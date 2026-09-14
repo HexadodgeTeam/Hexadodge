@@ -10,12 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 6504008313830532915}
   - component: {fileID: 6639904151794185876}
+  - component: {fileID: 7948004021265359173}
   - component: {fileID: 4274482798483262675}
   - component: {fileID: 1938711084967713150}
   - component: {fileID: 5599694054019429399}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   data: {fileID: 11400000, guid: ebe3f3bbf2ae5a748976f11ecc73aa10, type: 2}
   rb: {fileID: 4274482798483262675}
+--- !u!114 &7948004021265359173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562194563750654527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ed3a4018311424aa537a385e55a09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  data:
+    MaxHealth: 3
+    InvincibiltyCooldown: 1.5
 --- !u!50 &4274482798483262675
 Rigidbody2D:
   serializedVersion: 5
