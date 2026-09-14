@@ -9,6 +9,6 @@ public class BaseMovementData : PlayerMovementData
     {
         float totalSpeed = speed * Time.deltaTime;
             
-        movable.Move(input.normalized * totalSpeed);
+        movable.Move(Vector2.ClampMagnitude(input, 1f) * (totalSpeed * Time.fixedDeltaTime));
     }
 }

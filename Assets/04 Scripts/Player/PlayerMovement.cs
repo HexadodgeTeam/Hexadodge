@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     private Vector2 _moveInput;
 
-    private void Update()
+    private void FixedUpdate()
     {
         data.InputMove(_moveInput, this);
     }
@@ -28,6 +28,6 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     public void Move(Vector2 delta)
     {
-        rb.linearVelocity = delta;
+        rb.MovePosition(rb.position + delta);
     }
 }

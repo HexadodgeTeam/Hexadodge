@@ -89,9 +89,9 @@
                 "overlayPath": "Xiaomi Redmi Note 11S_Overlay.png",
                 "borderSize": {
                     "x": 55.0,
-                    "y": 107.0,
+                    "y": 69.0,
                     "z": 55.0,
-                    "w": 69.0
+                    "w": 107.0
                 }
             }
         }
@@ -100,7 +100,7 @@
         "deviceModel": "Xiaomi 2201117SG",
         "deviceType": 1,
         "operatingSystem": "Android OS 11 / API-30 (RKQ1.201004.002/V13.0.3.0.RKGMIXM)",
-        "operatingSystemFamily": 1,
+        "operatingSystemFamily": 0,
         "processorCount": 8,
         "processorFrequency": 2050,
         "processorType": "ARMv8",
@@ -112,7 +112,7 @@
         "systemMemorySize": 5924,
         "graphicsDependentData": [
             {
-                "graphicsDeviceType": 13,
+                "graphicsDeviceType": 11,
                 "graphicsMemorySize": 0,
                 "graphicsDeviceName": "Mali-G57 MC2",
                 "graphicsDeviceVendor": "ARM",
