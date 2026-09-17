@@ -1,0 +1,482 @@
+fileFormatVersion: 2
+guid: 516cb4fe8a187034887839251c3d3cee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2211309329534695495
+    second: AttaqueChatSpritesheet_0
+  - first:
+      213: -3689115988689063291
+    second: AttaqueChatSpritesheet_1
+  - first:
+      213: -7157037401003763241
+    second: AttaqueChatSpritesheet_2
+  - first:
+      213: 5165955226933090522
+    second: AttaqueChatSpritesheet_3
+  - first:
+      213: -4620259140612739780
+    second: AttaqueChatSpritesheet_4
+  - first:
+      213: -791470465792544412
+    second: AttaqueChatSpritesheet_5
+  - first:
+      213: -6823979555795303754
+    second: AttaqueChatSpritesheet_6
+  - first:
+      213: 8058345591662025189
+    second: AttaqueChatSpritesheet_7
+  - first:
+      213: -1313466447356685624
+    second: AttaqueChatSpritesheet_8
+  - first:
+      213: -788791075310103478
+    second: AttaqueChatSpritesheet_9
+  - first:
+      213: -2881380700191129523
+    second: AttaqueChatSpritesheet_10
+  - first:
+      213: -6569688818407739400
+    second: AttaqueChatSpritesheet_11
+  - first:
+      213: -3272618841088839291
+    second: AttaqueChatSpritesheet_12
+  - first:
+      213: 2926588907307227706
+    second: AttaqueChatSpritesheet_13
+  - first:
+      213: 3545924079352285947
+    second: AttaqueChatSpritesheet_14
+  - first:
+      213: 8257615305043210384
+    second: AttaqueChatSpritesheet_15
+  - first:
+      213: -8892510047020994808
+    second: AttaqueChatSpritesheet_16
+  - first:
+      213: -3982611911539477193
+    second: AttaqueChatSpritesheet_17
+  - first:
+      213: -1541768538355676323
+    second: AttaqueChatSpritesheet_18
+  - first:
+      213: 6066518769102712506
+    second: AttaqueChatSpritesheet_19
+  - first:
+      213: -3913526677040046201
+    second: AttaqueChatSpritesheet_20
+  - first:
+      213: -572344130716202964
+    second: AttaqueChatSpritesheet_21
+  - first:
+      213: 4083325955005549407
+    second: AttaqueChatSpritesheet_22
+  - first:
+      213: 8303165417496728241
+    second: AttaqueChatSpritesheet_23
+  - first:
+      213: -5260593459073046
+    second: AttaqueChatSpritesheet_24
+  - first:
+      213: 4011993981552220737
+    second: AttaqueChatSpritesheet_25
+  - first:
+      213: -2976563933319129763
+    second: AttaqueChatSpritesheet_26
+  - first:
+      213: 1553043590339924784
+    second: AttaqueChatSpritesheet_27
+  - first:
+      213: 4606181865268364411
+    second: AttaqueChatSpritesheet_28
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7483c638e1620be10800000000000000
+      internalID: 2211309329534695495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58279f6dd80adccc0800000000000000
+      internalID: -3689115988689063291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d95cf447681dac90800000000000000
+      internalID: -7157037401003763241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad85be298e821b740800000000000000
+      internalID: 5165955226933090522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3da6817aca81efb0800000000000000
+      internalID: -4620259140612739780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 461f8340ec12405f0800000000000000
+      internalID: -791470465792544412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b20b4ebfba5c41a0800000000000000
+      internalID: -6823979555795303754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e99954ee9ef4df60800000000000000
+      internalID: 8058345591662025189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c219e4a931a5cde0800000000000000
+      internalID: -1313466447356685624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a44942a32b6ad05f0800000000000000
+      internalID: -788791075310103478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d400176f4874308d0800000000000000
+      internalID: -2881380700191129523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ff63fdc3d6c3d4a0800000000000000
+      internalID: -6569688818407739400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6f9794c5663f3e3428df795433bffbfd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      AttaqueChatSpritesheet_0: 2211309329534695495
+      AttaqueChatSpritesheet_1: -3689115988689063291
+      AttaqueChatSpritesheet_10: -2881380700191129523
+      AttaqueChatSpritesheet_11: -6569688818407739400
+      AttaqueChatSpritesheet_2: -7157037401003763241
+      AttaqueChatSpritesheet_3: 5165955226933090522
+      AttaqueChatSpritesheet_4: -4620259140612739780
+      AttaqueChatSpritesheet_5: -791470465792544412
+      AttaqueChatSpritesheet_6: -6823979555795303754
+      AttaqueChatSpritesheet_7: 8058345591662025189
+      AttaqueChatSpritesheet_8: -1313466447356685624
+      AttaqueChatSpritesheet_9: -788791075310103478
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

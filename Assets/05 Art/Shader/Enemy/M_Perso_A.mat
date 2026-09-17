@@ -62,26 +62,32 @@ Material:
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _ColorOUTLINE: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_A_Light: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_A_Line: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_A_Shadow: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_B_Light: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_B_Line: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_B_Shadow: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_A_Light: {r: 0.34509805, g: 0.23529413, b: 0.24705884, a: 1}
+    - _Color_A_Line: {r: 0.69411767, g: 0.6039216, b: 0.5803922, a: 1}
+    - _Color_A_Shadow: {r: 0.52156866, g: 0.38823533, b: 0.40000004, a: 1}
+    - _Color_B_Light: {r: 0.18431373, g: 0.4784314, b: 0.18039216, a: 1}
+    - _Color_B_Line: {r: 0.41960788, g: 0.8235295, b: 0.56078434, a: 1}
+    - _Color_B_Shadow: {r: 0.2901961, g: 0.4784314, b: 0.44705886, a: 1}
     - _Color_C_Light: {r: 0, g: 0, b: 0, a: 1}
     - _Color_C_Line: {r: 0, g: 0, b: 0, a: 1}
     - _Color_C_Shadow: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_D_Light: {r: 0.3529412, g: 0.23137257, b: 0.24705884, a: 1}
-    - _Color_D_Line: {r: 0.69803923, g: 0.6039216, b: 0.5803922, a: 1}
-    - _Color_D_Shadow: {r: 0.53333336, g: 0.38431376, b: 0.39607847, a: 1}
+    - _Color_D_Light: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_D_Line: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_D_Shadow: {r: 0, g: 0, b: 0, a: 1}
     - _Color_EXTRA: {r: 0, g: 0, b: 0, a: 1}
     - _Color_E_Light: {r: 0, g: 0, b: 0, a: 1}
     - _Color_E_Line: {r: 0.1137255, g: 0.56078434, b: 0.15294118, a: 1}
     - _Color_E_Shadow: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_F_Light: {r: 0.1137255, g: 0.56078434, b: 0.15294118, a: 1}
-    - _Color_F_Line: {r: 0.41960788, g: 0.8235295, b: 0.56078434, a: 1}
-    - _Color_F_Shadow: {r: 0.30588236, g: 0.49411768, b: 0.43921572, a: 1}
+    - _Color_F_Light: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_F_Line: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_F_Shadow: {r: 0, g: 0, b: 0, a: 1}
     - _Color_LINEEARTS: {r: 0, g: 0, b: 0, a: 1}
+    - _Pallier_1: {r: 0.01, g: 0.14, b: 0, a: 0}
+    - _Pallier_2: {r: 0.14, g: 0.27, b: 0, a: 0}
+    - _Pallier_3: {r: 0.27, g: 0.35, b: 0, a: 0}
+    - _Pallier_4: {r: 0.35, g: 0.61, b: 0, a: 0}
+    - _Pallier_5: {r: 0.61, g: 0.97, b: 0, a: 0}
+    - _Pallier_6: {r: 0.97, g: 1.06, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &3204680989247609010
