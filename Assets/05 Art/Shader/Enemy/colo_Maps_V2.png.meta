@@ -1,0 +1,585 @@
+fileFormatVersion: 2
+guid: c3799201fb5515b45910ca6c267673f2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7279646608790744418
+    second: colo_Maps_V2_0
+  - first:
+      213: -7849473709641949953
+    second: colo_Maps_V2_1
+  - first:
+      213: 1464306230239627690
+    second: colo_Maps_V2_2
+  - first:
+      213: -3931828741262322621
+    second: colo_Maps_V2_3
+  - first:
+      213: -8808659867742291802
+    second: colo_Maps_V2_4
+  - first:
+      213: 5252581577458514779
+    second: colo_Maps_V2_5
+  - first:
+      213: 6561758454589008599
+    second: colo_Maps_V2_6
+  - first:
+      213: -4816889481409639506
+    second: colo_Maps_V2_7
+  - first:
+      213: -3947179082561223824
+    second: colo_Maps_V2_8
+  - first:
+      213: 7467564824620557023
+    second: colo_Maps_V2_9
+  - first:
+      213: -8675246552302607121
+    second: colo_Maps_V2_10
+  - first:
+      213: -8458906713657901699
+    second: colo_Maps_V2_11
+  - first:
+      213: -3598085179899676976
+    second: colo_Maps_V2_12
+  - first:
+      213: -2694219540699898799
+    second: colo_Maps_V2_13
+  - first:
+      213: 4451261350125536250
+    second: colo_Maps_V2_14
+  - first:
+      213: -1949612908957059614
+    second: colo_Maps_V2_15
+  - first:
+      213: 73630493722059436
+    second: colo_Maps_V2_16
+  - first:
+      213: 7585372570993536169
+    second: colo_Maps_V2_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: colo_Maps_V2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 869
+        width: 329
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26d695f7500860560800000000000000
+      internalID: 7279646608790744418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_1
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 869
+        width: 330
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc1607df31111390800000000000000
+      internalID: -7849473709641949953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_2
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 869
+        width: 329
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa903d712c2425410800000000000000
+      internalID: 1464306230239627690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 695
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344536f67965f69c0800000000000000
+      internalID: -3931828741262322621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_4
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 695
+        width: 330
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a83bf3458a51c580800000000000000
+      internalID: -8808659867742291802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_5
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 695
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bfc268d1be4e840800000000000000
+      internalID: 5252581577458514779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 521
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7daa1bb7c8c001b50800000000000000
+      internalID: 6561758454589008599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_7
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 521
+        width: 330
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab4342a988f62db0800000000000000
+      internalID: -4816889481409639506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_8
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 521
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0730617998dc839c0800000000000000
+      internalID: -3947179082561223824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 347
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd2e5b4a4ae12a760800000000000000
+      internalID: 7467564824620557023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_10
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 347
+        width: 330
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe4221f59355b9780800000000000000
+      internalID: -8675246552302607121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_11
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 347
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7df040492deb9a80800000000000000
+      internalID: -8458906713657901699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 173
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d67b74a798011ec0800000000000000
+      internalID: -3598085179899676976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_13
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 173
+        width: 330
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15c9aa13a953c9ad0800000000000000
+      internalID: -2694219540699898799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_14
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 173
+        width: 329
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af388a83d9e06cd30800000000000000
+      internalID: 4451261350125536250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 329
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e53918836591f4e0800000000000000
+      internalID: -1949612908957059614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_16
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 0
+        width: 330
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca2a0fe3b86950100800000000000000
+      internalID: 73630493722059436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: colo_Maps_V2_17
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 0
+        width: 329
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acaf0f0a28a44960800000000000000
+      internalID: 7585372570993536169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      colo_Maps_V2_0: 7279646608790744418
+      colo_Maps_V2_1: -7849473709641949953
+      colo_Maps_V2_10: -8675246552302607121
+      colo_Maps_V2_11: -8458906713657901699
+      colo_Maps_V2_12: -3598085179899676976
+      colo_Maps_V2_13: -2694219540699898799
+      colo_Maps_V2_14: 4451261350125536250
+      colo_Maps_V2_15: -1949612908957059614
+      colo_Maps_V2_16: 73630493722059436
+      colo_Maps_V2_17: 7585372570993536169
+      colo_Maps_V2_2: 1464306230239627690
+      colo_Maps_V2_3: -3931828741262322621
+      colo_Maps_V2_4: -8808659867742291802
+      colo_Maps_V2_5: 5252581577458514779
+      colo_Maps_V2_6: 6561758454589008599
+      colo_Maps_V2_7: -4816889481409639506
+      colo_Maps_V2_8: -3947179082561223824
+      colo_Maps_V2_9: 7467564824620557023
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
