@@ -2088,8 +2088,8 @@
     "m_ObjectId": "000174fbc4b148618180241145c7b70f",
     "m_Title": "B_LOW  [ PALETTE E]",
     "m_Position": {
-        "x": -1891.999755859375,
-        "y": 4956.99951171875
+        "x": -1892.0,
+        "y": 4957.0
     }
 }
 
@@ -2240,9 +2240,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.05117480456829071,
-        "g": 0.4716981053352356,
-        "b": 0.28302204608917239,
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -2323,9 +2323,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.07843136787414551,
-        "g": 0.18148846924304963,
-        "b": 0.7372549176216126,
+        "r": 0.11534356325864792,
+        "g": 0.3396226167678833,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -2445,7 +2445,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"737c8277d0f179c438db83428d544419\",\"type\":3}}",
+        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"317a58e6705dae4479be0f4e75b79cf1\",\"type\":3}}",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -2557,9 +2557,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.11764706671237946,
-        "g": 0.5607843399047852,
-        "b": 0.14901961386203767,
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -3177,9 +3177,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.6174404621124268,
-        "g": 0.8773584961891174,
-        "b": 0.4842025637626648,
+        "r": 0.33663368225097659,
+        "g": 1.0,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -5540,8 +5540,8 @@
     "m_ShaderOutputName": "_RANGE",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.0010000000474974514,
-        "y": 0.10000000149011612
+        "x": 0.0,
+        "y": 0.20000000298023225
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -6326,9 +6326,9 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "r": 0.3529411852359772,
-        "g": 0.23137256503105164,
-        "b": 0.24705883860588075,
+        "r": 0.08920561522245407,
+        "g": 0.849056601524353,
+        "b": 0.0,
         "a": 1.0
     },
     "isMainColor": false,
@@ -6346,8 +6346,8 @@
     "m_ShaderOutputName": "_RANGE",
     "m_StageCapability": 3,
     "m_Value": {
-        "x": 0.10000000149011612,
-        "y": 0.20000000298023225
+        "x": 0.15000000596046449,
+        "y": 0.1899999976158142
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -7651,8 +7651,8 @@
     "m_ObjectId": "7573ba7a503441469d99cd2733cb0ab4",
     "m_Title": "G_LOW  [ PALETTE C]",
     "m_Position": {
-        "x": -1889.9998779296875,
-        "y": 2628.999755859375
+        "x": -1890.0,
+        "y": 2629.0
     }
 }
 
@@ -7874,8 +7874,8 @@
     "m_ObjectId": "7929bf625716487dbc188f5275623038",
     "m_Title": "R_LOW [ PALETTE A]",
     "m_Position": {
-        "x": -1894.9998779296875,
-        "y": 300.999755859375
+        "x": -1895.0,
+        "y": 301.0
     }
 }
 
@@ -8315,7 +8315,7 @@
     "m_Title": "G_High  [ PALETTE D]",
     "m_Position": {
         "x": -1888.0,
-        "y": 3746.99951171875
+        "y": 3747.0
     }
 }
 
@@ -10935,7 +10935,7 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2165.999755859375,
+            "x": -2559.0,
             "y": 4937.99951171875,
             "width": 208.0,
             "height": 433.0
@@ -12228,8 +12228,8 @@
     "m_ObjectId": "df235f85b25c42249b8cb966de3a73d6",
     "m_Title": "B_High  [ PALETTE F]",
     "m_Position": {
-        "x": -1889.9998779296875,
-        "y": 6074.99951171875
+        "x": -1890.0,
+        "y": 6075.0
     }
 }
 
