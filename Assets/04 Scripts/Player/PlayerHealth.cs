@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public struct Data
     {
         public int MaxHealth;
-        public float InvincibiltyCooldown;
+        public float InvincibilityCooldown;
     }
 
     [SerializeField] private Data data;
@@ -15,13 +16,14 @@ public class PlayerHealth : MonoBehaviour
     private int _health;
     private float _invincibilityTimer = 0f;
 
-    private bool IsInvicible => _invincibilityTimer > 0f;
+    private bool IsInvincible => _invincibilityTimer > 0f;
     private int Health
     {
         get => _health;
         set
         {
             _health = Mathf.Clamp(0, data.MaxHealth, value);
+            UIManager.HealthUI?.SetCount(_health);
             
             if (_health <= 0)
             {
@@ -32,7 +34,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnEnable()
     {
-        _health = data.MaxHealth;
+        Health = data.MaxHealth;
     }
 
     private void Update()
@@ -45,14 +47,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
-        if (IsInvicible) return;
+        if (IsInvincible) return;
 
-        _health -= amount;
-        _invincibilityTimer = data.InvincibiltyCooldown;
+        Health -= amount;
+        _invincibilityTimer = data.InvincibilityCooldown;
     }
 
     private void Die()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
