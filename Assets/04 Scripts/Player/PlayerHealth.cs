@@ -22,7 +22,7 @@ public class PlayerHealth : MonoBehaviour
         get => _health;
         set
         {
-            _health = Mathf.Clamp(0, data.MaxHealth, value);
+            _health = Mathf.Clamp(value, 0, data.MaxHealth);
             UIManager.HealthUI?.SetCount(_health);
             
             if (_health <= 0)
