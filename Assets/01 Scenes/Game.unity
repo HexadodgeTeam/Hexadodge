@@ -280,8 +280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f252c8a63e28e946b3c6e2c4eff2be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  countText: {fileID: 0}
-  fieldName: 
+  countText: {fileID: 498518585}
+  fieldName: Health
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
