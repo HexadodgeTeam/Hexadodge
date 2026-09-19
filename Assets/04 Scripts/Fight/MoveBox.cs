@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[RequireComponent(typeof(Grid))]
 public class MoveBox : MonoBehaviour
 {
     [SerializeField] private Vector2 positionInCell = Vector2.zero;
@@ -12,11 +11,14 @@ public class MoveBox : MonoBehaviour
 
     private void OnValidate()
     {
+        if (!grid) return;
         if (!boundsTransforms.up || !boundsTransforms.down || !boundsTransforms.left || !boundsTransforms.right) return;
 
-        float width = widthInCell * grid.cellSize.x;
-        float height = heightInCell * grid.cellSize.y;
-        Vector2 position = new Vector2(positionInCell.x * grid.cellSize.x, positionInCell.y * grid.cellSize.y);
+        float width = widthInCell * grid.transform.localScale.x;
+        float height = heightInCell * grid.transform.localScale.y;
+        Vector2 position = new Vector2(
+            positionInCell.x * grid.transform.localScale.x,
+            positionInCell.y * grid.transform.localScale.y);
         
         boundsTransforms.up.localScale = new Vector3(width + boundsWidth * 2f, boundsWidth, 1f);
         boundsTransforms.down.localScale = new Vector3(width + boundsWidth * 2f, boundsWidth, 1f);
