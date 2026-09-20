@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -11,10 +12,12 @@ public class FillGrid : MonoBehaviour
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private TileBase filledTile;
     [SerializeField] private TileBase emptyTile;
+    [SerializeField] private float[] skillFractions;
 
     private int _filledTileCount;
     private int _totalTileCount;
     private Color _fillColor;
+    private int _skillNumber;
 
     private int FilledTileCount
     {
@@ -22,12 +25,23 @@ public class FillGrid : MonoBehaviour
         set
         {
             _filledTileCount = value;
-            UIManager.FillUI.SetFraction((float)_filledTileCount / _totalTileCount);
 
-            if (_filledTileCount == _totalTileCount)
+            float fraction = _filledTileCount / (float)_totalTileCount;
+            
+            UIManager.FillUI.SetFraction(fraction);
+
+            _skillNumber = 0;
+
+            foreach (var skillFraction in skillFractions)
             {
-                UIManager.SetAttackButton(true);
+                if (fraction >= skillFraction)
+                {
+                    _skillNumber++;
+                }
             }
+
+            UIManager.SkillNumber.SetCount(_skillNumber, true);
+            UIManager.SetAttackButton(_skillNumber > 0);
         }
     }
 
@@ -40,6 +54,11 @@ public class FillGrid : MonoBehaviour
         _totalTileCount = tilemap.GetTilesRangeCount(
             new Vector3Int((int)(gridBounds.xMin / ScaleX), (int)(gridBounds.yMin / ScaleY)),
             new Vector3Int((int)(gridBounds.xMax / ScaleX), (int)(gridBounds.yMax / ScaleY)));
+    }
+
+    private void Start()
+    {
+        UIManager.SetThresholdIndicators(skillFractions);
     }
 
     public void Draw(Vector3Int gridPos)
@@ -61,12 +80,12 @@ public class FillGrid : MonoBehaviour
         _fillColor = color;
     }
 
-    public bool TryEmptyGrid()
+    public bool TryEmptyGrid(Vector3Int gridPos)
     {
-        if (FilledTileCount < _totalTileCount) return false;
+        if (_skillNumber <= 0) return false;
         
         FilledTileCount = 0;
-        tilemap.FloodFill(Vector3Int.zero, emptyTile);
+        tilemap.FloodFill(gridPos, emptyTile);
         UIManager.SetAttackButton(false);
         
         return true;

@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
 
     private Action<Vector3Int> _drawAction;
 
+    private Vector3Int GridPos => transform.position.ToGrid();
+
     private void Start()
     {
         renderer.color = color;
@@ -17,13 +19,13 @@ public class Player : MonoBehaviour
         UIManager.FillUI.SetColor(color);
     }
 
-    public void Attack()
+    public void TryAttack()
     {
-        FillGrid.Instance.TryEmptyGrid();
+        FillGrid.Instance.TryEmptyGrid(GridPos);
     }
 
     private void FixedUpdate()
     {
-        _drawAction.ForCircle(transform.position.ToGrid(), fillRange);
+        _drawAction.ForCircle(GridPos, fillRange);
     }
 }
