@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [SelectionBase]
@@ -6,13 +7,23 @@ public class Bullet : MonoBehaviour, IBulletMovable
 {
     [SerializeField] private int damage = 1;
     [SerializeField] private BulletMovementData movement;
-    [SerializeField] private float despawnTime = 5f;
+    [SerializeField] private float despawnTime = 3f;
 
+    private Pool<Bullet> _pool;
+    
     public Vector2 Forward => transform.right;
 
-    private void OnEnable()
+    public void Init(Pool<Bullet> pool)
     {
+        _pool = pool;
         Destroy(gameObject, despawnTime);
+    }
+
+    private IEnumerator ReleaseCoroutine()
+    {
+        yield return new WaitForSeconds(despawnTime);
+        
+        _pool.Release(this);
     }
 
     private void FixedUpdate()

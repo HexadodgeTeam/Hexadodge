@@ -938,9 +938,9 @@ MonoBehaviour:
   m_DynamicOriginRange: 100
   m_ControlPath: <Gamepad>/leftStick
   m_Behaviour: 0
-  m_UseIsolatedInputActions: 0
+  m_UseIsolatedInputActions: 1
   m_PointerDownAction:
-    m_Name: 
+    m_Name: Pointer Down
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: c6d1eac8-5a20-4896-b3f8-4730109124eb
@@ -949,7 +949,7 @@ MonoBehaviour:
     m_SingletonActionBindings: []
     m_Flags: 0
   m_PointerMoveAction:
-    m_Name: 
+    m_Name: Pointer Move
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: e426557e-1f95-40fe-8c37-67fe58ec7853
@@ -1148,8 +1148,8 @@ MonoBehaviour:
   minBulletSpawnY: -2.2
   maxBulletSpawnY: 2.2
   bulletSpawnInterval: 0.6
-  leftSpawnRotation: {x: 0, y: 0, z: 0, w: 1}
-  rightSpawnRotation: {x: 0, y: 0, z: 1, w: -0.00000004371139}
+  leftSpawnRotation: 0
+  rightSpawnRotation: 180
 --- !u!1 &812236319
 GameObject:
   m_ObjectHideFlags: 0

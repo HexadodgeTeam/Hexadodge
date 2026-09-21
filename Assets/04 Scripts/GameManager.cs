@@ -4,6 +4,7 @@ public class GameManager : MonoBehaviour
 {
     private void Awake()
     {
-        Application.targetFrameRate = -1;
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
     }
 }
