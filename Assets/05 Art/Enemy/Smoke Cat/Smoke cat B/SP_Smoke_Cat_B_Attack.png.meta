@@ -1,0 +1,604 @@
+fileFormatVersion: 2
+guid: aa83626bb4a20d94d865c500662395d8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6220352133611512016
+    second: SP_Smoke_Cat_B_Attack_0
+  - first:
+      213: 7404274419714283032
+    second: SP_Smoke_Cat_B_Attack_1
+  - first:
+      213: -3652112424232503606
+    second: SP_Smoke_Cat_B_Attack_2
+  - first:
+      213: 3797943170144640660
+    second: SP_Smoke_Cat_B_Attack_3
+  - first:
+      213: -1521520813762422894
+    second: SP_Smoke_Cat_B_Attack_4
+  - first:
+      213: -5430702064158651269
+    second: SP_Smoke_Cat_B_Attack_5
+  - first:
+      213: 1201311548477781123
+    second: SP_Smoke_Cat_B_Attack_6
+  - first:
+      213: -7735130902111157363
+    second: SP_Smoke_Cat_B_Attack_7
+  - first:
+      213: -2024558670741413178
+    second: SP_Smoke_Cat_B_Attack_8
+  - first:
+      213: -5439166936977642731
+    second: SP_Smoke_Cat_B_Attack_9
+  - first:
+      213: -1358000751896533966
+    second: SP_Smoke_Cat_B_Attack_10
+  - first:
+      213: 3968788742528915440
+    second: SP_Smoke_Cat_B_Attack_11
+  - first:
+      213: 7646430293414750174
+    second: SP_Smoke_Cat_B_Attack_12
+  - first:
+      213: 3251736358625251181
+    second: SP_Smoke_Cat_B_Attack_13
+  - first:
+      213: -3937672123207128747
+    second: SP_Smoke_Cat_B_Attack_14
+  - first:
+      213: -3467646140549868858
+    second: SP_Smoke_Cat_B_Attack_15
+  - first:
+      213: 6776413783832432726
+    second: SP_Smoke_Cat_B_Attack_16
+  - first:
+      213: -6538239561823595715
+    second: SP_Smoke_Cat_B_Attack_17
+  - first:
+      213: 8304101876295903806
+    second: SP_Smoke_Cat_B_Attack_18
+  - first:
+      213: -2569594107882900152
+    second: SP_Smoke_Cat_B_Attack_19
+  - first:
+      213: -7937428125476323157
+    second: SP_Smoke_Cat_B_Attack_20
+  - first:
+      213: 5220102229022611030
+    second: SP_Smoke_Cat_B_Attack_21
+  - first:
+      213: -5532174691817309559
+    second: SP_Smoke_Cat_B_Attack_22
+  - first:
+      213: -2878795197126168840
+    second: SP_Smoke_Cat_B_Attack_23
+  - first:
+      213: 8094941403985195361
+    second: SP_Smoke_Cat_B_Attack_24
+  - first:
+      213: -336639462932594420
+    second: SP_Smoke_Cat_B_Attack_25
+  - first:
+      213: 3351223054469174746
+    second: SP_Smoke_Cat_B_Attack_26
+  - first:
+      213: -1098411637182708204
+    second: SP_Smoke_Cat_B_Attack_27
+  - first:
+      213: 272063282160436074
+    second: SP_Smoke_Cat_B_Attack_28
+  - first:
+      213: -68297417283441059
+    second: SP_Smoke_Cat_B_Attack_29
+  - first:
+      213: -3853111566376031451
+    second: SP_Smoke_Cat_B_Attack_30
+  - first:
+      213: 2238188104851108790
+    second: SP_Smoke_Cat_B_Attack_31
+  - first:
+      213: -6695013175286046567
+    second: SP_Smoke_Cat_B_Attack_32
+  - first:
+      213: 4389743887572216197
+    second: SP_Smoke_Cat_B_Attack_33
+  - first:
+      213: -4691224057412361418
+    second: SP_Smoke_Cat_B_Attack_34
+  - first:
+      213: 2350876786175324014
+    second: SP_Smoke_Cat_B_Attack_35
+  - first:
+      213: -4134743357783977696
+    second: SP_Smoke_Cat_B_Attack_36
+  - first:
+      213: 3606688760803690202
+    second: SP_Smoke_Cat_B_Attack_37
+  - first:
+      213: -85525200237005506
+    second: SP_Smoke_Cat_B_Attack_38
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0e1c50f41235650800000000000000
+      internalID: 6220352133611512016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 816d49eea5441c660800000000000000
+      internalID: 7404274419714283032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac6b4d19917115dc0800000000000000
+      internalID: -3652112424232503606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 3072
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e979dd03105b430800000000000000
+      internalID: 3797943170144640660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297d35991e872eae0800000000000000
+      internalID: -1521520813762422894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7cc7d8ee3542a4b0800000000000000
+      internalID: -5430702064158651269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 384b79f0d7aeba010800000000000000
+      internalID: 1201311548477781123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2048
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8384805d6b47a490800000000000000
+      internalID: -7735130902111157363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c265839d9257e3e0800000000000000
+      internalID: -2024558670741413178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51be56f1d723484b0800000000000000
+      internalID: -5439166936977642731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2346e7ad289672de0800000000000000
+      internalID: -1358000751896533966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 1024
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f751037558f31730800000000000000
+      internalID: 3968788742528915440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7a5ced6d39d1a60800000000000000
+      internalID: 7646430293414750174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f841f5dfc702d20800000000000000
+      internalID: 3251736358625251181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 559e74e01149a59c0800000000000000
+      internalID: -3937672123207128747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Smoke_Cat_B_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 1024
+        height: 1024
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c255c1253270efc0800000000000000
+      internalID: -3467646140549868858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: b9102819fc2cdc54793b6b081f9d57c3
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":1024.0,"y":1024.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SP_Smoke_Cat_B_Attack_0: 6220352133611512016
+      SP_Smoke_Cat_B_Attack_1: 7404274419714283032
+      SP_Smoke_Cat_B_Attack_10: -1358000751896533966
+      SP_Smoke_Cat_B_Attack_11: 3968788742528915440
+      SP_Smoke_Cat_B_Attack_12: 7646430293414750174
+      SP_Smoke_Cat_B_Attack_13: 3251736358625251181
+      SP_Smoke_Cat_B_Attack_14: -3937672123207128747
+      SP_Smoke_Cat_B_Attack_15: -3467646140549868858
+      SP_Smoke_Cat_B_Attack_2: -3652112424232503606
+      SP_Smoke_Cat_B_Attack_3: 3797943170144640660
+      SP_Smoke_Cat_B_Attack_4: -1521520813762422894
+      SP_Smoke_Cat_B_Attack_5: -5430702064158651269
+      SP_Smoke_Cat_B_Attack_6: 1201311548477781123
+      SP_Smoke_Cat_B_Attack_7: -7735130902111157363
+      SP_Smoke_Cat_B_Attack_8: -2024558670741413178
+      SP_Smoke_Cat_B_Attack_9: -5439166936977642731
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
