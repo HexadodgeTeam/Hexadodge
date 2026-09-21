@@ -55,6 +55,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UIManager.GameOver(false);
     }
 }

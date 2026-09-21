@@ -21,6 +21,7 @@ public class Player : MonoBehaviour
 
     public void TryAttack()
     {
+        // The enemy damage is currently done in FillGrid. Should replace this with a skill/attack/fill level object.
         FillGrid.Instance.TryEmptyGrid(GridPos);
     }
 
