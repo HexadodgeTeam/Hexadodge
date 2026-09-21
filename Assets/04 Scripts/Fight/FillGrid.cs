@@ -13,6 +13,9 @@ public class FillGrid : MonoBehaviour
     [SerializeField] private TileBase filledTile;
     [SerializeField] private TileBase emptyTile;
     [SerializeField] private float[] skillFractions;
+    
+    // TODO TEMP REFERENCE
+    [SerializeField] private Enemy enemy;
 
     private int _filledTileCount;
     private int _totalTileCount;
@@ -84,6 +87,7 @@ public class FillGrid : MonoBehaviour
     {
         if (_skillNumber <= 0) return false;
         
+        enemy.TakeDamage(_skillNumber);
         FilledTileCount = 0;
         tilemap.FloodFill(gridPos, emptyTile);
         UIManager.SetAttackButton(false);
