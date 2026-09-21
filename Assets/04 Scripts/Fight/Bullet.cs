@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [SelectionBase]
@@ -5,8 +6,14 @@ public class Bullet : MonoBehaviour, IBulletMovable
 {
     [SerializeField] private int damage = 1;
     [SerializeField] private BulletMovementData movement;
+    [SerializeField] private float despawnTime = 5f;
 
     public Vector2 Forward => transform.right;
+
+    private void OnEnable()
+    {
+        Destroy(gameObject, despawnTime);
+    }
 
     private void FixedUpdate()
     {
@@ -25,6 +32,8 @@ public class Bullet : MonoBehaviour, IBulletMovable
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
             playerHealth.TakeDamage(damage);
+            
+            gameObject.SetActive(false);
         }
     }
 
