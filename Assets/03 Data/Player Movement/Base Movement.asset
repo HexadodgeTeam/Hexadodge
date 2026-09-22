@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8485fa92f9d04c468ce0cc1a28c1698, type: 3}
   m_Name: Base Movement
   m_EditorClassIdentifier: Assembly-CSharp::BaseMovementData
-  speed: 2
+  speed: 2.5
