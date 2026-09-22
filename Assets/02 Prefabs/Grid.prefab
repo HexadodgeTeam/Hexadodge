@@ -68,9 +68,10 @@ MonoBehaviour:
   filledTile: {fileID: 11400000, guid: ac2c83ea1b8649c40b7e975d9af06bb7, type: 2}
   emptyTile: {fileID: 11400000, guid: 3bb41ce5e4b8e094cad47c72606d3c9f, type: 2}
   skillFractions:
-  - 0.33333334
-  - 0.6666667
-  - 1
+  - 0.5
+  - 0.8
+  - 0.95
+  enemy: {fileID: 0}
 --- !u!1 &1822461042337407179
 GameObject:
   m_ObjectHideFlags: 0
