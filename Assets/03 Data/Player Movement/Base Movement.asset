@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Base Movement
   m_EditorClassIdentifier: Assembly-CSharp::BaseMovementData
   speed: 2.5
+  inputMultiplier: 3
