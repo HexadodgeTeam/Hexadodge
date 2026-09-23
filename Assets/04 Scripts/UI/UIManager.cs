@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField] private CountUI healthUI;
     [SerializeField] private SliderUI fillUI;
+    [SerializeField] private GameObject stick;
     [SerializeField] private Button attackButton;
     [SerializeField] private CountUI skillNumber;
     [SerializeField] private SliderUI enemyHealthUI;
@@ -40,6 +41,14 @@ public class UIManager : MonoBehaviour
     public static void GameOver(bool win)
     {
         _gameOverPanel.Display(win);
+    }
+
+    public void SetControlType(int value)
+    {
+        bool classic = (Control.Type)value == Control.Type.Classic;
+        
+        stick.SetActive(classic);
+        attackButton.gameObject.SetActive(classic);
     }
     
     private void Awake()

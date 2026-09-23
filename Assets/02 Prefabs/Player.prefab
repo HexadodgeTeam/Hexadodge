@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078f8231ec4848d782df1bb5efc79545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  color: {r: 1, g: 0.2980392, b: 0.33966342, a: 1}
+  color: {r: 0.39279994, g: 0.8584906, b: 0.627108, a: 1}
   renderer: {fileID: 8815264857993271034}
   fillRange: 3
 --- !u!114 &6639904151794185876
@@ -66,8 +66,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a374f0eb6b3d9a7468b8a01f11d25b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  controlType: 1
+  stickInputMultiplier: 2
   data: {fileID: 11400000, guid: ebe3f3bbf2ae5a748976f11ecc73aa10, type: 2}
   rb: {fileID: 4274482798483262675}
+  playerInput: {fileID: 5599694054019429399}
 --- !u!114 &7948004021265359173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,8 +206,24 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 3cbf6541-81ba-4b74-8804-3ad382727ebd
     m_ActionName: Game/Attack
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Gamepad
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6639904151794185876}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: InputCursor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3e536141-40e6-4ece-ba04-ec444cb28fb5
+    m_ActionName: 'Game/Swipe[/Device Simulator Touchscreen/primaryTouch]'
+  m_NeverAutoSwitchControlSchemes: 1
+  m_DefaultControlScheme: Touch
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}

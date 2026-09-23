@@ -16,6 +16,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Swipe",
+                    "type": "Value",
+                    "id": "3e536141-40e6-4ece-ba04-ec444cb28fb5",
+                    "expectedControlType": "Touch",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Attack",
                     "type": "Button",
                     "id": "3cbf6541-81ba-4b74-8804-3ad382727ebd",
@@ -58,6 +67,28 @@
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f6a6f03-3947-4641-9375-3d7ab13d0cb0",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "MultiTap",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "63497e0b-99a8-4a26-8a1e-2f8412b63964",
+                    "path": "<Touchscreen>/primaryTouch",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Touch",
+                    "action": "Swipe",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -69,6 +100,17 @@
             "devices": [
                 {
                     "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "Touch",
+            "bindingGroup": "Touch",
+            "devices": [
+                {
+                    "devicePath": "<Touchscreen>",
                     "isOptional": false,
                     "isOR": false
                 }
