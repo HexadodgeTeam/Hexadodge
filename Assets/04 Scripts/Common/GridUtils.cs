@@ -3,11 +3,6 @@ using UnityEngine;
 
 public static class GridUtils
 {
-    public static Vector3Int ToGrid(this Vector3 pos)
-    {
-        return new Vector3Int((int)Mathf.Floor(pos.x / FillGrid.ScaleX), (int)Mathf.Floor(pos.y / FillGrid.ScaleY));
-    }
-
     public static void ForCircleOutline(this Action<Vector3Int> action, Vector3Int center, int radius)
     {
         int x = radius;

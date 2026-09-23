@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,6 +8,7 @@ public class FillGrid : MonoBehaviour
     public static float ScaleY;
     
     [SerializeField] private Rect gridBounds;
+    [SerializeField] private Grid grid;
     [SerializeField] private Tilemap tilemap;
     [SerializeField] private TileBase filledTile;
     [SerializeField] private TileBase emptyTile;
@@ -64,7 +64,13 @@ public class FillGrid : MonoBehaviour
         UIManager.SetThresholdIndicators(skillFractions);
     }
 
-    public void Draw(Vector3Int gridPos)
+    public Vector3 GetCellWorldPos(Vector3Int gridPos)
+    {
+        return tilemap.CellToWorld(gridPos);
+        return tilemap.cente
+    }
+    
+    private void SetTile(Vector3Int gridPos)
     {
         if (!IsInGrid(gridPos) || tilemap.GetTile(gridPos) == filledTile) return;
         
