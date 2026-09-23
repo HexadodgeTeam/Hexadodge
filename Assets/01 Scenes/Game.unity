@@ -283,7 +283,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1338784789}
   m_HandleRect: {fileID: 0}
@@ -2067,7 +2067,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 210561846}
   m_HandleRect: {fileID: 0}
@@ -2715,14 +2715,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -2749,10 +2741,6 @@ PrefabInstance:
     - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 3634652565659063082, guid: c2b8f71a6274d8d40a063280dec8c98e, type: 3}
       propertyPath: m_AnchoredPosition.y
