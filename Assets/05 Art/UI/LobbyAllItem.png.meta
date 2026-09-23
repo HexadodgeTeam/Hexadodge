@@ -389,6 +389,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: LobbyAllItem_10
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 1638
+        width: 356
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19b65a9adea60a4f892a2fb94949dae
+      internalID: -6875617599786332450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []

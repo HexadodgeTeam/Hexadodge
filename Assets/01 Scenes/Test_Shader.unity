@@ -650,6 +650,42 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1077679124}
     m_Modifications:
+    - target: {fileID: 1802091715454770399, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 359.1895
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802091715454770399, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 391.4762
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802091715454770399, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -14.4053
+      objectReference: {fileID: 0}
+    - target: {fileID: 1802091715454770399, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -953.7381
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648099110926859696, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648099110926859696, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6875617599786332450, guid: 69d20886c88f9dd42be51ecabaf98da5, type: 3}
+    - target: {fileID: 2648099110926859696, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648099110926859696, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648099110926859696, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3235719094869925507, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -734,8 +770,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuPrincipal
       objectReference: {fileID: 0}
+    - target: {fileID: 4268573341552555814, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 6194237872147809408, guid: 4397463c73c7e5b419c88a650f7c3ff2, type: 3}
+    - target: {fileID: 8993790582098079577, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2557038726755852168, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+    - {fileID: 3738391590821919657, guid: ed92732b23f3b414ab183686803a9450, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed92732b23f3b414ab183686803a9450, type: 3}
