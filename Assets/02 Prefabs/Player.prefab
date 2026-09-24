@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
   stickInputMultiplier: 2
-  moveBorderWidth: 65
+  moveBorderWidth: 100
   moveBorderSpeed: 3.5
   playerInput: {fileID: 5599694054019429399}
   movement: {fileID: 6639904151794185876}
