@@ -39,11 +39,36 @@ public static class GridUtils
                 {
                     int xSym = 2 * center.x - x;
                     int ySym = 2 * center.y - y;
-                    
+
                     action.Invoke(new Vector3Int(x, y));
                     action.Invoke(new Vector3Int(xSym, y));
                     action.Invoke(new Vector3Int(x, ySym));
                     action.Invoke(new Vector3Int(xSym, ySym));
+                }
+            }
+        }
+    }
+
+    public static void ForCircleFloat(this Action<Vector3Int> action,
+        Func<Vector3, Vector3Int> worldToCell,
+        Func<Vector3Int, Vector3> cellToWorld,
+        Vector3 center, float radius)
+    {
+        Vector3Int centerGridPos = worldToCell.Invoke(center);
+        int radiusCeil = Mathf.CeilToInt(radius);
+        float radiusScaled = radius * FillGrid.ScaleX;
+
+        for (int x = centerGridPos.x - radiusCeil; x <= centerGridPos.x + radiusCeil; x++)
+        {
+            for (int y = centerGridPos.y - radiusCeil; y <= centerGridPos.y + radiusCeil; y++)
+            {
+                Vector3Int gridPos = new Vector3Int(x, y);
+                Vector3 worldPos = cellToWorld.Invoke(gridPos);
+
+                if ((worldPos.x - center.x) * (worldPos.x - center.x) +
+                    (worldPos.y - center.y) * (worldPos.y - center.y) <= radiusScaled * radiusScaled)
+                {
+                    action.Invoke(gridPos);
                 }
             }
         }

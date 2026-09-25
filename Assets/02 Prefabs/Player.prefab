@@ -52,9 +52,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078f8231ec4848d782df1bb5efc79545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  color: {r: 0.39279994, g: 0.8584906, b: 0.627108, a: 1}
+  improvedDrawing: 1
+  color: {r: 0, g: 1, b: 0.58708096, a: 1}
+  fillColor1: {r: 0, g: 1, b: 0.7608695, a: 1}
+  fillColor2: {r: 0.59939295, g: 1, b: 0.39999998, a: 1}
   renderer: {fileID: 8815264857993271034}
-  fillRange: 3
+  fillRange: 2.1
 --- !u!114 &6639904151794185876
 MonoBehaviour:
   m_ObjectHideFlags: 0
