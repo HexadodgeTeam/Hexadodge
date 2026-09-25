@@ -35,7 +35,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 175, y: 175}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2463509472468494787
 CanvasRenderer:
@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
+  m_Color: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 0.53333336}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -85,6 +85,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130547541477710694}
   - component: {fileID: 2081615371523333050}
+  - component: {fileID: 8175435044703536517}
   - component: {fileID: 5896859230330819348}
   - component: {fileID: 6293185198386275154}
   m_Layer: 5
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_DynamicOriginRange: 150
   m_ControlPath: <Gamepad>/leftStick
   m_Behaviour: 1
-  m_UseIsolatedInputActions: 1
+  m_UseIsolatedInputActions: 0
   m_PointerDownAction:
     m_Name: Pointer Down
     m_Type: 0
@@ -149,9 +150,24 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
+  hideIfNotUsed: 0
   stickBaseImg: {fileID: 4316070164583685607}
   stickKnobImg: {fileID: 730033577913482960}
   stickZone: {fileID: 6293185198386275154}
+--- !u!114 &8175435044703536517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3831935001251117220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2f0be4e6b29794e8748aba9ec69910, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  stickBase: {fileID: 3634652565659063082}
+  dynamicOnScreenStick: {fileID: 2081615371523333050}
 --- !u!222 &5896859230330819348
 CanvasRenderer:
   m_ObjectHideFlags: 0

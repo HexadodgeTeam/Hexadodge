@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -16,16 +17,19 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        renderer.color = color;
         _drawAction = FillGrid.Instance.Draw;
+        renderer.color = color;
         FillGrid.Instance.SetColor(fillColor1, fillColor2);
         UIManager.FillUI.SetColor(color);
     }
 
-    public void TryAttack()
+    public void TryAttack(InputAction.CallbackContext context)
     {
-        // The enemy damage is currently done in FillGrid. Should replace this with a skill/attack/fill level object.
-        FillGrid.Instance.TryEmptyGrid(GridPos);
+        if (context.performed)
+        {
+            // The enemy damage is currently done in FillGrid. Should replace this with a skill/attack/fill level object.
+            FillGrid.Instance.TryEmptyGrid(GridPos);
+        }
     }
 
     private void FixedUpdate()
