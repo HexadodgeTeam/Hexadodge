@@ -1406,15 +1406,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4596812209630486420, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4596812209630486420, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4596812209630486420, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4596812209630486420, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1437,11 +1437,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
---- !u!156049354 &638031114 stripped
-Grid:
-  m_CorrespondingSourceObject: {fileID: 462780057570293428, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
-  m_PrefabInstance: {fileID: 638031113}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &715243041
 GameObject:
   m_ObjectHideFlags: 0
@@ -4015,10 +4010,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Move Box
       objectReference: {fileID: 0}
-    - target: {fileID: 6657465930348951567, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
-      propertyPath: grid
-      value: 
-      objectReference: {fileID: 638031114}
     - target: {fileID: 7280202371204885419, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
