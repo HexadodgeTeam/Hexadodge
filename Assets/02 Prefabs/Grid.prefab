@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   minFilledCellScale: 1
-  maxFilledCellScale: 2.1
+  maxFilledCellScale: 2.5
   filledCellGrowDuration: 0.5
   growCurve:
     serializedVersion: 2

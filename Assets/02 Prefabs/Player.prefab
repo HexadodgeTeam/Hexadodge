@@ -37,7 +37,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5042843611363140019}
-  - {fileID: 623253731160897633}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8333848220272853497
@@ -162,11 +161,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6c4e3eb57941f385243903a5b695a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
-  stickInputMultiplier: 2
-  moveBorderWidth: 100
+  stickInputMultiplier: 1
+  moveBorderWidth: 0
   moveBorderSpeed: 3.5
+  swipeMultiplier: 1
   playerInput: {fileID: 5599694054019429399}
   movement: {fileID: 6639904151794185876}
+  ghost: {fileID: 0}
 --- !u!114 &5599694054019429399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +214,7 @@ MonoBehaviour:
       - m_Target: {fileID: 8333848220272853497}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: TryAttack
-        m_Mode: 1
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -241,7 +242,7 @@ MonoBehaviour:
     m_ActionId: 3e536141-40e6-4ece-ba04-ec444cb28fb5
     m_ActionName: 'Game/Swipe[/Device Simulator Touchscreen/primaryTouch]'
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Touch
+  m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -274,7 +275,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 623253731160897633}
   m_Father: {fileID: 6504008313830532915}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8815264857993271034
@@ -361,12 +363,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6647326974819474522}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 6504008313830532915}
+  m_Father: {fileID: 5042843611363140019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4481448652540479518
 SpriteRenderer:

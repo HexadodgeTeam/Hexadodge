@@ -9,8 +9,10 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] private float stickInputMultiplier = 2f;
     [SerializeField] private float moveBorderWidth = 40f;
     [SerializeField] private float moveBorderSpeed = 3f;
+    [SerializeField] private float swipeMultiplier = 1f;
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private PlayerMovement movement;
+    [SerializeField] private Transform ghost;
     
     private Camera _camera;
     private bool _isTouching = false;
@@ -40,6 +42,7 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (_controlType == Control.Type.Modern && _isTouching)
         {
+            ghost.gameObject.SetActive(true);
             Vector2 borderPush = Vector2.zero;
             
             foreach ((Func<Vector2, bool> check, Vector2 delta) moveBorderCheck in _moveBorderChecks)
@@ -56,18 +59,23 @@ public class PlayerInputHandler : MonoBehaviour
             
             Vector3 touchWorldPosition = _camera.ScreenToWorldPoint(_touchPosition);
             Vector3 touchWorldStartPosition = _camera.ScreenToWorldPoint(_startTouchPosition);
-            Vector3 touchDisplacement = touchWorldPosition - touchWorldStartPosition;
+            Vector3 touchDisplacement = (touchWorldPosition - touchWorldStartPosition) * swipeMultiplier;
             Vector3 playerDisplacement = transform.position - _startPosition;
             Vector3 delta = touchDisplacement - playerDisplacement;
+            ghost.transform.position = _startPosition + touchDisplacement;
             
-            if (delta.magnitude > 0.1f)
+            if (delta.magnitude > 0.01f)
             {
-                _moveInput = delta.normalized;
+                _moveInput = Vector3.ClampMagnitude(delta, 1f);
             }
             else
             {
                 _moveInput = Vector2.zero;
             }
+        }
+        else
+        {
+            ghost.gameObject.SetActive(false);
         }
         
         float multiplier = _controlType == Control.Type.Classic ? stickInputMultiplier : 1f;
