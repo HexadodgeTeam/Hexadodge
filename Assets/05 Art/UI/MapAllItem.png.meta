@@ -177,7 +177,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -425,13 +425,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAllItem_21
+      name: _MainTex
       rect:
         serializedVersion: 2
-        x: 681
-        y: 1598
-        width: 133
-        height: 171
+        x: 608
+        y: 1541
+        width: 279
+        height: 267
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,10 +538,10 @@ TextureImporter:
       name: MapAllItem_26
       rect:
         serializedVersion: 2
-        x: 656
-        y: 1238
-        width: 266
-        height: 258
+        x: 634
+        y: 1209
+        width: 315
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -736,7 +736,7 @@ TextureImporter:
       name: MapAllItem_35
       rect:
         serializedVersion: 2
-        x: 1378
+        x: 1368
         y: 451
         width: 445
         height: 422
@@ -782,7 +782,6 @@ TextureImporter:
       MapAllItem_19: -1580372707580408580
       MapAllItem_2: 4141972698552502858
       MapAllItem_20: 5198344536584229419
-      MapAllItem_21: 4799726984692155366
       MapAllItem_22: 3325278596598617303
       MapAllItem_23: -4872381472399712229
       MapAllItem_24: -1531934965989717421
@@ -804,6 +803,7 @@ TextureImporter:
       MapAllItem_7: -8853199688557832647
       MapAllItem_8: -8661273145792205214
       MapAllItem_9: 1570774997648574478
+      _MainTex: 4799726984692155366
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
