@@ -211,8 +211,8 @@ MonoBehaviour:
     m_ActionName: Game/Move
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8333848220272853497}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: FillManager, Assembly-CSharp
         m_MethodName: TryAttack
         m_Mode: 0
         m_Arguments:
