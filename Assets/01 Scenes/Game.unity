@@ -1832,6 +1832,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877488860}
   - component: {fileID: 877488861}
+  - component: {fileID: 877488862}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1866,6 +1867,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &877488862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 877488859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6acefb888b44344d8131afb3186535d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  skillFractions:
+  - 0.5
+  - 0.8
+  - 0.95
+  attackPowers: 03000000060000000c000000
+  player: {fileID: 8258237376356356599}
+  enemy: {fileID: 921075221}
+  grid: {fileID: 927761107}
 --- !u!1 &921075219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1911,7 +1932,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3cbd9ed6fc3084d8dd14d39e0d2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  maxHealth: 5
+  data: {fileID: 11400000, guid: 2d75364874e75b7449cf478e71500d56, type: 2}
+--- !u!114 &927761107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+  m_PrefabInstance: {fileID: 638031113}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4cb6c7c2ba6f446b4453208dacc9f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &976642191
 GameObject:
   m_ObjectHideFlags: 0
@@ -4253,6 +4285,10 @@ PrefabInstance:
       propertyPath: swipeMultiplier
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5599694054019429399, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
+      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 877488862}
     - target: {fileID: 6504008313830532915, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4313,6 +4349,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c6c4e3eb57941f385243903a5b695a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
+--- !u!114 &8258237376356356599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
+  m_PrefabInstance: {fileID: 8258237376356356592}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078f8231ec4848d782df1bb5efc79545, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
