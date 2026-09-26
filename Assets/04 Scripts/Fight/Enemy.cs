@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 5;
+    [SerializeField] private Animator enemyAnimator;
 
     private int _health;
 
@@ -32,10 +33,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int amount)
     {
         Health -= amount;
+        enemyAnimator.SetTrigger("Hit");
+        
     }
 
     private void Die()
     {
         UIManager.GameOver(true);
+        enemyAnimator.SetTrigger("Death");
     }
 }
