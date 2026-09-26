@@ -1,12 +1,8 @@
-using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 5;
-    [SerializeField] private Animator enemyAnimator;
+    [SerializeField] private EnemyData data;
 
     private int _health;
 
@@ -15,8 +11,8 @@ public class Enemy : MonoBehaviour
         get => _health;
         set
         {
-            _health = Mathf.Clamp(value, 0, maxHealth);
-            UIManager.EnemyHealthUI.SetFraction(_health / (float)maxHealth);
+            _health = Mathf.Clamp(value, 0, data.maxHealth);
+            UIManager.EnemyHealthUI.SetFraction(_health / (float)data.maxHealth);
 
             if (_health <= 0)
             {
@@ -27,19 +23,16 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        Health = maxHealth;
+        Health = data.maxHealth;
     }
 
     public void TakeDamage(int amount)
     {
         Health -= amount;
-        enemyAnimator.SetTrigger("Hit");
-        
     }
 
     private void Die()
     {
         UIManager.GameOver(true);
-        enemyAnimator.SetTrigger("Death");
     }
 }

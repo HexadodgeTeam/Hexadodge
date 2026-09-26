@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -12,8 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float fillRange = 4;
 
     private Action<Vector3Int> _drawAction;
-
-    private Vector3Int GridPos => FillGrid.Instance.WorldToGrid(transform.position);
+    public Vector3Int GridPos => FillGrid.Instance.WorldToGrid(transform.position);
 
     private void Start()
     {
@@ -21,15 +19,6 @@ public class Player : MonoBehaviour
         renderer.color = color;
         FillGrid.Instance.SetColor(fillColor1, fillColor2);
         UIManager.FillUI.SetColor(color);
-    }
-
-    public void TryAttack(InputAction.CallbackContext context)
-    {
-        if (context.performed)
-        {
-            // The enemy damage is currently done in FillGrid. Should replace this with a skill/attack/fill level object.
-            FillGrid.Instance.TryEmptyGrid(GridPos);
-        }
     }
 
     private void FixedUpdate()
