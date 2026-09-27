@@ -19,6 +19,7 @@ public class FillGrid : MonoBehaviour
     [SerializeField] private AnimationCurve growCurve;
     [SerializeField] private float filledCellGlowDuration = 1f;
     [SerializeField] private AnimationCurve glowCurve;
+    [SerializeField] private int maxEmptyCellAutoFill = 5;
     
     [Header("References")]
     [SerializeField] private Grid grid;
@@ -32,6 +33,7 @@ public class FillGrid : MonoBehaviour
     private Color _fillColor1;
     private Color _fillColor2;
     private readonly Dictionary<Vector3Int, Coroutine> _activeGlows = new();
+    private readonly HashSet<Vector3Int> _checkedEmptyTiles = new();
     
     public Action<float> OnFillUpdated;
 
@@ -56,37 +58,66 @@ public class FillGrid : MonoBehaviour
             new Vector3Int((int)(gridBounds.xMax / ScaleX), (int)(gridBounds.yMax / ScaleY)));
     }
 
-    public Vector3 GridToWorld(Vector3Int gridPos)
+    public Vector3 CellToWorld(Vector3Int cellPos)
     {
-        return tilemap.GetCellCenterWorld(gridPos);
+        return tilemap.GetCellCenterWorld(cellPos);
     }
 
-    public Vector3Int WorldToGrid(Vector3 worldPos)
+    public Vector3Int WorldToCell(Vector3 worldPos)
     {
         return tilemap.WorldToCell(worldPos);
     }
     
-    public void Draw(Vector3Int gridPos)
+    public void Draw(Vector3Int cellPos)
     {
-        if (!IsInGrid(gridPos)) return;
+        if (!IsInGrid(cellPos)) return;
 
-        if (!tilemap.HasTile(gridPos))
+        FillCell(cellPos);
+        
+        ((Action)FillCheckedEmptyTiles).ForNeighboursIf(ShouldEmptyZoneAutoFill, cellPos, ClearCheckedEmptyTiles);
+    }
+
+    private bool ShouldEmptyZoneAutoFill(Vector3Int cellPos) => CountEmptyZoneSize(cellPos) <= maxEmptyCellAutoFill;
+    
+    /// <summary>
+    /// Recursively count an empty zone size.
+    /// </summary>
+    /// <param name="cellPos">Start position from which to check.</param>
+    /// <returns>Empty zone size.</returns>
+    private int CountEmptyZoneSize(Vector3Int cellPos)
+    {
+        if (tilemap.HasTile(cellPos)) return 0;
+        if (!_checkedEmptyTiles.Add(cellPos)) return 0;
+        if (_checkedEmptyTiles.Count > maxEmptyCellAutoFill) return maxEmptyCellAutoFill + 1;
+
+        int zoneSize = ((Func<Vector3Int, int>)CountEmptyZoneSize).CountForNeighbours(cellPos) + 1;
+        
+        return zoneSize > maxEmptyCellAutoFill ? maxEmptyCellAutoFill + 1 : zoneSize;
+    }
+
+    /// <summary>
+    /// Set a cell to "filled" state and animate it, without checking for empty zones.
+    /// </summary>
+    /// <param name="cellPos">Cell position.</param>
+    private void FillCell(Vector3Int cellPos)
+    {
+        if (!tilemap.HasTile(cellPos))
         {
             float randomScale = Random.Range(minFilledCellScale, maxFilledCellScale);
-            tilemap.SetTile(gridPos, RandomFilledTile());
-            StartCoroutine(GrowRoutine(gridPos, new Vector3(randomScale, randomScale, 1f)));
+            tilemap.SetTile(cellPos, RandomFilledTile());
+            StartCoroutine(GrowRoutine(cellPos, new Vector3(randomScale, randomScale, 1f)));
  
             FilledTileCount++;
         }
 
-        if (_activeGlows.TryGetValue(gridPos, out Coroutine activeGlow))
+        if (_activeGlows.TryGetValue(cellPos, out Coroutine activeGlow))
         {
             StopCoroutine(activeGlow);
         }
-        _activeGlows[gridPos] = StartCoroutine(GlowRoutine(gridPos, GetTileColor(gridPos)));
+        _activeGlows[cellPos] = StartCoroutine(GlowRoutine(cellPos, GetTileColor(cellPos)));
     }
  
-    private IEnumerator GrowRoutine(Vector3Int gridPos, Vector3 targetScale)
+    private IEnumerator GrowRoutine(Vector3Int cellPos, Vector3 targetScale)
     {
         float t = 0f;
         
@@ -94,14 +125,14 @@ public class FillGrid : MonoBehaviour
         {
             t += Time.deltaTime;
             float p = growCurve.Evaluate(t / filledCellGrowDuration);
-            tilemap.SetTransformMatrix(gridPos, Matrix4x4.Scale(Vector3.Lerp(Vector3.one, targetScale, p)));
+            tilemap.SetTransformMatrix(cellPos, Matrix4x4.Scale(Vector3.Lerp(Vector3.one, targetScale, p)));
             yield return null;
         }
  
-        tilemap.SetTransformMatrix(gridPos, Matrix4x4.Scale(targetScale));
+        tilemap.SetTransformMatrix(cellPos, Matrix4x4.Scale(targetScale));
     }
 
-    private IEnumerator GlowRoutine(Vector3Int gridPos, Color color)
+    private IEnumerator GlowRoutine(Vector3Int cellPos, Color color)
     {
         float t = 0f;
         Color glowColor = new Color(color.r + 0.07f, color.g + 0.07f, color.b + 0.07f);
@@ -110,17 +141,17 @@ public class FillGrid : MonoBehaviour
         {
             t += Time.deltaTime;
             float p = glowCurve.Evaluate(t / filledCellGlowDuration);
-            tilemap.SetColor(gridPos, Color.Lerp(glowColor, color, p));
+            tilemap.SetColor(cellPos, Color.Lerp(glowColor, color, p));
             yield return null;
         }
         
-        _activeGlows.Remove(gridPos);
+        _activeGlows.Remove(cellPos);
     }
 
 
-    private bool IsInGrid(Vector3Int gridPos)
+    private bool IsInGrid(Vector3Int cellPos)
     {
-        return emptyTilemap.HasTile(gridPos);
+        return emptyTilemap.HasTile(cellPos);
     }
 
     public void SetColor(Color color1, Color color2)
@@ -129,10 +160,10 @@ public class FillGrid : MonoBehaviour
         _fillColor2 = color2;
     }
 
-    public void EmptyAt(Vector3Int gridPos)
+    public void EmptyAt(Vector3Int cellPos)
     {
         FilledTileCount = 0;
-        tilemap.FloodFill(gridPos, null);
+        tilemap.FloodFill(cellPos, null);
     }
     
     private void OnDrawGizmos()
@@ -148,10 +179,25 @@ public class FillGrid : MonoBehaviour
         return filledTiles[Random.Range(0, filledTiles.Length)];
     }
 
-    private Color GetTileColor(Vector3Int gridPos)
+    private Color GetTileColor(Vector3Int cellPos)
     {
         float lower = emptyTilemap.cellBounds.yMin;
         float upper = emptyTilemap.cellBounds.yMax;
-        return Color.Lerp(_fillColor1, _fillColor2, Mathf.InverseLerp(lower, upper, gridPos.y));
+        return Color.Lerp(_fillColor1, _fillColor2, Mathf.InverseLerp(lower, upper, cellPos.y));
+    }
+
+    private void ClearCheckedEmptyTiles() => _checkedEmptyTiles.Clear();
+    private void FillCheckedEmptyTiles() => FillCells(_checkedEmptyTiles);
+    
+    /// <summary>
+    /// Fills all cell in a collection.
+    /// </summary>
+    /// <param name="cells">The cell collection.</param>
+    private void FillCells(ICollection<Vector3Int> cells)
+    {
+        foreach (Vector3Int tile in cells)
+        {
+            FillCell(tile);
+        }
     }
 }

@@ -59,6 +59,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4cb6c7c2ba6f446b4453208dacc9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  gridBounds:
+    serializedVersion: 2
+    x: -2
+    y: -3
+    width: 4
+    height: 6
   minFilledCellScale: 1
   maxFilledCellScale: 2
   filledCellGrowDuration: 0.5
@@ -75,8 +81,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.772774
-      value: 1.0551568
+      time: 0.7690426
+      value: 1.1228915
       inSlope: 0.009874478
       outSlope: 0.009874478
       tangentMode: 0
@@ -120,23 +126,13 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  gridBounds:
-    serializedVersion: 2
-    x: -2
-    y: -3
-    width: 4
-    height: 6
+  maxEmptyCellAutoFill: 3
   grid: {fileID: 462780057570293428}
   emptyTilemap: {fileID: 7583413805439257257}
   tilemap: {fileID: 4492070534381282124}
   filledTiles:
   - {fileID: 11400000, guid: 882d2055779236f49be545f1949f6e02, type: 2}
   emptyTile: {fileID: 11400000, guid: 451bdacd4b1c8b449ab2db8103912a4f, type: 2}
-  skillFractions:
-  - 0.5
-  - 0.8
-  - 0.95
-  enemy: {fileID: 0}
 --- !u!1 &1822461042337407179
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] private bool improvedDrawing = true;
     [SerializeField] private Color color = Color.white;
     [SerializeField] private Color fillColor1 = Color.white;
     [SerializeField] private Color fillColor2 = Color.white;
@@ -11,7 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float fillRange = 4;
 
     private Action<Vector3Int> _drawAction;
-    public Vector3Int GridPos => FillGrid.Instance.WorldToGrid(transform.position);
+    public Vector3Int GridPos => FillGrid.Instance.WorldToCell(transform.position);
 
     private void Start()
     {
@@ -23,13 +22,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (improvedDrawing)
-        {
-            _drawAction.ForCircleFloat(FillGrid.Instance.WorldToGrid, FillGrid.Instance.GridToWorld, transform.position, fillRange);
-        }
-        else
-        {
-            _drawAction.ForCircle(GridPos, (int)fillRange);
-        }
+        _drawAction.ForCircle(FillGrid.Instance.WorldToCell, FillGrid.Instance.CellToWorld, transform.position, fillRange);
     }
 }
