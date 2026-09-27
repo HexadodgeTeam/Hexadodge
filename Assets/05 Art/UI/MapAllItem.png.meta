@@ -201,6 +201,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -337,28 +350,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAllItem_12
-      rect:
-        serializedVersion: 2
-        x: 807
-        y: 1827
-        width: 206
-        height: 192
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7f1c12e89a6037d60800000000000000
-      internalID: 7886654697759687159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MapAllItem_15
       rect:
         serializedVersion: 2
@@ -381,82 +372,16 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAllItem_18
-      rect:
-        serializedVersion: 2
-        x: 78
-        y: 1551
-        width: 238
-        height: 246
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 18a7c1f05808c0030800000000000000
-      internalID: 3462283522513599105
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_20
-      rect:
-        serializedVersion: 2
-        x: 407
-        y: 1558
-        width: 135
-        height: 235
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b22123360da342840800000000000000
-      internalID: 5198344536584229419
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: _MainTex
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 1541
-        width: 279
-        height: 267
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6e3ce65334e0c9240800000000000000
-      internalID: 4799726984692155366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MapAllItem_22
       rect:
         serializedVersion: 2
-        x: 960
-        y: 1216
-        width: 341
-        height: 426
+        x: 166
+        y: 325
+        width: 933
+        height: 874
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 74, z: 0, w: 753}
       customData: 
       outline: []
       physicsShape: []
@@ -491,72 +416,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAllItem_24
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 1274
-        width: 215
-        height: 159
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35ace25d3497dbae0800000000000000
-      internalID: -1531934965989717421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_25
-      rect:
-        serializedVersion: 2
-        x: 354
-        y: 1274
-        width: 202
-        height: 187
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6a06b7429e3235000800000000000000
-      internalID: 23401907313402022
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_26
-      rect:
-        serializedVersion: 2
-        x: 634
-        y: 1209
-        width: 315
-        height: 303
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8b3d0851d8748b40800000000000000
-      internalID: 5441607090291161996
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MapAllItem_27
       rect:
         serializedVersion: 2
@@ -579,72 +438,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapAllItem_28
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 880
-        width: 325
-        height: 364
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 60cab380f750dd4d0800000000000000
-      internalID: -3108322124658660346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_29
-      rect:
-        serializedVersion: 2
-        x: 415
-        y: 939
-        width: 233
-        height: 209
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3afdd9f90996adfa0800000000000000
-      internalID: -5775187502275108957
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_30
-      rect:
-        serializedVersion: 2
-        x: 701
-        y: 964
-        width: 177
-        height: 147
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f4edfb31f1f3d37f0800000000000000
-      internalID: -631278970054123953
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: MapAllItem_31
       rect:
         serializedVersion: 2
@@ -662,72 +455,6 @@ TextureImporter:
       bones: []
       spriteID: be2a5efca8d186480800000000000000
       internalID: -8905835781094530325
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_32
-      rect:
-        serializedVersion: 2
-        x: 86
-        y: 630
-        width: 140
-        height: 185
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 35f41f4b3a5b91b20800000000000000
-      internalID: 3105713132768677715
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_33
-      rect:
-        serializedVersion: 2
-        x: 371
-        y: 601
-        width: 130
-        height: 241
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6aab7450b453fdd40800000000000000
-      internalID: 5611262257054333606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapAllItem_34
-      rect:
-        serializedVersion: 2
-        x: 642
-        y: 622
-        width: 280
-        height: 251
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 162e097f7b5292410800000000000000
-      internalID: 1452733826866405985
       vertices: []
       indices: 
       edges: []
