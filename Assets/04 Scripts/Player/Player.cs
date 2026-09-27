@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+[SelectionBase]
 public class Player : MonoBehaviour
 {
     [SerializeField] private Color color = Color.white;
