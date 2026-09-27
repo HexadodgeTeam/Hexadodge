@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   stickBase: {fileID: 3634652565659063082}
   dynamicOnScreenStick: {fileID: 2081615371523333050}
+  movementRangeMargin: 90
 --- !u!222 &5896859230330819348
 CanvasRenderer:
   m_ObjectHideFlags: 0

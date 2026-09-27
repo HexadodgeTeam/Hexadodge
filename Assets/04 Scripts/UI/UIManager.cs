@@ -1,15 +1,12 @@
 using System;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private CountUI healthUI;
     [SerializeField] private SliderUI fillUI;
     [SerializeField] private GameObject stick;
-    [SerializeField] private Button attackButton;
-    [SerializeField] private CountUI skillNumber;
     [SerializeField] private SliderUI enemyHealthUI;
     [SerializeField] private RectTransform[] thresholdIndicators;
     [SerializeField] private GameOverPanel gameOverPanel;
@@ -18,21 +15,14 @@ public class UIManager : MonoBehaviour
 
     public static CountUI HealthUI;
     public static SliderUI FillUI;
-    public static CountUI SkillNumber;
     public static SliderUI EnemyHealthUI;
 
-    private static Button _attackButton;
     private static RectTransform[] _thresholdIndicators;
     private static GameOverPanel _gameOverPanel;
 
     private void Start()
     {
         RefreshControlType();
-    }
-
-    public static void SetAttackButton(bool ready)
-    {
-        _attackButton.interactable = ready;
     }
 
     public static void SetThresholdIndicators(float[] fractions)
@@ -62,8 +52,6 @@ public class UIManager : MonoBehaviour
     {
         HealthUI = healthUI;
         FillUI = fillUI;
-        _attackButton = attackButton;
-        SkillNumber = skillNumber;
         _thresholdIndicators = thresholdIndicators;
         EnemyHealthUI = enemyHealthUI;
         _gameOverPanel = gameOverPanel;
@@ -75,7 +63,6 @@ public class UIManager : MonoBehaviour
         bool classic = controlType == (int)Control.Type.Classic;
 
         stick.SetActive(classic);
-        attackButton.gameObject.SetActive(classic);
         playerInputHandler.ChangeControlType(controlType);
         controlTypeDropdown.value = controlType;
     }

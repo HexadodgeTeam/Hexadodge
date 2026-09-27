@@ -4,16 +4,16 @@ public static class Control
 {
     public enum Type
     {
-        Classic,
-        Modern
+        Modern,
+        Classic
     }
 
     public static string GetInputScheme(this Type type)
     {
         return type switch
         {
-            Type.Classic => "Gamepad",
             Type.Modern => "Touch",
+            Type.Classic => "Gamepad",
             _ => throw new ArgumentOutOfRangeException(nameof(type), type, null)
         };
     }

@@ -84,14 +84,14 @@ public class FillGrid : MonoBehaviour
         }
         
         GlowCell(cell);
-        ((Action<Vector3Int>)CapillaritySpread).ForNeighbours(cell);
+        ((Action<Vector3Int>)CapillaritySpread).ForEachNeighbour(cell);
     }
     
     private void CapillaritySpread(Vector3Int cell)
     {
         if (!IsInGrid(cell) || tilemap.HasTile(cell) || _capillarityRoutines.ContainsKey(cell)) return;
         
-        if (cell.SumNeighbours(CapillarityLevel) >= capillarityTriggerLevel)
+        if (cell.SumNeighbours(CapillarityLevel, capillarityTriggerLevel) >= capillarityTriggerLevel)
         {
             _capillarityRoutines[cell] = StartCoroutine(CapillaritySpreadRoutine(cell));
         }

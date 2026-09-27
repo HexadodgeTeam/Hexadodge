@@ -50,20 +50,22 @@ public static class GridUtils
     {
         return cell.y % 2 == 0 ? evenRowNeighbourOffsets : oddRowNeighbourOffsets;
     }
-    
-    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> countFunc)
+
+    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> countFunc, int maxValue = int.MaxValue)
     {
-        int count = 0;
+        int sum = 0;
         
         foreach (Vector3Int offset in GetNeighbourOffsets(cell))
         {
-            count += countFunc.Invoke(cell + offset);
+            sum += countFunc.Invoke(cell + offset);
+
+            if (sum >= maxValue) return sum; // Optimization to return early if sum is already enough.
         }
 
-        return count;
+        return sum;
     }
 
-    public static void ForNeighbours(this Action<Vector3Int> action, Vector3Int cell)
+    public static void ForEachNeighbour(this Action<Vector3Int> action, Vector3Int cell)
     {
         foreach (Vector3Int offset in GetNeighbourOffsets(cell))
         {
