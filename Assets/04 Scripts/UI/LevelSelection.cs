@@ -10,16 +10,24 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<GameObject> enemy = new List<GameObject>();
    
     public int actualLvl = 0;
+    public int precedentlLvl = 0;
 
+    public void ChangeSpecificLevel(int lvl)
+    {
+        precedentlLvl =  actualLvl;
+        actualLvl = lvl;
+        Animator anim1 = enemy[1].GetComponent<Animator>();
+        anim1.runtimeAnimatorController = enemyAnim[actualLvl];
+    }
     public void ChangeLevel(int lvl)
     {
         actualLvl += lvl;
 
-        if (actualLvl >= enemy.Count)
+        if (actualLvl >= enemyAnim.Count)
             actualLvl = 0;
 
         if (actualLvl < 0)
-            actualLvl = enemy.Count - 1;
+            actualLvl = enemyAnim.Count - 1;
 
         if (lvl > 0)
         {
