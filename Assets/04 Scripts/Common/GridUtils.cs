@@ -3,74 +3,83 @@ using UnityEngine;
 
 public static class GridUtils
 {
-    public static void ForCircleOutline(this Action<Vector3Int> action, Vector3Int center, int radius)
-    {
-        int x = radius;
-        int y = 0;
-        int p = 1 - radius;
-
-        while (x >= y)
-        {
-            action.Invoke(new Vector3Int(center.x + x + radius, center.y + y + radius));
-            action.Invoke(new Vector3Int(center.x + y + radius, center.y + x + radius));
-            action.Invoke(new Vector3Int(center.x + x + radius, center.y - y + radius));
-            action.Invoke(new Vector3Int(center.x + y + radius, center.y - x + radius));
-            action.Invoke(new Vector3Int(center.x - x + radius, center.y + y + radius));
-            action.Invoke(new Vector3Int(center.x - y + radius, center.y + x + radius));
-            action.Invoke(new Vector3Int(center.x - x + radius, center.y - y + radius));
-            action.Invoke(new Vector3Int(center.x - y + radius, center.y - x + radius));
-
-            if (p > 0) x--;
-            y++;
-
-            p += p > 0
-                ? 1 - 2 * x + 2 * y
-                : 1 + 2 * y;
-        }
-    }
-
-    public static void ForCircle(this Action<Vector3Int> action, Vector3Int center, int radius)
-    {
-        for (int x = center.x - radius; x <= center.x; x++)
-        {
-            for (int y = center.y - radius; y <= center.y; y++)
-            {
-                if ((x - center.x) * (x - center.x) + (y - center.y) * (y - center.y) <= radius * radius)
-                {
-                    int xSym = 2 * center.x - x;
-                    int ySym = 2 * center.y - y;
-
-                    action.Invoke(new Vector3Int(x, y));
-                    action.Invoke(new Vector3Int(xSym, y));
-                    action.Invoke(new Vector3Int(x, ySym));
-                    action.Invoke(new Vector3Int(xSym, ySym));
-                }
-            }
-        }
-    }
-
-    public static void ForCircleFloat(this Action<Vector3Int> action,
+    public static void ForCircle(this Action<Vector3Int> action,
         Func<Vector3, Vector3Int> worldToCell,
         Func<Vector3Int, Vector3> cellToWorld,
         Vector3 center, float radius)
     {
-        Vector3Int centerGridPos = worldToCell.Invoke(center);
+        Vector3Int centerCell = worldToCell.Invoke(center);
         int radiusCeil = Mathf.CeilToInt(radius);
         float radiusScaled = radius * FillGrid.ScaleX;
 
-        for (int x = centerGridPos.x - radiusCeil; x <= centerGridPos.x + radiusCeil; x++)
+        for (int x = centerCell.x - radiusCeil; x <= centerCell.x + radiusCeil; x++)
         {
-            for (int y = centerGridPos.y - radiusCeil; y <= centerGridPos.y + radiusCeil; y++)
+            for (int y = centerCell.y - radiusCeil; y <= centerCell.y + radiusCeil; y++)
             {
-                Vector3Int gridPos = new Vector3Int(x, y);
-                Vector3 worldPos = cellToWorld.Invoke(gridPos);
+                Vector3Int cell = new Vector3Int(x, y);
+                Vector3 worldPos = cellToWorld.Invoke(cell);
 
                 if ((worldPos.x - center.x) * (worldPos.x - center.x) +
                     (worldPos.y - center.y) * (worldPos.y - center.y) <= radiusScaled * radiusScaled)
                 {
-                    action.Invoke(gridPos);
+                    action.Invoke(cell);
                 }
             }
         }
+    }
+
+    private static readonly Vector3Int[] evenRowNeighbourOffsets = {
+         new(-1, 0),
+         new(1, 0),
+         new(0, -1),
+         new(0, 1),
+         new(-1, -1),
+         new(-1, 1)
+    };
+    
+    private static readonly Vector3Int[] oddRowNeighbourOffsets = {
+        new(-1, 0),
+        new(1, 0),
+        new(0, -1),
+        new(0, 1),
+        new(1, -1),
+        new(1, 1)
+    };
+
+    private static Vector3Int[] GetNeighbourOffsets(Vector3Int cell)
+    {
+        return cell.y % 2 == 0 ? evenRowNeighbourOffsets : oddRowNeighbourOffsets;
+    }
+    
+    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> countFunc)
+    {
+        int count = 0;
+        
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
+        {
+            count += countFunc.Invoke(cell + offset);
+        }
+
+        return count;
+    }
+
+    public static void ForNeighbours(this Action<Vector3Int> action, Vector3Int cell)
+    {
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
+        {
+            action.Invoke(cell + offset);
+        }
+    }
+
+    public static int CountNeighboursThat(this Vector3Int cell, Func<Vector3Int, bool> checkFunc)
+    {
+        int count = 0;
+        
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
+        {
+            if (checkFunc.Invoke(cell + offset)) count++;
+        }
+
+        return count;
     }
 }

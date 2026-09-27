@@ -3,7 +3,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
-
+    [SerializeField] private Animator enemyAnimator;
     private int _health;
 
     private int Health
@@ -29,10 +29,12 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int amount)
     {
         Health -= amount;
+        enemyAnimator.SetTrigger("Hit");
     }
 
     private void Die()
     {
         UIManager.GameOver(true);
+        enemyAnimator.SetTrigger("Death");
     }
 }
