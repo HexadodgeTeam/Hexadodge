@@ -323,6 +323,22 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 921075221}
+    - target: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+      propertyPath: edgeCapillarityLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+      propertyPath: paintCapillarityLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+      propertyPath: capillarityTriggerLevel
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+      propertyPath: capillarityNeighbourCount
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

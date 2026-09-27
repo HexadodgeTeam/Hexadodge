@@ -126,7 +126,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxEmptyCellAutoFill: 3
+  capillarityNeighbourCount: 4
+  capillaritySpreadTime: 0.1
   grid: {fileID: 462780057570293428}
   emptyTilemap: {fileID: 7583413805439257257}
   tilemap: {fileID: 4492070534381282124}

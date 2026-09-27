@@ -8,21 +8,21 @@ public static class GridUtils
         Func<Vector3Int, Vector3> cellToWorld,
         Vector3 center, float radius)
     {
-        Vector3Int centerGridPos = worldToCell.Invoke(center);
+        Vector3Int centerCell = worldToCell.Invoke(center);
         int radiusCeil = Mathf.CeilToInt(radius);
         float radiusScaled = radius * FillGrid.ScaleX;
 
-        for (int x = centerGridPos.x - radiusCeil; x <= centerGridPos.x + radiusCeil; x++)
+        for (int x = centerCell.x - radiusCeil; x <= centerCell.x + radiusCeil; x++)
         {
-            for (int y = centerGridPos.y - radiusCeil; y <= centerGridPos.y + radiusCeil; y++)
+            for (int y = centerCell.y - radiusCeil; y <= centerCell.y + radiusCeil; y++)
             {
-                Vector3Int gridPos = new Vector3Int(x, y);
-                Vector3 worldPos = cellToWorld.Invoke(gridPos);
+                Vector3Int cell = new Vector3Int(x, y);
+                Vector3 worldPos = cellToWorld.Invoke(cell);
 
                 if ((worldPos.x - center.x) * (worldPos.x - center.x) +
                     (worldPos.y - center.y) * (worldPos.y - center.y) <= radiusScaled * radiusScaled)
                 {
-                    action.Invoke(gridPos);
+                    action.Invoke(cell);
                 }
             }
         }
@@ -46,35 +46,40 @@ public static class GridUtils
         new(1, 1)
     };
 
-    private static Vector3Int[] GetNeighbourOffsets(Vector3Int gridPos)
+    private static Vector3Int[] GetNeighbourOffsets(Vector3Int cell)
     {
-        return gridPos.y % 2 == 0 ? evenRowNeighbourOffsets : oddRowNeighbourOffsets;
+        return cell.y % 2 == 0 ? evenRowNeighbourOffsets : oddRowNeighbourOffsets;
     }
     
-    public static int CountForNeighbours(this Func<Vector3Int, int> countFunc, Vector3Int gridPos)
+    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> countFunc)
     {
         int count = 0;
         
-        foreach (Vector3Int offset in GetNeighbourOffsets(gridPos))
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
         {
-            count += countFunc.Invoke(gridPos + offset);
+            count += countFunc.Invoke(cell + offset);
         }
 
         return count;
     }
 
-    public static void ForNeighboursIf(this Action action, Func<Vector3Int, bool> checkFunc, Vector3Int gridPos, Action cleanAction)
+    public static void ForNeighbours(this Action<Vector3Int> action, Vector3Int cell)
     {
-        bool isOnEvenRow = gridPos.y % 2 == 0;
-        
-        foreach (Vector3Int offset in isOnEvenRow ? evenRowNeighbourOffsets : oddRowNeighbourOffsets)
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
         {
-            if (checkFunc.Invoke(gridPos + offset))
-            {
-                action.Invoke();
-            }
-            
-            cleanAction.Invoke();
+            action.Invoke(cell + offset);
         }
+    }
+
+    public static int CountNeighboursThat(this Vector3Int cell, Func<Vector3Int, bool> checkFunc)
+    {
+        int count = 0;
+        
+        foreach (Vector3Int offset in GetNeighbourOffsets(cell))
+        {
+            if (checkFunc.Invoke(cell + offset)) count++;
+        }
+
+        return count;
     }
 }

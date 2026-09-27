@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _drawAction = FillGrid.Instance.Draw;
+        _drawAction = FillGrid.Instance.Paint;
         renderer.color = color;
         FillGrid.Instance.SetColor(fillColor1, fillColor2);
         UIManager.FillUI.SetColor(color);
