@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_BrightnessDepthTile
+  m_Name: Paint
   m_Shader: {fileID: 4800000, guid: 70ec35a1171f5dc409fec4308a07ecd8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -30,6 +30,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _Cutoff: 0.5
+    - _WobbleAmount: 0.01
+    - _WobbleFreq: 2
+    - _WobbleScale: 4.77
+    - _WobbleSpeed: 1
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

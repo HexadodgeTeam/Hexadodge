@@ -1,9 +1,14 @@
-Shader "Custom/BrightnessDepthTile"
+Shader "Custom/Paint"
 {
     Properties
     {
         [MainTexture][PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
         _Cutoff ("Alpha Cutoff", Range(0,1)) = 0.5
+
+        [Header(Wobble)]
+        _WobbleAmount ("Amount", Range(0, 0.15)) = 0.03
+        _WobbleSpeed ("Speed", Range(0, 6)) = 1.5
+        _WobbleFreq ("Frequency", Range(0.5, 10)) = 3.0
     }
 
     SubShader
@@ -44,11 +49,23 @@ Shader "Custom/BrightnessDepthTile"
             TEXTURE2D(_MainTex);
             SAMPLER(sampler_MainTex);
             float _Cutoff;
+            float _WobbleAmount;
+            float _WobbleSpeed;
+            float _WobbleFreq;
 
             Varyings vert(Attributes IN)
             {
+                float3 pos = IN.positionOS.xyz;
+
+                float t = _Time.y * _WobbleSpeed;
+                float f = _WobbleFreq;
+                float2 d;
+                d.x = sin(pos.x * f + pos.y * f * 0.7 + t);
+                d.y = sin(pos.y * f + pos.x * f * 0.9 + t * 1.13);
+                pos.xy += d * _WobbleAmount;
+
                 Varyings OUT;
-                OUT.positionHCS = TransformObjectToHClip(IN.positionOS.xyz);
+                OUT.positionHCS = TransformObjectToHClip(pos);
                 OUT.color = IN.color;
                 OUT.uv = IN.uv;
                 return OUT;

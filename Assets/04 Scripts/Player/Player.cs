@@ -23,6 +23,9 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _paint.Circle(transform.position, fillRange);
+        if (FillGrid.Active)
+        {
+            _paint.Circle(transform.position, fillRange);
+        }
     }
 }

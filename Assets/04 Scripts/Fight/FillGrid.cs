@@ -10,10 +10,11 @@ public class FillGrid : MonoBehaviour
     public static FillGrid Instance { get; private set; }
     public static float ScaleX;
     private static float ScaleY;
+    public static bool Active { get; private set; }
 
     [Header("Bounds")]
     [SerializeField] private Rect gridBounds;
-    
+
     [Header("Grow")]
     [SerializeField] private float minFilledCellScale = 1f;
     [SerializeField] private float maxFilledCellScale = 1.5f;
@@ -24,12 +25,19 @@ public class FillGrid : MonoBehaviour
     [SerializeField] [Range(0f, 1f)] private float glowGammaGain = 0.1f;
     [SerializeField] private float filledCellGlowDuration = 1f;
     [SerializeField] private AnimationCurve glowCurve;
-    
+
     [Header("Capillarity")]
     [SerializeField] private int capillarityTriggerLevel = 5;
     [SerializeField] private int edgeCapillarityLevel = 2;
     [SerializeField] private int paintCapillarityLevel = 1;
     [SerializeField] private float capillaritySpreadTime = 0.2f;
+
+    [Header("Empty animation")]
+    [SerializeField] private float emptyAnimationDuration = 1f;
+    [SerializeField] private AnimationCurve emptyAnimationCurve;
+    [SerializeField] private AnimationCurve tileShrinkAnimationCurve;
+    [SerializeField] private bool tileShrink = true;
+    [SerializeField] private Vector3 tileShrinkTarget = new Vector3(0.7f, 0.7f, 0.7f);
 
     [Header("References")]
     [SerializeField] private Grid grid;
@@ -59,6 +67,7 @@ public class FillGrid : MonoBehaviour
 
     private void Awake()
     {
+        Active = true;
         Instance = this;
         ScaleX = transform.localScale.x;
         ScaleY = transform.localScale.y;
@@ -80,8 +89,8 @@ public class FillGrid : MonoBehaviour
 
     public void Paint(Vector3Int cell)
     {
-        if (!IsInGrid(cell)) return;
-        
+        if (!Active || !IsInGrid(cell)) return;
+
         if (!IsFilled(cell)) FillCell(cell);
         GlowCell(cell);
 
@@ -89,21 +98,20 @@ public class FillGrid : MonoBehaviour
         {
             _capillarityRoutines[cell] = StartCoroutine(CellCapillarityRoutine(cell));
         }
-        
     }
 
     private IEnumerator CellCapillarityRoutine(Vector3Int cell)
     {
         yield return new WaitForSeconds(capillaritySpreadTime);
-        
+
         ((Action<Vector3Int>)CapillaritySpread).ForEachNeighbour(cell);
         _capillarityRoutines.Remove(cell);
     }
-    
+
     private void CapillaritySpread(Vector3Int cell)
     {
-        if (!IsInGrid(cell) || IsFilled(cell)) return;
-        
+        if (!Active || !IsInGrid(cell) || IsFilled(cell)) return;
+
         if (cell.SumNeighbours(CapillarityLevel, capillarityTriggerLevel) >= capillarityTriggerLevel)
         {
             Paint(cell);
@@ -150,7 +158,7 @@ public class FillGrid : MonoBehaviour
     private IEnumerator GlowRoutine(Vector3Int cell, Color color)
     {
         Color glowColor = new Color(color.r + glowGammaGain, color.g + glowGammaGain, color.b + glowGammaGain);
-        
+
         float t = 0f;
         while (t < filledCellGlowDuration)
         {
@@ -179,14 +187,6 @@ public class FillGrid : MonoBehaviour
         _fillColor2 = color2;
     }
 
-    public void EmptyAt(Vector3Int cell)
-    {
-        _activeGlows.Clear();
-        _capillarityRoutines.Clear();
-        FilledTileCount = 0;
-        paintTilemap.FloodFill(cell, null);
-    }
-
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -213,4 +213,85 @@ public class FillGrid : MonoBehaviour
         if (!IsInGrid(cell)) return edgeCapillarityLevel;
         return 0;
     }
+
+    #region Emptying
+
+    public void EmptyAt(Vector3Int cell)
+    {
+        _activeGlows.Clear();
+        _capillarityRoutines.Clear();
+        FilledTileCount = 0;
+        Active = false;
+        StartCoroutine(EmptyAnimation());
+    }
+
+    private IEnumerator EmptyAnimation()
+    {
+        float shrinkTime = emptyAnimationDuration / gridBounds.size.y;
+
+        void EmptyRow(int y)
+        {
+            for (int x = backgroundTilemap.cellBounds.xMin; x <= backgroundTilemap.cellBounds.xMax; x++)
+            {
+                StartCoroutine(ShrinkRoutine(new Vector3Int(x, y), shrinkTime));
+            }
+        }
+
+        int emptyingRow = backgroundTilemap.cellBounds.yMax;
+
+        float t = 0f;
+        while (t < emptyAnimationDuration)
+        {
+            t += Time.deltaTime;
+
+            int nextRow = (int)Mathf.Lerp(
+                backgroundTilemap.cellBounds.yMax,
+                backgroundTilemap.cellBounds.yMin,
+                emptyAnimationCurve.Evaluate(t / emptyAnimationDuration));
+
+            if (nextRow != emptyingRow)
+            {
+                for (int r = emptyingRow; r >= nextRow; r--)
+                {
+                    EmptyRow(r);
+                }
+
+                emptyingRow = nextRow;
+            }
+
+            yield return null;
+        }
+
+        Active = true;
+    }
+
+    private IEnumerator ShrinkRoutine(Vector3Int cell, float shrinkTime)
+    {
+        if (tileShrink)
+        {
+            Matrix4x4 m = paintTilemap.GetTransformMatrix(cell);
+            Vector3 baseScale = new Vector3(
+                m.GetColumn(0).magnitude,
+                m.GetColumn(1).magnitude,
+                m.GetColumn(2).magnitude
+            );
+            float t = 0f;
+            while (t < shrinkTime)
+            {
+                t += Time.deltaTime;
+                float p = tileShrinkAnimationCurve.Evaluate(t / shrinkTime);
+                paintTilemap.SetTransformMatrix(cell,
+                    Matrix4x4.Scale(Vector3.Lerp(baseScale, tileShrinkTarget, p)));
+                yield return null;
+            }
+        }
+        else
+        {
+            yield return new WaitForSeconds(shrinkTime);
+        }
+
+        paintTilemap.SetTile(cell, null);
+    }
+
+    #endregion
 }
