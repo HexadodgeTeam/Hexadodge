@@ -10,12 +10,12 @@ public class Player : MonoBehaviour
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private float fillRange = 4;
 
-    private Action<Vector3Int> _drawAction;
+    private Action<Vector3Int> _paint;
     public Vector3Int GridPos => FillGrid.Instance.WorldToCell(transform.position);
 
     private void Start()
     {
-        _drawAction = FillGrid.Instance.Paint;
+        _paint = FillGrid.Instance.Paint;
         renderer.color = color;
         FillGrid.Instance.SetColor(fillColor1, fillColor2);
         UIManager.FillUI.SetColor(color);
@@ -23,6 +23,6 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _drawAction.ForCircle(FillGrid.Instance.WorldToCell, FillGrid.Instance.CellToWorld, transform.position, fillRange);
+        _paint.Circle(transform.position, fillRange);
     }
 }

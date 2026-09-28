@@ -3,12 +3,9 @@ using UnityEngine;
 
 public static class GridUtils
 {
-    public static void ForCircle(this Action<Vector3Int> action,
-        Func<Vector3, Vector3Int> worldToCell,
-        Func<Vector3Int, Vector3> cellToWorld,
-        Vector3 center, float radius)
+    public static void Circle(this Action<Vector3Int> action, Vector3 center, float radius)
     {
-        Vector3Int centerCell = worldToCell.Invoke(center);
+        Vector3Int centerCell = FillGrid.Instance.WorldToCell(center);
         int radiusCeil = Mathf.CeilToInt(radius);
         float radiusScaled = radius * FillGrid.ScaleX;
 
@@ -17,7 +14,7 @@ public static class GridUtils
             for (int y = centerCell.y - radiusCeil; y <= centerCell.y + radiusCeil; y++)
             {
                 Vector3Int cell = new Vector3Int(x, y);
-                Vector3 worldPos = cellToWorld.Invoke(cell);
+                Vector3 worldPos = FillGrid.Instance.CellToWorld(cell);
 
                 if ((worldPos.x - center.x) * (worldPos.x - center.x) +
                     (worldPos.y - center.y) * (worldPos.y - center.y) <= radiusScaled * radiusScaled)
@@ -51,13 +48,13 @@ public static class GridUtils
         return cell.y % 2 == 0 ? evenRowNeighbourOffsets : oddRowNeighbourOffsets;
     }
 
-    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> countFunc, int maxValue = int.MaxValue)
+    public static int SumNeighbours(this Vector3Int cell, Func<Vector3Int, int> getValue, int maxValue = int.MaxValue)
     {
         int sum = 0;
         
         foreach (Vector3Int offset in GetNeighbourOffsets(cell))
         {
-            sum += countFunc.Invoke(cell + offset);
+            sum += getValue.Invoke(cell + offset);
 
             if (sum >= maxValue) return sum; // Optimization to return early if sum is already enough.
         }
