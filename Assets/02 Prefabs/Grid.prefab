@@ -101,7 +101,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  filledCellGlowDuration: 3
+  glowGammaGain: 0.07
+  filledCellGlowDuration: 2
   glowCurve:
     serializedVersion: 2
     m_Curve:
@@ -128,11 +129,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   capillarityTriggerLevel: 10
   edgeCapillarityLevel: 3
-  paintCapillarityLevel: 2
+  paintCapillarityLevel: 3
   capillaritySpreadTime: 0.1
   grid: {fileID: 462780057570293428}
-  emptyTilemap: {fileID: 7583413805439257257}
-  tilemap: {fileID: 4492070534381282124}
+  backgroundTilemap: {fileID: 7583413805439257257}
+  paintTilemap: {fileID: 4492070534381282124}
   filledTiles:
   - {fileID: 11400000, guid: 882d2055779236f49be545f1949f6e02, type: 2}
   emptyTile: {fileID: 11400000, guid: 451bdacd4b1c8b449ab2db8103912a4f, type: 2}
@@ -148,7 +149,7 @@ GameObject:
   - component: {fileID: 4492070534381282124}
   - component: {fileID: 8340057912610793601}
   m_Layer: 0
-  m_Name: Tilemap
+  m_Name: Paint Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -261,7 +262,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: bf92ee2139d69594182d1c4e2dd4af4b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -303,7 +304,7 @@ GameObject:
   - component: {fileID: 7583413805439257257}
   - component: {fileID: 1566967057113828539}
   m_Layer: 0
-  m_Name: Tilemap Background
+  m_Name: Background Tilemap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
