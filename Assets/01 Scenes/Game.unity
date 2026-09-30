@@ -572,14 +572,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677cb7e0f06ce574c9ab921c40f92b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
-  moveBox: {fileID: 5835082}
-  bulletSpawnX: 2.5
-  minBulletSpawnY: -2.2
-  maxBulletSpawnY: 2.2
+  bulletData: {fileID: 11400000, guid: ce2fe44c90c56ce478fa18d9be10f569, type: 2}
   bulletSpawnInterval: 0.6
-  leftSpawnRotation: 0
-  rightSpawnRotation: 180
+  moveBox: {fileID: 5835082}
+  bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
 --- !u!1 &821407478
 GameObject:
   m_ObjectHideFlags: 0

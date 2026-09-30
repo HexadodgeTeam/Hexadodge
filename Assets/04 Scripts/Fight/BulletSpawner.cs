@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour
+public class BulletSpawner : MonoBehaviour, IBulletSpawner
 {
-    [SerializeField] private Bullet bulletPrefab;
-    [SerializeField] private MoveBox moveBox;
-    [SerializeField] private float bulletSpawnX;
-    [SerializeField] private float minBulletSpawnY;
-    [SerializeField] private float maxBulletSpawnY;
+    [Header("Parameters")]
+    [SerializeField] private BulletData bulletData;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
-    [SerializeField] private float leftSpawnRotation = 0f;
-    [SerializeField] private float rightSpawnRotation = 180f;
+    
+    [Header("References")]
+    [SerializeField] private MoveBox moveBox;
+    [SerializeField] private Bullet bulletPrefab;
 
     private Pool<Bullet> _pool;
     private float _bulletSpawnTimer = 0f;
@@ -25,38 +24,25 @@ public class BulletSpawner : MonoBehaviour
         
         if (_bulletSpawnTimer >= bulletSpawnInterval)
         {
-            SpawnBullet();
+            bulletData.spawning.Spawn(this);
             _bulletSpawnTimer -= bulletSpawnInterval;
         }
-    }
-
-    private void SpawnBullet()
-    {
-        (Vector3 position, float rotation) spawn = GetRandomSpawnPosition();
-        
-        _pool.Spawn(spawn.position, spawn.rotation);
     }
 
     private Bullet InstantiateBullet()
     {
         Bullet bullet = Instantiate(bulletPrefab, transform);
-        bullet.Init(_pool);
+        bullet.Init(_pool, bulletData.movement, bulletData.properties);
         return bullet;
     }
 
-    private void DestroyBullet(Bullet bullet)
+    private static void DestroyBullet(Bullet bullet)
     {
         Destroy(bullet.gameObject);
     }
 
-    private (Vector3, float) GetRandomSpawnPosition()
+    public void SpawnBullet(Vector3 position, float rotation)
     {
-        bool left = Random.value > 0.5f;
-        
-        float spawnY = Random.Range(minBulletSpawnY, maxBulletSpawnY);
-        float spawnX = left ? -bulletSpawnX : bulletSpawnX;
-        float spawnRotation = left ? leftSpawnRotation : rightSpawnRotation;
-
-        return (new Vector3(spawnX, spawnY), spawnRotation);
+        _pool.Spawn(position, rotation);
     }
 }

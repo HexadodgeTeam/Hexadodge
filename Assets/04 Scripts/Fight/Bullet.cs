@@ -1,34 +1,42 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 [SelectionBase]
 public class Bullet : MonoBehaviour, IBulletMovable
 {
-    [SerializeField] private int damage = 1;
-    [SerializeField] private BulletMovementData movement;
-    [SerializeField] private float despawnTime = 3f;
-
+    private BulletMovement _m;
+    private BulletProperties _p;
     private Pool<Bullet> _pool;
+    private Coroutine _releaseRoutine;
+    private float _startTime;
+    private float _moveRandom;
+    private float _powerRandom;
     
+    private float Lifetime => Time.time - _startTime;
     public Vector2 Forward => transform.right;
 
-    public void Init(Pool<Bullet> pool)
+    public void Init(Pool<Bullet> pool, BulletMovement movement, BulletProperties properties)
     {
         _pool = pool;
-        Destroy(gameObject, despawnTime);
+        _m = movement;
+        _p = properties;
+        _startTime = Time.time;
+        _moveRandom = Random.value;
+        _powerRandom = Random.value;
+        
+        _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
 
     private IEnumerator ReleaseCoroutine()
     {
-        yield return new WaitForSeconds(despawnTime);
+        yield return new WaitForSeconds(_p.GetLifetime(Random.value));
         
         _pool.Release(this);
     }
 
     private void FixedUpdate()
     {
-        movement.Move(this);
+        _m.Move(this, Lifetime, _moveRandom);
     }
 
     public void Move(Vector2 delta)
@@ -38,13 +46,22 @@ public class Bullet : MonoBehaviour, IBulletMovable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (_p.impactType != BulletProperties.ImpactType.None && collision.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
-            playerHealth.TakeDamage(damage);
+            switch (_p.impactType)
+            {
+                case BulletProperties.ImpactType.Damage:
+                    playerHealth.TakeDamage((int)_p.GetImpactPower(Lifetime, _powerRandom));
+                    break;
+                case BulletProperties.ImpactType.Heal:
+                    playerHealth.Heal((int)_p.GetImpactPower(Lifetime, _powerRandom));
+                    break;
+            }
             
-            gameObject.SetActive(false);
+            StopCoroutine(_releaseRoutine);
+            _pool.Release(this);
         }
     }
 

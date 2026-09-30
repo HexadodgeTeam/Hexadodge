@@ -53,6 +53,11 @@ public class PlayerHealth : MonoBehaviour
         _invincibilityTimer = data.InvincibilityCooldown;
     }
 
+    public void Heal(int amount)
+    {
+        Health += amount;
+    }
+
     private void Die()
     {
         UIManager.GameOver(false);
