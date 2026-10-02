@@ -131,6 +131,57 @@ MonoBehaviour:
   edgeCapillarityLevel: 3
   paintCapillarityLevel: 3
   capillaritySpreadTime: 0.1
+  emptyAnimationDuration: 0.5
+  emptyAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  tileShrinkAnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  tileShrink: 1
+  tileShrinkTarget: {x: 0, y: 0, z: 0}
   grid: {fileID: 462780057570293428}
   backgroundTilemap: {fileID: 7583413805439257257}
   paintTilemap: {fileID: 4492070534381282124}
@@ -8328,13 +8379,9 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 799
     m_Data: {fileID: 11400000, guid: 451bdacd4b1c8b449ab2db8103912a4f, type: 2}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 799
     m_Data: {fileID: 21300000, guid: 2333f4b1990d0fa459240cde1a0ac70c, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 799
     m_Data:
@@ -8360,8 +8407,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -17, y: -21, z: 0}
-  m_Size: {x: 34, y: 43, z: 1}
+  m_Origin: {x: -10, y: -19, z: 0}
+  m_Size: {x: 21, y: 39, z: 1}
   m_TileAnchor: {x: 0, y: 0, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

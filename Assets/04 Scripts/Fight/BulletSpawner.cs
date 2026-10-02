@@ -5,6 +5,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     [Header("Parameters")]
     [SerializeField] private BulletData bulletData;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
+    [SerializeField] private int maxBulletCount = 30;
     
     [Header("References")]
     [SerializeField] private MoveBox moveBox;
@@ -15,7 +16,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
 
     private void Awake()
     {
-        _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, 10);
+        _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, maxBulletCount);
     }
 
     private void Update()
@@ -31,9 +32,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
 
     private Bullet InstantiateBullet()
     {
-        Bullet bullet = Instantiate(bulletPrefab, transform);
-        bullet.Init(_pool, bulletData.movement, bulletData.properties);
-        return bullet;
+        return Instantiate(bulletPrefab, transform);
     }
 
     private static void DestroyBullet(Bullet bullet)
@@ -43,6 +42,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
 
     public void SpawnBullet(Vector3 position, float rotation)
     {
-        _pool.Spawn(position, rotation);
+        Bullet bullet = _pool.Spawn(position, rotation);
+        bullet?.Init(_pool, bulletData);
     }
 }

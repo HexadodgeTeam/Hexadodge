@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private int _health;
     private float _invincibilityTimer = 0f;
 
-    private bool IsInvincible => _invincibilityTimer > 0f;
+    public bool IsInvincible => _invincibilityTimer > 0f;
     private int Health
     {
         get => _health;
