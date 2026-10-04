@@ -18,7 +18,7 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
             createFunc: CreatePoolObject,
             actionOnGet: OnGet,
             actionOnRelease: OnRelease,
-            actionOnDestroy: OnDestroyParticle,
+            actionOnDestroy: OnDestroy,
             maxSize: maxSize
         );
         _maxSize = maxSize;
@@ -51,5 +51,5 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
 
     private void OnGet(TPoolObject po) => po.gameObject.SetActive(true);
     private void OnRelease(TPoolObject po) => po.gameObject.SetActive(false);
-    private void OnDestroyParticle(TPoolObject po) { if (po) { _destroyObjectFunc.Invoke(po); } }
+    private void OnDestroy(TPoolObject po) { if (po) { _destroyObjectFunc.Invoke(po); } }
 }

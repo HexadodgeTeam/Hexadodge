@@ -26,9 +26,7 @@ public class BSPosition : BulletSpawning
         int randomPosIndex = Random.Range(0, positions.Length);
         int randomRotIndex = pairPositionWithRotation ? randomPosIndex : Random.Range(0, rotations.Length);
 
-        Vector3 position = new Vector3(
-            positions[randomPosIndex].x.Eval(time, Random.value),
-            positions[randomPosIndex].y.Eval(time, Random.value));
+        Vector3 position = positions[randomPosIndex].Eval(time, Random.value, Random.value);
         float rotation = rotations.Length > 0
             ? rotations[randomRotIndex].Eval(time, Random.value)
             : Random.Range(0f, 360f);

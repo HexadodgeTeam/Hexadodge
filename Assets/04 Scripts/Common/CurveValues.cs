@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -117,6 +118,12 @@ public struct Vector2Curve
     public FloatCurve x;
     public FloatCurve y;
 
+    public Vector2Curve(float x, float y)
+    {
+        this.x = x;
+        this.y = y;
+    }
+    
     public Rect? GetGizmosRect()
     {
         if (!x.CanGizmo || !y.CanGizmo) return null;
@@ -126,5 +133,32 @@ public struct Vector2Curve
         Rect rect = new(x.Center - width / 2f, y.Center - height / 2f, width, height);
         
         return rect;
+    }
+    
+    public Vector2 Eval(float time, float lerpFactorX, float lerpFactorY) =>
+        new(x.Eval(time, lerpFactorX), y.Eval(time, lerpFactorY));
+    
+    public static implicit operator Vector2Curve(Vector2 vector2) => new(vector2.x, vector2.y);
+
+    public Vector2CurveInstance Instance() => new(this);
+}
+
+public struct Vector2CurveInstance
+{
+    private FloatCurveInstance _curveX;
+    private FloatCurveInstance _curveY;
+    
+    public Vector2CurveInstance(Vector2Curve curve)
+    {
+        _curveX = curve.x.Instance();
+        _curveY = curve.y.Instance();
+    }
+    
+    public Vector2 Eval(float time) => new(_curveX.Eval(time), _curveY.Eval(time));
+
+    public void ReRoll()
+    {
+        _curveX.ReRoll();
+        _curveY.ReRoll();
     }
 }
