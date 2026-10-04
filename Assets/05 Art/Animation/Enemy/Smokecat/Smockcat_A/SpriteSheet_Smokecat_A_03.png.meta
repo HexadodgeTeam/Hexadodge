@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: df3b10ac4836ee54091e696abf25773c
+guid: d1ec48455bd481d44a85fd240804ec0b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5974620310389904952
-    second: Spritesheet_SP_Smokecat_A_Hit_0
+      213: -1501817333204246811
+    second: SpriteSheet_Smokecat_A_03_0
   - first:
-      213: -7447779091380810362
-    second: Spritesheet_SP_Smokecat_A_Hit_1
+      213: 3604470951432005928
+    second: SpriteSheet_Smokecat_A_03_1
   - first:
-      213: 1591941102439817464
-    second: Spritesheet_SP_Smokecat_A_Hit_2
+      213: 7813277554197447438
+    second: SpriteSheet_Smokecat_A_03_2
   - first:
-      213: 1320549080958360912
-    second: Spritesheet_SP_Smokecat_A_Hit_3
+      213: -650394342167538934
+    second: SpriteSheet_Smokecat_A_03_3
+  - first:
+      213: -5418981193145542106
+    second: SpriteSheet_Smokecat_A_03_4
+  - first:
+      213: 3734579922962831642
+    second: SpriteSheet_Smokecat_A_03_5
+  - first:
+      213: -5005228002499314588
+    second: SpriteSheet_Smokecat_A_03_6
+  - first:
+      213: 2032828883289168009
+    second: SpriteSheet_Smokecat_A_03_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -105,11 +117,24 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_0
+      name: SpriteSheet_Smokecat_A_03_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,14 +149,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 836df94748d1ae250800000000000000
-      internalID: 5974620310389904952
+      spriteID: 5ee16d8a719782be0800000000000000
+      internalID: -1501817333204246811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_1
+      name: SpriteSheet_Smokecat_A_03_1
       rect:
         serializedVersion: 2
         x: 512
@@ -146,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 68d4aac506c24a890800000000000000
-      internalID: -7447779091380810362
+      spriteID: 829a157ab37a50230800000000000000
+      internalID: 3604470951432005928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_2
+      name: SpriteSheet_Smokecat_A_03_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -168,14 +193,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8f0e44a8ff5b71610800000000000000
-      internalID: 1591941102439817464
+      spriteID: e03c87df9865e6c60800000000000000
+      internalID: 7813277554197447438
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_3
+      name: SpriteSheet_Smokecat_A_03_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -188,16 +213,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a50fd79d28d934447b2b46e7c8e4ec9a
-      internalID: 1122405687
+      spriteID: a031e2faac559f6f0800000000000000
+      internalID: -650394342167538934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_4
+      name: SpriteSheet_Smokecat_A_03_4
       rect:
         serializedVersion: 2
         x: 0
@@ -210,16 +235,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8e31b1f247425b34ab1eacb3f1ccf968
-      internalID: -513721439
+      spriteID: 62a990ad059ebc4b0800000000000000
+      internalID: -5418981193145542106
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_5
+      name: SpriteSheet_Smokecat_A_03_5
       rect:
         serializedVersion: 2
         x: 512
@@ -232,16 +257,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5be4a11203dc9e740bb2af248e33df68
-      internalID: 1419012849
+      spriteID: a19518d37a4e3d330800000000000000
+      internalID: 3734579922962831642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_6
+      name: SpriteSheet_Smokecat_A_03_6
       rect:
         serializedVersion: 2
         x: 1024
@@ -256,14 +281,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa40f047249322146a46c316f2743233
-      internalID: -96197728
+      spriteID: e8acaedccb876c44496845e817a84e98
+      internalID: 420415727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_7
+      name: SpriteSheet_Smokecat_A_03_7
       rect:
         serializedVersion: 2
         x: 1536
@@ -278,14 +303,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d9f929228bd58514fbcb1754e23ed96e
-      internalID: 276665956
+      spriteID: 5c75df9ebf97e0443a6eab8aed2f69ec
+      internalID: -1706636797
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Spritesheet_SP_Smokecat_A_Hit_8
+      name: SpriteSheet_Smokecat_A_03_8
       rect:
         serializedVersion: 2
         x: 0
@@ -300,8 +325,118 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ac1975ebc11563044bc9a22ba97313d2
-      internalID: -258533552
+      spriteID: 50eaac6da39debe498bc7db2adac53cb
+      internalID: 169684708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Smokecat_A_03_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d0a4c31a8daeb4caef44cd3acff999
+      internalID: -1352566413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Smokecat_A_03_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2724a04d6f0348d419636fce60585cfc
+      internalID: 17309055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Smokecat_A_03_11
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ad698469dfb2743b4a63327ea0c6df
+      internalID: 1764233539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Smokecat_A_03_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33be6935b75b9a44c83ddc851db4a75b
+      internalID: -1756012831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_Smokecat_A_03_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8b76e0f2d19f549a93cbabeb2df8ac
+      internalID: -1114191666
       vertices: []
       indices: 
       edges: []
@@ -310,7 +445,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6866497dd7af1a1409a8c8cd9f146b03
+    spriteID: 109e07c137af5a34b94b0d40962bd7e3
     internalID: 0
     vertices: []
     indices: 
@@ -322,15 +457,20 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":4.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Spritesheet_SP_Smokecat_A_Hit_0: 5974620310389904952
-      Spritesheet_SP_Smokecat_A_Hit_1: -7447779091380810362
-      Spritesheet_SP_Smokecat_A_Hit_2: 1591941102439817464
-      Spritesheet_SP_Smokecat_A_Hit_3: 1122405687
-      Spritesheet_SP_Smokecat_A_Hit_4: -513721439
-      Spritesheet_SP_Smokecat_A_Hit_5: 1419012849
-      Spritesheet_SP_Smokecat_A_Hit_6: -96197728
-      Spritesheet_SP_Smokecat_A_Hit_7: 276665956
-      Spritesheet_SP_Smokecat_A_Hit_8: -258533552
+      SpriteSheet_Smokecat_A_03_0: -1501817333204246811
+      SpriteSheet_Smokecat_A_03_1: 3604470951432005928
+      SpriteSheet_Smokecat_A_03_10: 17309055
+      SpriteSheet_Smokecat_A_03_11: 1764233539
+      SpriteSheet_Smokecat_A_03_12: -1756012831
+      SpriteSheet_Smokecat_A_03_13: -1114191666
+      SpriteSheet_Smokecat_A_03_2: 7813277554197447438
+      SpriteSheet_Smokecat_A_03_3: -650394342167538934
+      SpriteSheet_Smokecat_A_03_4: -5418981193145542106
+      SpriteSheet_Smokecat_A_03_5: 3734579922962831642
+      SpriteSheet_Smokecat_A_03_6: 420415727
+      SpriteSheet_Smokecat_A_03_7: -1706636797
+      SpriteSheet_Smokecat_A_03_8: 169684708
+      SpriteSheet_Smokecat_A_03_9: -1352566413
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
