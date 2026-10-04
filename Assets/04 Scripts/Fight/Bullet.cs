@@ -7,38 +7,56 @@ using Random = UnityEngine.Random;
 public class Bullet : MonoBehaviour, IBulletMovable
 {
     private BulletData _data;
+    private BulletPropertiesInstance _properties;
+    private BulletMovementInstance _movement;
     private Pool<Bullet> _pool;
+    private float _age;
+    private float _lifetime;
+    private float _t;
     private Coroutine _releaseRoutine;
-    private float _startTime;
-    private float _moveRandom;
-    private float _powerRandom;
-
-    private BulletMovement M => _data.movement;
-    private BulletData.Properties P => _data.properties;
-    private float Lifetime => Time.time - _startTime;
+    
     public Vector2 Forward => transform.right;
 
     public void Init(Pool<Bullet> pool, BulletData data)
     {
-        _pool = pool;
-        _data = data;
-        _startTime = Time.time;
-        _moveRandom = Random.value;
-        _powerRandom = Random.value;
+        if (_data == data)
+        {
+            // If same data was already present on pooled object, just re-roll random values.
+            _properties.ReRoll();
+            _movement.ReRoll();
+        }
+        else
+        {
+            // If no data or different, instance fields.
+            _data = data;
+            _properties = _data.properties.Instance();
+            _movement = _data.movement.Instance();
+            _pool = pool;
+        }
         
+        _age = 0f;
+        _lifetime = _properties.lifetime;
         _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
 
     private IEnumerator ReleaseCoroutine()
     {
-        yield return new WaitForSeconds(P.lifetime);
-        
-        Explode();
+        yield return new WaitUntil(HasExpired);
+
+        Die();
+    }
+
+    private void Update()
+    {
+        _age += Time.deltaTime;
+        _t = _age / _lifetime;
+        float scale = _properties.scale.Eval(_t);
+        transform.localScale = new Vector3(scale, scale, 1f);
     }
 
     private void FixedUpdate()
     {
-        M.Move(this, Lifetime, _moveRandom);
+        _movement.Move(this, _t);
     }
 
     public void Move(Vector2 delta)
@@ -46,7 +64,7 @@ public class Bullet : MonoBehaviour, IBulletMovable
         transform.Translate(delta * Time.fixedDeltaTime, Space.World);
     }
 
-    private void Explode()
+    private void Die()
     {
         SpawnExplosionProjectiles();
         _pool.Release(this);
@@ -54,49 +72,54 @@ public class Bullet : MonoBehaviour, IBulletMovable
 
     private void SpawnExplosionProjectiles()
     {
-        int bulletCount = P.explosion.bulletCount;
-        float arc = P.explosion.arc;
-        float angleOffset = P.explosion.direction switch
+        int bulletCount = _properties.explosionBulletCount.Eval(_t);
+        float arc = _properties.explosionArc.Eval(_t);
+        float angleOffset = _data.properties.explosion.direction switch
         {
-            BulletData.Properties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
-            BulletData.Properties.ExplosionDirection.Player => Vector2.Angle(transform.position, Player.Pos),
-            BulletData.Properties.ExplosionDirection.Random => Random.Range(0f, 360f),
+            BulletProperties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
+            BulletProperties.ExplosionDirection.Player => Vector2.SignedAngle(Vector2.right,
+                Player.Pos - (Vector2)transform.position),
+            BulletProperties.ExplosionDirection.Random => Random.Range(0f, 360f),
             _ => throw new ArgumentOutOfRangeException()
         };
         for (int i = 0; i < bulletCount; i++)
         {
-            float angle = i * arc / bulletCount;
+            float angle = i * arc / (bulletCount - 1);
             float rotation = angle - arc / 2f + angleOffset;
             Bullet bullet = _pool.Spawn(transform.position, rotation);
-            bullet?.Init(_pool, P.explosion.bullets.Length > 0 ? P.explosion.bullets.RandomElement() : _data);
+            if (bullet) bullet.Init(_pool, _data.properties.explosion.bullets.Length > 0
+                ? _data.properties.explosion.bullets.RandomElement()
+                : _data);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (P.impactType == BulletData.Properties.ImpactType.None) return;
-        
+        if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
+
         if (collision.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
             if (!playerHealth.IsInvincible)
             {
-                switch (P.impactType)
+                switch (_data.properties.impactType)
                 {
-                    case BulletData.Properties.ImpactType.Damage:
-                        playerHealth.TakeDamage(P.impactPower.Eval(Lifetime, _powerRandom));
+                    case BulletProperties.ImpactType.Damage:
+                        playerHealth.TakeDamage(_properties.impactPower.Eval(_t));
                         break;
-                    case BulletData.Properties.ImpactType.Heal:
-                        playerHealth.Heal(P.impactPower.Eval(Lifetime, _powerRandom));
+                    case BulletProperties.ImpactType.Heal:
+                        playerHealth.Heal(_properties.impactPower.Eval(_t));
                         break;
                 }
-            
+
                 StopCoroutine(_releaseRoutine);
-                Explode();
+                Die();
             }
         }
     }
+    
+    private bool HasExpired() => _age > _lifetime;
 
     private void OnDrawGizmos()
     {

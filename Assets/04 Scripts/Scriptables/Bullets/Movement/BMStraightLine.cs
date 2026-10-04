@@ -3,10 +3,27 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Straight Line", menuName = "Scriptable Objects/Bullets/Movement/Straight Line")]
 public class BMStraightLine : BulletMovement
 {
-    [SerializeField] private FloatCurve speed = 1f;
+    [SerializeField] internal FloatCurve speed = 1f;
 
-    public override void Move(IBulletMovable movable, float time, float random)
+    public override BulletMovementInstance Instance() => new BMStraightLineInstance(this);
+}
+
+public class BMStraightLineInstance : BulletMovementInstance
+{
+    private FloatCurveInstance speed;
+
+    public BMStraightLineInstance(BMStraightLine data)
     {
-        movable.Move(movable.Forward * speed.Eval(time, random));
+        speed = data.speed.Instance();
+    }
+    
+    public override void Move(IBulletMovable movable, float time)
+    {
+        movable.Move(movable.Forward * speed.Eval(time));
+    }
+
+    public override void ReRoll()
+    {
+        speed.ReRoll();
     }
 }

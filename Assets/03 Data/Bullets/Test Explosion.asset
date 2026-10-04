@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: Test Explosion
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  spawning: {fileID: 11400000, guid: 46809f26a0c8f764085980085efda62b, type: 2}
+  spawning: {fileID: 11400000, guid: cc03710eaaf8f404fa341744df5ae088, type: 2}
   movement: {fileID: 11400000, guid: 3ecd5fa60e53a784ba7f83ab7b94d13f, type: 2}
   properties:
     lifetime:
@@ -33,6 +33,69 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0.5
         m_ConstantMax: 1.5
+    scale:
+      curve:
+        m_Mode: 1
+        m_CurveMultiplier: 0.25
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 0.25
+            value: 1.5
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.49728423
+            value: 0.5
+            inSlope: -0.0037897213
+            outSlope: -0.0037897213
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.75
+            value: 1.5
+            inSlope: 0.00020232357
+            outSlope: 0.00020232357
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.7744802
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
     impactType: 1
     impactPower:
       curve:
@@ -91,4 +154,4 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 180
-      direction: 0
+      direction: 1

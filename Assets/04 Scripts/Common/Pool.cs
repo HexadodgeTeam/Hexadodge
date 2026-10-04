@@ -8,7 +8,7 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
     private readonly Func<TPoolObject> _instantiateObjectFunc;
     private readonly Action<TPoolObject> _destroyObjectFunc;
     private int _count = 0;
-    private int _maxSize;
+    private readonly int _maxSize;
 
     public Pool(Func<TPoolObject> instantiateObjectFunc, Action<TPoolObject> destroyObjectFunc, int maxSize)
     {
@@ -26,7 +26,7 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
 
     public TPoolObject Spawn(Vector3 position, float rotation)
     {
-        if (_count > _maxSize) return null;
+        if (_count + 1 > _maxSize) return null;
         
         TPoolObject po = _pool.Get();
         po.transform.position = position;

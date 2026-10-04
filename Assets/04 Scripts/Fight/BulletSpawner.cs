@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour, IBulletSpawner
@@ -25,7 +26,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
         
         if (_bulletSpawnTimer >= bulletSpawnInterval)
         {
-            bulletData.spawning.Spawn(this);
+            bulletData.spawning.Spawn(this, 1f);
             _bulletSpawnTimer -= bulletSpawnInterval;
         }
     }
@@ -43,6 +44,11 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     public void SpawnBullet(Vector3 position, float rotation)
     {
         Bullet bullet = _pool.Spawn(position, rotation);
-        bullet?.Init(_pool, bulletData);
+        if (bullet) bullet.Init(_pool, bulletData);
+    }
+
+    private void OnDrawGizmos()
+    {
+        bulletData.spawning.OnDrawGizmos();
     }
 }
