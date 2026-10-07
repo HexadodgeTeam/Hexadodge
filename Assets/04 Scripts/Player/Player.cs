@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Vector2 Pos;
+    public static Vector2 Delta;
     
     [SerializeField] private Color color = Color.white;
     [SerializeField] private Gradient fillGradient;
@@ -24,6 +25,7 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Delta = (Vector2)transform.position - Pos;
         Pos = transform.position;
         if (FillGrid.Active)
         {

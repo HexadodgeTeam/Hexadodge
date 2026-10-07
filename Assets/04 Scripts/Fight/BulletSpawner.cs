@@ -6,6 +6,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     [SerializeField] private BulletData bulletData;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private int maxBulletCount = 30;
+    [SerializeField] private bool debugOneAtATime = false;
     
     [Header("References")]
     [SerializeField] private MoveBox moveBox;
@@ -23,7 +24,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     {
         _bulletSpawnTimer += Time.deltaTime;
         
-        if (_bulletSpawnTimer >= bulletSpawnInterval)
+        if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
         {
             bulletData.spawning.Spawn(this, 1f);
             _bulletSpawnTimer -= bulletSpawnInterval;

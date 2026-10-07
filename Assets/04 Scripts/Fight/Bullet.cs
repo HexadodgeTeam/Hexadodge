@@ -1,21 +1,24 @@
 using System;
 using System.Collections;
+using System.Numerics;
 using UnityEngine;
+using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 [SelectionBase]
-public class Bullet : MonoBehaviour, IBulletMovable
+public class Bullet : MonoBehaviour
 {
+    private const float BulletScaleFactor = 0.25f;
     private BulletData _data;
     private BulletPropertiesInstance _properties;
-    private BulletMovementInstance _movement;
+    private BulletTransformInstance _transform;
     private Pool<Bullet> _pool;
     private float _age;
     private float _lifetime;
     private float _t;
     private Coroutine _releaseRoutine;
-    
-    public Vector2 Forward => transform.right;
 
     public void Init(Pool<Bullet> pool, BulletData data)
     {
@@ -23,14 +26,14 @@ public class Bullet : MonoBehaviour, IBulletMovable
         {
             // If same data was already present on pooled object, just re-roll random values.
             _properties.ReRoll();
-            _movement.ReRoll();
+            _transform.ReRoll();
         }
         else
         {
             // If no data or different, instance fields.
             _data = data;
             _properties = _data.properties.Instance();
-            _movement = _data.movement.Instance();
+            _transform = _data.transform.Instance();
             _pool = pool;
         }
         
@@ -50,18 +53,14 @@ public class Bullet : MonoBehaviour, IBulletMovable
     {
         _age += Time.deltaTime;
         _t = _age / _lifetime;
-        float scale = _properties.scale.Eval(_t);
-        transform.localScale = new Vector3(scale, scale, 1f);
     }
 
     private void FixedUpdate()
     {
-        _movement.Move(this, _t);
-    }
-
-    public void Move(Vector2 delta)
-    {
-        transform.Translate(delta * Time.fixedDeltaTime, Space.World);
+        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _t, _age);
+        transform.Translate(position, Space.World);
+        transform.Rotate(Vector3.forward, rotation);
+        transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
     }
 
     private void Die()
@@ -124,6 +123,6 @@ public class Bullet : MonoBehaviour, IBulletMovable
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)Forward * 0.2f);
+        Gizmos.DrawLine(transform.position, transform.position + transform.right * 0.2f);
     }
 }

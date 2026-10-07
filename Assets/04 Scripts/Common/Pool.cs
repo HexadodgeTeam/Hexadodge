@@ -9,6 +9,8 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
     private readonly Action<TPoolObject> _destroyObjectFunc;
     private int _count = 0;
     private readonly int _maxSize;
+    
+    public int Count => _count;
 
     public Pool(Func<TPoolObject> instantiateObjectFunc, Action<TPoolObject> destroyObjectFunc, int maxSize)
     {

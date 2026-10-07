@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 /// <summary>
@@ -11,7 +10,11 @@ public struct FloatCurve
 {
     [SerializeField] private ParticleSystem.MinMaxCurve curve;
 
-    public FloatCurve(float constant) { curve = constant; }
+    public FloatCurve(float constant)
+    {
+        curve = constant;
+        curve.curveMultiplier = constant;
+    }
     public FloatCurve(float min, float max) { curve = new ParticleSystem.MinMaxCurve(min, max); }
     public FloatCurve(ParticleSystem.MinMaxCurve curve) { this.curve = curve; }
 
@@ -71,7 +74,11 @@ public struct IntCurve
 {
     [SerializeField] private ParticleSystem.MinMaxCurve curve;
 
-    public IntCurve(int constant) { curve = constant; }
+    public IntCurve(int constant)
+    {
+        curve = constant;
+        curve.curveMultiplier = constant;
+    }
     public IntCurve(int min, int max) { curve = new ParticleSystem.MinMaxCurve(min, max); }
     public IntCurve(ParticleSystem.MinMaxCurve curve) { this.curve = curve; }
 

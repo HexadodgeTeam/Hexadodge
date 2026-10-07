@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Test Bullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   spawning: {fileID: 11400000, guid: cc03710eaaf8f404fa341744df5ae088, type: 2}
-  movement: {fileID: 11400000, guid: 3ecd5fa60e53a784ba7f83ab7b94d13f, type: 2}
+  transform: {fileID: 11400000, guid: a8c751a93d8bade4587757600e7d9b4e, type: 2}
   properties:
     lifetime:
       curve:
@@ -67,26 +67,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: 4
-        m_ConstantMax: 7
-    scale:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0.15
+        m_ConstantMin: 3
+        m_ConstantMax: 5
     impactType: 1
     impactPower:
       curve:

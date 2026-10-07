@@ -21,13 +21,6 @@ public class BulletProperties
     [Tooltip("Durée de vie du bullet. Il est toujours détruit après ce laps de temps.")]
     [SerializeField] internal FloatCurve lifetime = 5f;
 
-    [Tooltip("Taille du projectile.")]
-    [SerializeField] internal FloatCurve scale = new(new ParticleSystem.MinMaxCurve
-    {
-        constant = 0.25f,
-        curveMultiplier = 0.25f
-    });
-
     [Tooltip("None : le projectile n'a pas de collision.\n" +
              "Damage : inflige des dégâts au contact.\n" +
              "Heal : soigne au contact.")]
@@ -66,7 +59,6 @@ public class BulletProperties
 public class BulletPropertiesInstance
 {
     public FloatCurveInstance lifetime;
-    public FloatCurveInstance scale;
     public IntCurveInstance impactPower;
     public IntCurveInstance explosionBulletCount;
     public FloatCurveInstance explosionArc;
@@ -74,7 +66,6 @@ public class BulletPropertiesInstance
     public BulletPropertiesInstance(BulletProperties data)
     {
         lifetime = data.lifetime.Instance();
-        scale = data.scale.Instance();
         impactPower = data.impactPower.Instance();
         explosionBulletCount = data.explosion.bulletCount.Instance();
         explosionArc = data.explosion.arc.Instance();
@@ -83,7 +74,6 @@ public class BulletPropertiesInstance
     public void ReRoll()
     {
         lifetime.ReRoll();
-        scale.ReRoll();
         impactPower.ReRoll();
         explosionBulletCount.ReRoll();
         explosionArc.ReRoll();
