@@ -48,8 +48,7 @@ public class FillGrid : MonoBehaviour
 
     private int _filledTileCount;
     private int _totalTileCount;
-    private Color _fillColor1;
-    private Color _fillColor2;
+    private Gradient _gradient;
     private readonly Dictionary<Vector3Int, Coroutine> _activeGlows = new();
     private readonly Dictionary<Vector3Int, Coroutine> _capillarityRoutines = new();
 
@@ -181,10 +180,9 @@ public class FillGrid : MonoBehaviour
         return paintTilemap.HasTile(cell);
     }
 
-    public void SetColor(Color color1, Color color2)
+    public void SetGradient(Gradient gradient)
     {
-        _fillColor1 = color1;
-        _fillColor2 = color2;
+        _gradient = gradient;
     }
 
     private void OnDrawGizmos()
@@ -204,7 +202,7 @@ public class FillGrid : MonoBehaviour
     {
         float lower = backgroundTilemap.cellBounds.yMin;
         float upper = backgroundTilemap.cellBounds.yMax;
-        return Color.Lerp(_fillColor1, _fillColor2, Mathf.InverseLerp(lower, upper, cell.y));
+        return _gradient.Evaluate(Mathf.InverseLerp(lower, upper, cell.y));
     }
 
     private int CapillarityLevel(Vector3Int cell)

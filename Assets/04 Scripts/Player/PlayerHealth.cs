@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private int _health;
     private float _invincibilityTimer = 0f;
 
-    private bool IsInvincible => _invincibilityTimer > 0f;
+    public bool IsInvincible => _invincibilityTimer > 0f;
     private int Health
     {
         get => _health;
@@ -51,6 +51,11 @@ public class PlayerHealth : MonoBehaviour
 
         Health -= amount;
         _invincibilityTimer = data.InvincibilityCooldown;
+    }
+
+    public void Heal(int amount)
+    {
+        Health += amount;
     }
 
     private void Die()

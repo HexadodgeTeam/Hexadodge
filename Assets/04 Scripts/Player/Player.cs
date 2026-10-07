@@ -4,9 +4,11 @@ using UnityEngine;
 [SelectionBase]
 public class Player : MonoBehaviour
 {
+    public static Vector2 Pos;
+    public static Vector2 Delta;
+    
     [SerializeField] private Color color = Color.white;
-    [SerializeField] private Color fillColor1 = Color.white;
-    [SerializeField] private Color fillColor2 = Color.white;
+    [SerializeField] private Gradient fillGradient;
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private float fillRange = 4;
 
@@ -17,12 +19,14 @@ public class Player : MonoBehaviour
     {
         _paint = FillGrid.Instance.Paint;
         renderer.color = color;
-        FillGrid.Instance.SetColor(fillColor1, fillColor2);
+        FillGrid.Instance.SetGradient(fillGradient);
         UIManager.FillUI.SetColor(color);
     }
 
     private void FixedUpdate()
     {
+        Delta = (Vector2)transform.position - Pos;
+        Pos = transform.position;
         if (FillGrid.Active)
         {
             _paint.Circle(transform.position, fillRange);

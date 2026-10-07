@@ -1,56 +1,128 @@
 using System;
 using System.Collections;
+using System.Numerics;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
+using Vector2 = UnityEngine.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 [SelectionBase]
-public class Bullet : MonoBehaviour, IBulletMovable
+public class Bullet : MonoBehaviour
 {
-    [SerializeField] private int damage = 1;
-    [SerializeField] private BulletMovementData movement;
-    [SerializeField] private float despawnTime = 3f;
-
+    private const float BulletScaleFactor = 0.25f;
+    private BulletData _data;
+    private BulletPropertiesInstance _properties;
+    private BulletTransformInstance _transform;
     private Pool<Bullet> _pool;
-    
-    public Vector2 Forward => transform.right;
+    private float _age;
+    private float _lifetime;
+    private float _t;
+    private Coroutine _releaseRoutine;
 
-    public void Init(Pool<Bullet> pool)
+    public void Init(Pool<Bullet> pool, BulletData data)
     {
-        _pool = pool;
-        Destroy(gameObject, despawnTime);
+        if (_data == data)
+        {
+            // If same data was already present on pooled object, just re-roll random values.
+            _properties.ReRoll();
+            _transform.ReRoll();
+        }
+        else
+        {
+            // If no data or different, instance fields.
+            _data = data;
+            _properties = _data.properties.Instance();
+            _transform = _data.transform.Instance();
+            _pool = pool;
+        }
+        
+        _age = 0f;
+        _lifetime = _properties.lifetime;
+        _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
 
     private IEnumerator ReleaseCoroutine()
     {
-        yield return new WaitForSeconds(despawnTime);
-        
-        _pool.Release(this);
+        yield return new WaitUntil(HasExpired);
+
+        Die();
+    }
+
+    private void Update()
+    {
+        _age += Time.deltaTime;
+        _t = _age / _lifetime;
     }
 
     private void FixedUpdate()
     {
-        movement.Move(this);
+        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _t, _age);
+        transform.Translate(position, Space.World);
+        transform.Rotate(Vector3.forward, rotation);
+        transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
     }
 
-    public void Move(Vector2 delta)
+    private void Die()
     {
-        transform.Translate(delta * Time.fixedDeltaTime, Space.World);
+        SpawnExplosionProjectiles();
+        _pool.Release(this);
+    }
+
+    private void SpawnExplosionProjectiles()
+    {
+        int bulletCount = _properties.explosionBulletCount.Eval(_t);
+        float arc = _properties.explosionArc.Eval(_t);
+        float angleOffset = _data.properties.explosion.direction switch
+        {
+            BulletProperties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
+            BulletProperties.ExplosionDirection.Player => Vector2.SignedAngle(Vector2.right,
+                Player.Pos - (Vector2)transform.position),
+            BulletProperties.ExplosionDirection.Random => Random.Range(0f, 360f),
+            _ => throw new ArgumentOutOfRangeException()
+        };
+        for (int i = 0; i < bulletCount; i++)
+        {
+            float angle = i * arc / (bulletCount - 1);
+            float rotation = angle - arc / 2f + angleOffset;
+            Bullet bullet = _pool.Spawn(transform.position, rotation);
+            if (bullet) bullet.Init(_pool, _data.properties.explosion.bullets.Length > 0
+                ? _data.properties.explosion.bullets.RandomElement()
+                : _data);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
+
         if (collision.CompareTag("Player"))
         {
             PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
-            playerHealth.TakeDamage(damage);
-            
-            gameObject.SetActive(false);
+            if (!playerHealth.IsInvincible)
+            {
+                switch (_data.properties.impactType)
+                {
+                    case BulletProperties.ImpactType.Damage:
+                        playerHealth.TakeDamage(_properties.impactPower.Eval(_t));
+                        break;
+                    case BulletProperties.ImpactType.Heal:
+                        playerHealth.Heal(_properties.impactPower.Eval(_t));
+                        break;
+                }
+
+                StopCoroutine(_releaseRoutine);
+                Die();
+            }
         }
     }
+    
+    private bool HasExpired() => _age > _lifetime;
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
-        Gizmos.DrawLine(transform.position, transform.position + (Vector3)Forward * 0.2f);
+        Gizmos.DrawLine(transform.position, transform.position + transform.right * 0.2f);
     }
 }
