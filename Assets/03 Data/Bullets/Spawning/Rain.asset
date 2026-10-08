@@ -29,8 +29,8 @@ MonoBehaviour:
           m_PreInfinity: 0
           m_PostInfinity: 0
           m_RotationOrder: 0
-        m_ConstantMin: -2
-        m_ConstantMax: 2
+        m_ConstantMin: -1.6
+        m_ConstantMax: 1.6
     y:
       curve:
         m_Mode: 3
