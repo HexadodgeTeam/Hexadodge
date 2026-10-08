@@ -464,10 +464,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677cb7e0f06ce574c9ab921c40f92b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  bulletData: {fileID: 11400000, guid: 7411830962933f1479e08b6fa129f28e, type: 2}
+  bulletData: {fileID: 11400000, guid: 07e1c7554a90c234da40518ca6230402, type: 2}
   bulletSpawnInterval: 1.5
   maxBulletCount: 100
-  debugOneAtATime: 0
+  debugOneAtATime: 1
   moveBox: {fileID: 5835082}
   bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
 --- !u!1 &821407478
@@ -1936,6 +1936,10 @@ PrefabInstance:
     - target: {fileID: 2562194563750654527, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2562194563750654527, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3977327151515039948, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: ghost
