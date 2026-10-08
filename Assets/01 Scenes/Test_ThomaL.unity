@@ -465,9 +465,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   bulletData: {fileID: 11400000, guid: 7411830962933f1479e08b6fa129f28e, type: 2}
-  bulletSpawnInterval: 2
+  bulletSpawnInterval: 1.5
   maxBulletCount: 100
-  debugOneAtATime: 1
+  debugOneAtATime: 0
   moveBox: {fileID: 5835082}
   bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
 --- !u!1 &821407478

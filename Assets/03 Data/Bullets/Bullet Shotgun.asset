@@ -17,7 +17,7 @@ MonoBehaviour:
   properties:
     lifetime:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
@@ -68,7 +68,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 3
-        m_ConstantMax: 5
+        m_ConstantMax: 2
     impactType: 1
     impactPower:
       curve:
@@ -107,8 +107,7 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 0
-      bullets:
-      - {fileID: 0}
+      bullets: []
       arc:
         curve:
           m_Mode: 0

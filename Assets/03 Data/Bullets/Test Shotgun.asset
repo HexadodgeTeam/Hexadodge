@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: 4
+        m_ConstantMin: 1
         m_ConstantMax: 4
     impactType: 1
     impactPower:
@@ -72,7 +72,7 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 4
       bullets:
-      - {fileID: 11400000, guid: ce2fe44c90c56ce478fa18d9be10f569, type: 2}
+      - {fileID: 11400000, guid: 14fcd2b182082924aab7d7870059a2ed, type: 2}
       arc:
         curve:
           m_Mode: 0
@@ -90,5 +90,5 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 180
+          m_ConstantMax: 40
       direction: 1
