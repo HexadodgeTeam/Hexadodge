@@ -78,9 +78,11 @@ public class BTGeneralInstance : BulletTransformInstance
         _scaleMultiplier = data.scaleMultiplier.Instance();
     }
 
-    public override (Vector2, float, Vector2) Transform(Vector2 forward, float time, float realTime)
+    protected override (Vector2, float, Vector2) TransformTimed(Vector2 forward, float time)
     {
-        (Vector2 p, float r, Vector2 s) = base.Transform(forward, time, realTime);
+        Vector2 p = Vector2.zero; // Position
+        float r = !_disableRotationSpeed ? _rotationSpeed.Eval(time) * Time.fixedDeltaTime : 0f; // Rotation
+        Vector2 s = !_disableScale ? _scale.Eval(time) * _scaleMultiplier.Eval(time) : Vector2.one; // Scale
 
         if (!_disableForwardSpeed)
         {
@@ -92,14 +94,6 @@ public class BTGeneralInstance : BulletTransformInstance
             p += _worldSpeed.Eval(time) * Time.fixedDeltaTime;
         if (!_disablePFM) 
             p += Player.Delta * _playerFollowMultiplier.Eval(time);
-        if (!_disableRotationSpeed) 
-            r += _rotationSpeed.Eval(time) * Time.fixedDeltaTime;
-        if (!_disableScale)
-        {
-            // Multiply scale by sub transform scale by each axis.
-            Vector2 s2 = _scale.Eval(time) * _scaleMultiplier.Eval(time);
-            s = new Vector2(s.x * s2.x, s.y * s2.y);
-        }
         
         return (p, r, s);
     }

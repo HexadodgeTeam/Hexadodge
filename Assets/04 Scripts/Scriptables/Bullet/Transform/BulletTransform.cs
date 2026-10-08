@@ -2,17 +2,17 @@ using UnityEngine;
 
 public abstract class BulletTransform : ScriptableObject
 {
+    [Tooltip("Toutes les curves bouclent sur cette période.")]
+    [SerializeField] internal FloatCurve period;
+    
     [Header("Sub Transform")]
     [Tooltip("Un sous-transform qui s'assemblera avec celui-ci. Exemple : ce transform grandit progressivement, " +
              "le sous-transform oscille de taille, le résultat sera une oscillation de taille qui grandit " +
              "progressivement. Peut être vide pour pas de sous-transform.")]
     [SerializeField] internal BulletTransform subTransform;
 
-    [Tooltip("La période du sous-transform. Cette période s'appliquera au(x) courbe(s) du sous-transform.\n" +
-             "Exemple : une période de 2.0 avec un sous-transform qui oscille de taille = un transform qui oscille " +
-             "toutes les 2 secondes.\n" +
-             "!! Attention !! : la période du sous-transform doit être inférieure à la période du transform pour " +
-             "fonctionner correctement.")]
+    [Header("À APPLIQUER AU TRANSFORM ENFANT")]
+    [Tooltip("OBSOLÈTE. Appliquer cette valeur au champ period du transform enfant.")]
     [SerializeField] internal FloatCurve subTransformPeriod;
     
     public abstract BulletTransformInstance Instance();
@@ -21,37 +21,45 @@ public abstract class BulletTransform : ScriptableObject
 public abstract class BulletTransformInstance
 {
     private readonly BulletTransformInstance _subInstance;
-    private FloatCurveInstance _subInstancePeriod;
+    private FloatCurveInstance _periodInstance;
     private float _periodStart;
     private float _currentPeriod;
 
     protected BulletTransformInstance(BulletTransform data)
     {
         _subInstance = data.subTransform ? data.subTransform.Instance() : null;
-        _subInstancePeriod = data.subTransformPeriod.Instance();
-        _currentPeriod = _subInstancePeriod.Eval(0f);
+        _periodInstance = data.period.Instance();
+        _currentPeriod = _periodInstance.Eval(0f);
         _periodStart = 0f;
     }
 
-    public virtual (Vector2, float, Vector2) Transform(Vector2 forward, float time, float realTime)
+    public (Vector2 p, float r, Vector2 s) Transform(Vector2 forward, float time)
     {
-        if (_subInstance == null) return (Vector2.zero, 0, Vector2.one);
-        
-        float periodTime = realTime - _periodStart;
+        float periodTime = time - _periodStart;
         if (periodTime >= _currentPeriod)
         {
-            _currentPeriod = _subInstancePeriod.Eval(time);
-            _periodStart = realTime;
+            _currentPeriod = _periodInstance.Eval(time);
+            _periodStart = time;
         }
 
-        return _subInstance.Transform(forward, periodTime / _currentPeriod, realTime);
+        (Vector2 p, float r, Vector2 s) transform = TransformTimed(forward, periodTime / _currentPeriod);
+        (Vector2 p, float r, Vector2 s) subTransform =
+            _subInstance?.Transform(forward, time) ?? (Vector2.zero, 0, Vector2.one);
+        Debug.Log("sda " + transform.s);
+        Debug.Log("srwqr " + subTransform.s);
+        return (
+            p: transform.p + subTransform.p,
+            r: transform.r + subTransform.r,
+            s: new Vector2(transform.s.x * subTransform.s.x, transform.s.y * subTransform.s.y));
     }
+
+    protected abstract (Vector2 p, float r, Vector2 s) TransformTimed(Vector2 forward, float time);
 
     public virtual void ReRoll()
     {
         _subInstance?.ReRoll();
-        _subInstancePeriod.ReRoll();
-        _currentPeriod = _subInstancePeriod.Eval(0f);
+        _periodInstance.ReRoll();
+        _currentPeriod = _periodInstance.Eval(0f);
         _periodStart = 0f;
     }
 }
