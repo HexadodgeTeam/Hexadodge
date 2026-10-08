@@ -137,9 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 588bfa2179ec6ff4bbc6ac3d356261ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  damage: 1
-  movement: {fileID: 11400000, guid: 3ecd5fa60e53a784ba7f83ab7b94d13f, type: 2}
-  despawnTime: 3
+  spriteRenderer: {fileID: 1580278819831896927}
 --- !u!58 &5967467045468893168
 CircleCollider2D:
   m_ObjectHideFlags: 0
