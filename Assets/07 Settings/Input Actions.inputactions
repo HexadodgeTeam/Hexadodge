@@ -74,7 +74,7 @@
                     "path": "<Touchscreen>/primaryTouch",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Touch",
+                    "groups": ";Touch;Gamepad",
                     "action": "Swipe",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -94,7 +94,7 @@
                 },
                 {
                     "devicePath": "<Touchscreen>",
-                    "isOptional": true,
+                    "isOptional": false,
                     "isOR": false
                 }
             ]
