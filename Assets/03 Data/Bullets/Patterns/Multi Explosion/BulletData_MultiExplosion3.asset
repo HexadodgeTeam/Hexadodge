@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BulletData_MultiExplosion3
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   spawning: {fileID: 0}
-  transform: {fileID: 11400000, guid: a8c751a93d8bade4587757600e7d9b4e, type: 2}
+  transform: {fileID: 11400000, guid: 0961a1caf28e43e49966d4769fcbfe6c, type: 2}
   properties:
     lifetime:
       curve:
