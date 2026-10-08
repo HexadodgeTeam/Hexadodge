@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
   m_Name: Straight Line
   m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
-  subTransform: {fileID: 0}
+  subTransform: {fileID: 11400000, guid: 83ea81456dd991b44b73468849e3c81e, type: 2}
   subTransformPeriod:
     curve:
       m_Mode: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0
+      m_ConstantMax: 1
   forwardSpeed:
     x:
       curve:
@@ -68,7 +68,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableForwardSpeed: 0
+  disableForwardSpeed: 1
   worldSpeed:
     x:
       curve:
@@ -105,8 +105,8 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
-  disableWorldSpeed: 1
+        m_ConstantMax: -4
+  disableWorldSpeed: 0
   playerFollowMultiplier:
     curve:
       m_Mode: 0
