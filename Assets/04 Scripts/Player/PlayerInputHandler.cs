@@ -85,13 +85,14 @@ public class PlayerInputHandler : MonoBehaviour
     public void ChangeControlType(int value)
     {
         _controlType = (Control.Type)value;
-        playerInput.SwitchCurrentControlScheme(_controlType.GetInputScheme());
         _isTouching = false;
         _moveInput = Vector2.zero;
     }
     
     public void InputCursor(InputAction.CallbackContext context)
     {
+        if (_controlType == Control.Type.Classic) return;
+        
         if (context.performed)
         {
             TouchState touch = context.ReadValue<TouchState>();

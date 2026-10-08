@@ -10,6 +10,8 @@ using Vector3 = UnityEngine.Vector3;
 [SelectionBase]
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    
     private const float BulletScaleFactor = 0.25f;
     private BulletData _data;
     private BulletPropertiesInstance _properties;
@@ -35,9 +37,12 @@ public class Bullet : MonoBehaviour
             _properties = _data.properties.Instance();
             _transform = _data.transform.Instance();
             _pool = pool;
+            if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;
         }
-        
+
+        _t = 0f;
         _age = 0f;
+        UpdateTransform(0f, 0f);
         _lifetime = _properties.lifetime;
         _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
@@ -57,7 +62,12 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _t, _age);
+        UpdateTransform(_t, _age);
+    }
+
+    private void UpdateTransform(float time, float realTime)
+    {
+        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, time, realTime);
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
         transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
@@ -83,7 +93,7 @@ public class Bullet : MonoBehaviour
         };
         for (int i = 0; i < bulletCount; i++)
         {
-            float angle = i * arc / (bulletCount - 1);
+            float angle = bulletCount == 1 ? 0 : i * arc / (bulletCount - 1);
             float rotation = angle - arc / 2f + angleOffset;
             Bullet bullet = _pool.Spawn(transform.position, rotation);
             if (bullet) bullet.Init(_pool, _data.properties.explosion.bullets.Length > 0
