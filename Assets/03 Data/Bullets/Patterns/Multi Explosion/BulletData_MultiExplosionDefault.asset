@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
+  m_Name: BulletData_MultiExplosionDefault
+  m_EditorClassIdentifier: Assembly-CSharp::BulletData
+  spawning: {fileID: 11400000, guid: cc03710eaaf8f404fa341744df5ae088, type: 2}
+  transform: {fileID: 11400000, guid: 22f789cf0f5bcb44f80ead0aab4a71bd, type: 2}
+  properties:
+    lifetime:
+      curve:
+        m_Mode: 3
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 4
+        m_ConstantMax: 5
+    impactType: 1
+    impactPower:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    explosion:
+      bulletCount:
+        curve:
+          m_Mode: 0
+          m_CurveMultiplier: 0
+          m_CurveMin:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_CurveMax:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_ConstantMin: 0
+          m_ConstantMax: 7
+      bullets:
+      - {fileID: 11400000, guid: 8ee1730fa4bb17e4db20fb96af03b0e0, type: 2}
+      arc:
+        curve:
+          m_Mode: 0
+          m_CurveMultiplier: 0
+          m_CurveMin:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_CurveMax:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_ConstantMin: 0
+          m_ConstantMax: 360
+      direction: 2
