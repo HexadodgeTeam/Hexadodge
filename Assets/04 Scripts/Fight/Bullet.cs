@@ -66,7 +66,7 @@ public class Bullet : MonoBehaviour
     private void UpdateTransform()
     {
         (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _age);
-        Debug.Log("scale " + scale);
+        
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
         transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
