@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
   m_Name: Pulse Fasten
   m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
-  subTransform: {fileID: 11400000, guid: c88688e3a6dd5bb4fbc17fdb4ade10d0, type: 2}
-  subTransformPeriod:
+  period:
     curve:
-      m_Mode: 1
-      m_CurveMultiplier: 1
+      m_Mode: 0
+      m_CurveMultiplier: 0
       m_CurveMin:
         serializedVersion: 2
         m_Curve: []
@@ -25,48 +24,31 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0.8
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 0.5381965
-          value: 0.6464392
-          inSlope: -0.97709817
-          outSlope: -0.97709817
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.38652703
-        - serializedVersion: 3
-          time: 0.6624062
-          value: 0.3970959
-          inSlope: -1.0094762
-          outSlope: -1.0094762
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.3636175
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 0.3
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.5
+      m_ConstantMax: 0
+  subTransform: {fileID: 11400000, guid: c88688e3a6dd5bb4fbc17fdb4ade10d0, type: 2}
+  subPeriodOverride:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 0
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0
   forwardSpeed:
     x:
       curve:
@@ -104,7 +86,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableForwardSpeed: 0
   worldSpeed:
     x:
       curve:
@@ -142,7 +123,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableWorldSpeed: 0
   playerFollowMultiplier:
     curve:
       m_Mode: 0
@@ -161,7 +141,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disablePFM: 0
   rotationSpeed:
     curve:
       m_Mode: 0
@@ -180,7 +159,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disableRotationSpeed: 0
   scale:
     x:
       curve:
@@ -254,4 +232,3 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 1
-  disableScale: 0

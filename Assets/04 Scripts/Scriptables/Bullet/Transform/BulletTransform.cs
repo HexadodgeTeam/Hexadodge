@@ -7,21 +7,28 @@ public abstract class BulletTransform : PeriodData
              "le sous-transform oscille de taille, le résultat sera une oscillation de taille qui grandit " +
              "progressivement. Peut être vide pour pas de sous-transform.")]
     [SerializeField] internal BulletTransform subTransform;
-
-    [Header("À APPLIQUER AU TRANSFORM ENFANT")]
-    [Tooltip("OBSOLÈTE. Appliquer cette valeur au champ period du transform enfant.")]
-    [SerializeField] internal FloatCurve subTransformPeriod;
+    
+    [Tooltip("Si définie, la période du sous-transform sera override par cette période.")]
+    [SerializeField] internal FloatCurve subPeriodOverride = 0f;
     
     public abstract BulletTransformInstance Instance();
 }
 
 public abstract class BulletTransformInstance : PeriodDataInstance
 {
-    private readonly BulletTransformInstance _subInstance;
+    private readonly BulletTransformInstance _subInstance = null;
 
     protected BulletTransformInstance(BulletTransform data) : base(data)
     {
-        _subInstance = data.subTransform ? data.subTransform.Instance() : null;
+        if (data.subTransform)
+        {
+            _subInstance = data.subTransform.Instance();
+            
+            if (!data.subPeriodOverride.IsAlmostZero)
+            {
+                _subInstance.OverridePeriodInstance(data.subPeriodOverride.Instance());
+            }
+        }
     }
 
     public (Vector2 p, float r, Vector2 s) Transform(Vector2 forward, float lifetime01)
@@ -30,7 +37,8 @@ public abstract class BulletTransformInstance : PeriodDataInstance
         
         (Vector2 p, float r, Vector2 s) transform = TransformTimed(forward, period01);
         (Vector2 p, float r, Vector2 s) subTransform =
-            _subInstance?.Transform(forward, lifetime01) ?? (Vector2.zero, 0, Vector2.one);
+            _subInstance?.Transform(forward, lifetime01)
+            ?? (Vector2.zero, 0, Vector2.one);
         return (
             p: transform.p + subTransform.p,
             r: transform.r + subTransform.r,

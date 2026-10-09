@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
   m_Name: Courbe droite
   m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
+  period:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 0
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0
   subTransform: {fileID: 11400000, guid: e12b6d4fff5c63340ac5ae782f1c6d9c, type: 2}
   subTransformPeriod:
     curve:
@@ -30,7 +48,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 2
+      m_ConstantMax: 0
   forwardSpeed:
     x:
       curve:
@@ -86,7 +104,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: -1
-  disableForwardSpeed: 1
   worldSpeed:
     x:
       curve:
@@ -169,7 +186,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: -1
-  disableWorldSpeed: 0
   playerFollowMultiplier:
     curve:
       m_Mode: 0
@@ -188,7 +204,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disablePFM: 1
   rotationSpeed:
     curve:
       m_Mode: 0
@@ -207,7 +222,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disableRotationSpeed: 1
   scale:
     x:
       curve:
@@ -263,4 +277,3 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 1
-  disableScale: 1

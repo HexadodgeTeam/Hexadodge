@@ -51,7 +51,7 @@ MonoBehaviour:
   subTransform: {fileID: 11400000, guid: c88688e3a6dd5bb4fbc17fdb4ade10d0, type: 2}
   subTransformPeriod:
     curve:
-      m_Mode: 1
+      m_Mode: 0
       m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
@@ -102,7 +102,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.5
+      m_ConstantMax: 0
   forwardSpeed:
     x:
       curve:
@@ -167,7 +167,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableForwardSpeed: 0
   worldSpeed:
     x:
       curve:
@@ -205,7 +204,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableWorldSpeed: 0
   playerFollowMultiplier:
     curve:
       m_Mode: 0
@@ -224,7 +222,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disablePFM: 0
   rotationSpeed:
     curve:
       m_Mode: 0
@@ -243,7 +240,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disableRotationSpeed: 0
   scale:
     x:
       curve:
@@ -317,4 +313,3 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 1
-  disableScale: 0
