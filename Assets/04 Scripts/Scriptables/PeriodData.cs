@@ -30,9 +30,10 @@ public class PeriodDataInstance
         {
             _currentPeriod = _periodInstance.Eval(time);
             _periodStart = time;
+            period = 0f;
         }
 
-        return period;
+        return period / _currentPeriod;
     }
 
     public virtual void ReRoll()
