@@ -70,9 +70,8 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 5
-      bullets:
-      - {fileID: 11400000, guid: ce2fe44c90c56ce478fa18d9be10f569, type: 2}
+          m_ConstantMax: 1
+      bullets: []
       arc:
         curve:
           m_Mode: 0
@@ -90,5 +89,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 180
+          m_ConstantMax: 0
       direction: 1
+  animation:
+    sprite: {fileID: -8805941976036427166, guid: 34167cba5b098ef478dc2e5b9620cdeb, type: 3}

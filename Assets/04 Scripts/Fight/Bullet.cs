@@ -1,8 +1,6 @@
 using System;
 using System.Collections;
-using System.Numerics;
 using UnityEngine;
-using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
@@ -42,7 +40,7 @@ public class Bullet : MonoBehaviour
 
         _t = 0f;
         _age = 0f;
-        UpdateTransform(0f, 0f);
+        UpdateTransform();
         _lifetime = _properties.lifetime;
         _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
@@ -62,12 +60,13 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        UpdateTransform(_t, _age);
+        UpdateTransform();
     }
 
-    private void UpdateTransform(float time, float realTime)
+    private void UpdateTransform()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, time, realTime);
+        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _age);
+        
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
         transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
