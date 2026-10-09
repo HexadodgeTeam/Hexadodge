@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_MultiExplosionDefault
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  spawning: {fileID: 11400000, guid: cc03710eaaf8f404fa341744df5ae088, type: 2}
+  spawning: {fileID: 11400000, guid: e76940673ce3f7c4abf99148cfbd5c06, type: 2}
   transform: {fileID: 11400000, guid: 22f789cf0f5bcb44f80ead0aab4a71bd, type: 2}
   properties:
     lifetime:

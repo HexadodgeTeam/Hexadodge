@@ -1912,27 +1912,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key0.b
-      value: 0.25943398
+      value: 0.25882354
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key0.g
-      value: 0.24993084
+      value: 0.12627962
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key0.r
-      value: 0.08566217
+      value: 0.08627451
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key1.b
-      value: 0.1535244
+      value: 0.41037738
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key1.g
-      value: 0.3537736
+      value: 0.3669529
       objectReference: {fileID: 0}
     - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: fillGradient.key1.r
-      value: 0.1535244
+      value: 0.29423285
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

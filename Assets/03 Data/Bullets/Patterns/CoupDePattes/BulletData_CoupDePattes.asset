@@ -127,3 +127,5 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 360
       direction: 1
+  animation:
+    sprite: {fileID: 0}
