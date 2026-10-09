@@ -49,32 +49,25 @@ public class BTGeneralInstance : BulletTransformInstance
 
     public BTGeneralInstance(BTGeneral data) : base(data)
     {
-        _forwardSpeed = data.forwardSpeed.Instance(0, 0);
-        _worldSpeed = data.worldSpeed.Instance(0, 0);
-        _playerFollowMultiplier = data.playerFollowMultiplier.Instance(0);
-        _rotationSpeed = data.rotationSpeed.Instance(0);
-        _scale = data.scale.Instance(1, 1);
-        _scaleMultiplier = data.scaleMultiplier.Instance(1);
+        _forwardSpeed = data.forwardSpeed.Instance();
+        _worldSpeed = data.worldSpeed.Instance();
+        _playerFollowMultiplier = data.playerFollowMultiplier.Instance();
+        _rotationSpeed = data.rotationSpeed.Instance();
+        _scale = data.scale.Instance();
+        _scaleMultiplier = data.scaleMultiplier.Instance();
     }
 
-    protected override (Vector2, float, Vector2) TransformTimed(Vector2 forward, float time)
+    protected override (Vector2, float, Vector2) TransformTimed(Vector2 forward, float lifetime01)
     {
         Vector2 p = Vector2.zero; // Position
-        float r = !_rotationSpeed.IsDefault ? _rotationSpeed.Eval(time) * Time.fixedDeltaTime : 0f; // Rotation
-        Vector2 s = !(_scale.IsDefault && _scaleMultiplier.IsDefault) 
-            ? _scale.Eval(time) * _scaleMultiplier.Eval(time) 
-            : Vector2.one; // Scale
+        float r = _rotationSpeed.Eval(lifetime01) * Time.fixedDeltaTime; // Rotation
+        Vector2 s = _scale.Eval(lifetime01) * _scaleMultiplier.Eval(lifetime01); // Scale
 
-        if (!_forwardSpeed.IsDefault)
-        {
-            Vector2 right = new(forward.y, forward.x);
-            Vector2 velocity = _forwardSpeed.Eval(time);
-            p += forward * (velocity.x * Time.fixedDeltaTime) + right * (velocity.y * Time.fixedDeltaTime);
-        }
-        if (!_worldSpeed.IsDefault)
-            p += _worldSpeed.Eval(time) * Time.fixedDeltaTime;
-        if (!_playerFollowMultiplier.IsDefault) 
-            p += Player.Delta * _playerFollowMultiplier.Eval(time);
+        Vector2 right = new(forward.y, forward.x);
+        Vector2 velocity = _forwardSpeed.Eval(lifetime01);
+        p += forward * (velocity.x * Time.fixedDeltaTime) + right * (velocity.y * Time.fixedDeltaTime);
+        p += _worldSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
+        p += Player.Delta * _playerFollowMultiplier.Eval(lifetime01);
         
         return (p, r, s);
     }

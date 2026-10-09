@@ -24,20 +24,20 @@ public abstract class BulletTransformInstance : PeriodDataInstance
         _subInstance = data.subTransform ? data.subTransform.Instance() : null;
     }
 
-    public (Vector2 p, float r, Vector2 s) Transform(Vector2 forward, float time)
+    public (Vector2 p, float r, Vector2 s) Transform(Vector2 forward, float lifetime01)
     {
-        float period = GetPeriod(time);
+        float period01 = GetPeriod(lifetime01);
         
-        (Vector2 p, float r, Vector2 s) transform = TransformTimed(forward, period);
+        (Vector2 p, float r, Vector2 s) transform = TransformTimed(forward, period01);
         (Vector2 p, float r, Vector2 s) subTransform =
-            _subInstance?.Transform(forward, time) ?? (Vector2.zero, 0, Vector2.one);
+            _subInstance?.Transform(forward, lifetime01) ?? (Vector2.zero, 0, Vector2.one);
         return (
             p: transform.p + subTransform.p,
             r: transform.r + subTransform.r,
             s: new Vector2(transform.s.x * subTransform.s.x, transform.s.y * subTransform.s.y));
     }
 
-    protected abstract (Vector2 p, float r, Vector2 s) TransformTimed(Vector2 forward, float time);
+    protected abstract (Vector2 p, float r, Vector2 s) TransformTimed(Vector2 forward, float lifetime01);
 
     public override void ReRoll()
     {

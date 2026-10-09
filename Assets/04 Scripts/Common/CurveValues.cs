@@ -34,12 +34,8 @@ public struct FloatCurve
         ParticleSystemCurveMode.TwoConstants => Mathf.Abs(curve.constantMax - curve.constantMin),
         _ => throw new ArgumentOutOfRangeException()
     };
-    public bool IsDefault(float defaultValue)
-    {
-        return curve.mode == ParticleSystemCurveMode.Constant && curve.constant == defaultValue;
-    }
-    public float Default => curve.constant;
-    public bool ParentPeriod => curve.mode == ParticleSystemCurveMode.Constant && curve.constant == -1f;
+
+    public bool IsAlmostZero => curve.mode == ParticleSystemCurveMode.Constant && curve.constant <= 0.01;
 
     public (float, float) GetAngleRange() => curve.mode switch
     {
@@ -51,30 +47,29 @@ public struct FloatCurve
     public static implicit operator FloatCurve(float constant) => new(constant);
     public static implicit operator FloatCurve(ParticleSystem.MinMaxCurve curve) => new(curve);
 
-    public FloatCurveInstance Instance(float defaultValue) => new(this, defaultValue);
+    public FloatCurveInstance Instance() => new(this);
 }
 
 public struct FloatCurveInstance
 {
-    private const float Default = -1f;
     private FloatCurve _curve;
     private float _random;
 
-    public FloatCurveInstance(FloatCurve curve, float defaultValue)
+    public FloatCurveInstance(FloatCurve curve)
     {
         _curve = curve;
-        _random = curve.IsDefault(defaultValue) ? Default : Random.value;
+        _random = Random.value;
     }
 
     
     public float Eval(float time)
     {
-        return IsDefault ? _curve.Default : _curve.Eval(time, _random);
+        return _curve.Eval(time, _random);
     }
-    public bool IsDefault => _random == Default;
-    public bool ParentPeriod => _curve.ParentPeriod;
 
     public void ReRoll() => _random = Random.value;
+
+    public bool IsAlmostZero => _curve.IsAlmostZero;
         
     public static implicit operator float(FloatCurveInstance curveInstance) => curveInstance.Eval(1f);
 }
@@ -107,35 +102,27 @@ public struct IntCurve
 
         return Mathf.RoundToInt(curve.Evaluate(time, lerpFactor));
     }
-    public bool IsDefault(float defaultValue)
-    {
-        return curve.mode == ParticleSystemCurveMode.Constant && curve.constant == defaultValue;
-    }
-    public int Default => Mathf.RoundToInt(curve.constant);
 
     public static implicit operator IntCurve(int constant) => new(constant);
     public static implicit operator IntCurve(ParticleSystem.MinMaxCurve curve) => new(curve);
 
-    public IntCurveInstance Instance(float defaultValue) => new(this, defaultValue);
+    public IntCurveInstance Instance() => new(this);
 }
 
 public struct IntCurveInstance
 {
-    private const float Default = -1f;
     private IntCurve _curve;
     private float _random;
 
-    public IntCurveInstance(IntCurve curve, float defaultValue)
+    public IntCurveInstance(IntCurve curve)
     {
         _curve = curve;
-        _random = curve.IsDefault(defaultValue) ? Default : Random.value;
+        _random = Random.value;
     }
-    
-    public bool IsDefault => _random == Default;
     
     public int Eval(float time)
     {
-        return IsDefault ? _curve.Default : _curve.Eval(time, _random);
+        return _curve.Eval(time, _random);
     }
 
     public void ReRoll() => _random = Random.value;
@@ -171,7 +158,7 @@ public struct Vector2Curve
     
     public static implicit operator Vector2Curve(Vector2 vector2) => new(vector2.x, vector2.y);
 
-    public Vector2CurveInstance Instance(float defaultX, float defaultY) => new(this, defaultX, defaultY);
+    public Vector2CurveInstance Instance() => new(this);
 }
 
 public struct Vector2CurveInstance
@@ -179,13 +166,11 @@ public struct Vector2CurveInstance
     private FloatCurveInstance _curveX;
     private FloatCurveInstance _curveY;
     
-    public Vector2CurveInstance(Vector2Curve curve, float defaultX, float defaultY)
+    public Vector2CurveInstance(Vector2Curve curve)
     {
-        _curveX = curve.x.Instance(defaultX);
-        _curveY = curve.y.Instance(defaultY);
+        _curveX = curve.x.Instance();
+        _curveY = curve.y.Instance();
     }
-    
-    public bool IsDefault => _curveX.IsDefault && _curveY.IsDefault;
     
     public Vector2 Eval(float time) => new(_curveX.Eval(time), _curveY.Eval(time));
 
