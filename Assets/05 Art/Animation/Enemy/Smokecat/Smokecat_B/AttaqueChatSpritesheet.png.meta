@@ -447,6 +447,72 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 170f41efc6899fc41813f372ac8c5181
+      internalID: -1418753882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fdd9f6b541c3844b816ba8f2b409669
+      internalID: -1211930148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AttaqueChatSpritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1d0f6f8cef32be4ba9ec74145c811a5
+      internalID: -889535322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -467,6 +533,9 @@ TextureImporter:
       AttaqueChatSpritesheet_1: -3689115988689063291
       AttaqueChatSpritesheet_10: -2881380700191129523
       AttaqueChatSpritesheet_11: -6569688818407739400
+      AttaqueChatSpritesheet_12: -1418753882
+      AttaqueChatSpritesheet_13: -1211930148
+      AttaqueChatSpritesheet_14: -889535322
       AttaqueChatSpritesheet_2: -7157037401003763241
       AttaqueChatSpritesheet_3: 5165955226933090522
       AttaqueChatSpritesheet_4: -4620259140612739780
