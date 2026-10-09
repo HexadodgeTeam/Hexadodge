@@ -48,7 +48,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 2
+      m_ConstantMax: 0
   forwardSpeed:
     x:
       curve:
@@ -104,7 +104,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: -1
-  disableForwardSpeed: 1
   worldSpeed:
     x:
       curve:
@@ -187,7 +186,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: -1
-  disableWorldSpeed: 0
   playerFollowMultiplier:
     curve:
       m_Mode: 0
@@ -206,7 +204,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disablePFM: 1
   rotationSpeed:
     curve:
       m_Mode: 0
@@ -225,7 +222,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disableRotationSpeed: 1
   scale:
     x:
       curve:
@@ -281,4 +277,3 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 1
-  disableScale: 1

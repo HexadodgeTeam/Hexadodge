@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
   m_Name: "BulletTransform_Laser_Arraign\xE9e_Rotation"
   m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
+  period:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 0
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0
   subTransform: {fileID: 11400000, guid: d33b19acbab89e341978e75784f3f3ca, type: 2}
   subTransformPeriod:
     curve:
@@ -30,7 +48,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 2
+      m_ConstantMax: 0
   forwardSpeed:
     x:
       curve:
@@ -68,7 +86,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableForwardSpeed: 1
   worldSpeed:
     x:
       curve:
@@ -106,7 +123,6 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  disableWorldSpeed: 1
   playerFollowMultiplier:
     curve:
       m_Mode: 0
@@ -125,7 +141,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  disablePFM: 1
   rotationSpeed:
     curve:
       m_Mode: 3
@@ -198,7 +213,6 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 100
       m_ConstantMax: -100
-  disableRotationSpeed: 0
   scale:
     x:
       curve:
@@ -308,4 +322,3 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 1
-  disableScale: 1

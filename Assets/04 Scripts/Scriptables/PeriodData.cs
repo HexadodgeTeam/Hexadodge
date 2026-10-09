@@ -17,10 +17,15 @@ public class PeriodDataInstance
 
     protected PeriodDataInstance(PeriodData data)
     {
-        _getLifetimeInsteadOfPeriod = _periodInstance.IsAlmostZero;
         _periodInstance = data.period.Instance();
-        _currentPeriod = _periodInstance.Eval(0f);
+        _getLifetimeInsteadOfPeriod = _periodInstance.IsAlmostZero;
+        if (!_getLifetimeInsteadOfPeriod) _currentPeriod = _periodInstance.Eval(0f);
         _periodStart = Time.time;
+    }
+
+    protected void OverridePeriodInstance(FloatCurveInstance periodInstance)
+    {
+        _periodInstance = periodInstance;
     }
 
     protected float GetPeriod(float lifetime01)

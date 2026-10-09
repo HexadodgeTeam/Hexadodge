@@ -6,6 +6,7 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     [SerializeField] private BulletData bulletData;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private int maxBulletCount = 30;
+    [SerializeField] private bool debugModifyOnPlay = false;
     [SerializeField] private bool debugOneAtATime = false;
     
     [Header("References")]
