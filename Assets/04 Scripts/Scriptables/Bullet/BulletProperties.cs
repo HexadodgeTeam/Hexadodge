@@ -65,10 +65,10 @@ public class BulletPropertiesInstance
 
     public BulletPropertiesInstance(BulletProperties data)
     {
-        lifetime = data.lifetime.Instance(5f);
-        impactPower = data.impactPower.Instance(1);
-        explosionBulletCount = data.explosion.bulletCount.Instance(0);
-        explosionArc = data.explosion.arc.Instance(360);
+        lifetime = data.lifetime.Instance();
+        impactPower = data.impactPower.Instance();
+        explosionBulletCount = data.explosion.bulletCount.Instance();
+        explosionArc = data.explosion.arc.Instance();
     }
 
     public void ReRoll()

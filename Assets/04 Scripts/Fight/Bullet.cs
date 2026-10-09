@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour
 
     private void UpdateTransform()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _age);
+        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _t);
         
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);

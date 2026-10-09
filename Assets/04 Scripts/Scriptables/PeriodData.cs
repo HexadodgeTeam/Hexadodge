@@ -10,26 +10,28 @@ public abstract class PeriodData : ScriptableObject
 
 public class PeriodDataInstance
 {
+    private readonly bool _getLifetimeInsteadOfPeriod;
     private FloatCurveInstance _periodInstance;
     private float _periodStart;
     private float _currentPeriod;
 
     protected PeriodDataInstance(PeriodData data)
     {
-        _periodInstance = data.period.Instance(0f);
+        _getLifetimeInsteadOfPeriod = _periodInstance.IsAlmostZero;
+        _periodInstance = data.period.Instance();
         _currentPeriod = _periodInstance.Eval(0f);
-        _periodStart = 0f;
+        _periodStart = Time.time;
     }
 
-    protected float GetPeriod(float time)
+    protected float GetPeriod(float lifetime01)
     {
-        if (_periodInstance.IsDefault) return time;
+        if (_getLifetimeInsteadOfPeriod) return lifetime01;
         
-        float period = time - _periodStart;
+        float period = Time.time - _periodStart;
         if (period >= _currentPeriod)
         {
-            _currentPeriod = _periodInstance.Eval(time);
-            _periodStart = time;
+            _currentPeriod = _periodInstance.Eval(lifetime01);
+            _periodStart = Time.time;
             period = 0f;
         }
 
