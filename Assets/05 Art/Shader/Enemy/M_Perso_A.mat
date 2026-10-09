@@ -68,17 +68,17 @@ Material:
     - _Color_B_Light: {r: 0.18431373, g: 0.4784314, b: 0.18039216, a: 1}
     - _Color_B_Line: {r: 0.41960788, g: 0.8235295, b: 0.56078434, a: 1}
     - _Color_B_Shadow: {r: 0.2901961, g: 0.4784314, b: 0.44705886, a: 1}
-    - _Color_C_Light: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_C_Light: {r: 0.9716981, g: 0.55460125, b: 0.84265345, a: 1}
     - _Color_C_Line: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_C_Shadow: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_D_Light: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_D_Line: {r: 0, g: 0, b: 0, a: 1}
-    - _Color_D_Shadow: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_C_Shadow: {r: 0.8928024, g: 0.34242615, b: 0.8962264, a: 1}
+    - _Color_D_Light: {r: 0.8867924, g: 0.13803846, b: 0.69062954, a: 1}
+    - _Color_D_Line: {r: 0.9245283, g: 0.58873266, b: 0.86574817, a: 1}
+    - _Color_D_Shadow: {r: 0.8301887, g: 0.3250267, b: 0.8040862, a: 1}
     - _Color_EXTRA: {r: 0, g: 0, b: 0, a: 1}
     - _Color_E_Light: {r: 0, g: 0, b: 0, a: 1}
     - _Color_E_Line: {r: 0.1137255, g: 0.56078434, b: 0.15294118, a: 1}
     - _Color_E_Shadow: {r: 1, g: 1, b: 1, a: 1}
-    - _Color_F_Light: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_F_Light: {r: 1, g: 0.48584908, b: 0.48584908, a: 1}
     - _Color_F_Line: {r: 0, g: 0, b: 0, a: 1}
     - _Color_F_Shadow: {r: 0, g: 0, b: 0, a: 1}
     - _Color_LINEEARTS: {r: 0, g: 0, b: 0, a: 1}
