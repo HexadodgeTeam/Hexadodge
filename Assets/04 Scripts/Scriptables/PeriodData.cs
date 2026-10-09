@@ -28,7 +28,7 @@ public class PeriodDataInstance
         _periodInstance = periodInstance;
     }
 
-    protected float GetPeriod(float lifetime01)
+    protected float GetPeriod01(float lifetime01)
     {
         if (_getLifetimeInsteadOfPeriod) return lifetime01;
         

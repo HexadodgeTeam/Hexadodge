@@ -56,17 +56,22 @@ public class BTGeneralInstance : BulletTransformInstance
         _scale = data.scale.Instance();
         _scaleMultiplier = data.scaleMultiplier.Instance();
     }
-
-    protected override (Vector2, float, Vector2) TransformTimed(Vector2 forward, float lifetime01)
+    
+    protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01)
     {
-        Vector2 p = Vector2.zero; // Position
-        float r = _rotationSpeed.Eval(lifetime01) * Time.fixedDeltaTime; // Rotation
-        Vector2 s = _scale.Eval(lifetime01) * _scaleMultiplier.Eval(lifetime01); // Scale
+        // Position
+        Vector2 p = Vector2.zero;
+        float rotSign = mirror.x != mirror.y ? -1 : 1;
+        // Rotation
+        float r = _rotationSpeed.Eval(lifetime01) * Time.fixedDeltaTime * rotSign;
+        // Scale
+        Vector2 s = _scale.Eval(lifetime01) * _scaleMultiplier.Eval(lifetime01);
 
         Vector2 right = new(forward.y, forward.x);
         Vector2 velocity = _forwardSpeed.Eval(lifetime01);
-        p += forward * (velocity.x * Time.fixedDeltaTime) + right * (velocity.y * Time.fixedDeltaTime);
-        p += _worldSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
+        p += forward * (velocity.x * Time.fixedDeltaTime) + right * (velocity.y * Time.fixedDeltaTime); 
+        Vector2 worldSpeed = _worldSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
+        p += new Vector2(worldSpeed.x * (mirror.x ? -1 : 1), worldSpeed.y * (mirror.y ? -1 : 1));
         p += Player.Delta * _playerFollowMultiplier.Eval(lifetime01);
         
         return (p, r, s);

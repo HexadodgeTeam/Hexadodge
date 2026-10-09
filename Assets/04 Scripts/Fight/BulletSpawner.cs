@@ -3,14 +3,10 @@ using UnityEngine;
 public class BulletSpawner : MonoBehaviour, IBulletSpawner
 {
     [Header("Parameters")]
-    [SerializeField] private BulletData bulletData;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private int maxBulletCount = 30;
-    [SerializeField] private bool debugModifyOnPlay = false;
-    [SerializeField] private bool debugOneAtATime = false;
     
     [Header("References")]
-    [SerializeField] private MoveBox moveBox;
     [SerializeField] private Bullet bulletPrefab;
 
     private Pool<Bullet> _pool;
@@ -25,9 +21,9 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
     {
         _bulletSpawnTimer += Time.deltaTime;
         
-        if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
+        if (_bulletSpawnTimer >= bulletSpawnInterval && !(_pool.Count > 0))
         {
-            bulletData.spawning.Spawn(this, 1f);
+            // TODO bulletData.spawning.Spawn(this, 1f);
             _bulletSpawnTimer -= bulletSpawnInterval;
         }
     }
@@ -42,14 +38,9 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
         Destroy(bullet.gameObject);
     }
 
-    public void SpawnBullet(Vector3 position, float rotation)
+    public void SpawnBullet(BulletData bulletData, Vector3 position, float rotation, (bool, bool) mirror)
     {
         Bullet bullet = _pool.Spawn(position, rotation);
-        if (bullet) bullet.Init(_pool, bulletData);
-    }
-
-    private void OnDrawGizmos()
-    {
-        bulletData.spawning.OnDrawGizmos();
+        if (bullet) bullet.Init(_pool, bulletData, mirror);
     }
 }
