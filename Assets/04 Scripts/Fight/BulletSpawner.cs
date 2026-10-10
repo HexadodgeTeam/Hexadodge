@@ -1,34 +1,42 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour, IBulletSpawner
 {
     [Header("Parameters")]
-    [SerializeField] private BulletData bulletData;
+    [SerializeField] private BulletPattern bulletPattern;
     [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private int maxBulletCount = 30;
-    [SerializeField] private bool debugModifyOnPlay = false;
-    [SerializeField] private bool debugOneAtATime = false;
+    [SerializeField] private float basePeriod = 5f;
     
     [Header("References")]
-    [SerializeField] private MoveBox moveBox;
     [SerializeField] private Bullet bulletPrefab;
 
     private Pool<Bullet> _pool;
+    private BulletPatternInstance _bulletPatternInstance;
     private float _bulletSpawnTimer = 0f;
+    private readonly List<(BulletData, Vector2, float, (bool, bool))> _spawns = new();
 
     private void Awake()
     {
         _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, maxBulletCount);
+        _bulletPatternInstance = bulletPattern.Instance();
     }
 
     private void Update()
     {
         _bulletSpawnTimer += Time.deltaTime;
         
-        if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
+        _bulletPatternInstance.GetSpawns(_spawns, _bulletSpawnTimer / basePeriod);
+        foreach ((BulletData b, Vector2 p, float r, (bool, bool) mirror) in _spawns)
         {
-            bulletData.spawning.Spawn(this, 1f);
-            _bulletSpawnTimer -= bulletSpawnInterval;
+            SpawnBullet(b, p, r, mirror);
+        }
+        _spawns.Clear();
+            
+        if (_bulletSpawnTimer >= basePeriod)
+        {
+            _bulletSpawnTimer = 0f;
         }
     }
 
@@ -42,14 +50,9 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
         Destroy(bullet.gameObject);
     }
 
-    public void SpawnBullet(Vector3 position, float rotation)
+    public void SpawnBullet(BulletData bulletData, Vector3 position, float rotation, (bool, bool) mirror)
     {
         Bullet bullet = _pool.Spawn(position, rotation);
-        if (bullet) bullet.Init(_pool, bulletData);
-    }
-
-    private void OnDrawGizmos()
-    {
-        bulletData.spawning.OnDrawGizmos();
+        if (bullet) bullet.Init(_pool, bulletData, mirror);
     }
 }

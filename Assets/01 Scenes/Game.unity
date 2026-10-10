@@ -119,17 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!114 &5835082 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6657465930348951567, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
-  m_PrefabInstance: {fileID: 1554254745419700318}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c001ff1fba791488bc3f3f2482333d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &442857269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8221506045613954063, guid: f7175472cf2782745a32862958a17728, type: 3}
@@ -464,11 +453,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 677cb7e0f06ce574c9ab921c40f92b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  bulletData: {fileID: 11400000, guid: 195a7e15e465fe44ead22ee163717c81, type: 2}
+  bulletPattern: {fileID: 11400000, guid: 3ccbe8308bb5e6e48b594e3f9f606635, type: 2}
   bulletSpawnInterval: 0.6
   maxBulletCount: 100
-  debugOneAtATime: 0
-  moveBox: {fileID: 5835082}
+  basePeriod: 8
   bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
 --- !u!1 &821407478
 GameObject:
@@ -1236,6 +1224,14 @@ PrefabInstance:
     - target: {fileID: 1187209543658767809, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_Pivot.x

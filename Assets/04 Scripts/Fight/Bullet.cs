@@ -19,10 +19,13 @@ public class Bullet : MonoBehaviour
     private float _lifetime;
     private float _t;
     private Coroutine _releaseRoutine;
+    
+    // Bullet pattern variables.
+    private (bool x, bool y) _mirror;
 
-    public void Init(Pool<Bullet> pool, BulletData data)
+    public void Init(Pool<Bullet> pool, BulletData data, (bool x, bool y) mirror)
     {
-        if (_data == data)
+        if (!BulletTester.ModifyOnPlay && _data == data)
         {
             // If same data was already present on pooled object, just re-roll random values.
             _properties.ReRoll();
@@ -33,11 +36,12 @@ public class Bullet : MonoBehaviour
             // If no data or different, instance fields.
             _data = data;
             _properties = _data.properties.Instance();
-            _transform = _data.transform.Instance();
+            _transform = _data.transform?.Instance();
             _pool = pool;
             if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;
         }
 
+        _mirror = mirror;
         _t = 0f;
         _age = 0f;
         UpdateTransform();
@@ -65,7 +69,8 @@ public class Bullet : MonoBehaviour
 
     private void UpdateTransform()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(transform.right, _t);
+        (Vector2 position, float rotation, Vector2 scale) = _transform?.Transform(_mirror, transform.right, _t)
+                                                            ?? (Vector2.zero, 0f, Vector2.one);
         
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
@@ -97,7 +102,7 @@ public class Bullet : MonoBehaviour
             Bullet bullet = _pool.Spawn(transform.position, rotation);
             if (bullet) bullet.Init(_pool, _data.properties.explosion.bullets.Length > 0
                 ? _data.properties.explosion.bullets.RandomElement()
-                : _data);
+                : _data, (false, false));
         }
     }
 
