@@ -1815,10 +1815,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Template
       objectReference: {fileID: 0}
-    - target: {fileID: 7280712666256111870, guid: 2a3bde127a80da045b225031401f3240, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1887,60 +1883,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2562194563750654527, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8258237376356356600}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
 --- !u!114 &8258237376356356593 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3977327151515039948, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
   m_PrefabInstance: {fileID: 8258237376356356592}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258237376356356594}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c6c4e3eb57941f385243903a5b695a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInputHandler
---- !u!1 &8258237376356356594 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2562194563750654527, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-  m_PrefabInstance: {fileID: 8258237376356356592}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8258237376356356599 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
   m_PrefabInstance: {fileID: 8258237376356356592}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258237376356356594}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 078f8231ec4848d782df1bb5efc79545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
---- !u!95 &8258237376356356600
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8258237376356356594}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e94f7e696025fbd478d44bcecbcd65dc, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8516059183163520187
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1938711084967713150}
   - component: {fileID: 3977327151515039948}
   - component: {fileID: 5599694054019429399}
+  - component: {fileID: 4784320591457263705}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ed3a4018311424aa537a385e55a09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  playerAnimator: {fileID: 4784320591457263705}
   data:
     MaxHealth: 3
     InvincibilityCooldown: 1
@@ -273,6 +275,28 @@ MonoBehaviour:
   m_DefaultActionMap: Game
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &4784320591457263705
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562194563750654527}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e94f7e696025fbd478d44bcecbcd65dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3202828394773669448
 GameObject:
   m_ObjectHideFlags: 0
