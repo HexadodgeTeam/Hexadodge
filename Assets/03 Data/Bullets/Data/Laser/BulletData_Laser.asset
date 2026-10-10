@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_Laser
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  spawning: {fileID: 11400000, guid: 94a74c13fb99fba4d8495901aa4055f2, type: 2}
   transform: {fileID: 11400000, guid: ef258ffd079607b42b2f00f7857c11d3, type: 2}
   properties:
     lifetime:
@@ -91,3 +90,5 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 180
       direction: 1
+  animation:
+    sprite: {fileID: -8156265321633315653, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
