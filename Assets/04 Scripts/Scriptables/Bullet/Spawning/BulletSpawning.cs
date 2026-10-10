@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public abstract class BulletSpawning : ScriptableObject
+public abstract class BulletSpawning : PeriodData
 {
-    public abstract void Spawn(IBulletSpawner spawner, float time);
+    public abstract (Vector2 p, float r)? GetSpawn(float time, (bool x, bool y) mirror);
     
     public abstract void OnDrawGizmos();
 }

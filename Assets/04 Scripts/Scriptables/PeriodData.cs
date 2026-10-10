@@ -3,7 +3,7 @@ using UnityEngine;
 public abstract class PeriodData : ScriptableObject
 {
     [Tooltip("Toutes les autres curves sur ce scriptable bouclent sur cette durée en secondes.\n" +
-             "/!\\ Cette curve dépend donc de la période du scriptable parent.\n" +
+             "/!\\ Cette curve dépend donc de la durée de vie du scriptable.\n" +
              "Si = 0 : toutes les curves du scriptable dépendent de la durée de vie du scriptable.\n")]
     [SerializeField] internal FloatCurve period;
 }
@@ -28,7 +28,7 @@ public class PeriodDataInstance
         _periodInstance = periodInstance;
     }
 
-    protected float GetPeriod(float lifetime01)
+    protected float GetPeriod01(float lifetime01)
     {
         if (_getLifetimeInsteadOfPeriod) return lifetime01;
         
