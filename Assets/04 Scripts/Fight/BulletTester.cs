@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class BulletTester : MonoBehaviour, IBulletSpawner
 {
@@ -8,9 +9,10 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
     [Header("Parameters")]
     [Tooltip("Scriptable à tester. Peut être BulletData.")]
     [SerializeField] private ScriptableObject testData;
-    //[SerializeField] private float basePeriod = 5f;
+    [SerializeField] private float basePeriod = 5f;
     [SerializeField] private int maxBulletCount = 30;
     [SerializeField] private bool debugOneAtATime = false;
+    [SerializeField] private InputAction reset;
     
     [Header("BulletData")]
     [SerializeField] private float bulletSpawnInterval = 0.3f;
@@ -25,18 +27,28 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
     private Pool<Bullet> _pool;
     private float _bulletSpawnTimer = 0f;
     private BulletPatternInstance _bulletPatternInstance;
-    private readonly List<(BulletData b, Vector2, float)> _spawns = new();
+    private readonly List<(BulletData, Vector2, float, (bool, bool))> _spawns = new();
 
     private void Awake()
     {
         ModifyOnPlay = true;
         _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, maxBulletCount);
+        Refresh();
+        reset.Enable();
+    }
+
+    private void Refresh()
+    {
         if (testData is BulletPattern bulletPattern)
             _bulletPatternInstance = bulletPattern.Instance();
     }
 
     private void Update()
     {
+        if (reset.WasPressedThisFrame())
+        {
+            Refresh();
+        }
         if (testData is BulletData bulletData)
         {
             _bulletSpawnTimer += Time.deltaTime;
@@ -47,18 +59,20 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
                 _bulletSpawnTimer -= bulletSpawnInterval;
             }
         }
-        else if (testData is BulletPattern bulletPattern)
+        else if (testData is BulletPattern)
         {
             _bulletSpawnTimer += Time.deltaTime;
         
-            _bulletPatternInstance.GetSpawns(_spawns, _bulletSpawnTimer / bulletSpawnInterval);
-            foreach ((BulletData b, Vector2 p, float r) in _spawns)
+            _bulletPatternInstance.GetSpawns(_spawns, _bulletSpawnTimer / basePeriod);
+            foreach ((BulletData b, Vector2 p, float r, (bool, bool) mirror) in _spawns)
             {
-                //SpawnBullet(bulletData, p, r, );
+                SpawnBullet(b, p, r, mirror);
             }
-            if (_bulletSpawnTimer >= bulletSpawnInterval)
+            _spawns.Clear();
+            
+            if (_bulletSpawnTimer >= basePeriod)
             {
-                _bulletSpawnTimer -= bulletSpawnInterval;
+                _bulletSpawnTimer = 0f;
             }
         }
     }

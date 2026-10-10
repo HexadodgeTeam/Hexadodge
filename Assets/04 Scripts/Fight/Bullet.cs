@@ -36,7 +36,7 @@ public class Bullet : MonoBehaviour
             // If no data or different, instance fields.
             _data = data;
             _properties = _data.properties.Instance();
-            _transform = _data.transform.Instance();
+            _transform = _data.transform?.Instance();
             _pool = pool;
             if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;
         }
@@ -69,7 +69,8 @@ public class Bullet : MonoBehaviour
 
     private void UpdateTransform()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform.Transform(_mirror, transform.right, _t);
+        (Vector2 position, float rotation, Vector2 scale) = _transform?.Transform(_mirror, transform.right, _t)
+                                                            ?? (Vector2.zero, 0f, Vector2.one);
         
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);

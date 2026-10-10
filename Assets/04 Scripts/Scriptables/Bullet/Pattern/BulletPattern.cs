@@ -32,7 +32,7 @@ public class BulletPatternInstance : PeriodDataInstance
         _throwIntervalInstance = data.throwInterval.Instance();
     }
 
-    public void GetSpawns(in List<(BulletData b, Vector2 p, float r)> spawns, float time)
+    public void GetSpawns(in List<(BulletData b, Vector2 p, float r, (bool x, bool y) mirror)> spawns, float time)
     {
         if (_throwTimer > 0f)
         {
@@ -42,7 +42,9 @@ public class BulletPatternInstance : PeriodDataInstance
         {
             foreach (BulletThrowInstance bulletThrow in _bulletThrowInstances)
             {
-                bulletThrow.GetSpawn(spawns, time);
+                (BulletData b, Vector2 p, float r, (bool x, bool y) mirror)? spawn = bulletThrow.GetSpawn(time);
+                if (spawn.HasValue)
+                    spawns.Add(spawn.Value);
             }
             float period01 = GetPeriod01(time);
             _throwTimer = _throwIntervalInstance.Eval(period01);
@@ -77,12 +79,14 @@ public class BulletThrowInstance
         _data = data;
     }
 
-    public void GetSpawn(in List<(BulletData b, Vector2 p, float r)> spawns, float time)
+    public (BulletData b, Vector2 p, float r, (bool x, bool y) mirror)? GetSpawn(float time)
     {
         (Vector2 p, float r)? spawn = _data.spawn.GetSpawn(time, (_data.mirrorX, _data.mirrorY));
         if (spawn.HasValue)
         {
-            spawns.Add((_data.bullet, spawn.Value.p, spawn.Value.r));
+            return (_data.bullet, spawn.Value.p, spawn.Value.r, (_data.mirrorX, _data.mirrorY));
         }
+
+        return null;
     }
 }

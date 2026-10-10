@@ -362,9 +362,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 83943f1471dc32a4fa5a5d01af6b3afd, type: 2}
-  maxBulletCount: 30
+  testData: {fileID: 11400000, guid: 3ccbe8308bb5e6e48b594e3f9f606635, type: 2}
+  basePeriod: 10
+  maxBulletCount: 100
   debugOneAtATime: 1
+  reset:
+    m_Name: Reset
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9b7e5ee4-2d46-4b46-b8b7-ef0489bb7766
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: d688a2f9-de2c-4748-94ad-ffd4a0900569
+      m_Path: <Keyboard>/r
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Reset
+      m_Flags: 0
+    m_Flags: 0
   bulletSpawnInterval: 1
   bulletSpawnPos: {x: -2.04, y: 0.95, z: 0}
   bulletRotation: -22.13
