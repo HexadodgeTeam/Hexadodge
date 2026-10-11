@@ -214,8 +214,10 @@ public class FillGrid : MonoBehaviour
 
     #region Emptying
 
-    public void EmptyAt(Vector3Int cell)
+    public void Empty()
     {
+        foreach (var (_, coroutine) in _activeGlows) StopCoroutine(coroutine);
+        foreach (var (_, coroutine) in _capillarityRoutines) StopCoroutine(coroutine);
         _activeGlows.Clear();
         _capillarityRoutines.Clear();
         FilledTileCount = 0;

@@ -15,7 +15,7 @@ public class BSPosition : BulletSpawning
              "Si activé, les deux tableaux doivent avoir le même nombre d'éléments.")]
     [SerializeField] private bool pairPositionWithRotation;
 
-    public override (Vector2 p, float r)? GetSpawn(float time, (bool x, bool y) mirror)
+    public override (Vector2 p, float r)? GetSpawn(float time01, (bool x, bool y) mirror)
     {
         if (pairPositionWithRotation && positions.Length != rotations.Length)
         {
@@ -26,9 +26,9 @@ public class BSPosition : BulletSpawning
         int randomPosIndex = Random.Range(0, positions.Length);
         int randomRotIndex = pairPositionWithRotation ? randomPosIndex : Random.Range(0, rotations.Length);
 
-        Vector3 position = positions[randomPosIndex].Eval(time, Random.value, Random.value);
+        Vector3 position = positions[randomPosIndex].Eval(time01, Random.value, Random.value);
         float rotation = rotations.Length > 0
-            ? rotations[randomRotIndex].Eval(time, Random.value)
+            ? rotations[randomRotIndex].Eval(time01, Random.value)
             : Random.Range(0f, 360f);
 
         if (mirror.x) rotation = 180 - rotation;

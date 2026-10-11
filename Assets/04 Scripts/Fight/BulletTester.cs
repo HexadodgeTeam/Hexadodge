@@ -1,20 +1,23 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class BulletTester : MonoBehaviour, IBulletSpawner
+public class BulletTester : MonoBehaviour
 {
     public static bool ModifyOnPlay = false;
     
     [Header("Parameters")]
-    [Tooltip("Scriptable à tester. Peut être BulletData.")]
+    [Tooltip("Scriptable à tester. Peut être BulletData, BulletPattern, PatternSequence, FightPhase ou FightData.")]
     [SerializeField] private ScriptableObject testData;
     [SerializeField] private float basePeriod = 5f;
     [SerializeField] private int maxBulletCount = 30;
     [SerializeField] private bool debugOneAtATime = false;
     [SerializeField] private InputAction reset;
+
+    [Header("If not FightData")]
+    [SerializeField] private EnemyData enemyData;
     
-    [Header("BulletData")]
+    [Header("If BulletData")]
     [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private Vector3 bulletSpawnPos;
     [SerializeField] private float bulletRotation;
@@ -23,24 +26,48 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
     
     [Header("References")]
     [SerializeField] private Bullet bulletPrefab;
+    [SerializeField] private Enemy enemy;
 
     private Pool<Bullet> _pool;
     private float _bulletSpawnTimer = 0f;
     private BulletPatternInstance _bulletPatternInstance;
-    private readonly List<(BulletData, Vector2, float, (bool, bool))> _spawns = new();
+    private PatternSequenceInstance _patternSequenceInstance;
+    private FightPhaseInstance _fightPhaseInstance;
+    private FightDataInstance _fightInstance;
 
     private void Awake()
     {
         ModifyOnPlay = true;
         _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, maxBulletCount);
+    }
+
+    private void Start()
+    {
         Refresh();
         reset.Enable();
+        
+        if (testData is FightData fightData) enemy.Init(fightData.enemy);
+        else enemy.Init(enemyData);
     }
 
     private void Refresh()
     {
-        if (testData is BulletPattern bulletPattern)
-            _bulletPatternInstance = bulletPattern.Instance();
+        switch (testData)
+        {
+            case BulletPattern bulletPattern:
+                _bulletPatternInstance = bulletPattern.Instance(SpawnBullet);
+                break;
+            case PatternSequence patternSequence:
+                _patternSequenceInstance = patternSequence.Instance(SpawnBullet);
+                break;
+            case FightPhase fightPhase:
+                _fightPhaseInstance = fightPhase.Instance(SpawnBullet);
+                _fightPhaseInstance.Start();
+                break;
+            case FightData fightData:
+                _fightInstance = fightData.Instance(SpawnBullet);
+                break;
+        }
     }
 
     private void Update()
@@ -49,31 +76,43 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
         {
             Refresh();
         }
-        if (testData is BulletData bulletData)
+
+        switch (testData)
         {
-            _bulletSpawnTimer += Time.deltaTime;
+            case BulletData bulletData:
+                _bulletSpawnTimer += Time.deltaTime;
         
-            if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
-            {
-                SpawnBullet(bulletData, bulletSpawnPos, bulletRotation, (mirrorX, mirrorY));
-                _bulletSpawnTimer -= bulletSpawnInterval;
-            }
-        }
-        else if (testData is BulletPattern)
-        {
-            _bulletSpawnTimer += Time.deltaTime;
+                if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
+                {
+                    SpawnBullet(new BulletSpawn(bulletData, bulletSpawnPos, bulletRotation, (mirrorX, mirrorY)));
+                    _bulletSpawnTimer -= bulletSpawnInterval;
+                }
+
+                break;
+            case BulletPattern:
+                _bulletSpawnTimer += Time.deltaTime;
         
-            _bulletPatternInstance.GetSpawns(_spawns, _bulletSpawnTimer / basePeriod);
-            foreach ((BulletData b, Vector2 p, float r, (bool, bool) mirror) in _spawns)
-            {
-                SpawnBullet(b, p, r, mirror);
-            }
-            _spawns.Clear();
+                _bulletPatternInstance.Tick(_bulletSpawnTimer / basePeriod);
             
-            if (_bulletSpawnTimer >= basePeriod)
-            {
-                _bulletSpawnTimer = 0f;
-            }
+                if (_bulletSpawnTimer >= basePeriod)
+                {
+                    _bulletSpawnTimer = 0f;
+                }
+
+                break;
+            case PatternSequence:
+                _patternSequenceInstance.Tick();
+                
+                if (_patternSequenceInstance.Ended())
+                    _patternSequenceInstance.ReRoll();
+                
+                break;
+            case FightPhase:
+                _fightPhaseInstance.Tick();
+                break;
+            case FightData:
+                _fightInstance.Tick(enemy.HealthRatio);
+                break;
         }
     }
 
@@ -87,22 +126,28 @@ public class BulletTester : MonoBehaviour, IBulletSpawner
         Destroy(bullet.gameObject);
     }
 
-    public void SpawnBullet(BulletData bulletData, Vector3 position, float rotation, (bool, bool) mirror)
+    private void SpawnBullet(BulletSpawn spawn)
     {
-        Bullet bullet = _pool.Spawn(position, rotation);
-        if (bullet) bullet.Init(_pool, bulletData, mirror);
+        Bullet bullet = _pool.Spawn(spawn.position, spawn.rotation);
+        if (bullet) bullet.Init(_pool, spawn.bullet, spawn.mirror);
     }
 
     private void OnDrawGizmos()
     {
-        if (testData is BulletData)
+        switch (testData)
         {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawSphere(bulletSpawnPos, 0.05f);
-            Gizmos.color = Color.blue;
-            Quaternion rotation = Quaternion.Euler(0, 0, bulletRotation);
-            Vector3 direction = rotation * Vector3.right;
-            Gizmos.DrawRay(bulletSpawnPos, direction * 0.5f);
+            case BulletData:
+                // Draw spawn point and rotation gizmo.
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawSphere(bulletSpawnPos, 0.05f);
+                Gizmos.color = Color.blue;
+                Quaternion rotation = Quaternion.Euler(0, 0, bulletRotation);
+                Vector3 direction = rotation * Vector3.right;
+                Gizmos.DrawRay(bulletSpawnPos, direction * 0.5f);
+                break;
+            case IGizmosDrawer gizmosDrawer:
+                gizmosDrawer.OnDrawGizmos();
+                break;
         }
     }
 }

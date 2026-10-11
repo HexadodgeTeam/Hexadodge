@@ -18,7 +18,7 @@ public struct FloatCurve
     public FloatCurve(float min, float max) { curve = new ParticleSystem.MinMaxCurve(min, max); }
     public FloatCurve(ParticleSystem.MinMaxCurve curve) { this.curve = curve; }
 
-    public float Eval(float time, float lerpFactor) => curve.Evaluate(time, lerpFactor);
+    public float Eval(float time01, float lerpFactor) => curve.Evaluate(time01, lerpFactor);
 
     public bool CanGizmo => curve.mode is ParticleSystemCurveMode.Constant or ParticleSystemCurveMode.TwoConstants;
     
@@ -60,11 +60,10 @@ public struct FloatCurveInstance
         _curve = curve;
         _random = Random.value;
     }
-
     
-    public float Eval(float time)
+    public float Eval(float time01)
     {
-        return _curve.Eval(time, _random);
+        return _curve.Eval(time01, _random);
     }
 
     public void ReRoll() => _random = Random.value;
@@ -90,7 +89,7 @@ public struct IntCurve
     public IntCurve(int min, int max) { curve = new ParticleSystem.MinMaxCurve(min, max); }
     public IntCurve(ParticleSystem.MinMaxCurve curve) { this.curve = curve; }
 
-    public int Eval(float time, float lerpFactor)
+    public int Eval(float time01, float lerpFactor)
     {
         // Special case for TwoConstants mode to be more instinctive.
         if (curve.mode == ParticleSystemCurveMode.TwoConstants)
@@ -100,7 +99,7 @@ public struct IntCurve
             return Mathf.Min(max, min + Mathf.FloorToInt(Mathf.Clamp01(lerpFactor) * (max - min + 1)));
         }
 
-        return Mathf.RoundToInt(curve.Evaluate(time, lerpFactor));
+        return Mathf.RoundToInt(curve.Evaluate(time01, lerpFactor));
     }
 
     public static implicit operator IntCurve(int constant) => new(constant);
@@ -120,9 +119,9 @@ public struct IntCurveInstance
         _random = Random.value;
     }
     
-    public int Eval(float time)
+    public int Eval(float time01)
     {
-        return _curve.Eval(time, _random);
+        return _curve.Eval(time01, _random);
     }
 
     public void ReRoll() => _random = Random.value;
@@ -153,8 +152,8 @@ public struct Vector2Curve
         return rect;
     }
     
-    public Vector2 Eval(float time, float lerpFactorX, float lerpFactorY) =>
-        new(x.Eval(time, lerpFactorX), y.Eval(time, lerpFactorY));
+    public Vector2 Eval(float time01, float lerpFactorX, float lerpFactorY) =>
+        new(x.Eval(time01, lerpFactorX), y.Eval(time01, lerpFactorY));
     
     public static implicit operator Vector2Curve(Vector2 vector2) => new(vector2.x, vector2.y);
 
@@ -172,11 +171,33 @@ public struct Vector2CurveInstance
         _curveY = curve.y.Instance();
     }
     
-    public Vector2 Eval(float time) => new(_curveX.Eval(time), _curveY.Eval(time));
+    public Vector2 Eval(float time01) => new(_curveX.Eval(time01), _curveY.Eval(time01));
 
     public void ReRoll()
     {
         _curveX.ReRoll();
         _curveY.ReRoll();
     }
+}
+
+[Serializable]
+public struct GradientInstance
+{
+    private ParticleSystem.MinMaxGradient _gradient;
+    private float _random;
+
+    public GradientInstance(ParticleSystem.MinMaxGradient gradient)
+    {
+        _gradient = gradient;
+        _random = Random.value;
+    }
+    
+    public Color Eval(float time01)
+    {
+        return _gradient.Evaluate(time01, _random);
+    }
+
+    public void ReRoll() => _random = Random.value;
+        
+    public static implicit operator Color(GradientInstance curveInstance) => curveInstance.Eval(1f);
 }

@@ -1,43 +1,19 @@
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletSpawner : MonoBehaviour, IBulletSpawner
+public class BulletSpawner : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField] private BulletPattern bulletPattern;
-    [SerializeField] private float bulletSpawnInterval = 0.3f;
     [SerializeField] private int maxBulletCount = 30;
-    [SerializeField] private float basePeriod = 5f;
     
     [Header("References")]
     [SerializeField] private Bullet bulletPrefab;
 
     private Pool<Bullet> _pool;
-    private BulletPatternInstance _bulletPatternInstance;
-    private float _bulletSpawnTimer = 0f;
-    private readonly List<(BulletData, Vector2, float, (bool, bool))> _spawns = new();
+    private FightDataInstance _fightData;
 
     private void Awake()
     {
         _pool = new Pool<Bullet>(InstantiateBullet, DestroyBullet, maxBulletCount);
-        _bulletPatternInstance = bulletPattern.Instance();
-    }
-
-    private void Update()
-    {
-        _bulletSpawnTimer += Time.deltaTime;
-        
-        _bulletPatternInstance.GetSpawns(_spawns, _bulletSpawnTimer / basePeriod);
-        foreach ((BulletData b, Vector2 p, float r, (bool, bool) mirror) in _spawns)
-        {
-            SpawnBullet(b, p, r, mirror);
-        }
-        _spawns.Clear();
-            
-        if (_bulletSpawnTimer >= basePeriod)
-        {
-            _bulletSpawnTimer = 0f;
-        }
     }
 
     private Bullet InstantiateBullet()
@@ -50,9 +26,25 @@ public class BulletSpawner : MonoBehaviour, IBulletSpawner
         Destroy(bullet.gameObject);
     }
 
-    public void SpawnBullet(BulletData bulletData, Vector3 position, float rotation, (bool, bool) mirror)
+    public void SpawnBullet(BulletSpawn data)
     {
-        Bullet bullet = _pool.Spawn(position, rotation);
-        if (bullet) bullet.Init(_pool, bulletData, mirror);
+        Bullet bullet = _pool.Spawn(data.position, data.rotation);
+        if (bullet) bullet.Init(_pool, data.bullet, data.mirror);
+    }
+}
+
+public readonly struct BulletSpawn
+{
+    public readonly BulletData bullet;
+    public readonly Vector2 position;
+    public readonly float rotation;
+    public readonly (bool, bool) mirror;
+
+    public BulletSpawn(BulletData bullet, Vector2 position, float rotation, (bool, bool) mirror)
+    {
+        this.bullet = bullet;
+        this.position = position;
+        this.rotation = rotation;
+        this.mirror = mirror;
     }
 }
