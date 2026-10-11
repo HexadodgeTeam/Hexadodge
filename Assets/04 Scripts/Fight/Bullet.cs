@@ -98,7 +98,7 @@ public class Bullet : MonoBehaviour
     {
         int bulletCount = _properties.explosionBulletCount.Eval(_t);
         float arc = _properties.explosionArc.Eval(_t);
-        float angleOffset = _data.properties.explosion.direction switch
+        float angleOffset = _properties.rotationOffset.Eval(_t) + _data.properties.explosion.direction switch
         {
             BulletProperties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
             BulletProperties.ExplosionDirection.Player => Vector2.SignedAngle(Vector2.right,

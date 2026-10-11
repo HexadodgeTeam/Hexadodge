@@ -101,10 +101,17 @@ public class BulletTester : MonoBehaviour
 
                 break;
             case PatternSequence:
-                _patternSequenceInstance.Tick();
+                _bulletSpawnTimer += Time.deltaTime;
                 
-                if (_patternSequenceInstance.Ended())
+                _patternSequenceInstance.Tick(_bulletSpawnTimer / basePeriod);
+                
+                if (_patternSequenceInstance.Ended(_bulletSpawnTimer / basePeriod))
                     _patternSequenceInstance.ReRoll();
+                
+                if (_bulletSpawnTimer >= basePeriod)
+                {
+                    _bulletSpawnTimer = 0f;
+                }
                 
                 break;
             case FightPhase:

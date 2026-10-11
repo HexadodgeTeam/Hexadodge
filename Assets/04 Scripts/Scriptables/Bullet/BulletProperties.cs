@@ -46,6 +46,9 @@ public class BulletProperties
         [Tooltip("L'arc de l'explosion en degré. L'arc est dirigé vers Explosion Direction (voir ci-dessous).")]
         [SerializeField] internal FloatCurve arc = 360;
 
+        [Tooltip("Décalage de la rotation de l'explosion.")]
+        [SerializeField] internal FloatCurve rotationOffset = 0;
+
         [Tooltip("La direction de l'explosion, au cas où l'arc est à moins de 360 degrés.\n" +
                  "BulletDirection : la direction qu'avait le bullet avant d'exploser.\n" +
                  "Player : vers le joueur.\n" +
@@ -62,6 +65,7 @@ public class BulletPropertiesInstance
     public IntCurveInstance impactPower;
     public IntCurveInstance explosionBulletCount;
     public FloatCurveInstance explosionArc;
+    public FloatCurveInstance rotationOffset;
 
     public BulletPropertiesInstance(BulletProperties data)
     {
@@ -69,6 +73,7 @@ public class BulletPropertiesInstance
         impactPower = data.impactPower.Instance();
         explosionBulletCount = data.explosion.bulletCount.Instance();
         explosionArc = data.explosion.arc.Instance();
+        rotationOffset = data.explosion.rotationOffset.Instance();
     }
 
     public void ReRoll()
@@ -77,5 +82,6 @@ public class BulletPropertiesInstance
         impactPower.ReRoll();
         explosionBulletCount.ReRoll();
         explosionArc.ReRoll();
+        rotationOffset.ReRoll();
     }
 }

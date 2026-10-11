@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "General", menuName = "Scriptable Objects/Bullets/Transform/General")]
-public class BTGeneral : BulletTransform
+[CreateAssetMenu(fileName = "Cartesian", menuName = "Scriptable Objects/Bullets/Transform/Cartesian")]
+public class BTCartesian : BulletTransform
 {
     [Header("Position")]
     [Tooltip("Vitesse relative à la direction actuelle du bullet (représentée par un trait bleu en debug).\n" +
@@ -47,7 +47,7 @@ public class BTGeneralInstance : BulletTransformInstance
     private Vector2CurveInstance _scale;
     private FloatCurveInstance _scaleMultiplier;
 
-    public BTGeneralInstance(BTGeneral data) : base(data)
+    public BTGeneralInstance(BTCartesian data) : base(data)
     {
         _forwardSpeed = data.forwardSpeed.Instance();
         _worldSpeed = data.worldSpeed.Instance();

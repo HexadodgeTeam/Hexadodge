@@ -90,8 +90,8 @@ public struct FightLevel
 
 public struct FightLevelInstance
 {
-    public FightPhaseInstance phase;
-    public float enemyHealthFraction;
+    public readonly FightPhaseInstance phase;
+    public readonly float enemyHealthFraction;
 
     public FightLevelInstance(FightLevel data, Action<BulletSpawn> spawnAction)
     {

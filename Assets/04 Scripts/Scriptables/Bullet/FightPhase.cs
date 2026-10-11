@@ -81,13 +81,14 @@ public class FightPhaseInstance
         else
         {
             _phaseTime = Time.time - _phaseStart;
+            float time01 = Mathf.Clamp01(_phaseTime / _periodInstance);
         
             PatternSequenceInstance currentSequence = _sequenceInstances[_currentSequenceIndex];
         
-            currentSequence.Tick();
-            if (currentSequence.Ended())
+            currentSequence.Tick(time01);
+            if (currentSequence.Ended(time01))
             {
-                _waitTimer = _waitBetweenSequenceInstance.Eval(Mathf.Clamp01(_phaseTime / _periodInstance));
+                _waitTimer = _waitBetweenSequenceInstance.Eval(time01);
                 currentSequence.ReRoll();
                 GetNextSequenceIndex();
                 _phaseStart = 0f;
