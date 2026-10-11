@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] private Animator playerAnimator;
     [Serializable]
     public struct Data
     {
@@ -41,15 +42,22 @@ public class PlayerHealth : MonoBehaviour
     {
         if (_invincibilityTimer > 0f)
         {
+            playerAnimator.SetBool("IF", true);
             _invincibilityTimer -= Time.deltaTime;
+        }
+        else
+        {
+            playerAnimator.SetBool("IF", false);
         }
     }
 
     public void TakeDamage(int amount)
     {
+        
         if (IsInvincible) return;
 
         Health -= amount;
+        
         _invincibilityTimer = data.InvincibilityCooldown;
     }
 

@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_CoupDePattes
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  spawning: {fileID: 11400000, guid: 241c4bdba8a63a947a3a214a577e608b, type: 2}
   transform: {fileID: 11400000, guid: 284c2a901a941d744b50a3d5d448b8f4, type: 2}
   properties:
     lifetime:
@@ -128,4 +127,4 @@ MonoBehaviour:
           m_ConstantMax: 360
       direction: 1
   animation:
-    sprite: {fileID: 0}
+    sprite: {fileID: -4904322811417709248, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
