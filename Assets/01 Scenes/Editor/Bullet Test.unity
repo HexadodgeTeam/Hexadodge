@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 776526447}
   - component: {fileID: 776526449}
   m_Layer: 0
-  m_Name: Bullet Tester
+  m_Name: BULLET TESTER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 3ccbe8308bb5e6e48b594e3f9f606635, type: 2}
+  testData: {fileID: 11400000, guid: 13484ee0d2ed9384db4231edf83c58a2, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 1
@@ -383,12 +383,14 @@ MonoBehaviour:
       m_Action: Reset
       m_Flags: 0
     m_Flags: 0
+  enemyData: {fileID: 11400000, guid: 2d75364874e75b7449cf478e71500d56, type: 2}
   bulletSpawnInterval: 1
   bulletSpawnPos: {x: -2.04, y: 0.95, z: 0}
   bulletRotation: -22.13
   mirrorX: 0
   mirrorY: 0
   bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
+  enemy: {fileID: 921075221}
 --- !u!1 &821407478
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3cbd9ed6fc3084d8dd14d39e0d2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  data: {fileID: 11400000, guid: 2d75364874e75b7449cf478e71500d56, type: 2}
   enemyAnimator: {fileID: 1500713076}
 --- !u!114 &927761107 stripped
 MonoBehaviour:
@@ -1903,46 +1904,6 @@ PrefabInstance:
     - target: {fileID: 6504008313830532915, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7948004021265359173, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: data.MaxHealth
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: color.b
-      value: 0.8066038
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: color.g
-      value: 0.71029645
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: color.r
-      value: 0.5783197
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key0.b
-      value: 0.25882354
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key0.g
-      value: 0.12627962
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key0.r
-      value: 0.08627451
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key1.b
-      value: 0.41037738
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key1.g
-      value: 0.3669529
-      objectReference: {fileID: 0}
-    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
-      propertyPath: fillGradient.key1.r
-      value: 0.29423285
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

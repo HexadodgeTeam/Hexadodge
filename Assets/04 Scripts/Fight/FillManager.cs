@@ -54,7 +54,7 @@ public class FillManager : MonoBehaviour
             if (!HasSkill) return;
         
             enemy.TakeDamage(attackPowers[CurrentSkillIndex]);
-            grid.EmptyAt(player.GridPos);
+            grid.Empty();
             CurrentSkillIndex = NoSkill;
             attackEvent.Invoke();
         }

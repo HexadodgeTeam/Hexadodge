@@ -12,8 +12,9 @@ public class Bullet : MonoBehaviour
     
     private const float BulletScaleFactor = 0.25f;
     private BulletData _data;
-    private BulletPropertiesInstance _properties;
     private BulletTransformInstance _transform;
+    private BulletPropertiesInstance _properties;
+    private BulletAnimationInstance _animation;
     private Pool<Bullet> _pool;
     private float _age;
     private float _lifetime;
@@ -28,8 +29,9 @@ public class Bullet : MonoBehaviour
         if (!BulletTester.ModifyOnPlay && _data == data)
         {
             // If same data was already present on pooled object, just re-roll random values.
-            _properties.ReRoll();
             _transform.ReRoll();
+            _properties.ReRoll();
+            _animation.ReRoll();
         }
         else
         {
@@ -37,6 +39,7 @@ public class Bullet : MonoBehaviour
             _data = data;
             _properties = _data.properties.Instance();
             _transform = _data.transform?.Instance();
+            _animation = _data.animation.Instance();
             _pool = pool;
             if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;
         }
@@ -45,6 +48,7 @@ public class Bullet : MonoBehaviour
         _t = 0f;
         _age = 0f;
         UpdateTransform();
+        UpdateAnimation();
         _lifetime = _properties.lifetime;
         _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
@@ -60,11 +64,18 @@ public class Bullet : MonoBehaviour
     {
         _age += Time.deltaTime;
         _t = _age / _lifetime;
+        
+        UpdateAnimation();
     }
 
     private void FixedUpdate()
     {
         UpdateTransform();
+    }
+
+    private void UpdateAnimation()
+    {
+        spriteRenderer.color = _animation.GetColor(_t);
     }
 
     private void UpdateTransform()
@@ -110,25 +121,22 @@ public class Bullet : MonoBehaviour
     {
         if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
 
-        if (collision.CompareTag("Player"))
+        PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+
+        if (!playerHealth.IsInvincible)
         {
-            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-
-            if (!playerHealth.IsInvincible)
+            switch (_data.properties.impactType)
             {
-                switch (_data.properties.impactType)
-                {
-                    case BulletProperties.ImpactType.Damage:
-                        playerHealth.TakeDamage(_properties.impactPower.Eval(_t));
-                        break;
-                    case BulletProperties.ImpactType.Heal:
-                        playerHealth.Heal(_properties.impactPower.Eval(_t));
-                        break;
-                }
-
-                StopCoroutine(_releaseRoutine);
-                Die();
+                case BulletProperties.ImpactType.Damage:
+                    playerHealth.TakeDamage(_properties.impactPower.Eval(_t));
+                    break;
+                case BulletProperties.ImpactType.Heal:
+                    playerHealth.Heal(_properties.impactPower.Eval(_t));
+                    break;
             }
+
+            StopCoroutine(_releaseRoutine);
+            Die();
         }
     }
     

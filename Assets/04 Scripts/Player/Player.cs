@@ -6,21 +6,22 @@ public class Player : MonoBehaviour
 {
     public static Vector2 Pos;
     public static Vector2 Delta;
+
+    private static SpriteRenderer Renderer;
     
-    [SerializeField] private Color color = Color.white;
-    [SerializeField] private Gradient fillGradient;
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private float fillRange = 4;
 
     private Action<Vector3Int> _paint;
-    public Vector3Int GridPos => FillGrid.Instance.WorldToCell(transform.position);
+
+    private void Awake()
+    {
+        Renderer = renderer;
+    }
 
     private void Start()
     {
         _paint = FillGrid.Instance.Paint;
-        renderer.color = color;
-        FillGrid.Instance.SetGradient(fillGradient);
-        UIManager.FillUI.SetColor(color);
     }
 
     private void FixedUpdate()
@@ -31,5 +32,10 @@ public class Player : MonoBehaviour
         {
             _paint.Circle(transform.position, fillRange);
         }
+    }
+
+    public static void UpdateColor(Color color)
+    {
+        Renderer.color = color;
     }
 }

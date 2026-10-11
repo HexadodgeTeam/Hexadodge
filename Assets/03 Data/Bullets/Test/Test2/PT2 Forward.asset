@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
-  m_Name: ProgTest2 Still
+  m_Name: PT2 Forward
   m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
   period:
     curve:
@@ -52,8 +52,8 @@ MonoBehaviour:
   forwardSpeed:
     x:
       curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
+        m_Mode: 1
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -62,12 +62,30 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_CurveMax:
           serializedVersion: 2
-          m_Curve: []
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 0
+            inSlope: -2.9820747
+            outSlope: -2.9820747
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.043103456
+            outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 1
     y:
       curve:
         m_Mode: 0
@@ -216,8 +234,8 @@ MonoBehaviour:
         m_ConstantMax: 1
   scaleMultiplier:
     curve:
-      m_Mode: 0
-      m_CurveMultiplier: 1
+      m_Mode: 1
+      m_CurveMultiplier: 0.6
       m_CurveMin:
         serializedVersion: 2
         m_Curve: []
@@ -226,7 +244,43 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0.3
+          inSlope: 8.723426
+          outSlope: 8.723426
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.12643678
+        - serializedVersion: 3
+          time: 0.15
+          value: 1
+          inSlope: -0.0066484134
+          outSlope: -0.0066484134
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.3277796
+        - serializedVersion: 3
+          time: 0.7706862
+          value: 1
+          inSlope: 0.0077676065
+          outSlope: 0.0077676065
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.28055158
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -4.573995
+          outSlope: -4.573995
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.12029901
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
