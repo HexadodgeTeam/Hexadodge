@@ -35,7 +35,7 @@ public class BTCartesian : BulletTransform
     [Tooltip("Multiplicateur simple appliqué à la scale totale, si besoin de contrôler juste la scale globale " +
              "au lieu des composants x et y individuels.")]
     [SerializeField] internal FloatCurve scaleMultiplier = 1f;
-    public override BulletTransformInstance Instance() => new BTGeneralInstance(this);
+    public override BulletTransformInstance Instance(Vector2 bulletPos) => new BTGeneralInstance(this, bulletPos);
 }
 
 public class BTGeneralInstance : BulletTransformInstance
@@ -47,7 +47,7 @@ public class BTGeneralInstance : BulletTransformInstance
     private Vector2CurveInstance _scale;
     private FloatCurveInstance _scaleMultiplier;
 
-    public BTGeneralInstance(BTCartesian data) : base(data)
+    public BTGeneralInstance(BTCartesian data, Vector2 bulletPos) : base(data, bulletPos)
     {
         _forwardSpeed = data.forwardSpeed.Instance();
         _worldSpeed = data.worldSpeed.Instance();
@@ -77,7 +77,7 @@ public class BTGeneralInstance : BulletTransformInstance
         return (p, r, s);
     }
 
-    public override void ReRoll()
+    public override void ReRollTransform(Vector2 bulletPos)
     {
         base.ReRoll();
         _forwardSpeed.ReRoll();

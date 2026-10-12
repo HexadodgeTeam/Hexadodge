@@ -11,18 +11,18 @@ public abstract class BulletTransform : PeriodData
     [Tooltip("Si définie, la période du sous-transform sera override par cette période.")]
     [SerializeField] internal FloatCurve subPeriodOverride = 0f;
     
-    public abstract BulletTransformInstance Instance();
+    public abstract BulletTransformInstance Instance(Vector2 bulletPos);
 }
 
 public abstract class BulletTransformInstance : PeriodDataInstance
 {
     private readonly BulletTransformInstance _subInstance = null;
 
-    protected BulletTransformInstance(BulletTransform data) : base(data)
+    protected BulletTransformInstance(BulletTransform data, Vector2 bulletPos) : base(data)
     {
         if (data.subTransform)
         {
-            _subInstance = data.subTransform.Instance();
+            _subInstance = data.subTransform.Instance(bulletPos);
             
             if (!data.subPeriodOverride.IsAlmostZero)
             {
@@ -47,9 +47,9 @@ public abstract class BulletTransformInstance : PeriodDataInstance
     
     protected abstract (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01);
 
-    public override void ReRoll()
+    public virtual void ReRollTransform(Vector2 bulletPos)
     {
-        base.ReRoll();
+        ReRoll();
         _subInstance?.ReRoll();
     }
 }

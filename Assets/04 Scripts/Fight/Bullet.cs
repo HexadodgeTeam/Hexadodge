@@ -29,7 +29,7 @@ public class Bullet : MonoBehaviour
         if (!BulletTester.ModifyOnPlay && _data == data)
         {
             // If same data was already present on pooled object, just re-roll random values.
-            _transform.ReRoll();
+            _transform.ReRollTransform(transform.position);
             _properties.ReRoll();
             _animation.ReRoll();
         }
@@ -38,7 +38,7 @@ public class Bullet : MonoBehaviour
             // If no data or different, instance fields.
             _data = data;
             _properties = _data.properties.Instance();
-            _transform = _data.transform?.Instance();
+            _transform = _data.transform?.Instance(transform.position);
             _animation = _data.animation.Instance();
             _pool = pool;
             if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;

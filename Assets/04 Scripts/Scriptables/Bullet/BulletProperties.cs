@@ -26,7 +26,7 @@ public class BulletProperties
     [Tooltip("Durée avant que le bullet ne soit tangible.\n" +
              "Utiliser une curve ici n'a aucun effet.")]
     [SerializeField]
-    internal FloatCurve tangibleCooldown = 0.5f;
+    internal FloatCurve tangibleCooldown = 0.1f;
 
     [Tooltip("None : le projectile n'a pas de collision.\n" +
              "Damage : inflige des dégâts au contact.\n" +
