@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882d592421ce413bae0f5b9db6036b91, type: 3}
   m_Name: BS Position Cadre central
   m_EditorClassIdentifier: Assembly-CSharp::BSPosition
+  subSpawning: {fileID: 0}
   positions:
   - x:
       curve:
@@ -47,8 +48,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.5
-        m_ConstantMax: 0.5
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     y:
       curve:
         m_Mode: 3
@@ -101,8 +102,8 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: -0.5
-        m_ConstantMax: 0.5
+        m_ConstantMin: 0
+        m_ConstantMax: 0
   rotations:
   - curve:
       m_Mode: 3
