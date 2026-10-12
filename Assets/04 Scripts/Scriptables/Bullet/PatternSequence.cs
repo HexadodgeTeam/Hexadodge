@@ -42,6 +42,12 @@ public class PatternSequenceInstance
         }
     }
 
+    public void Start()
+    {
+        _sequenceStart = Time.time;
+        _sequenceTime = 0f;
+    }
+
     public void Tick(float phaseTime01)
     {
         _sequenceTime = Time.time - _sequenceStart;

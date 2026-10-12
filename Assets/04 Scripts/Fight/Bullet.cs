@@ -119,6 +119,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (_age < _properties.tangibleCooldown) return;
         if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
 
         PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
@@ -135,8 +136,11 @@ public class Bullet : MonoBehaviour
                     break;
             }
 
-            StopCoroutine(_releaseRoutine);
-            Die();
+            if (_data.properties.destroyOnImpact)
+            {
+                StopCoroutine(_releaseRoutine);
+                Die();
+            }
         }
     }
     

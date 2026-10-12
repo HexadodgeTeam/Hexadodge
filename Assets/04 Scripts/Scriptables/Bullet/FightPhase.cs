@@ -50,6 +50,7 @@ public class FightPhaseInstance
     private float _phaseTime;
     private int _currentSequenceIndex;
     private float _waitTimer = 0f;
+    private bool _isWaiting = false;
 
     public FightPhaseInstance(FightPhase data, Action<BulletSpawn> spawnAction)
     {
@@ -59,7 +60,6 @@ public class FightPhaseInstance
         {
             _sequenceInstances[i] = _data.sequences[i].Instance(spawnAction);
         }
-
         _periodInstance = _data.period.Instance();
         _waitBetweenSequenceInstance = _data.waitBetweenSequence.Instance();
         _currentSequenceIndex = _data.randomOrder ? Random.Range(0, _data.sequences.Length) : 0;
@@ -67,9 +67,9 @@ public class FightPhaseInstance
 
     public void Start()
     {
-        Player.UpdateColor(_data.color);
-        FillGrid.Instance.SetGradient(_data.gradient);
-        UIManager.FillUI.SetColor(_data.color);
+        GameManager.SetColor(_data.color, _data.gradient);
+        _phaseStart = Time.time;
+        _phaseTime = 0f;
     }
     
     public void Tick()
@@ -85,13 +85,19 @@ public class FightPhaseInstance
         
             PatternSequenceInstance currentSequence = _sequenceInstances[_currentSequenceIndex];
         
+            if (_isWaiting)
+            {
+                currentSequence.Start();
+                _isWaiting = false;
+            }
+            
             currentSequence.Tick(time01);
             if (currentSequence.Ended(time01))
             {
+                _isWaiting = true;
                 _waitTimer = _waitBetweenSequenceInstance.Eval(time01);
                 currentSequence.ReRoll();
                 GetNextSequenceIndex();
-                _phaseStart = 0f;
             }
         }
     }
