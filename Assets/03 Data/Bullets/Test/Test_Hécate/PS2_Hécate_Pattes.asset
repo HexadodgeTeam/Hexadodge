@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40683352dea3ec34589256222fefe81b, type: 3}
-  m_Name: "PS1_H\xE9cate"
+  m_Name: "PS2_H\xE9cate_Pattes"
   m_EditorClassIdentifier: Assembly-CSharp::PatternSequence
   duration:
     curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 10
   timelines:
-  - pattern: {fileID: 11400000, guid: 4c99db7ad63b2a7418cfa5a83ed8b7d9, type: 2}
+  - pattern: {fileID: 11400000, guid: 3d60bf4c21fd3764694af98fe3f4daba, type: 2}
     start:
       curve:
         m_Mode: 0
