@@ -98,7 +98,7 @@ public class Bullet : MonoBehaviour
     {
         int bulletCount = _properties.explosionBulletCount.Eval(_t);
         float arc = _properties.explosionArc.Eval(_t);
-        float angleOffset = _data.properties.explosion.direction switch
+        float angleOffset = _properties.rotationOffset.Eval(_t) + _data.properties.explosion.direction switch
         {
             BulletProperties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
             BulletProperties.ExplosionDirection.Player => Vector2.SignedAngle(Vector2.right,
@@ -119,6 +119,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (_age < _properties.tangibleCooldown) return;
         if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
 
         PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
@@ -135,8 +136,11 @@ public class Bullet : MonoBehaviour
                     break;
             }
 
-            StopCoroutine(_releaseRoutine);
-            Die();
+            if (_data.properties.destroyOnImpact)
+            {
+                StopCoroutine(_releaseRoutine);
+                Die();
+            }
         }
     }
     

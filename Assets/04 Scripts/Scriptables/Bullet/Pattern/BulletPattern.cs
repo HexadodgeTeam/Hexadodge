@@ -50,7 +50,7 @@ public class BulletPatternInstance : PeriodDataInstance
             
             foreach (BulletThrowInstance bulletThrow in _bulletThrowInstances)
             {
-                bulletThrow.TrySpawn(period01);
+                bulletThrow.SpawnBullet(period01);
             }
             
             _throwTimer = _throwIntervalInstance.Eval(period01);
@@ -104,19 +104,13 @@ public class BulletThrowInstance
         _spawnAction = spawnAction;
     }
 
-    public void TrySpawn(float time01)
+    public void SpawnBullet(float time01)
     {
         float period01 = _data.spawnPeriodOverride.IsAlmostZero ? time01 : _periodTimer.GetPeriod01(time01);
-        (Vector2 p, float r)? s = _data.spawn.GetSpawn(period01, (_data.mirrorX, _data.mirrorY));
-        if (s.HasValue)
-        {
-            // Spawn bullet.
-            _spawnAction.Invoke(new BulletSpawn(
-                _data.bullet,
-                s.Value.p,
-                s.Value.r,
-                (_data.mirrorX, _data.mirrorY)));
-        }
+        (Vector2 p, float r) s = _data.spawn.GetCombinedSpawn(period01, (_data.mirrorX, _data.mirrorY));
+        
+        // Spawn bullet.
+        _spawnAction.Invoke(new BulletSpawn(_data.bullet, s.p, s.r, (_data.mirrorX, _data.mirrorY)));
     }
 
     public void ReRoll()

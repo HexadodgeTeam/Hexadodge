@@ -5,7 +5,7 @@ using UnityEngine;
 public class PatternSequence : ScriptableObject, IGizmosDrawer
 {
     [Tooltip("La durée de la séquence.\n" +
-             "Utiliser une courbe ici n'a aucun effet.")]
+             "Dépend de la période de la phase.")]
     [SerializeField] internal FloatCurve duration;
     
     [Tooltip("Les timelines de pattern. Chaque pattern peut être défini avec un début et une fin.")]
@@ -42,19 +42,25 @@ public class PatternSequenceInstance
         }
     }
 
-    public void Tick()
+    public void Start()
+    {
+        _sequenceStart = Time.time;
+        _sequenceTime = 0f;
+    }
+
+    public void Tick(float phaseTime01)
     {
         _sequenceTime = Time.time - _sequenceStart;
         
         foreach (PatternTimelineInstance timeline in _timelineInstances)
         {
-            timeline.Tick(_sequenceTime);
+            timeline.Tick(phaseTime01, _sequenceTime);
         }
     }
 
-    public bool Ended()
+    public bool Ended(float phaseTime01)
     {
-        return _sequenceTime >= _durationInstance;
+        return _sequenceTime >= _durationInstance.Eval(phaseTime01);
     }
 
     public void ReRoll()
@@ -76,11 +82,11 @@ public class PatternTimeline
     public BulletPattern pattern;
 
     [Tooltip("Le début du pattern selon le début de la séquence.\n" +
-             "Utiliser une courbe ici n'a aucun effet.")]
+             "Dépend de la période de la phase.")]
     public FloatCurve start;
     
     [Tooltip("La fin du pattern selon le début de la séquence.\n" +
-             "Utiliser une courbe ici n'a aucun effet.")]
+             "Dépend de la période de la phase.")]
     public FloatCurve end;
 
     public PatternTimelineInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
@@ -99,11 +105,11 @@ public class PatternTimelineInstance
         _endInstance = data.end.Instance();
     }
 
-    public void Tick(float sequenceTime)
+    public void Tick(float phaseTime01, float sequenceTime)
     {
-        if (sequenceTime < _startInstance || sequenceTime > _endInstance) return;
+        if (sequenceTime < _startInstance.Eval(phaseTime01) || sequenceTime > _endInstance.Eval(phaseTime01)) return;
         
-        float time01 = Mathf.InverseLerp(_startInstance, _endInstance, sequenceTime);
+        float time01 = Mathf.InverseLerp(_startInstance.Eval(phaseTime01), _endInstance.Eval(phaseTime01), sequenceTime);
         
         _patternInstance.Tick(time01);
     }

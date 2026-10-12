@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
-[CreateAssetMenu(fileName = "Position", menuName = "Scriptable Objects/Bullets/Spawning/Position")]
-public class BSPosition : BulletSpawning
+[CreateAssetMenu(fileName = "Cartesian", menuName = "Scriptable Objects/Bullets/Spawning/Cartesian")]
+public class BSCartesian : BulletSpawning
 {
     [Tooltip("Ensemble de positions où le bullet peut apparaître au hasard.")]
     [SerializeField] private Vector2Curve[] positions;
@@ -15,13 +17,10 @@ public class BSPosition : BulletSpawning
              "Si activé, les deux tableaux doivent avoir le même nombre d'éléments.")]
     [SerializeField] private bool pairPositionWithRotation;
 
-    public override (Vector2 p, float r)? GetSpawn(float time01, (bool x, bool y) mirror)
+    protected override (Vector2 p, float r) GetSpawn(float time01, (bool x, bool y) mirror)
     {
         if (pairPositionWithRotation && positions.Length != rotations.Length)
-        {
-            Debug.LogWarning("Le nombre de positions diffère du nombre de rotations. Apparition ignorée.");
-            return null;
-        }
+            throw new Exception("Le nombre de positions diffère du nombre de rotations.");
         
         int randomPosIndex = Random.Range(0, positions.Length);
         int randomRotIndex = pairPositionWithRotation ? randomPosIndex : Random.Range(0, rotations.Length);

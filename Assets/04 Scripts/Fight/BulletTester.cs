@@ -16,6 +16,10 @@ public class BulletTester : MonoBehaviour
 
     [Header("If not FightData")]
     [SerializeField] private EnemyData enemyData;
+
+    [Header("If not FightData or FightPhase")]
+    [SerializeField] private Color color = Color.white;
+    [SerializeField] private Gradient gradient;
     
     [Header("If BulletData")]
     [SerializeField] private float bulletSpawnInterval = 0.3f;
@@ -48,6 +52,8 @@ public class BulletTester : MonoBehaviour
         
         if (testData is FightData fightData) enemy.Init(fightData.enemy);
         else enemy.Init(enemyData);
+
+        if (testData is not FightData && testData is not FightPhase) GameManager.SetColor(color, gradient);
     }
 
     private void Refresh()
@@ -59,6 +65,7 @@ public class BulletTester : MonoBehaviour
                 break;
             case PatternSequence patternSequence:
                 _patternSequenceInstance = patternSequence.Instance(SpawnBullet);
+                _patternSequenceInstance.Start();
                 break;
             case FightPhase fightPhase:
                 _fightPhaseInstance = fightPhase.Instance(SpawnBullet);
@@ -101,10 +108,17 @@ public class BulletTester : MonoBehaviour
 
                 break;
             case PatternSequence:
-                _patternSequenceInstance.Tick();
+                _bulletSpawnTimer += Time.deltaTime;
                 
-                if (_patternSequenceInstance.Ended())
+                _patternSequenceInstance.Tick(_bulletSpawnTimer / basePeriod);
+                
+                if (_patternSequenceInstance.Ended(_bulletSpawnTimer / basePeriod))
                     _patternSequenceInstance.ReRoll();
+                
+                if (_bulletSpawnTimer >= basePeriod)
+                {
+                    _bulletSpawnTimer = 0f;
+                }
                 
                 break;
             case FightPhase:

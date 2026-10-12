@@ -35,7 +35,7 @@ MonoBehaviour:
     start:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 0
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -44,10 +44,28 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_CurveMax:
           serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
+          m_Curve:
+          - serializedVersion: 3
+            time: -0.00000025704503
+            value: 1.0000014
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          - serializedVersion: 3
+            time: 1
+            value: 1
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 3
     end:
