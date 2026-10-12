@@ -949,7 +949,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4584246937935785656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimBeforeActive, Assembly-CSharp
         m_MethodName: StartWaitForAnim
         m_Mode: 6
@@ -2851,7 +2851,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4584246937935785656}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimBeforeActive, Assembly-CSharp
         m_MethodName: StartWaitForAnim
         m_Mode: 6
