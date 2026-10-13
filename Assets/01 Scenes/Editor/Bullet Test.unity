@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 67225b6e8f2b1d8419482f3aa7e1a200, type: 2}
+  testData: {fileID: 11400000, guid: 918e93e174cc35f4e91ea6fabeb9e1b7, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 1
