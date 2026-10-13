@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "Pattern", menuName = "Scriptable Objects/Bullets/Pattern")]
 public class BulletPattern : PeriodData, IGizmosDrawer
@@ -79,6 +80,10 @@ public class BulletThrow
     [SerializeField]
     internal BulletData bullet;
 
+    [Tooltip("Transform qui s'applique 1 fois à tous les bullets d'un seul throw au spawn.")]
+    [SerializeField]
+    internal ThrowTransform throwTransform;
+
     [Tooltip("Le spawn du bullet. Peut évoluer selon la période du bullet pattern.")]
     [SerializeField]
     internal BulletSpawning spawn;
@@ -123,13 +128,18 @@ public class BulletThrowInstance
         int spawnCount = _spawnCount.Eval(period01);
         if (spawnCount == 0) spawnCount = 1;
 
+        float ttRandom01 = Random.value;
+        
         for (int i = 0; i < spawnCount; i++)
         {
             float count01 = spawnCount == 1 ? 0.5f : i / (float)(spawnCount - 1);
             (Vector2 p, float r) s = _data.spawn.GetCombinedSpawn(
                 period01,
+                
                 (_data.mirrorX, _data.mirrorY),
                 count01);
+
+            if (_data.throwTransform) s = _data.throwTransform.TransformSpawn(time01, ttRandom01, s);
             
             // Spawn bullet.
             _spawnAction.Invoke(new BulletSpawn(_data.bullet, s.p, s.r, (_data.mirrorX, _data.mirrorY)));

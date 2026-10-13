@@ -29,9 +29,10 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 5
+      m_ConstantMax: 15
   bulletThrows:
   - bullet: {fileID: 11400000, guid: 429a1967bdb81e442831edebb9b09740, type: 2}
+    throwTransform: {fileID: 11400000, guid: b3c2913f6d935344080806e564ea55bd, type: 2}
     spawn: {fileID: 11400000, guid: e594e52e7817f744194565435c296251, type: 2}
     spawnCount:
       curve:
@@ -50,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 15
+        m_ConstantMax: 20
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -73,7 +74,7 @@ MonoBehaviour:
     mirrorY: 0
   throwInterval:
     curve:
-      m_Mode: 0
+      m_Mode: 1
       m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
@@ -83,9 +84,36 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 3
+          inSlope: -3.2762907
+          outSlope: -3.2762907
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.50134313
+          value: 1.3574542
+          inSlope: -2.2973704
+          outSlope: -2.2973704
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1
+          value: 0.7
+          inSlope: -1.3184501
+          outSlope: -1.3184501
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 2
+      m_ConstantMax: 1.5
