@@ -51,6 +51,7 @@ public class BTRadialInstance : BulletTransformInstance
     private Vector2 _pole;
     private float _angle;
     private float _distance;
+    private Vector2 _lastPos;
 
     public BTRadialInstance(BTRadial data, Vector2 bulletPos) : base(data, bulletPos)
     {
@@ -58,6 +59,7 @@ public class BTRadialInstance : BulletTransformInstance
         _poleSpeed = data.poleSpeed.Instance();
         _distanceSpeed = data.distanceSpeed.Instance();
         _angleSpeed = data.angleSpeed.Instance();
+        _lastPos = bulletPos;
         
         Start(bulletPos);
     }
@@ -72,8 +74,11 @@ public class BTRadialInstance : BulletTransformInstance
         Vector2 position = _pole + new Vector2(
             _distance * Mathf.Cos(rad) * (mirror.x ? -1 : 1), 
             _distance * Mathf.Sin(rad) * (mirror.y ? -1 : 1));
+        
+        Vector2 move = position - _lastPos;
+        _lastPos = position;
 
-        return (position, 0f, Vector2.one);
+        return (move, 0f, Vector2.one);
     }
 
     public override void ReRollTransform(Vector2 bulletPos)

@@ -5,10 +5,12 @@ using UnityEngine;
 public class BulletPattern : PeriodData, IGizmosDrawer
 {
     [Tooltip("Tous les bullets instanciés en un seul jet.")]
-    [SerializeField] internal BulletThrow[] bulletThrows;
+    [SerializeField]
+    internal BulletThrow[] bulletThrows;
 
     [Tooltip("L'intervalle de jet.")]
-    [SerializeField] internal FloatCurve throwInterval = 1;
+    [SerializeField]
+    internal FloatCurve throwInterval = 1;
 
     public BulletPatternInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
 
@@ -74,19 +76,28 @@ public class BulletPatternInstance : PeriodDataInstance
 public class BulletThrow
 {
     [Tooltip("Le bullet.")]
-    [SerializeField] internal BulletData bullet;
+    [SerializeField]
+    internal BulletData bullet;
 
     [Tooltip("Le spawn du bullet. Peut évoluer selon la période du bullet pattern.")]
-    [SerializeField] internal BulletSpawning spawn;
+    [SerializeField]
+    internal BulletSpawning spawn;
 
+    [Tooltip("Nombre de bullets à faire apparaître.")]
+    [SerializeField]
+    internal IntCurve spawnCount = 1;
+    
     [Tooltip("Si défini, la période utilisée pour le spawn est celle-ci au lieu de la période du pattern.")]
-    [SerializeField] internal FloatCurve spawnPeriodOverride;
+    [SerializeField]
+    internal FloatCurve spawnPeriodOverride;
     
     [Tooltip("Inverser le comportement du bullet en X.")]
-    [SerializeField] internal bool mirrorX;
+    [SerializeField]
+    internal bool mirrorX;
         
     [Tooltip("Inverser le comportement du bullet en Y.")]
-    [SerializeField] internal bool mirrorY;
+    [SerializeField]
+    internal bool mirrorY;
 
     public BulletThrowInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
 }
@@ -96,21 +107,33 @@ public class BulletThrowInstance
     private readonly BulletThrow _data;
     private readonly Action<BulletSpawn> _spawnAction;
     private PeriodTimer _periodTimer;
+    private IntCurveInstance _spawnCount;
     
     public BulletThrowInstance(BulletThrow data, Action<BulletSpawn> spawnAction)
     {
         _data = data;
         _periodTimer = new PeriodTimer(_data.spawnPeriodOverride);
         _spawnAction = spawnAction;
+        _spawnCount = data.spawnCount.Instance();
     }
 
     public void SpawnBullet(float time01)
     {
         float period01 = _data.spawnPeriodOverride.IsAlmostZero ? time01 : _periodTimer.GetPeriod01(time01);
-        (Vector2 p, float r) s = _data.spawn.GetCombinedSpawn(period01, (_data.mirrorX, _data.mirrorY));
-        
-        // Spawn bullet.
-        _spawnAction.Invoke(new BulletSpawn(_data.bullet, s.p, s.r, (_data.mirrorX, _data.mirrorY)));
+        int spawnCount = _spawnCount.Eval(period01);
+        if (spawnCount == 0) spawnCount = 1;
+
+        for (int i = 0; i < spawnCount; i++)
+        {
+            float count01 = spawnCount == 1 ? 0.5f : i / (float)(spawnCount - 1);
+            (Vector2 p, float r) s = _data.spawn.GetCombinedSpawn(
+                period01,
+                (_data.mirrorX, _data.mirrorY),
+                count01);
+            
+            // Spawn bullet.
+            _spawnAction.Invoke(new BulletSpawn(_data.bullet, s.p, s.r, (_data.mirrorX, _data.mirrorY)));
+        }
     }
 
     public void ReRoll()

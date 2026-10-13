@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: PT2 Projectiles
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 998a4098df49f2e48bf32a91e497279f, type: 2}
+  transform: {fileID: 11400000, guid: 1e2d881a54cc11b43b155f76927c2837, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 2
+        m_ConstantMax: 10
     tangibleCooldown:
       curve:
         m_Mode: 0

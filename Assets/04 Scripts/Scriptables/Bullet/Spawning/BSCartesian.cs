@@ -6,18 +6,33 @@ using Random = UnityEngine.Random;
 public class BSCartesian : BulletSpawning
 {
     [Tooltip("Ensemble de positions où le bullet peut apparaître au hasard.")]
-    [SerializeField] private Vector2Curve[] positions;
+    [SerializeField]
+    private Vector2Curve[] positions;
+
+    [Tooltip("Évaluer le X des positions depuis le nombre de bullets instanciés au lieu de la période.")]
+    [SerializeField]
+    private bool positionsXFromCount = false;
+    
+    [Tooltip("Évaluer le Y des positions depuis le nombre de bullets instanciés au lieu de la période.")]
+    [SerializeField]
+    private bool positionsYFromCount = false;
     
     [Tooltip("Ensemble de rotations dans lesquelles le bullet peut se diriger au hasard à l'apparition.\n" +
              "Laisser vide pour une rotation totalement aléatoire dans les 360 degrés.")]
-    [SerializeField] private FloatCurve[] rotations;
+    [SerializeField]
+    private FloatCurve[] rotations;
+    
+    [Tooltip("Évaluer les rotations depuis le nombre de bullets instanciés au lieu de la période.")]
+    [SerializeField]
+    private bool rotationsFromCount = false;
     
     [Tooltip("Appairer les positions et les rotations des 2 tableaux ci-dessus, par index.\n" +
              "Exemple : la première position définie est associée à la première rotation définie.\n" +
              "Si activé, les deux tableaux doivent avoir le même nombre d'éléments.")]
-    [SerializeField] private bool pairPositionWithRotation;
+    [SerializeField]
+    private bool pairPositionWithRotation;
 
-    protected override (Vector2 p, float r) GetSpawn(float time01, (bool x, bool y) mirror)
+    protected override (Vector2 p, float r) GetSpawn(float time01, (bool x, bool y) mirror, float count01)
     {
         if (pairPositionWithRotation && positions.Length != rotations.Length)
             throw new Exception("Le nombre de positions diffère du nombre de rotations.");
@@ -25,9 +40,11 @@ public class BSCartesian : BulletSpawning
         int randomPosIndex = Random.Range(0, positions.Length);
         int randomRotIndex = pairPositionWithRotation ? randomPosIndex : Random.Range(0, rotations.Length);
 
-        Vector3 position = positions[randomPosIndex].Eval(time01, Random.value, Random.value);
+        Vector2 position = new Vector2(
+            positions[randomPosIndex].x.Eval(positionsXFromCount ? count01 : time01, Random.value),
+            positions[randomPosIndex].y.Eval(positionsYFromCount ? count01 : time01, Random.value));
         float rotation = rotations.Length > 0
-            ? rotations[randomRotIndex].Eval(time01, Random.value)
+            ? rotations[randomRotIndex].Eval(rotationsFromCount ? count01 : time01, Random.value)
             : Random.Range(0f, 360f);
 
         if (mirror.x) rotation = 180 - rotation;
