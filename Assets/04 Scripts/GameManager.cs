@@ -12,6 +12,6 @@ public class GameManager : MonoBehaviour
     {
         Player.UpdateColor(color);
         FillGrid.Instance.SetGradient(gradient);
-        UIManager.FillUI.SetColor(color);
+        UIManager.Instance.fillUI.SetColor(color);
     }
 }

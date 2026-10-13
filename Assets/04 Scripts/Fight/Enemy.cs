@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour
         private set
         {
             _healthRatio = value;
-            UIManager.EnemyHealthUI.SetFraction(_healthRatio);
+            UIManager.Instance.enemyHealthUI.SetFraction(_healthRatio);
         }
     }
 
@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        UIManager.GameOver(true);
+        UIManager.Instance.GameOver(true);
         enemyAnimator.SetTrigger(Death);
     }
 }

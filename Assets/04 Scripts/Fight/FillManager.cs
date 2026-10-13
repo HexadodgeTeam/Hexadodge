@@ -33,7 +33,7 @@ public class FillManager : MonoBehaviour
     
     private void Start()
     {
-        UIManager.SetThresholdIndicators(skillFractions);
+        UIManager.Instance.SetThresholdIndicators(skillFractions);
         grid.OnFillUpdated = SetFillFraction;
     }
     
@@ -44,7 +44,7 @@ public class FillManager : MonoBehaviour
             CurrentSkillIndex++;
         }
 
-        UIManager.FillUI.SetFraction(fraction);
+        UIManager.Instance.fillUI.SetFraction(fraction);
     }
 
     public void TryAttack(InputAction.CallbackContext context)

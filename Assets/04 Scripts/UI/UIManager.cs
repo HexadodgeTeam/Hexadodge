@@ -4,28 +4,37 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] private CountUI healthUI;
-    [SerializeField] private SliderUI fillUI;
+    private static readonly int Hit = Animator.StringToHash("Hit");
+    public static UIManager Instance { get; private set; }
+    
     [SerializeField] private GameObject stick;
-    [SerializeField] private SliderUI enemyHealthUI;
     [SerializeField] private RectTransform[] thresholdIndicators;
     [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private PlayerInputHandler playerInputHandler;
     [SerializeField] private TMP_Dropdown controlTypeDropdown;
+    [SerializeField] private Animator hitAnimator;
 
-    public static CountUI HealthUI;
-    public static SliderUI FillUI;
-    public static SliderUI EnemyHealthUI;
+    public CountUI healthUI;
+    public SliderUI fillUI;
+    public SliderUI enemyHealthUI;
 
-    private static RectTransform[] _thresholdIndicators;
-    private static GameOverPanel _gameOverPanel;
+    private RectTransform[] _thresholdIndicators;
+    private GameOverPanel _gameOverPanel;
 
+    private void Awake()
+    {
+        Instance = this;
+        
+        _thresholdIndicators = thresholdIndicators;
+        _gameOverPanel = gameOverPanel;
+    }
+    
     private void Start()
     {
         RefreshControlType();
     }
 
-    public static void SetThresholdIndicators(float[] fractions)
+    public void SetThresholdIndicators(float[] fractions)
     {
         for (var i = 0; i < Math.Min(fractions.Length, _thresholdIndicators.Length); i++)
         {
@@ -36,7 +45,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public static void GameOver(bool win)
+    public void GameOver(bool win)
     {
         _gameOverPanel.Display(win);
     }
@@ -47,15 +56,8 @@ public class UIManager : MonoBehaviour
         
         RefreshControlType();
     }
-
-    private void Awake()
-    {
-        HealthUI = healthUI;
-        FillUI = fillUI;
-        _thresholdIndicators = thresholdIndicators;
-        EnemyHealthUI = enemyHealthUI;
-        _gameOverPanel = gameOverPanel;
-    }
+    
+    public void OnHit() => hitAnimator.SetTrigger(Hit);
 
     private void RefreshControlType()
     {

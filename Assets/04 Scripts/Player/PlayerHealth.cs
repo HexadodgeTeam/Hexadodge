@@ -4,8 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private static readonly int IFrames = Animator.StringToHash("IF");
+    
     [SerializeField] private Animator playerAnimator;
-    [SerializeField] private Animator hitAnimator;
     [Serializable]
     public struct Data
     {
@@ -25,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         set
         {
             _health = Mathf.Clamp(value, 0, data.MaxHealth);
-            UIManager.HealthUI?.SetCount(_health);
+            UIManager.Instance.healthUI?.SetCount(_health);
             
             if (_health <= 0)
             {
@@ -34,7 +35,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void Start()
     {
         Health = data.MaxHealth;
     }
@@ -43,21 +44,20 @@ public class PlayerHealth : MonoBehaviour
     {
         if (_invincibilityTimer > 0f)
         {
-            playerAnimator.SetBool("IF", true);
+            playerAnimator.SetBool(IFrames, true);
             _invincibilityTimer -= Time.deltaTime;
         }
         else
         {
-            playerAnimator.SetBool("IF", false);
+            playerAnimator.SetBool(IFrames, false);
         }
     }
 
     public void TakeDamage(int amount)
     {
-        
         if (IsInvincible) return;
-        hitAnimator.SetTrigger("Hit");
-
+        
+        UIManager.Instance.OnHit();
         Health -= amount;
         
         _invincibilityTimer = data.InvincibilityCooldown;
@@ -70,6 +70,6 @@ public class PlayerHealth : MonoBehaviour
 
     private void Die()
     {
-        UIManager.GameOver(false);
+        UIManager.Instance.GameOver(false);
     }
 }
