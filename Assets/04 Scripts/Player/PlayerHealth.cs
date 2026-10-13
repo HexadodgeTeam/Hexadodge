@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] private Animator playerAnimator;
+    [SerializeField] private Animator hitAnimator;
     [Serializable]
     public struct Data
     {
@@ -55,6 +56,7 @@ public class PlayerHealth : MonoBehaviour
     {
         
         if (IsInvincible) return;
+        hitAnimator.SetTrigger("Hit");
 
         Health -= amount;
         
