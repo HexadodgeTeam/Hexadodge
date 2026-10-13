@@ -1,0 +1,3159 @@
+fileFormatVersion: 2
+guid: c8ca68b4d5bce2e469598dda39ed2bf7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 159275211455100136
+    second: inventaire test_0
+  - first:
+      213: 5398752617653232388
+    second: inventaire test_1
+  - first:
+      213: -1773039401196376256
+    second: inventaire test_2
+  - first:
+      213: -1758859886901349400
+    second: inventaire test_3
+  - first:
+      213: -799641081270356030
+    second: inventaire test_4
+  - first:
+      213: -4162829551603860409
+    second: inventaire test_5
+  - first:
+      213: -1625024646499298019
+    second: inventaire test_6
+  - first:
+      213: 4735786807620921945
+    second: inventaire test_7
+  - first:
+      213: 6058395367239339908
+    second: inventaire test_8
+  - first:
+      213: 7573001240280245875
+    second: inventaire test_9
+  - first:
+      213: -4203244512004553760
+    second: inventaire test_10
+  - first:
+      213: -310087615235230928
+    second: inventaire test_11
+  - first:
+      213: -4418660173207094153
+    second: inventaire test_12
+  - first:
+      213: -2292173011093833144
+    second: inventaire test_13
+  - first:
+      213: 8829067002960108052
+    second: inventaire test_14
+  - first:
+      213: 1422899128221992162
+    second: inventaire test_15
+  - first:
+      213: -7474831587596190149
+    second: inventaire test_16
+  - first:
+      213: -9103550831464438384
+    second: inventaire test_17
+  - first:
+      213: 2984719240805284778
+    second: inventaire test_18
+  - first:
+      213: 3803071663587811517
+    second: inventaire test_19
+  - first:
+      213: -969386965814257764
+    second: inventaire test_20
+  - first:
+      213: -6877434138185498892
+    second: inventaire test_21
+  - first:
+      213: 7353269693727672662
+    second: inventaire test_22
+  - first:
+      213: -4268070689448960443
+    second: inventaire test_23
+  - first:
+      213: 1190325635225964656
+    second: inventaire test_24
+  - first:
+      213: -3757945840232809244
+    second: inventaire test_25
+  - first:
+      213: -8150433540855849892
+    second: inventaire test_26
+  - first:
+      213: -9093658306049204201
+    second: inventaire test_27
+  - first:
+      213: -6760208141360013114
+    second: inventaire test_28
+  - first:
+      213: 4605818226876089493
+    second: inventaire test_29
+  - first:
+      213: 2952059135401149786
+    second: inventaire test_30
+  - first:
+      213: -2824968890138224048
+    second: inventaire test_31
+  - first:
+      213: -1736595738226967602
+    second: inventaire test_32
+  - first:
+      213: 1396420899062579684
+    second: inventaire test_33
+  - first:
+      213: 8707766858978943924
+    second: inventaire test_34
+  - first:
+      213: 5130190158572600057
+    second: inventaire test_35
+  - first:
+      213: 3449688128418915100
+    second: inventaire test_36
+  - first:
+      213: -6221103297952917784
+    second: inventaire test_37
+  - first:
+      213: -1777872586923732785
+    second: inventaire test_38
+  - first:
+      213: 5983889330417093472
+    second: inventaire test_39
+  - first:
+      213: -3621109488630246972
+    second: inventaire test_40
+  - first:
+      213: -7605539022496364883
+    second: inventaire test_41
+  - first:
+      213: -5305029976199355698
+    second: inventaire test_42
+  - first:
+      213: 5185538827319008787
+    second: inventaire test_43
+  - first:
+      213: 4962932387260864771
+    second: inventaire test_44
+  - first:
+      213: 6835112758660805426
+    second: inventaire test_45
+  - first:
+      213: -4309394091957493583
+    second: inventaire test_46
+  - first:
+      213: 296115330448247324
+    second: inventaire test_47
+  - first:
+      213: -3139389757868025400
+    second: inventaire test_48
+  - first:
+      213: 4502530687506003021
+    second: inventaire test_49
+  - first:
+      213: 8589124925956761837
+    second: inventaire test_50
+  - first:
+      213: 5926211456833917444
+    second: inventaire test_51
+  - first:
+      213: 402214531721148067
+    second: inventaire test_52
+  - first:
+      213: -4471565932714050522
+    second: inventaire test_53
+  - first:
+      213: 2986141117451145682
+    second: inventaire test_54
+  - first:
+      213: 5030802982430321574
+    second: inventaire test_55
+  - first:
+      213: 8790494614046775619
+    second: inventaire test_56
+  - first:
+      213: 1043842502094723194
+    second: inventaire test_57
+  - first:
+      213: -5082232273670106789
+    second: inventaire test_58
+  - first:
+      213: -5699021592884462777
+    second: inventaire test_59
+  - first:
+      213: 7546677013930921938
+    second: inventaire test_60
+  - first:
+      213: 7810523894608418371
+    second: inventaire test_61
+  - first:
+      213: -3318588676257180502
+    second: inventaire test_62
+  - first:
+      213: -5467005814942702073
+    second: inventaire test_63
+  - first:
+      213: 8249582556296791382
+    second: inventaire test_64
+  - first:
+      213: 6941480427946947855
+    second: inventaire test_65
+  - first:
+      213: 2700788840537699131
+    second: inventaire test_66
+  - first:
+      213: 2579308869209022846
+    second: inventaire test_67
+  - first:
+      213: -6811061827899130325
+    second: inventaire test_68
+  - first:
+      213: 7574506927836658471
+    second: inventaire test_69
+  - first:
+      213: -5672496794574391760
+    second: inventaire test_70
+  - first:
+      213: -6961898826162052725
+    second: inventaire test_71
+  - first:
+      213: 4377186921688975943
+    second: inventaire test_72
+  - first:
+      213: -2111853830758563057
+    second: inventaire test_73
+  - first:
+      213: 7986657163019284129
+    second: inventaire test_74
+  - first:
+      213: 3904407796437892202
+    second: inventaire test_75
+  - first:
+      213: 5545498571976146820
+    second: inventaire test_76
+  - first:
+      213: -3703682990074615485
+    second: inventaire test_77
+  - first:
+      213: 4191493707483715247
+    second: inventaire test_78
+  - first:
+      213: 1229853087146547191
+    second: inventaire test_79
+  - first:
+      213: -7600485802516729181
+    second: inventaire test_80
+  - first:
+      213: -3594205192433992944
+    second: inventaire test_81
+  - first:
+      213: -7760393460746665051
+    second: inventaire test_82
+  - first:
+      213: -4492458942287061592
+    second: inventaire test_83
+  - first:
+      213: -5245243001538090565
+    second: inventaire test_84
+  - first:
+      213: 8344258227685382313
+    second: inventaire test_85
+  - first:
+      213: 518020752376475286
+    second: inventaire test_86
+  - first:
+      213: -3657443344019952467
+    second: inventaire test_87
+  - first:
+      213: 3390992967806396732
+    second: inventaire test_88
+  - first:
+      213: -5218097520643255727
+    second: inventaire test_89
+  - first:
+      213: -7878522764441082329
+    second: inventaire test_90
+  - first:
+      213: -1916670761300081268
+    second: inventaire test_91
+  - first:
+      213: 5638225170891355793
+    second: inventaire test_92
+  - first:
+      213: 1440263099417107075
+    second: inventaire test_93
+  - first:
+      213: -8721058661172717964
+    second: inventaire test_94
+  - first:
+      213: 4673429193596483304
+    second: inventaire test_95
+  - first:
+      213: -324062465097674551
+    second: inventaire test_96
+  - first:
+      213: 1893947282432741950
+    second: inventaire test_97
+  - first:
+      213: 7073827075404600311
+    second: inventaire test_98
+  - first:
+      213: 7779764067295050121
+    second: inventaire test_99
+  - first:
+      213: 2044491060026150366
+    second: inventaire test_100
+  - first:
+      213: -7829668751423957505
+    second: inventaire test_101
+  - first:
+      213: -5030048973365379006
+    second: inventaire test_102
+  - first:
+      213: 7377708706124070155
+    second: inventaire test_103
+  - first:
+      213: 6439399366978907032
+    second: inventaire test_104
+  - first:
+      213: -4559944403235260814
+    second: inventaire test_105
+  - first:
+      213: 2079168666413366220
+    second: inventaire test_106
+  - first:
+      213: -5964001244414581369
+    second: inventaire test_107
+  - first:
+      213: -4017494334111604101
+    second: inventaire test_108
+  - first:
+      213: -9066631463814981854
+    second: inventaire test_109
+  - first:
+      213: 8252136844711477866
+    second: inventaire test_110
+  - first:
+      213: -1154666739490440229
+    second: inventaire test_111
+  - first:
+      213: 3296739927908914660
+    second: inventaire test_112
+  - first:
+      213: 8161569030158768483
+    second: inventaire test_113
+  - first:
+      213: -6370160970903414869
+    second: inventaire test_114
+  - first:
+      213: -771450754815010386
+    second: inventaire test_115
+  - first:
+      213: -4618233196950733478
+    second: inventaire test_116
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inventaire test_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1688
+        width: 750
+        height: 662
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e47e4006fbd53200800000000000000
+      internalID: 159275211455100136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 1677
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4036e65e6e83cea40800000000000000
+      internalID: 5398752617653232388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1467
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f2beefe06e467e0800000000000000
+      internalID: -1773039401196376256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_3
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1447
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e3bf8f60464797e0800000000000000
+      internalID: -1758859886901349400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_4
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1467
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c7321b5caa17e4f0800000000000000
+      internalID: -799641081270356030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_5
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1467
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c37241498aa36c0800000000000000
+      internalID: -4162829551603860409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_6
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1447
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15972a91b0c279e0800000000000000
+      internalID: -1625024646499298019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_7
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1467
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ae930a205e8b140800000000000000
+      internalID: 4735786807620921945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_8
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1467
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f4c2ddc7eb31450800000000000000
+      internalID: 6058395367239339908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_9
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1447
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3762f7a2184b81960800000000000000
+      internalID: 7573001240280245875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_10
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1467
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3cbd5d2631ba5c0800000000000000
+      internalID: -4203244512004553760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_11
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1681
+        width: 27
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033f7a4f4f852bbf0800000000000000
+      internalID: -310087615235230928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_12
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1448
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c33d8cbf3cda2c0800000000000000
+      internalID: -4418660173207094153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_13
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1448
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84ab3067ac09030e0800000000000000
+      internalID: -2292173011093833144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_14
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1448
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a5f8929a5278a70800000000000000
+      internalID: 8829067002960108052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_15
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1448
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e482e0e7372fb310800000000000000
+      internalID: 1422899128221992162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_16
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1448
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3eb5714640144890800000000000000
+      internalID: -7474831587596190149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_17
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1448
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095a9df50c0b9a180800000000000000
+      internalID: -9103550831464438384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_18
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabf876f55adb6920800000000000000
+      internalID: 2984719240805284778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1168
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0618b478937c430800000000000000
+      internalID: 3803071663587811517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_20
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 1148
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c975fbcc0bb0c82f0800000000000000
+      internalID: -969386965814257764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_21
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fefe4be6127e80a0800000000000000
+      internalID: -6877434138185498892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_22
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 1168
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6598840c3df0c0660800000000000000
+      internalID: 7353269693727672662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_23
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54e53273254c4c4c0800000000000000
+      internalID: -4268070689448960443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_24
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1168
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0705faecbd2e48010800000000000000
+      internalID: 1190325635225964656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_25
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 1148
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec34c33b2819dbc0800000000000000
+      internalID: -3757945840232809244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_26
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c9bdf90e7d3ee80800000000000000
+      internalID: -8150433540855849892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_27
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 1168
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710282f63f5dcc180800000000000000
+      internalID: -9093658306049204201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_28
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c06886338aee22a0800000000000000
+      internalID: -6760208141360013114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_29
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 1168
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59408f056472bef30800000000000000
+      internalID: 4605818226876089493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_30
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 1148
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5548899422d7f820800000000000000
+      internalID: 2952059135401149786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_31
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1398
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05a18c103c1bbc8d0800000000000000
+      internalID: -2824968890138224048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_32
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1168
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb3680806f56e7e0800000000000000
+      internalID: -1736595738226967602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_33
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1149
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e18e8db865116310800000000000000
+      internalID: 1396420899062579684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_34
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 1149
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3eb5092d338d870800000000000000
+      internalID: 8707766858978943924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_35
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1149
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fabcefa4c8123740800000000000000
+      internalID: 5130190158572600057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_36
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 1149
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13aa485311cfdf20800000000000000
+      internalID: 3449688128418915100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_37
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1149
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e65186e2833aa9a0800000000000000
+      internalID: -6221103297952917784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_38
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1149
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc091804d4ab357e0800000000000000
+      internalID: -1777872586923732785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_39
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bc2ca54ab0b0350800000000000000
+      internalID: 5983889330417093472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_40
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 872
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1d5650b1c3fbdc0800000000000000
+      internalID: -3621109488630246972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_41
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 852
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da68bbe0e82b37690800000000000000
+      internalID: -7605539022496364883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_42
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec2a6d9085fb066b0800000000000000
+      internalID: -5305029976199355698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_43
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 872
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e585bd61cb6f740800000000000000
+      internalID: 5185538827319008787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_44
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30917f226b0efd440800000000000000
+      internalID: 4962932387260864771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_45
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 872
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 233b7bb07d23bde50800000000000000
+      internalID: 6835112758660805426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_46
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 852
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b0e4bfc7e4f134c0800000000000000
+      internalID: -4309394091957493583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_47
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1a4aebf2530c1400800000000000000
+      internalID: 296115330448247324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_48
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 872
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c9d6cef5a5ae64d0800000000000000
+      internalID: -3139389757868025400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_49
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d44371b0ec33c7e30800000000000000
+      internalID: 4502530687506003021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_50
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 872
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de82b1fec93b23770800000000000000
+      internalID: 8589124925956761837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_51
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 852
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4029f6cebe12e3250800000000000000
+      internalID: 5926211456833917444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_52
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 1102
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a63dbe4cf3f49500800000000000000
+      internalID: 402214531721148067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_53
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 872
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c37deb97ec1f1c0800000000000000
+      internalID: -4471565932714050522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_54
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 853
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d11dda6687e07920800000000000000
+      internalID: 2986141117451145682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_55
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 853
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab2cbe78a001d540800000000000000
+      internalID: 5030802982430321574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_56
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 853
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3491e36074c1ef970800000000000000
+      internalID: 8790494614046775619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_57
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 853
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a789fc2a9397c7e00800000000000000
+      internalID: 1043842502094723194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_58
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 853
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b511ed58ca84879b0800000000000000
+      internalID: -5082232273670106789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_59
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 853
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b37d45e0209e0b0800000000000000
+      internalID: -5699021592884462777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_60
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df45f992ce2bb860800000000000000
+      internalID: 7546677013930921938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_61
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 573
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346d5d7a91e846c60800000000000000
+      internalID: 7810523894608418371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_62
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 553
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa49e0c7e2102f1d0800000000000000
+      internalID: -3318588676257180502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_63
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 706685f3d2b4124b0800000000000000
+      internalID: -5467005814942702073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_64
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 573
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 655445570a76c7270800000000000000
+      internalID: 8249582556296791382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_65
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05ba13fba7155060800000000000000
+      internalID: 6941480427946947855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_66
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 573
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b33b69d14212b7520800000000000000
+      internalID: 2700788840537699131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_67
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 553
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71e73330cb8bc320800000000000000
+      internalID: 2579308869209022846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_68
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2e79d4aa5f3a71a0800000000000000
+      internalID: -6811061827899130325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_69
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 573
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72b707e5bed0e1960800000000000000
+      internalID: 7574506927836658471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_70
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036f9d1383e3741b0800000000000000
+      internalID: -5672496794574391760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_71
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 573
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81e66047ed526f90800000000000000
+      internalID: -6961898826162052725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_72
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 553
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74ac1ce5054eebc30800000000000000
+      internalID: 4377186921688975943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_73
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 803
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f038618412031b2e0800000000000000
+      internalID: -2111853830758563057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_74
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 573
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aee798ef5e46de60800000000000000
+      internalID: 7986657163019284129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_75
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 554
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6c32f4543e3f2630800000000000000
+      internalID: 3904407796437892202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_76
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 554
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ff215e19195fc40800000000000000
+      internalID: 5545498571976146820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_77
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 554
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34922f781ffd99cc0800000000000000
+      internalID: -3703682990074615485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_78
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 554
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa61ad8c15d2b2a30800000000000000
+      internalID: 4191493707483715247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_79
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 554
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f79941edd0511110800000000000000
+      internalID: 1229853087146547191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_80
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 554
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a237948e66a58690800000000000000
+      internalID: -7600485802516729181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_81
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01b7b1f9b61de1ec0800000000000000
+      internalID: -3594205192433992944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_82
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 277
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a34ee6834b8d4490800000000000000
+      internalID: -7760393460746665051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_83
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 257
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8add3f0e46497a1c0800000000000000
+      internalID: -4492458942287061592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_84
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb9e7b4d7472537b0800000000000000
+      internalID: -5245243001538090565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_85
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 277
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a85157f5a2ccc370800000000000000
+      internalID: 8344258227685382313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_86
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69e2ea33121603700800000000000000
+      internalID: 518020752376475286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_87
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 277
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dace29518a62e3dc0800000000000000
+      internalID: -3657443344019952467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_88
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 257
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c39a2f1532a3f0f20800000000000000
+      internalID: 3390992967806396732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_89
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15256be93f79597b0800000000000000
+      internalID: -5218097520643255727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_90
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 277
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72629a6b94dd9a290800000000000000
+      internalID: -7878522764441082329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_91
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c85c459f81e9665e0800000000000000
+      internalID: -1916670761300081268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_92
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 277
+        width: 9
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19635aa9beffe3e40800000000000000
+      internalID: 5638225170891355793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_93
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 257
+        width: 154
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38a1cd778a7dcf310800000000000000
+      internalID: 1440263099417107075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_94
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 507
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476d4739a5398f680800000000000000
+      internalID: -8721058661172717964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_95
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 277
+        width: 9
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e63247371b5bd040800000000000000
+      internalID: 4673429193596483304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_96
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 258
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0d0daa7e2b08bf0800000000000000
+      internalID: -324062465097674551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_97
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 258
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3258b0d407a84a10800000000000000
+      internalID: 1893947282432741950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_98
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 258
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f318001f384b2260800000000000000
+      internalID: 7073827075404600311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_99
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 258
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9893873433647fb60800000000000000
+      internalID: 7779764067295050121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_100
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 258
+        width: 22
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edd025379cd7f5c10800000000000000
+      internalID: 2044491060026150366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_101
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 258
+        width: 23
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff5166201cd675390800000000000000
+      internalID: -7829668751423957505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_102
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2400dbbeb1da13ab0800000000000000
+      internalID: -5030048973365379006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_103
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 9
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0df4dcbaf2e26660800000000000000
+      internalID: 7377708706124070155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_104
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 154
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b27ab5b975d5950800000000000000
+      internalID: 6439399366978907032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_105
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 276b1a199b2d7b0c0800000000000000
+      internalID: -4559944403235260814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_106
+      rect:
+        serializedVersion: 2
+        x: 236
+        y: 0
+        width: 9
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccbf0bdd2e0badc10800000000000000
+      internalID: 2079168666413366220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_107
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7856ea2877c9b3da0800000000000000
+      internalID: -5964001244414581369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_108
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 0
+        width: 9
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b722220503efe38c0800000000000000
+      internalID: -4017494334111604101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_109
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 0
+        width: 154
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2279de188badc2280800000000000000
+      internalID: -9066631463814981854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_110
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62c0f21dba758270800000000000000
+      internalID: 8252136844711477866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_111
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 0
+        width: 9
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdbb6b6d7bcc9ffe0800000000000000
+      internalID: -1154666739490440229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_112
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e59bdf5f7f50cd20800000000000000
+      internalID: 3296739927908914660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_113
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 0
+        width: 9
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36951748ac7b34170800000000000000
+      internalID: 8161569030158768483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_114
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 0
+        width: 154
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba79e37f854a897a0800000000000000
+      internalID: -6370160970903414869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_115
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 208
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea95b8530a14b45f0800000000000000
+      internalID: -771450754815010386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inventaire test_116
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 0
+        width: 9
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5db5d5306db8efb0800000000000000
+      internalID: -4618233196950733478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      inventaire test_0: 159275211455100136
+      inventaire test_1: 5398752617653232388
+      inventaire test_10: -4203244512004553760
+      inventaire test_100: 2044491060026150366
+      inventaire test_101: -7829668751423957505
+      inventaire test_102: -5030048973365379006
+      inventaire test_103: 7377708706124070155
+      inventaire test_104: 6439399366978907032
+      inventaire test_105: -4559944403235260814
+      inventaire test_106: 2079168666413366220
+      inventaire test_107: -5964001244414581369
+      inventaire test_108: -4017494334111604101
+      inventaire test_109: -9066631463814981854
+      inventaire test_11: -310087615235230928
+      inventaire test_110: 8252136844711477866
+      inventaire test_111: -1154666739490440229
+      inventaire test_112: 3296739927908914660
+      inventaire test_113: 8161569030158768483
+      inventaire test_114: -6370160970903414869
+      inventaire test_115: -771450754815010386
+      inventaire test_116: -4618233196950733478
+      inventaire test_12: -4418660173207094153
+      inventaire test_13: -2292173011093833144
+      inventaire test_14: 8829067002960108052
+      inventaire test_15: 1422899128221992162
+      inventaire test_16: -7474831587596190149
+      inventaire test_17: -9103550831464438384
+      inventaire test_18: 2984719240805284778
+      inventaire test_19: 3803071663587811517
+      inventaire test_2: -1773039401196376256
+      inventaire test_20: -969386965814257764
+      inventaire test_21: -6877434138185498892
+      inventaire test_22: 7353269693727672662
+      inventaire test_23: -4268070689448960443
+      inventaire test_24: 1190325635225964656
+      inventaire test_25: -3757945840232809244
+      inventaire test_26: -8150433540855849892
+      inventaire test_27: -9093658306049204201
+      inventaire test_28: -6760208141360013114
+      inventaire test_29: 4605818226876089493
+      inventaire test_3: -1758859886901349400
+      inventaire test_30: 2952059135401149786
+      inventaire test_31: -2824968890138224048
+      inventaire test_32: -1736595738226967602
+      inventaire test_33: 1396420899062579684
+      inventaire test_34: 8707766858978943924
+      inventaire test_35: 5130190158572600057
+      inventaire test_36: 3449688128418915100
+      inventaire test_37: -6221103297952917784
+      inventaire test_38: -1777872586923732785
+      inventaire test_39: 5983889330417093472
+      inventaire test_4: -799641081270356030
+      inventaire test_40: -3621109488630246972
+      inventaire test_41: -7605539022496364883
+      inventaire test_42: -5305029976199355698
+      inventaire test_43: 5185538827319008787
+      inventaire test_44: 4962932387260864771
+      inventaire test_45: 6835112758660805426
+      inventaire test_46: -4309394091957493583
+      inventaire test_47: 296115330448247324
+      inventaire test_48: -3139389757868025400
+      inventaire test_49: 4502530687506003021
+      inventaire test_5: -4162829551603860409
+      inventaire test_50: 8589124925956761837
+      inventaire test_51: 5926211456833917444
+      inventaire test_52: 402214531721148067
+      inventaire test_53: -4471565932714050522
+      inventaire test_54: 2986141117451145682
+      inventaire test_55: 5030802982430321574
+      inventaire test_56: 8790494614046775619
+      inventaire test_57: 1043842502094723194
+      inventaire test_58: -5082232273670106789
+      inventaire test_59: -5699021592884462777
+      inventaire test_6: -1625024646499298019
+      inventaire test_60: 7546677013930921938
+      inventaire test_61: 7810523894608418371
+      inventaire test_62: -3318588676257180502
+      inventaire test_63: -5467005814942702073
+      inventaire test_64: 8249582556296791382
+      inventaire test_65: 6941480427946947855
+      inventaire test_66: 2700788840537699131
+      inventaire test_67: 2579308869209022846
+      inventaire test_68: -6811061827899130325
+      inventaire test_69: 7574506927836658471
+      inventaire test_7: 4735786807620921945
+      inventaire test_70: -5672496794574391760
+      inventaire test_71: -6961898826162052725
+      inventaire test_72: 4377186921688975943
+      inventaire test_73: -2111853830758563057
+      inventaire test_74: 7986657163019284129
+      inventaire test_75: 3904407796437892202
+      inventaire test_76: 5545498571976146820
+      inventaire test_77: -3703682990074615485
+      inventaire test_78: 4191493707483715247
+      inventaire test_79: 1229853087146547191
+      inventaire test_8: 6058395367239339908
+      inventaire test_80: -7600485802516729181
+      inventaire test_81: -3594205192433992944
+      inventaire test_82: -7760393460746665051
+      inventaire test_83: -4492458942287061592
+      inventaire test_84: -5245243001538090565
+      inventaire test_85: 8344258227685382313
+      inventaire test_86: 518020752376475286
+      inventaire test_87: -3657443344019952467
+      inventaire test_88: 3390992967806396732
+      inventaire test_89: -5218097520643255727
+      inventaire test_9: 7573001240280245875
+      inventaire test_90: -7878522764441082329
+      inventaire test_91: -1916670761300081268
+      inventaire test_92: 5638225170891355793
+      inventaire test_93: 1440263099417107075
+      inventaire test_94: -8721058661172717964
+      inventaire test_95: 4673429193596483304
+      inventaire test_96: -324062465097674551
+      inventaire test_97: 1893947282432741950
+      inventaire test_98: 7073827075404600311
+      inventaire test_99: 7779764067295050121
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

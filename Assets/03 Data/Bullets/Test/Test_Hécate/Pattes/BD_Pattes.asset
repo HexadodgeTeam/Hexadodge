@@ -32,7 +32,26 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0.5
+    tangibleCooldown:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0.5
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     impactType: 1
+    destroyOnImpact: 0
     impactPower:
       curve:
         m_Mode: 0
@@ -75,6 +94,24 @@ MonoBehaviour:
         curve:
           m_Mode: 0
           m_CurveMultiplier: 360
+          m_CurveMin:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_CurveMax:
+            serializedVersion: 2
+            m_Curve: []
+            m_PreInfinity: 2
+            m_PostInfinity: 2
+            m_RotationOrder: 4
+          m_ConstantMin: 0
+          m_ConstantMax: 0
+      rotationOffset:
+        curve:
+          m_Mode: 0
+          m_CurveMultiplier: 0
           m_CurveMin:
             serializedVersion: 2
             m_Curve: []

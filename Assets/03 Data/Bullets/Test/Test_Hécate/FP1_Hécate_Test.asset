@@ -29,8 +29,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 20
+      m_ConstantMax: 10
   sequences:
+  - {fileID: 11400000, guid: 0442a7cc16afd124fba5fbeb1ffdc309, type: 2}
   - {fileID: 11400000, guid: fbcea52321ff7a04e847a1f0e4007778, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0

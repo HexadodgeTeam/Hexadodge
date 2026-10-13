@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882d592421ce413bae0f5b9db6036b91, type: 3}
   m_Name: "BulletSpawning_Fum\xE9e"
   m_EditorClassIdentifier: Assembly-CSharp::BSPosition
+  subSpawning: {fileID: 0}
   positions:
   - x:
       curve:
@@ -66,5 +67,5 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
       m_ConstantMin: 0
-      m_ConstantMax: -90
+      m_ConstantMax: 90
   pairPositionWithRotation: 1

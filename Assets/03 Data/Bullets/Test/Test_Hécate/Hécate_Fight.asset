@@ -17,6 +17,6 @@ MonoBehaviour:
     enemyHealthFraction: 1
   - phase: {fileID: 11400000, guid: 463399eb5746a404d8d4183d4059d829, type: 2}
     enemyHealthFraction: 0.66
-  - phase: {fileID: 11400000, guid: 463399eb5746a404d8d4183d4059d829, type: 2}
+  - phase: {fileID: 11400000, guid: 63c69a6d3a717a84d897662fb69c397e, type: 2}
     enemyHealthFraction: 0.33
   enemy: {fileID: 11400000, guid: e1630bd55d208794f90d8f89f959c711, type: 2}
