@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class InventoryWheel : MonoBehaviour
 {
+    public List<ItemData> ItemInInventory = new List<ItemData>();
+    public List<Image> itemEmplacement = new List<Image>();
+    public List<ItemData> ItemEquip = new List<ItemData>();
+    
     public Scrollbar scrollbarInventaire;
     public List<RectTransform> PivotSlotInventaire = new List<RectTransform>();
     public List<RectTransform> SlotInventaire = new List<RectTransform>();
@@ -17,6 +21,8 @@ public class InventoryWheel : MonoBehaviour
     public Vector3 positionBaseSlotInventaire;
     public GameObject parentPop;
     public float popRange;
+    
+    
     
     public Scrollbar scrollbarEquipement;
     public List<RectTransform> PivotSlotEquipement = new List<RectTransform>();
@@ -38,13 +44,17 @@ public class InventoryWheel : MonoBehaviour
             var angles = PivotSlotInventaire[i].localEulerAngles;
             angles.z = RotationInitialSlotInventaire[i]   ;
             PivotSlotInventaire[i].localEulerAngles = angles;
+
+            itemEmplacement[i+5].sprite = ItemInInventory[i].Icon;
+            ItemInInventory[i].emplacement = i;
+            
             i++;
         }
         int j = 0;
         foreach (var VARIABLE in  PivotSlotEquipement )
         {
             var angles = PivotSlotEquipement[j].localEulerAngles;
-            angles.z = RotationInitialItemEquipement[j]   ;
+            angles.z = RotationInitialItemEquipement[j];
             PivotSlotEquipement[j].localEulerAngles = angles;
             j++;
         }
@@ -123,31 +133,87 @@ public class InventoryWheel : MonoBehaviour
 
     public void SwapItem()
     {
-        int i = 0;
-        int k = 0;
+        
+        int k;
         int l;
-        foreach (var VARIABLE in  PivotSlotInventaire )
+        int m;
+        k = 0;
+        l = 0;
+        m = 0;
+        for (int i = 0; i < PivotSlotInventaire.Count; i++)
         {
-            if (PivotSlotInventaire[i].localEulerAngles.z > -popRange && PivotSlotInventaire[i].localEulerAngles.z < popRange )
+            float rotationPivot = Mathf.DeltaAngle(
+                0f,
+                PivotSlotInventaire[i].localEulerAngles.z
+            );
+
+            if (Mathf.Abs(rotationPivot) < popRange)
             {
                 k = i;
                 break;
             }
-            
         }
-        int j = 0;
-        foreach (var VARIABLE in  PivotSlotEquipement )
+
+        for (int j = 0; j < PivotSlotEquipement.Count; j++)
         {
-            if (PivotSlotEquipement[i].localEulerAngles.z > -popRangeEquip && PivotSlotEquipement[i].localEulerAngles.z < popRange )
+            float rotationPivot = Mathf.DeltaAngle(
+                0f,
+                PivotSlotEquipement[j].localEulerAngles.z
+            );
+
+            if (Mathf.Abs(rotationPivot) < popRangeEquip)
             {
                 l = j;
                 break;
             }
         }
 
-        SlotInventaire[k].transform.SetParent(PivotSlotEquipement[j].transform) ;
-        SlotInventaire[k].localPosition = localPositionForEquip;
-        SlotEquipement[j].transform.SetParent(PivotSlotInventaire[k].transform) ;
-        SlotEquipement[j].localPosition = localPositionForInventaire;
+        ItemData Temp = ItemEquip[l];
+
+        if (ItemInInventory[k] == null) return;
+
+        ItemEquip.Insert(l, ItemInInventory[k]);
+        ItemEquip.RemoveAt(l + 1);
+
+        if (Temp == null)
+        {
+            ItemInInventory.RemoveAt(k);
+            UpdateItem();
+            return;
+        }
+
+        ItemInInventory.Insert(k, Temp);
+        ItemInInventory.RemoveAt(k + 1);
+
+        UpdateItem();
+
+    }
+
+    private void UpdateItem()
+    {
+        for (int o = 0; o < PivotSlotInventaire.Count; o++)
+        {
+            int indexImage = o + 5;
+
+            if (o >= ItemInInventory.Count || ItemInInventory[o] == null)
+            {
+                itemEmplacement[indexImage].sprite = null;
+                continue;
+            }
+
+            itemEmplacement[indexImage].sprite = ItemInInventory[o].Icon;
+            ItemInInventory[o].emplacement = o;
+        }
+        for (int n = 0; n < PivotSlotEquipement.Count-1; n++)
+        {
+            if (n >= ItemEquip.Count || ItemEquip[n] == null)
+            {
+                itemEmplacement[n].sprite = null;
+                continue;
+            }
+
+            itemEmplacement[n].sprite = ItemEquip[n].Icon;
+            ItemEquip[n].emplacement = n;
+        }
     }
 }
