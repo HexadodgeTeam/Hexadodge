@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2076078300285216102, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 2076078300285216102, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_LocalPosition.y
@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_Template
       objectReference: {fileID: 0}
+    - target: {fileID: 3555416487120806831, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3329846888488446647, guid: 5642f157432ba4a4eb65fa8718e32eb6, type: 3}
     - target: {fileID: 7280712666256111870, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_Controller
       value: 
@@ -434,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 67ce134cd97a62c409b8d9f4611dbad7, type: 2}
+  testData: {fileID: 11400000, guid: 034f38cd193a3a84fbe98ba655546b65, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 0
