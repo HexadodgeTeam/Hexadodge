@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 20
   timelines:
-  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
+  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 8
-  - pattern: {fileID: 11400000, guid: 2bd8cea2e7ced9b44a10d170b02e9ed1, type: 2}
+        m_ConstantMax: 4.5
+  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 12
+        m_ConstantMax: 4.5
     end:
       curve:
         m_Mode: 0
@@ -104,8 +104,8 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 20
-  - pattern: {fileID: 11400000, guid: 0407567ea8ac12b42bf2eadb4a8abb78, type: 2}
+        m_ConstantMax: 9
+  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 7
+        m_ConstantMax: 10.5
     end:
       curve:
         m_Mode: 0
@@ -141,41 +141,4 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 15
-  - pattern: {fileID: 11400000, guid: a2cd6cbc5bb3e464ca8611092c193291, type: 2}
-    start:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 8
-    end:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 15
+        m_ConstantMax: 14
