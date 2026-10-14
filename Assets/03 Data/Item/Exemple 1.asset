@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
   m_Name: Exemple 1
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: 
+  Name: SmokeCatA
   Description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -8805941976036427166, guid: 34167cba5b098ef478dc2e5b9620cdeb, type: 3}
   lore: 
+  emplacement: 0

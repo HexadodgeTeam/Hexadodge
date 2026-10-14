@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
   m_Name: Exemple 10
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: 
+  Name: Dragfeu
   Description: 
-  Icon: {fileID: 0}
+  Icon: {fileID: -7973351307694376670, guid: 92c34a6e366eb7d4d8735642ea33b4d0, type: 3}
   lore: 
+  emplacement: 4
