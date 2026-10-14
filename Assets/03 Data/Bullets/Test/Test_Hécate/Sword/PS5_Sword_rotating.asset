@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40683352dea3ec34589256222fefe81b, type: 3}
-  m_Name: PS3_Test
+  m_Name: PS5_Sword_rotating
   m_EditorClassIdentifier: Assembly-CSharp::PatternSequence
   duration:
     curve:
@@ -29,9 +29,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 6
+      m_ConstantMax: 15
   timelines:
-  - pattern: {fileID: 11400000, guid: df3885b202978eb4ca85990745a498fa, type: 2}
+  - pattern: {fileID: 11400000, guid: 67ce134cd97a62c409b8d9f4611dbad7, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -67,4 +67,4 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 3
+        m_ConstantMax: 15

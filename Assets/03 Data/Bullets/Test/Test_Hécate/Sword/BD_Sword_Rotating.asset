@@ -10,35 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: Basic_Bullet_3
+  m_Name: BD_Sword_Rotating
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 998d1fa32c371be4cbf49dcb340e5acb, type: 2}
+  transform: {fileID: 11400000, guid: a757251d14cab924b94aefb9b118d29e, type: 2}
   properties:
     lifetime:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 1
+        m_CurveMultiplier: 3
         m_CurveMin:
           serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
+          m_Curve: []
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
@@ -48,26 +30,26 @@ MonoBehaviour:
           - serializedVersion: 3
             time: 0
             value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
+            inSlope: -1
+            outSlope: -1
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
             time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
+            value: 0
+            inSlope: -1
+            outSlope: -1
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: 3
-        m_ConstantMax: 10
+        m_ConstantMin: 0
+        m_ConstantMax: 5
     tangibleCooldown:
       curve:
         m_Mode: 0
@@ -85,13 +67,13 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0.1
+        m_ConstantMax: 0
     impactType: 1
-    destroyOnImpact: 1
+    destroyOnImpact: 0
     impactPower:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 0
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -129,7 +111,7 @@ MonoBehaviour:
       arc:
         curve:
           m_Mode: 0
-          m_CurveMultiplier: 0
+          m_CurveMultiplier: 360
           m_CurveMin:
             serializedVersion: 2
             m_Curve: []
@@ -164,9 +146,9 @@ MonoBehaviour:
           m_ConstantMax: 0
       direction: 1
   animation:
-    sprite: {fileID: 0}
+    sprite: {fileID: -5646406841247498773, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
     color:
-      m_Mode: 0
+      m_Mode: 1
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -199,7 +181,7 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0, b: 0, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}

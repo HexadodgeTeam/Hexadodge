@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 463399eb5746a404d8d4183d4059d829, type: 2}
+  testData: {fileID: 11400000, guid: 56a1ce314fc033f49a78fe5548c3376b, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 0
