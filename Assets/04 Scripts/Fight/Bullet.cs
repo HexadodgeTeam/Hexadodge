@@ -41,7 +41,7 @@ public class Bullet : MonoBehaviour
             _transform = _data.transform?.Instance(transform.position);
             _animation = _data.animation.Instance();
             _pool = pool;
-            if (_data.animation.sprite) spriteRenderer.sprite = _data.animation.sprite;
+            spriteRenderer.sprite = _data.animation.sprite;
         }
 
         _mirror = mirror;
