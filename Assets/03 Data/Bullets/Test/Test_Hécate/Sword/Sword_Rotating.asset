@@ -30,7 +30,7 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  subTransform: {fileID: 0}
+  subTransform: {fileID: 11400000, guid: fa0e5fadc51645f4dbc7270aa3dc424d, type: 2}
   subPeriodOverride:
     curve:
       m_Mode: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 2
+        m_ConstantMax: 0
     y:
       curve:
         m_Mode: 0
@@ -212,7 +212,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.75
+      m_ConstantMax: 0
   rotationSpeed:
     curve:
       m_Mode: 0
@@ -248,7 +248,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 10
-      m_ConstantMax: 0
+      m_ConstantMax: 200
   scale:
     x:
       curve:
@@ -339,4 +339,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 1
+      m_ConstantMax: 1.5

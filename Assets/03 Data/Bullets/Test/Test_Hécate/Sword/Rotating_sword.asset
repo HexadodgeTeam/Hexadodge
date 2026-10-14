@@ -69,12 +69,12 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.25
+      m_ConstantMax: 1.5
   distanceFromCount: 0
   angle:
     curve:
-      m_Mode: 3
-      m_CurveMultiplier: 1
+      m_Mode: 1
+      m_CurveMultiplier: 360
       m_CurveMin:
         serializedVersion: 2
         m_Curve:
@@ -104,19 +104,19 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
           outWeight: 0
@@ -124,8 +124,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 360
-  angleFromCount: 0
+      m_ConstantMax: 0
+  angleFromCount: 1
   facePole: 1
   rotationOffset:
     curve:

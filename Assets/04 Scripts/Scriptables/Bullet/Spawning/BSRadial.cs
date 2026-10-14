@@ -58,7 +58,7 @@ public class BSRadial : BulletSpawning
             dist * Mathf.Sin(rad) * (mirror.y ? -1 : 1));
 
         Vector2 bulletToPlayer = center - position;
-        float rotation = facePole ? Mathf.Atan2(bulletToPlayer.y, bulletToPlayer.x) * Mathf.Rad2Deg : 0
+        float rotation = (facePole ? Mathf.Atan2(bulletToPlayer.y, bulletToPlayer.x) * Mathf.Rad2Deg : 0)
             + rotationOffset.Eval(rotationOffsetFromCount ? count01 : time01, Random.value);
 
         return (position, rotation);

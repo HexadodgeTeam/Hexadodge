@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 56a1ce314fc033f49a78fe5548c3376b, type: 2}
+  testData: {fileID: 11400000, guid: 67ce134cd97a62c409b8d9f4611dbad7, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 0
@@ -456,11 +456,11 @@ MonoBehaviour:
       m_Flags: 0
     m_Flags: 0
   enemyData: {fileID: 11400000, guid: e1630bd55d208794f90d8f89f959c711, type: 2}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  color: {r: 0, g: 0.093925, b: 1, a: 1}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0, g: 0.10661459, b: 1, a: 1}
+    key1: {r: 0.3066038, g: 0.40615714, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
