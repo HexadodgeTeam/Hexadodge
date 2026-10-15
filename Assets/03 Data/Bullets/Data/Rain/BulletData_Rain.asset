@@ -128,7 +128,7 @@ MonoBehaviour:
           m_ConstantMax: 0
       direction: 1
   animation:
-    sprite: {fileID: -8156265321633315653, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
+    sprite: {fileID: 467594448470497486, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:
@@ -192,4 +192,4 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
-      m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
+      m_ColorMax: {r: 0.8490566, g: 0.5645654, b: 0.4285333, a: 1}

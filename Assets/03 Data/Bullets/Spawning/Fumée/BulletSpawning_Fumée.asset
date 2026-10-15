@@ -16,7 +16,7 @@ MonoBehaviour:
   positions:
   - x:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2
@@ -31,10 +31,10 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: -1.5
-        m_ConstantMax: 1.5
+        m_ConstantMax: 2.5
     y:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2
@@ -49,7 +49,9 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: -2
-        m_ConstantMax: -2.5
+        m_ConstantMax: -4.5
+  positionsXFromCount: 0
+  positionsYFromCount: 0
   rotations:
   - curve:
       m_Mode: 0
@@ -67,5 +69,6 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
       m_ConstantMin: 0
-      m_ConstantMax: 90
+      m_ConstantMax: 180
+  rotationsFromCount: 0
   pairPositionWithRotation: 1

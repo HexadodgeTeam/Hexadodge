@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40683352dea3ec34589256222fefe81b, type: 3}
-  m_Name: PT2 Sequence 2 Phase 1 Level_1_1
+  m_Name: PT2 Sequence 5 Phase 1 Level_1_1
   m_EditorClassIdentifier: Assembly-CSharp::PatternSequence
   duration:
     curve:
@@ -29,9 +29,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 20
+      m_ConstantMax: 6
   timelines:
-  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
+  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -67,7 +67,44 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 4.5
+        m_ConstantMax: 1
+  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
+    start:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    end:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_ConstantMin: 0
+        m_ConstantMax: 2
   - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
     start:
       curve:
@@ -86,7 +123,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 4.5
+        m_ConstantMax: 2
     end:
       curve:
         m_Mode: 0
@@ -104,8 +141,8 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 9
-  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
+        m_ConstantMax: 3
+  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -123,7 +160,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 10.5
+        m_ConstantMax: 3
     end:
       curve:
         m_Mode: 0
@@ -141,4 +178,4 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 14
+        m_ConstantMax: 4

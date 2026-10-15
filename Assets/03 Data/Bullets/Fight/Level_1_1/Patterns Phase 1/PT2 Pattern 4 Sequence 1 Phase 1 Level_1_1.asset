@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 10
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 227477e4a1079bd439a3f373acf2dc46, type: 2}
+  - bullet: {fileID: 11400000, guid: 024697ff5027d1c4a9ad4ec896ff2608, type: 2}
     throwTransform: {fileID: 0}
     spawn: {fileID: 11400000, guid: 1fc6228e86af0d049838f8aee1007a53, type: 2}
     spawnCount:
@@ -51,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 3
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -89,4 +89,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 1.75
+      m_ConstantMax: 2
