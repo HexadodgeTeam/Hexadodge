@@ -31,8 +31,27 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 10
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 452cf057e31c5874689b13a8cf08b037, type: 2}
-    spawn: {fileID: 11400000, guid: 4b12c65f29393ef42809c568483639f3, type: 2}
+  - bullet: {fileID: 11400000, guid: 281c4fd353d5ded49be959cb1e862613, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: 4c39fcfcac1c88440a2b96b8d762afa3, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -55,7 +74,7 @@ MonoBehaviour:
     mirrorY: 0
   throwInterval:
     curve:
-      m_Mode: 1
+      m_Mode: 0
       m_CurveMultiplier: 2
       m_CurveMin:
         serializedVersion: 2
@@ -124,4 +143,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 3
+      m_ConstantMax: 2

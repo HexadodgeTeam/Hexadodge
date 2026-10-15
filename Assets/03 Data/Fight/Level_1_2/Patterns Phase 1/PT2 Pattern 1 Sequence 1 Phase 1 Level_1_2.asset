@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
-  m_Name: BulletTransform_CoupDePattes_grow
-  m_EditorClassIdentifier: Assembly-CSharp::BTGeneral
-  subTransform: {fileID: 0}
-  subTransformPeriod:
+  m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
+  m_Name: PT2 Pattern 1 Sequence 1 Phase 1 Level_1_2
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
+  period:
     curve:
       m_Mode: 0
       m_CurveMultiplier: 0
@@ -30,126 +29,15 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0
-  forwardSpeed:
-    x:
+      m_ConstantMax: 10
+  bulletThrows:
+  - bullet: {fileID: 11400000, guid: ce2da89199983f74ea4fe862ee849483, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: dbce326cdea2fcd4681a579b1b989172, type: 2}
+    spawnCount:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0
-    y:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0
-  disableForwardSpeed: 0
-  worldSpeed:
-    x:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0
-    y:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0
-  disableWorldSpeed: 1
-  playerFollowMultiplier:
-    curve:
-      m_Mode: 0
-      m_CurveMultiplier: 0
-      m_CurveMin:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_CurveMax:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_ConstantMin: 0
-      m_ConstantMax: 0
-  disablePFM: 1
-  rotationSpeed:
-    curve:
-      m_Mode: 0
-      m_CurveMultiplier: 0
-      m_CurveMin:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_CurveMax:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      m_ConstantMin: 0
-      m_ConstantMax: 0
-  disableRotationSpeed: 1
-  scale:
-    x:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0.25
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -164,10 +52,33 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 1
-    y:
+    spawnPeriodOverride:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 0.25
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+    mirrorX: 0
+    mirrorY: 0
+  - bullet: {fileID: 11400000, guid: 0a669f28d427ce643be6a28a349ec680, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: dbce326cdea2fcd4681a579b1b989172, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -182,9 +93,152 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 1
-  scaleMultiplier:
+    spawnPeriodOverride:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+    mirrorX: 0
+    mirrorY: 0
+  - bullet: {fileID: 11400000, guid: 705c34a124ac6d04ab036a7dc9454835, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: dbce326cdea2fcd4681a579b1b989172, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    spawnPeriodOverride:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+    mirrorX: 0
+    mirrorY: 0
+  - bullet: {fileID: 11400000, guid: ac3fef44f7e86024a8ac416dcb7c4398, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: dbce326cdea2fcd4681a579b1b989172, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    spawnPeriodOverride:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+    mirrorX: 0
+    mirrorY: 0
+  - bullet: {fileID: 11400000, guid: 419e1f1104cc38c4d80517c21ae44cec, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: dbce326cdea2fcd4681a579b1b989172, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    spawnPeriodOverride:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
+    mirrorX: 0
+    mirrorY: 0
+  throwInterval:
     curve:
-      m_Mode: 1
+      m_Mode: 0
       m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
@@ -194,28 +248,9 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 0
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 1
-  disableScale: 0
+      m_ConstantMax: 4

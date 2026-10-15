@@ -33,8 +33,10 @@ MonoBehaviour:
   sequences:
   - {fileID: 11400000, guid: f689d0cf94783c5488ce80377fc74044, type: 2}
   - {fileID: 11400000, guid: d6931940c8744894d8e31e68eaf54142, type: 2}
+  - {fileID: 11400000, guid: a1d56690b98d01248b1c6b113d3f1748, type: 2}
+  - {fileID: 11400000, guid: fe2c1cc6b357d834790958c0ea55924f, type: 2}
   randomOrder: 1
-  randomSequenceCanRepeat: 1
+  randomSequenceCanRepeat: 0
   waitBetweenSequence:
     curve:
       m_Mode: 0
@@ -52,7 +54,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0
+      m_ConstantMax: 2
   color: {r: 0.13333333, g: 0.6509851, b: 0.7529412, a: 1}
   gradient:
     serializedVersion: 2
