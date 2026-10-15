@@ -1,6 +1,8 @@
 
 using System;
 using System.Collections.Generic;
+using TMPro;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +11,8 @@ public class InventoryWheel : MonoBehaviour
     public List<ItemData> ItemInInventory = new List<ItemData>();
     public List<Image> itemEmplacement = new List<Image>();
     public List<ItemData> ItemEquip = new List<ItemData>();
+
+    public bool IsInventory;
     
     public Scrollbar scrollbarInventaire;
     public List<RectTransform> PivotSlotInventaire = new List<RectTransform>();
@@ -29,12 +33,59 @@ public class InventoryWheel : MonoBehaviour
     public List<RectTransform> SlotEquipement = new List<RectTransform>();
     public List<float> RotationInitialItemEquipement = new List<float>();
     private Quaternion rotationEquipement;
+    public List<bool> isSlotEquipShow = new List<bool>();
     public float vitesseScrollEquip=-10;
     public Vector3 popScaleEquip;
     public float popRangeEquip;
 
+    public TextMeshProUGUI nameItem;
+    public TextMeshProUGUI descriptionItem;
+    public TextMeshProUGUI lore;
+    public int itemToShowInventaire;
+    public int itemToShowEquipement;
+
     public Vector3 localPositionForEquip;
     public Vector3 localPositionForInventaire;
+    
+    public List<int> indexItemInventaire = new List<int>();
+
+    public void changeDesciptionFocus(bool isInventoryB)
+    {
+        IsInventory = isInventoryB;
+        UpdateInventoryDescription();
+    }
+
+    void UpdateInventoryDescription()
+    {
+        int i = 0;
+        if (IsInventory)
+        {
+            foreach (var VARIABLE in ItemInInventory)
+            {
+                if (ItemInInventory[i].emplacement == itemToShowInventaire)
+                {
+                    nameItem.text = ItemInInventory[i].Name;
+                    descriptionItem.text = ItemInInventory[i].Description;
+                    lore.text = ItemInInventory[i].lore;
+                }
+                else  i++;
+            }
+        }
+        else
+        {
+
+            foreach (var VARIABLE in ItemEquip)
+            {
+                if (ItemEquip[i].emplacement == itemToShowEquipement)
+                {
+                    nameItem.text = ItemEquip[i].Name;
+                    descriptionItem.text = ItemEquip[i].Description;
+                    lore.text = ItemEquip[i].lore;
+                }
+                else  i++;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -57,6 +108,10 @@ public class InventoryWheel : MonoBehaviour
             angles.z = RotationInitialItemEquipement[j];
             PivotSlotEquipement[j].localEulerAngles = angles;
             j++;
+        }
+        for (int k = 0; k < PivotSlotInventaire.Count; k++)
+        {
+            indexItemInventaire.Add(k % ItemInInventory.Count);
         }
     }
 
@@ -81,10 +136,21 @@ public class InventoryWheel : MonoBehaviour
             if (rotationEquipement.z > -popRange && rotationEquipement.z < popRange) 
             {
                 SlotEquipement[i].localScale = popScaleEquip;
+                if (!isSlotEquipShow[i])
+                {
+                    isSlotEquipShow[i] = true;
+                    itemToShowEquipement = i;
+                    UpdateInventoryDescription();
+                }
             }
             
             else 
             {
+                if (isSlotEquipShow[i] == true)
+                {
+                    isSlotEquipShow[i] = false;
+                }
+
                 SlotEquipement[i].localScale = Vector3.one;
             }
             
@@ -92,54 +158,94 @@ public class InventoryWheel : MonoBehaviour
             if (i >= PivotSlotEquipement.Count) i = 0;
         }
     }
-    void RotationInventaire()
+    int ModuloPositif(int valeur, int modulo)
     {
-        int i = 0;
-        foreach (var VARIABLE in  PivotSlotInventaire )
+        return ((valeur % modulo) + modulo) % modulo;
+    }
+    void RotationInventaire()
+{
+    for (int i = 0; i < PivotSlotInventaire.Count; i++)
+    {
+        float angle =
+            (scrollbarInventaire.value - 0.5f)
+            * 360f * vitesseScroll
+            + RotationInitialSlotInventaire[i];
+        
+        while (angle > 21f)
         {
-            rotationInventaire.z = (scrollbarInventaire.value-0.5f) * 360f * (vitesseScroll) + RotationInitialSlotInventaire[i];
-            PivotSlotInventaire[i].localEulerAngles = new Vector3(0, 0, rotationInventaire.z);
-            
-            if (rotationInventaire.z > 21) RotationInitialSlotInventaire[i] -= 42;
-            else if (rotationInventaire.z < -21) RotationInitialSlotInventaire[i] += 42;
+            RotationInitialSlotInventaire[i] -= 42f;
+            indexItemInventaire[i] += 8;
 
-            if (rotationInventaire.z > -popRange && rotationInventaire.z < popRange) 
+            angle -= 42f;
+        }
+
+        while (angle < -21f)
+        {
+            RotationInitialSlotInventaire[i] += 42f;
+            indexItemInventaire[i] -= 8;
+
+            angle += 42f;
+        }
+        
+        PivotSlotInventaire[i].localEulerAngles =
+            new Vector3(
+                0f,
+                0f,
+                angle
+            );
+
+        int index = ModuloPositif(
+            indexItemInventaire[i],
+            ItemInInventory.Count
+        );
+
+        itemEmplacement[i + 5].sprite =
+            ItemInInventory[index].Icon;
+
+        if (angle > -popRange && angle < popRange)
+        {
+            SlotInventaire[i].localScale = popScaleSlotInventaire;
+
+            if (!isSlotInventaireShow[i])
             {
-                SlotInventaire[i].localScale = popScaleSlotInventaire;
-                if ( !isSlotInventaireShow[i])
-                {
-                    isSlotInventaireShow[i] = true;
-                    SlotInventaire[i].transform.SetParent(parentPop.transform);
-                    SlotInventaire[i].localPosition = Vector3.zero;
-                    SlotInventaire[i].localEulerAngles = Vector3.zero;
-                }  
+                isSlotInventaireShow[i] = true;
+                itemToShowInventaire = index;
+
+                SlotInventaire[i].transform.SetParent(parentPop.transform);
+                SlotInventaire[i].localPosition = Vector3.zero;
+                SlotInventaire[i].localEulerAngles = Vector3.zero;
+
+                UpdateInventoryDescription();
             }
-            
-            else 
+        }
+        else
+        {
+            SlotInventaire[i].localScale = Vector3.one;
+
+            if (isSlotInventaireShow[i])
             {
-                SlotInventaire[i].localScale = Vector3.one;
-                if ( isSlotInventaireShow[i]==true)
-                {
-                    SlotInventaire[i].transform.SetParent(PivotSlotInventaire[i].transform);
-                    SlotInventaire[i].localPosition = positionBaseSlotInventaire;
-                    isSlotInventaireShow[i] = false;
-                } 
+                SlotInventaire[i].transform.SetParent(
+                    PivotSlotInventaire[i].transform
+                );
+
+                SlotInventaire[i].localPosition =
+                    positionBaseSlotInventaire;
+
+                isSlotInventaireShow[i] = false;
             }
-            
-            i++;
-            if (i >= PivotSlotInventaire.Count) i = 0;
         }
     }
+}
 
     public void SwapItem()
     {
         
         int k;
         int l;
-        int m;
+        
         k = 0;
         l = 0;
-        m = 0;
+        
         for (int i = 0; i < PivotSlotInventaire.Count; i++)
         {
             float rotationPivot = Mathf.DeltaAngle(
@@ -149,7 +255,8 @@ public class InventoryWheel : MonoBehaviour
 
             if (Mathf.Abs(rotationPivot) < popRange)
             {
-                k = i;
+                
+                k = (int)(i+(RotationInitialSlotInventaire[i] / 42) * 8);
                 break;
             }
         }
@@ -168,22 +275,22 @@ public class InventoryWheel : MonoBehaviour
             }
         }
 
-        ItemData Temp = ItemEquip[l];
+        ItemData Temp = ItemEquip[itemToShowEquipement];
 
-        if (ItemInInventory[k] == null) return;
+        if (ItemInInventory[itemToShowInventaire] == null) return;
 
-        ItemEquip.Insert(l, ItemInInventory[k]);
-        ItemEquip.RemoveAt(l + 1);
+        ItemEquip.Insert(itemToShowEquipement, ItemInInventory[itemToShowInventaire]);
+        ItemEquip.RemoveAt(itemToShowEquipement + 1);
 
         if (Temp == null)
         {
-            ItemInInventory.RemoveAt(k);
+            ItemInInventory.RemoveAt(itemToShowInventaire);
             UpdateItem();
             return;
         }
 
-        ItemInInventory.Insert(k, Temp);
-        ItemInInventory.RemoveAt(k + 1);
+        ItemInInventory.Insert(itemToShowInventaire, Temp);
+        ItemInInventory.RemoveAt(itemToShowInventaire + 1);
 
         UpdateItem();
 
@@ -215,5 +322,13 @@ public class InventoryWheel : MonoBehaviour
             itemEmplacement[n].sprite = ItemEquip[n].Icon;
             ItemEquip[n].emplacement = n;
         }
+    }
+
+    public void RemoveItem()
+    {
+        ItemInInventory.Insert(ItemEquip[itemToShowEquipement].ID,ItemEquip[itemToShowEquipement] );
+        ItemEquip.RemoveAt(itemToShowEquipement);
+
+        UpdateItem();
     }
 }
