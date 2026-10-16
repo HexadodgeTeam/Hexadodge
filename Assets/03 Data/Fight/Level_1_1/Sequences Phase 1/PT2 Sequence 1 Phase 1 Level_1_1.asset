@@ -179,3 +179,16 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 8
+  animTriggers:
+  - animationTrigger: Prep_B
+    triggerTime: 0.5
+  - animationTrigger: Attaque_B
+    triggerTime: 1.1
+  - animationTrigger: Prep_B
+    triggerTime: 3
+  - animationTrigger: Attaque_B
+    triggerTime: 3.6
+  - animationTrigger: Prep_B
+    triggerTime: 5.5
+  - animationTrigger: Attaque_B
+    triggerTime: 6.1
