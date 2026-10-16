@@ -8,8 +8,6 @@ using Vector3 = UnityEngine.Vector3;
 [SelectionBase]
 public class Bullet : MonoBehaviour
 {
-    public static float BulletTimeScale = 1f;
-    
     [SerializeField] private SpriteRenderer spriteRenderer;
     
     private const float BulletScaleFactor = 0.25f;
@@ -64,7 +62,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        _age += BulletTimeScale * Time.deltaTime;
+        _age += Time.deltaTime;
         _t = _age / _lifetime;
         
         UpdateAnimation();

@@ -242,7 +242,7 @@ public class FillGrid : MonoBehaviour
         float t = 0f;
         while (t < emptyAnimationDuration)
         {
-            t += Time.deltaTime;
+            t += Time.unscaledDeltaTime;
 
             int nextRow = (int)Mathf.Lerp(
                 backgroundTilemap.cellBounds.yMax,
@@ -278,7 +278,7 @@ public class FillGrid : MonoBehaviour
             float t = 0f;
             while (t < shrinkTime)
             {
-                t += Time.deltaTime;
+                t += Time.unscaledDeltaTime;
                 float p = tileShrinkAnimationCurve.Evaluate(t / shrinkTime);
                 paintTilemap.SetTransformMatrix(cell,
                     Matrix4x4.Scale(Vector3.Lerp(baseScale, tileShrinkTarget, p)));

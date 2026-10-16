@@ -88,11 +88,11 @@ public class FillManager : MonoBehaviour
         {
             t += Time.unscaledDeltaTime;
 
-            Bullet.BulletTimeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
+            Time.timeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
 
             yield return null;
         }
 
-        Bullet.BulletTimeScale = 1f;
+        Time.timeScale = 1f;
     }
 }
