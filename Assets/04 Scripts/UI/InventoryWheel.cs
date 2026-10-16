@@ -62,11 +62,12 @@ public class InventoryWheel : MonoBehaviour
         {
             foreach (var VARIABLE in ItemInInventory)
             {
-                if (ItemInInventory[i].emplacement == itemToShowInventaire)
+                if (indexItemInventaire[i]%(ItemInInventory.Count) == itemToShowInventaire)
                 {
-                    nameItem.text = ItemInInventory[i].Name;
-                    descriptionItem.text = ItemInInventory[i].Description;
-                    lore.text = ItemInInventory[i].lore;
+                    if ( ItemInInventory[itemToShowInventaire] == null) return;
+                    nameItem.text = ItemInInventory[itemToShowInventaire].Name;
+                    descriptionItem.text = ItemInInventory[itemToShowInventaire].Description;
+                    lore.text = ItemInInventory[itemToShowInventaire].lore;
                 }
                 else  i++;
             }
@@ -76,11 +77,12 @@ public class InventoryWheel : MonoBehaviour
 
             foreach (var VARIABLE in ItemEquip)
             {
-                if (ItemEquip[i].emplacement == itemToShowEquipement)
+                if (indexItemInventaire[i]%(ItemInInventory.Count) == itemToShowEquipement)
                 {
-                    nameItem.text = ItemEquip[i].Name;
-                    descriptionItem.text = ItemEquip[i].Description;
-                    lore.text = ItemEquip[i].lore;
+                    if ( ItemEquip[itemToShowEquipement] == null)return;
+                    nameItem.text = ItemEquip[itemToShowEquipement].Name;
+                    descriptionItem.text = ItemEquip[itemToShowEquipement].Description;
+                    lore.text = ItemEquip[itemToShowEquipement].lore;
                 }
                 else  i++;
             }
@@ -175,6 +177,7 @@ public class InventoryWheel : MonoBehaviour
         {
             RotationInitialSlotInventaire[i] -= 42f;
             indexItemInventaire[i] += 8;
+            //ItemInInventory[i].emplacement = (indexItemInventaire[i]%ItemInInventory.Count);
 
             angle -= 42f;
         }
@@ -183,6 +186,7 @@ public class InventoryWheel : MonoBehaviour
         {
             RotationInitialSlotInventaire[i] += 42f;
             indexItemInventaire[i] -= 8;
+            //ItemInInventory[i].emplacement = (indexItemInventaire[i]%ItemInInventory.Count);
 
             angle += 42f;
         }
@@ -326,8 +330,17 @@ public class InventoryWheel : MonoBehaviour
 
     public void RemoveItem()
     {
-        ItemInInventory.Insert(ItemEquip[itemToShowEquipement].ID,ItemEquip[itemToShowEquipement] );
-        ItemEquip.RemoveAt(itemToShowEquipement);
+        if (ItemEquip[itemToShowEquipement] == null) return;
+        if (ItemEquip[itemToShowEquipement].ID> ItemInInventory.Count)
+        {
+            ItemInInventory.Insert(ItemInInventory.Count, ItemEquip[itemToShowEquipement]);
+            ItemEquip[itemToShowEquipement]=null;
+        }
+        else
+        {
+            ItemInInventory.Insert(ItemEquip[itemToShowEquipement].ID, ItemEquip[itemToShowEquipement]);
+            ItemEquip[itemToShowEquipement]=null;
+        }
 
         UpdateItem();
     }
