@@ -53,4 +53,9 @@ public class Enemy : MonoBehaviour
         UIManager.Instance.GameOver(true);
         enemyAnimator.SetTrigger(Death);
     }
+
+    public void TriggerAnim(int hash)
+    {
+        enemyAnimator.SetTrigger(hash);
+    }
 }

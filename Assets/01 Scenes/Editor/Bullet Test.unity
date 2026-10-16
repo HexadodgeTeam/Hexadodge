@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!95 &441744997 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6876018282905750422, guid: 12990b8316a813448ae4454a9248bccc, type: 3}
+  m_PrefabInstance: {fileID: 1197544194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &442857269 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8221506045613954063, guid: f7175472cf2782745a32862958a17728, type: 3}
@@ -362,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 918e93e174cc35f4e91ea6fabeb9e1b7, type: 2}
+  testData: {fileID: 11400000, guid: 77b0bebf6857b3c49aebf2245d94f261, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 1
@@ -753,9 +758,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enemyHitDelay: 0.5
+  attackSlowdownTimeScale:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackSlowdownDuration: 0
   player: {fileID: 8258237376356356599}
   enemy: {fileID: 921075221}
   grid: {fileID: 927761107}
+  attackFx: {fileID: 441744997}
 --- !u!1 &921075219
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1092,54 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5423128768596489246, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
   m_PrefabInstance: {fileID: 8258237376356356592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1766543705
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766543707}
+  - component: {fileID: 1766543706}
+  m_Layer: 0
+  m_Name: Fight Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766543706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766543705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724bf5abfd9ba5f439e65407961c310b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Fight
+  data: {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
+  bulletSpawner: {fileID: 0}
+  enemy: {fileID: 921075221}
+  instanceFight: 0
+--- !u!4 &1766543707
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766543705}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.4482, y: 2.88826, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1896328819 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
@@ -2042,6 +2104,7 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1529275319}
   - {fileID: 877488860}
+  - {fileID: 1766543707}
   - {fileID: 1166071888719182054}
   - {fileID: 4515265486562515204}
   - {fileID: 638031113}

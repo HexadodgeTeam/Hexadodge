@@ -10,7 +10,7 @@ public class FightData : ScriptableObject, IGizmosDrawer
     [Tooltip("Les données de l'ennemi.")]
     [SerializeField] internal EnemyData enemy;
     
-    public FightDataInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
+    public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
     
     public void OnDrawGizmos()
     {
@@ -26,12 +26,12 @@ public class FightDataInstance
     private int _currentLevelIndex;
     private readonly FightLevelInstance[] _levels;
     
-    public FightDataInstance(FightData data, Action<BulletSpawn> spawnAction)
+    public FightDataInstance(FightData data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
         _levels = new FightLevelInstance[data.levels.Length];
         for (int i = 0; i < _levels.Length; i++)
         {
-            _levels[i] = data.levels[i].Instance(spawnAction);
+            _levels[i] = data.levels[i].Instance(animTriggerAction, spawnAction);
         }
         _currentLevelIndex = GetLevelIndex(1);
         _levels[_currentLevelIndex].phase.Start();
@@ -85,7 +85,7 @@ public struct FightLevel
     [Tooltip("Fraction de la vie de l'ennemi auquel la phase se déclenche.")]
     [Range(0, 1)] public float enemyHealthFraction;
 
-    public FightLevelInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
+    public FightLevelInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction,spawnAction);
 }
 
 public struct FightLevelInstance
@@ -93,9 +93,9 @@ public struct FightLevelInstance
     public readonly FightPhaseInstance phase;
     public readonly float enemyHealthFraction;
 
-    public FightLevelInstance(FightLevel data, Action<BulletSpawn> spawnAction)
+    public FightLevelInstance(FightLevel data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
-        phase = data.phase.Instance(spawnAction);
+        phase = data.phase.Instance(animTriggerAction, spawnAction);
         enemyHealthFraction = data.enemyHealthFraction;
     }
 }
