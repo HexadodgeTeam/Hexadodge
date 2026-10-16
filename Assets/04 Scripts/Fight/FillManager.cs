@@ -1,9 +1,16 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class FillManager : MonoBehaviour
 {
+    private static readonly int[] HitTriggers =
+    {
+        Animator.StringToHash("Level_1"),
+        Animator.StringToHash("Level_2"),
+        Animator.StringToHash("Level_3")
+    };
     private const int NoSkill = -1;
     
     [Header("Parameters")]
@@ -11,11 +18,15 @@ public class FillManager : MonoBehaviour
     [SerializeField] private int[] attackPowers;
     [SerializeField] private UnityEvent[] skillUnlockedEvents;
     [SerializeField] private UnityEvent attackEvent;
+    [SerializeField] private float enemyHitDelay = 0.5f;
+    [SerializeField] private AnimationCurve attackSlowdownTimeScale;
+    [SerializeField] private float attackSlowdownDuration;
 
     [Header("References")]
     [SerializeField] private Player player;
     [SerializeField] private Enemy enemy;
     [SerializeField] private FillGrid grid;
+    [SerializeField] private Animator attackFx;
     
     private int _currentSkillIndex = NoSkill;
 
@@ -52,11 +63,36 @@ public class FillManager : MonoBehaviour
         if (context.performed)
         {
             if (!HasSkill) return;
-        
-            enemy.TakeDamage(attackPowers[CurrentSkillIndex]);
+            
+            attackFx.SetTrigger(HitTriggers[CurrentSkillIndex]);
             grid.Empty();
-            CurrentSkillIndex = NoSkill;
             attackEvent.Invoke();
+            StartCoroutine(AttackCoroutine(CurrentSkillIndex));
+            StartCoroutine(AttackSlowdownCoroutine());
+            CurrentSkillIndex = NoSkill;
         }
+    }
+
+    private IEnumerator AttackCoroutine(int skillIndex)
+    {
+        yield return new WaitForSeconds(enemyHitDelay);
+        
+        enemy.TakeDamage(attackPowers[skillIndex]);
+    }
+
+    private IEnumerator AttackSlowdownCoroutine()
+    {
+        float t = 0f;
+
+        while (t < attackSlowdownDuration)
+        {
+            t += Time.unscaledDeltaTime;
+
+            Bullet.BulletTimeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
+
+            yield return null;
+        }
+
+        Bullet.BulletTimeScale = 1f;
     }
 }

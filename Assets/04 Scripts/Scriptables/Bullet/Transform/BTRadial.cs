@@ -66,9 +66,9 @@ public class BTRadialInstance : BulletTransformInstance
     
     protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01)
     {
-        _pole += _poleSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
-        _angle += _angleSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
-        _distance += _distanceSpeed.Eval(lifetime01) * Time.fixedDeltaTime;
+        _pole += _poleSpeed.Eval(lifetime01) * (Bullet.BulletTimeScale * Time.fixedDeltaTime);
+        _angle += _angleSpeed.Eval(lifetime01) * Bullet.BulletTimeScale * Time.fixedDeltaTime;
+        _distance += _distanceSpeed.Eval(lifetime01) * Bullet.BulletTimeScale * Time.fixedDeltaTime;
         
         float rad = _angle * Mathf.Deg2Rad;
         Vector2 position = _pole + new Vector2(

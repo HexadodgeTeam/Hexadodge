@@ -10,8 +10,11 @@ public class PatternSequence : ScriptableObject, IGizmosDrawer
     
     [Tooltip("Les timelines de pattern. Chaque pattern peut être défini avec un début et une fin.")]
     [SerializeField] internal PatternTimeline[] timelines;
+    
+    [Tooltip("Les triggers d'animation présentes dans la séquence.")]
+    [SerializeField] internal AnimTriggerTimeline[] animTriggers;
 
-    public PatternSequenceInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
+    public PatternSequenceInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
     public void OnDrawGizmos()
     {
@@ -27,18 +30,32 @@ public class PatternSequenceInstance
     private FloatCurveInstance _durationInstance;
     private float _sequenceStart;
     private float _sequenceTime;
+    private float _lastSequenceTime;
     private readonly PatternTimelineInstance[] _timelineInstances;
+    private readonly AnimTriggerTimeline[] _animTriggers;
+    private readonly int[] _animTriggersHash;
+    private readonly Action<int> _animTriggerAction;
 
-    public PatternSequenceInstance(PatternSequence data, Action<BulletSpawn> spawnAction)
+    public PatternSequenceInstance(PatternSequence data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
         _durationInstance = data.duration.Instance();
         _sequenceStart = Time.time;
         _sequenceTime = 0f;
+        _lastSequenceTime = 0f;
         _timelineInstances = new PatternTimelineInstance[data.timelines.Length];
+        _animTriggers = data.animTriggers;
+        _animTriggerAction = animTriggerAction;
         
         for (int i = 0; i < data.timelines.Length; i++)
         {
             _timelineInstances[i] = data.timelines[i].Instance(spawnAction);
+        }
+
+        _animTriggersHash = new int[data.animTriggers.Length];
+
+        for (int i = 0; i < data.animTriggers.Length; i++)
+        {
+            _animTriggersHash[i] = Animator.StringToHash(data.animTriggers[i].animationTrigger);
         }
     }
 
@@ -56,6 +73,16 @@ public class PatternSequenceInstance
         {
             timeline.Tick(phaseTime01, _sequenceTime);
         }
+
+        for (var i = 0; i < _animTriggers.Length; i++)
+        {
+            if (_lastSequenceTime <= _animTriggers[i].triggerTime && _animTriggers[i].triggerTime <= _sequenceTime)
+            {
+                _animTriggerAction.Invoke(_animTriggersHash[i]);
+            }
+        }
+
+        _lastSequenceTime = _sequenceTime;
     }
 
     public bool Ended(float phaseTime01)
@@ -90,6 +117,16 @@ public class PatternTimeline
     public FloatCurve end;
 
     public PatternTimelineInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
+}
+
+[Serializable]
+public class AnimTriggerTimeline
+{
+    [Tooltip("Le nom du trigger.")]
+    public string animationTrigger;
+
+    [Tooltip("Le temps où le trigger se déclenche selon le début de la séquence.")]
+    public float triggerTime;
 }
 
 public class PatternTimelineInstance

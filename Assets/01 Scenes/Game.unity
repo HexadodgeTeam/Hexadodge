@@ -786,9 +786,45 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enemyHitDelay: 0.65
+  attackSlowdownTimeScale:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -80
+      outSlope: -80
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.01
+      value: 0.2
+      inSlope: -0.021001562
+      outSlope: -0.021001562
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 0.029837055
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.9610512
+      outSlope: 1.9610512
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.058922563
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackSlowdownDuration: 2
   player: {fileID: 8258237376356356599}
   enemy: {fileID: 921075221}
   grid: {fileID: 927761107}
+  attackFx: {fileID: 1197544195}
 --- !u!114 &921075221 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6463363396445947107, guid: 2a3bde127a80da045b225031401f3240, type: 3}
@@ -873,6 +909,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12990b8316a813448ae4454a9248bccc, type: 3}
+--- !u!95 &1197544195 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6876018282905750422, guid: 12990b8316a813448ae4454a9248bccc, type: 3}
+  m_PrefabInstance: {fileID: 1197544194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1301078859 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1399047379014534984, guid: f7175472cf2782745a32862958a17728, type: 3}
@@ -1006,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724bf5abfd9ba5f439e65407961c310b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fight
-  data: {fileID: 11400000, guid: 57bc2e15c6477e7439e45527f62c7f8a, type: 2}
+  data: {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
   bulletSpawner: {fileID: 776526448}
   enemy: {fileID: 921075221}
 --- !u!1 &1896328819 stripped

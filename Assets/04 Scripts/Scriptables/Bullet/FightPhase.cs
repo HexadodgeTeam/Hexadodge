@@ -28,7 +28,7 @@ public class FightPhase : ScriptableObject, IGizmosDrawer
     [Tooltip("Dégradé de la peinture lors de la phase.")]
     [SerializeField] internal Gradient gradient;
 
-    public FightPhaseInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
+    public FightPhaseInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
     public void OnDrawGizmos()
     {
@@ -52,13 +52,13 @@ public class FightPhaseInstance
     private float _waitTimer = 0f;
     private bool _isWaiting = false;
 
-    public FightPhaseInstance(FightPhase data, Action<BulletSpawn> spawnAction)
+    public FightPhaseInstance(FightPhase data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
         _data = data;
         _sequenceInstances = new PatternSequenceInstance[_data.sequences.Length];
         for (int i = 0; i < _data.sequences.Length; i++)
         {
-            _sequenceInstances[i] = _data.sequences[i].Instance(spawnAction);
+            _sequenceInstances[i] = _data.sequences[i].Instance(animTriggerAction, spawnAction);
         }
         _periodInstance = _data.period.Instance();
         _waitBetweenSequenceInstance = _data.waitBetweenSequence.Instance();

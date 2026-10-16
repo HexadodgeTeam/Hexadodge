@@ -64,15 +64,15 @@ public class BulletTester : MonoBehaviour
                 _bulletPatternInstance = bulletPattern.Instance(SpawnBullet);
                 break;
             case PatternSequence patternSequence:
-                _patternSequenceInstance = patternSequence.Instance(SpawnBullet);
+                _patternSequenceInstance = patternSequence.Instance(enemy.TriggerAnim, SpawnBullet);
                 _patternSequenceInstance.Start();
                 break;
             case FightPhase fightPhase:
-                _fightPhaseInstance = fightPhase.Instance(SpawnBullet);
+                _fightPhaseInstance = fightPhase.Instance(enemy.TriggerAnim, SpawnBullet);
                 _fightPhaseInstance.Start();
                 break;
             case FightData fightData:
-                _fightInstance = fightData.Instance(SpawnBullet);
+                _fightInstance = fightData.Instance(enemy.TriggerAnim, SpawnBullet);
                 break;
         }
     }
