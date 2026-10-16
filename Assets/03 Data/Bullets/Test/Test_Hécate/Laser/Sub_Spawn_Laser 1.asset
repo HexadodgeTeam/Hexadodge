@@ -48,7 +48,7 @@ MonoBehaviour:
           m_PreInfinity: 2
           m_PostInfinity: 2
           m_RotationOrder: 4
-        m_ConstantMin: 0
+        m_ConstantMin: -0.1
         m_ConstantMax: 0
   poleXFromCount: 0
   poleYFromCount: 0
@@ -112,16 +112,52 @@ MonoBehaviour:
   rotationOffset:
     curve:
       m_Mode: 0
-      m_CurveMultiplier: 0
+      m_CurveMultiplier: 360
       m_CurveMin:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: -1.0075797
+          tangentMode: 69
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1.0015259
+          value: -0.009117126
+          inSlope: -1.0075797
+          outSlope: 0
+          tangentMode: 69
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 34
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4

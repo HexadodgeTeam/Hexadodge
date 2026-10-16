@@ -2708,7 +2708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 1040187391
+      value: 973078527
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2732,7 +2732,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 791805696
+      value: 741474048
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
@@ -2740,7 +2740,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3198617528483151376, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_IsActive
@@ -2851,7 +2851,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9117957088609544998, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
@@ -2890,7 +2891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 1040187391
+      value: 989855743
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2914,7 +2915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 791805696
+      value: 758251264
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
@@ -3025,7 +3026,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9117957088609544998, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
@@ -3070,7 +3072,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 1040187391
+      value: 939524095
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3094,7 +3096,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 791805696
+      value: 724696832
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
@@ -3209,7 +3211,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 9117957088609544998, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
