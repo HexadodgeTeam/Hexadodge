@@ -9,21 +9,20 @@ public class InventoryWheel : MonoBehaviour
     private const float StepAngle = 42f;
     private const float HalfStepAngle = StepAngle / 2f;
     private const int InventoryImageOffset = 5;
-    private const string DissolvedAmountProperty = "_DissolvedAmount";
 
     [Header("Données")]
     public List<ItemData> ItemInInventory = new List<ItemData>();
     public List<ItemData> ItemEquip = new List<ItemData>();
     public List<Image> itemEmplacement = new List<Image>();
-    public Sprite emptySlotSprite;        // affiché quand un slot n'a pas d'item (vide = aucun sprite)
+    public Sprite emptySlotSprite; 
 
     [Header("Focus et description")]
     public bool IsInventory;
     public TextMeshProUGUI nameItem;
     public TextMeshProUGUI descriptionItem;
     public TextMeshProUGUI lore;
-    public int itemToShowInventaire;      // index d'ITEM dans ItemInInventory (≠ index de slot !)
-    public int itemToShowEquipement;      // index de slot d'équipement (= index d'item dans ItemEquip)
+    public int itemToShowInventaire;    
+    public int itemToShowEquipement;   
     public Vector3 Deplacementpop;
     public Vector3 DeplacementInitial;
 
@@ -51,10 +50,7 @@ public class InventoryWheel : MonoBehaviour
     public float popRangeEquip;
 
     [Header("Animation de swap")]
-    public Material DissolvedMaterial;
-    public float dissolveDuration = 1f;
-    public float moveDuration = 0.15f;
-    public Vector2 swapTargetPosition = new Vector2(0f, 400f);
+    public float moveDuration = 0.15f;   
 
     private int EquipSlotCount => Mathf.Min(PivotSlotEquipement.Count, InventoryImageOffset);
 
@@ -62,7 +58,6 @@ public class InventoryWheel : MonoBehaviour
 
     private readonly List<Quaternion> slotBaseLocalRotation = new List<Quaternion>();
 
-    // true pendant l'animation de swap : roues figées, swap/remove ignorés.
     private bool isSwapping;
 
 
@@ -77,71 +72,60 @@ public class InventoryWheel : MonoBehaviour
         if (isSwapping) return;
         StartCoroutine(SwapItemCoroutine());
     }
-
     private IEnumerator SwapItemCoroutine()
     {
-        // ⚠ itemToShowInventaire = index d'ITEM dans ItemInInventory : il peut dépasser le nombre de slots.
-        // Le slot VISUEL au centre de la roue est celui dont isSlotInventaireShow vaut true.
         int inventorySlot = isSlotInventaireShow.IndexOf(true);
         int equipSlot = itemToShowEquipement;
         ItemData fromInventory = GetInventoryItem(itemToShowInventaire);
 
-        // On valide AVANT d'animer : pas d'animation pour un swap impossible.
         if (inventorySlot < 0 || fromInventory == null
             || !IsValidEquipSlot(equipSlot)
-            || equipSlot >= SlotEquipement.Count
-            || equipSlot >= itemEmplacement.Count)
+            || equipSlot >= SlotEquipement.Count)
             yield break;
 
         isSwapping = true;
 
-        RectTransform slot = SlotInventaire[inventorySlot];
-        Vector2 startPosition = slot.anchoredPosition;
-
-        List<Image> targets = GetDissolveTargets(equipSlot);
-        List<Material> originalMaterials = new List<Material>();
-        Material dissolve = null;
+        RectTransform inventoryRect = SlotInventaire[inventorySlot];
+        RectTransform equipRect = SlotEquipement[equipSlot];
+        Vector3 inventoryLocalPos = inventoryRect.localPosition;
+        Vector3 inventoryScale = inventoryRect.localScale;
+        Vector3 equipLocalPos = equipRect.localPosition;
+        Vector3 equipScale = equipRect.localScale;
+        Vector3 inventoryWorldPos = inventoryRect.position;
+        Vector3 equipWorldPos = equipRect.position;
 
         try
         {
-            if (DissolvedMaterial != null)
+            yield return StartCoroutine(Animate(moveDuration, t =>
             {
-                dissolve = Instantiate(DissolvedMaterial);
-                dissolve.SetFloat(DissolvedAmountProperty, 0f);
+                inventoryRect.position = Vector3.Lerp(inventoryWorldPos, equipWorldPos, t);
+                equipRect.position = Vector3.Lerp(equipWorldPos, inventoryWorldPos, t);
 
-                foreach (Image target in targets)
-                {
-                    originalMaterials.Add(target.material);
-                    target.material = dissolve;
-                }
-
-                yield return StartCoroutine(Animate(dissolveDuration,
-                    t => dissolve.SetFloat(DissolvedAmountProperty, t)));
-            }
-
-            yield return StartCoroutine(Animate(moveDuration,
-                t => slot.anchoredPosition = Vector2.Lerp(startPosition, swapTargetPosition, t)));
-
-            // Les données changent alors que tout est encore dissous/déplacé : pas de flash de l'ancien item.
+                inventoryRect.localScale = Vector3.Lerp(inventoryScale, equipScale, t);
+                equipRect.localScale = Vector3.Lerp(equipScale, inventoryScale, t);
+            }));
             ApplySwap(fromInventory, equipSlot);
         }
         finally
         {
-            // Remet tout en état, même si l'animation est interrompue ou si ApplySwap lève une exception.
-            for (int k = 0; k < originalMaterials.Count; k++)
-                if (targets[k] != null) targets[k].material = originalMaterials[k];
+            if (inventoryRect != null)
+            {
+                inventoryRect.localPosition = inventoryLocalPos;
+                inventoryRect.localScale = inventoryScale;
+            }
 
-            if (dissolve != null) Destroy(dissolve);
-            if (slot != null) slot.anchoredPosition = startPosition;
+            if (equipRect != null)
+            {
+                equipRect.localPosition = equipLocalPos;
+                equipRect.localScale = equipScale;
+            }
 
             isSwapping = false;
         }
     }
 
-    /// <summary>Retire l'item de l'inventaire, l'équipe, et renvoie l'ancien item équipé dans l'inventaire (par ID).</summary>
     private void ApplySwap(ItemData fromInventory, int equipSlot)
     {
-        // On retrouve l'item par référence : l'index a pu bouger pendant l'animation.
         int inventoryIndex = ItemInInventory.IndexOf(fromInventory);
         if (inventoryIndex < 0 || !IsValidEquipSlot(equipSlot)) return;
 
@@ -151,26 +135,11 @@ public class InventoryWheel : MonoBehaviour
         ItemEquip[equipSlot] = fromInventory;
 
         if (fromEquipment != null)
-            InsertInInventoryById(fromEquipment);
+            ItemInInventory.Insert(inventoryIndex, fromEquipment);  
 
         OnItemsChanged();
     }
 
-    /// <summary>Images de l'équipement qui se dissolvent : l'icône et le fond du slot.</summary>
-    private List<Image> GetDissolveTargets(int equipSlot)
-    {
-        List<Image> targets = new List<Image>();
-
-        Image icon = itemEmplacement[equipSlot];
-        if (icon != null) targets.Add(icon);
-
-        Image background = SlotEquipement[equipSlot].GetComponent<Image>();
-        if (background != null) targets.Add(background);
-
-        return targets;
-    }
-
-    /// <summary>Appelle apply avec une valeur qui va de 0 à 1 sur la durée donnée.</summary>
     private static IEnumerator Animate(float duration, System.Action<float> apply)
     {
         float elapsed = 0f;
@@ -221,7 +190,7 @@ public class InventoryWheel : MonoBehaviour
 
     private void Update()
     {
-        if (isSwapping) return;   // roues figées pendant l'animation de swap
+        if (isSwapping) return;   
 
         UpdateInventoryWheel();
         UpdateEquipmentWheel();
@@ -463,7 +432,7 @@ public class InventoryWheel : MonoBehaviour
         if (image == null) return;
 
         Sprite sprite = item != null ? item.Icon : null;
-        if (sprite == null) sprite = emptySlotSprite;   // slot vide, ou item sans icône
+        if (sprite == null) sprite = emptySlotSprite;   
 
         if (image.sprite != sprite) image.sprite = sprite;
     }
