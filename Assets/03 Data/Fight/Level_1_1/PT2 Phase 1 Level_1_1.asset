@@ -32,6 +32,10 @@ MonoBehaviour:
       m_ConstantMax: 20
   sequences:
   - {fileID: 11400000, guid: a2dff3160eedbe24e873080db529f4f5, type: 2}
+  - {fileID: 11400000, guid: bdbac71f28c68e7488724beef6cb83f0, type: 2}
+  - {fileID: 11400000, guid: 133056ea85fc31547b41884edebe401a, type: 2}
+  - {fileID: 11400000, guid: a262eed3985a2dd418b7c7a95f0b63b8, type: 2}
+  - {fileID: 11400000, guid: 32224380ab2dde2459f7452775a91c89, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0
   waitBetweenSequence:
