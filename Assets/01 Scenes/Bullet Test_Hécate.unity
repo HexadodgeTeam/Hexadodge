@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: 7280712666256111870, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 463399eb5746a404d8d4183d4059d829, type: 2}
+  testData: {fileID: 11400000, guid: fe2c1cc6b357d834790958c0ea55924f, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 0
@@ -498,6 +498,11 @@ MonoBehaviour:
   mirrorY: 0
   bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
   enemy: {fileID: 368596643}
+--- !u!95 &795333457 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6876018282905750422, guid: 12990b8316a813448ae4454a9248bccc, type: 3}
+  m_PrefabInstance: {fileID: 1197544194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &821407478
 GameObject:
   m_ObjectHideFlags: 0
@@ -829,9 +834,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  enemyHitDelay: 0.5
+  attackSlowdownTimeScale:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackSlowdownDuration: 0
   player: {fileID: 8258237376356356599}
-  enemy: {fileID: 0}
+  enemy: {fileID: 368596643}
   grid: {fileID: 927761107}
+  attackFx: {fileID: 795333457}
 --- !u!114 &927761107 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}

@@ -145,15 +145,9 @@ MonoBehaviour:
   animTriggers:
   - animationTrigger: Prep_B
     triggerTime: 0.2
-  - animationTrigger: Attack_B
-    triggerTime: 1
   - animationTrigger: Prep_B
     triggerTime: 2
-  - animationTrigger: Attack_B
-    triggerTime: 3
   - animationTrigger: Prep_B
     triggerTime: 4.2
-  - animationTrigger: Attack_B
-    triggerTime: 5
   - animationTrigger: IdleBreak
     triggerTime: 6
