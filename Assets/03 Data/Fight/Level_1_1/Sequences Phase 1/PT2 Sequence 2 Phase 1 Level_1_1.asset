@@ -142,3 +142,12 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 5
+  animTriggers:
+  - animationTrigger: Prep_B
+    triggerTime: 0.2
+  - animationTrigger: Prep_B
+    triggerTime: 2
+  - animationTrigger: Prep_B
+    triggerTime: 4.2
+  - animationTrigger: IdleBreak
+    triggerTime: 6

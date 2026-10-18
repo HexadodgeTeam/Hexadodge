@@ -802,20 +802,20 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.01
       value: 0.2
-      inSlope: -0.021001562
-      outSlope: -0.021001562
+      inSlope: 0.0352899
+      outSlope: 0.0352899
       tangentMode: 0
       weightedMode: 0
       inWeight: 1
-      outWeight: 0.029837055
+      outWeight: 0.63756454
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1.9610512
-      outSlope: 1.9610512
+      inSlope: 2.000726
+      outSlope: 2.000726
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.058922563
+      inWeight: 0.05050506
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724bf5abfd9ba5f439e65407961c310b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fight
-  data: {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
+  data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   bulletSpawner: {fileID: 776526448}
   enemy: {fileID: 921075221}
   instanceFight: 1
