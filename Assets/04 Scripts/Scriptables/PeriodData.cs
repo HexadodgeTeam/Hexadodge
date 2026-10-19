@@ -38,7 +38,7 @@ public struct PeriodTimer
         _periodInstance = period.Instance();
         _getLifetimeInsteadOfPeriod = _periodInstance.IsAlmostZero;
         _currentPeriod = !_getLifetimeInsteadOfPeriod ? _periodInstance.Eval(0f) : 0f;
-        _periodStart = Time.time;
+        _periodStart = Game.ScaledTime;
     }
 
     public void OverridePeriodInstance(FloatCurveInstance periodInstance)
@@ -50,11 +50,11 @@ public struct PeriodTimer
     {
         if (_getLifetimeInsteadOfPeriod) return lifetime01;
 
-        float period = Time.time - _periodStart;
+        float period = Game.ScaledTime - _periodStart;
         if (period >= _currentPeriod)
         {
             _currentPeriod = _periodInstance.Eval(lifetime01);
-            _periodStart = Time.time;
+            _periodStart = Game.ScaledTime;
             period = 0f;
         }
 

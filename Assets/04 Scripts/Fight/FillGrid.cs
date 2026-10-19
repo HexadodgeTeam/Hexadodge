@@ -145,7 +145,7 @@ public class FillGrid : MonoBehaviour
         float t = 0f;
         while (t < filledCellGrowDuration)
         {
-            t += Time.deltaTime;
+            t += Game.DeltaTime;
             float p = growCurve.Evaluate(t / filledCellGrowDuration);
             paintTilemap.SetTransformMatrix(cell, Matrix4x4.Scale(Vector3.Lerp(Vector3.one, targetScale, p)));
             yield return null;
@@ -161,7 +161,7 @@ public class FillGrid : MonoBehaviour
         float t = 0f;
         while (t < filledCellGlowDuration)
         {
-            t += Time.deltaTime;
+            t += Game.DeltaTime;
             float p = glowCurve.Evaluate(t / filledCellGlowDuration);
             paintTilemap.SetColor(cell, Color.Lerp(glowColor, color, p));
             yield return null;
