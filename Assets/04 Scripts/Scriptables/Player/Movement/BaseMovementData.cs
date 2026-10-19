@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Base Movement", menuName = "Scriptable Objects/Player Movement/Base Movement")]
+[CreateAssetMenu(fileName = "Base Movement", menuName = "Scriptable Objects/Player/Movement/Base Movement")]
 public class BaseMovementData : PlayerMovementData
 {
     [SerializeField] private float speed = 2f;

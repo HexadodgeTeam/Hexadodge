@@ -2,26 +2,22 @@ using System;
 using UnityEngine;
 
 [SelectionBase]
+[RequireComponent(typeof(PlayerMovement))]
 public class Player : MonoBehaviour
 {
     public static Vector2 Pos;
     public static Vector2 Delta;
 
-    private static SpriteRenderer Renderer;
-    
+    [SerializeField] private PlayerData data;
     [SerializeField] private new SpriteRenderer renderer;
-    [SerializeField] private float fillRange = 4;
+    [SerializeField] private PlayerInputHandler inputHandler;
 
     private Action<Vector3Int> _paint;
-
-    private void Awake()
-    {
-        Renderer = renderer;
-    }
 
     private void Start()
     {
         _paint = FillGrid.Instance.Paint;
+        GetComponent<PlayerMovement>().Init(data.movementData);
     }
 
     private void FixedUpdate()
@@ -30,12 +26,17 @@ public class Player : MonoBehaviour
         Pos = transform.position;
         if (FillGrid.Active)
         {
-            _paint.Circle(transform.position, fillRange);
+            _paint.Circle(transform.position, data.fillRange);
         }
     }
 
-    public static void UpdateColor(Color color)
+    public void UpdateColor(Color color)
     {
-        Renderer.color = color;
+        renderer.color = color;
+    }
+
+    public void ChangeControlType(int value)
+    {
+        inputHandler.ChangeControlType(value);
     }
 }

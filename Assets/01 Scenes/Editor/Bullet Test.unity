@@ -367,7 +367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 77b0bebf6857b3c49aebf2245d94f261, type: 2}
+  testData: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
   basePeriod: 10
   maxBulletCount: 100
   debugOneAtATime: 1
@@ -563,6 +563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 0}
+  fill: {fileID: 0}
 --- !u!114 &877488862
 MonoBehaviour:
   m_ObjectHideFlags: 0

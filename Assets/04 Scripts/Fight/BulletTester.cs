@@ -53,7 +53,7 @@ public class BulletTester : MonoBehaviour
         if (testData is FightData fightData) enemy.Init(fightData.enemy);
         else enemy.Init(enemyData);
 
-        if (testData is not FightData && testData is not FightPhase) Game.SetColor(color, gradient);
+        if (testData is not FightData && testData is not FightPhase) Game.Instance.SetColor(color, gradient);
     }
 
     private void Refresh()
