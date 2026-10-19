@@ -39,7 +39,7 @@ public class PatternSequenceInstance
     public PatternSequenceInstance(PatternSequence data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
         _durationInstance = data.duration.Instance();
-        _sequenceStart = Time.time;
+        _sequenceStart = Game.ScaledTime;
         _sequenceTime = 0f;
         _lastSequenceTime = 0f;
         _timelineInstances = new PatternTimelineInstance[data.timelines.Length];
@@ -61,13 +61,13 @@ public class PatternSequenceInstance
 
     public void Start()
     {
-        _sequenceStart = Time.time;
+        _sequenceStart = Game.ScaledTime;
         _sequenceTime = 0f;
     }
 
     public void Tick(float phaseTime01)
     {
-        _sequenceTime = Time.time - _sequenceStart;
+        _sequenceTime = Game.ScaledTime - _sequenceStart;
         
         foreach (PatternTimelineInstance timeline in _timelineInstances)
         {
@@ -93,7 +93,7 @@ public class PatternSequenceInstance
     public void ReRoll()
     {
         _durationInstance.ReRoll();
-        _sequenceStart = Time.time;
+        _sequenceStart = Game.ScaledTime;
         _sequenceTime = 0f;
         foreach (PatternTimelineInstance timeline in _timelineInstances)
         {
