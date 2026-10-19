@@ -67,8 +67,8 @@ public class FightPhaseInstance
 
     public void Start()
     {
-        GameManager.SetColor(_data.color, _data.gradient);
-        _phaseStart = Time.time;
+        Game.SetColor(_data.color, _data.gradient);
+        _phaseStart = Game.ScaledTime;
         _phaseTime = 0f;
     }
     
@@ -76,11 +76,11 @@ public class FightPhaseInstance
     {
         if (_waitTimer > 0f)
         {
-            _waitTimer -= Time.deltaTime;
+            _waitTimer -= Game.DeltaTime;
         }
         else
         {
-            _phaseTime = Time.time - _phaseStart;
+            _phaseTime = Game.ScaledTime - _phaseStart;
             float time01 = Mathf.Clamp01(_phaseTime / _periodInstance);
         
             PatternSequenceInstance currentSequence = _sequenceInstances[_currentSequenceIndex];

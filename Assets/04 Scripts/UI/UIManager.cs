@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private PlayerInputHandler playerInputHandler;
     [SerializeField] private TMP_Dropdown controlTypeDropdown;
     [SerializeField] private Animator hitAnimator;
+    [SerializeField] private string mainMenuScene = "MainMenu";
 
     public CountUI healthUI;
     public SliderUI fillUI;
@@ -67,5 +69,10 @@ public class UIManager : MonoBehaviour
         stick.SetActive(classic);
         playerInputHandler.ChangeControlType(controlType);
         controlTypeDropdown.value = controlType;
+    }
+
+    public void SwitchToMainMenu()
+    {
+        SceneManager.LoadScene(mainMenuScene);
     }
 }

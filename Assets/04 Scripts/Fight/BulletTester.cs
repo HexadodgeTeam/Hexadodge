@@ -53,7 +53,7 @@ public class BulletTester : MonoBehaviour
         if (testData is FightData fightData) enemy.Init(fightData.enemy);
         else enemy.Init(enemyData);
 
-        if (testData is not FightData && testData is not FightPhase) GameManager.SetColor(color, gradient);
+        if (testData is not FightData && testData is not FightPhase) Game.SetColor(color, gradient);
     }
 
     private void Refresh()
@@ -87,7 +87,7 @@ public class BulletTester : MonoBehaviour
         switch (testData)
         {
             case BulletData bulletData:
-                _bulletSpawnTimer += Time.deltaTime;
+                _bulletSpawnTimer += Game.DeltaTime;
         
                 if (_bulletSpawnTimer >= bulletSpawnInterval && !(debugOneAtATime && _pool.Count > 0))
                 {
@@ -97,7 +97,7 @@ public class BulletTester : MonoBehaviour
 
                 break;
             case BulletPattern:
-                _bulletSpawnTimer += Time.deltaTime;
+                _bulletSpawnTimer += Game.DeltaTime;
         
                 _bulletPatternInstance.Tick(_bulletSpawnTimer / basePeriod);
             
@@ -108,7 +108,7 @@ public class BulletTester : MonoBehaviour
 
                 break;
             case PatternSequence:
-                _bulletSpawnTimer += Time.deltaTime;
+                _bulletSpawnTimer += Game.DeltaTime;
                 
                 _patternSequenceInstance.Tick(_bulletSpawnTimer / basePeriod);
                 

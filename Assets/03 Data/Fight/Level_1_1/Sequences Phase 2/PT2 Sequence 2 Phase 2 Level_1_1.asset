@@ -105,7 +105,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  - pattern: {fileID: 11400000, guid: aa6656b4050403740a3264f7bfc9222b, type: 2}
+  - pattern: {fileID: 11400000, guid: c837e40e850381741bce190e9e76b943, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 5
-  - pattern: {fileID: 11400000, guid: c1ea875cca6908b4cbce72b4bdd43534, type: 2}
+  - pattern: {fileID: 11400000, guid: a75a7db17f284a240a10e65a41456f0f, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -215,7 +215,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 3.5
+        m_ConstantMax: 4
   animTriggers:
   - animationTrigger: Prep_B
     triggerTime: 0.2

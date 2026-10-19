@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     
-    private const float BulletScaleFactor = 0.25f;
+    private const float BaseScaleFactor = 0.25f;
     private BulletData _data;
     private BulletTransformInstance _transform;
     private BulletPropertiesInstance _properties;
@@ -85,7 +85,7 @@ public class Bullet : MonoBehaviour
         
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
-        transform.localScale = new Vector3(scale.x * BulletScaleFactor, scale.y * BulletScaleFactor, 1f);
+        transform.localScale = new Vector3(scale.x * BaseScaleFactor, scale.y * BaseScaleFactor, 1f);
     }
 
     private void Die()
