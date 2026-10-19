@@ -471,12 +471,12 @@ TextureImporter:
       name: LobbyAllItem_10
       rect:
         serializedVersion: 2
-        x: 1496
-        y: 1638
+        x: 1618
+        y: 1315
         width: 356
-        height: 388
+        height: 310
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -485,6 +485,72 @@ TextureImporter:
       bones: []
       spriteID: c19b65a9adea60a4f892a2fb94949dae
       internalID: -6875617599786332450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LobbyAllItem_11
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 1075
+        width: 299
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76c055d3a156734e8a20a85e17bdc52
+      internalID: 7156132975700573798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LobbyAllItem_12
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1904
+        width: 431
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88a53448d3cb5c45a4c2624d149d34a
+      internalID: 6136682762850920564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LobbyAllItem_13
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 1625
+        width: 720
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a0778a364d1a6745a81b46a62083b3f
+      internalID: 3632249776987893172
       vertices: []
       indices: 
       edges: []

@@ -51,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 3
+        m_ConstantMax: 2
     spawnPeriodOverride:
       curve:
         m_Mode: 0

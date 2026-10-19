@@ -45,7 +45,7 @@ public class BulletPatternInstance : PeriodDataInstance
     {
         if (_throwTimer > 0f)
         {
-            _throwTimer -= Time.deltaTime;
+            _throwTimer -= Game.DeltaTime;
         }
         else
         {

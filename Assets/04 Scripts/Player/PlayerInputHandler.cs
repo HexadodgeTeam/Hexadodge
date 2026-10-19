@@ -55,7 +55,7 @@ public class PlayerInputHandler : MonoBehaviour
             
             borderPush.Normalize();
             
-            _startPosition += (Vector3)borderPush * (moveBorderSpeed * Time.fixedDeltaTime);
+            _startPosition += (Vector3)borderPush * (moveBorderSpeed * Game.DeltaTime);
             
             Vector3 touchWorldPosition = _camera.ScreenToWorldPoint(_touchPosition);
             Vector3 touchWorldStartPosition = _camera.ScreenToWorldPoint(_startTouchPosition);
