@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 5
   timelines:
-  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
+  - pattern: {fileID: 11400000, guid: 8716535fe21488f458b021fd91f907ee, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
+  - pattern: {fileID: 11400000, guid: e6b1b40015a4e8041a9693256a404534, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  - pattern: {fileID: 11400000, guid: 15b572b581ee73d499a9fb92c78950f2, type: 2}
+  - pattern: {fileID: 11400000, guid: 8716535fe21488f458b021fd91f907ee, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 4
-  - pattern: {fileID: 11400000, guid: 03e2ac948a2cbe44ea2cf71c39a93ddd, type: 2}
+  - pattern: {fileID: 11400000, guid: e6b1b40015a4e8041a9693256a404534, type: 2}
     start:
       curve:
         m_Mode: 0
