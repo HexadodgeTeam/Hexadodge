@@ -45,7 +45,7 @@ public class PlayerHealth : MonoBehaviour
         if (_invincibilityTimer > 0f)
         {
             playerAnimator.SetBool(IFrames, true);
-            _invincibilityTimer -= Time.deltaTime;
+            _invincibilityTimer -= Game.DeltaTime;
         }
         else
         {

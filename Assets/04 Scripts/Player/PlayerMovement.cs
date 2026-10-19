@@ -12,6 +12,6 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     public void Move(Vector2 delta)
     {
-        rb.MovePosition(rb.position + delta * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + delta * Game.DeltaTime);
     }
 }

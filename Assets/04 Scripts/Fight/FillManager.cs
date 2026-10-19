@@ -86,13 +86,13 @@ public class FillManager : MonoBehaviour
 
         while (t < attackSlowdownDuration)
         {
-            t += Time.unscaledDeltaTime;
+            t += Time.deltaTime;
 
-            Time.timeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
+            Game.TimeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
 
             yield return null;
         }
 
-        Time.timeScale = 1f;
+        Game.TimeScale = 1f;
     }
 }
