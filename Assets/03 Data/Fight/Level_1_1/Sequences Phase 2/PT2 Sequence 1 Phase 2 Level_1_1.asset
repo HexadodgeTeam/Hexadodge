@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 4
+        m_ConstantMax: 4.5
     end:
       curve:
         m_Mode: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 7
+        m_ConstantMax: 7.5
   - pattern: {fileID: 11400000, guid: 54db6342b008a8c4586c76acf77be382, type: 2}
     start:
       curve:
