@@ -26,7 +26,7 @@ public class Bullet : MonoBehaviour
 
     public void Init(Pool<Bullet> pool, BulletData data, (bool x, bool y) mirror)
     {
-        if (!BulletTester.ModifyOnPlay && _data == data)
+        if (!FightTest.ModifyOnPlay && _data == data)
         {
             // If same data was already present on pooled object, just re-roll random values.
             _transform.ReRollTransform(transform.position);

@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerData data;
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private PlayerInputHandler inputHandler;
+    [SerializeField] private PlayerHealth health;
 
     private Action<Vector3Int> _paint;
 
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
     {
         _paint = FillGrid.Instance.Paint;
         GetComponent<PlayerMovement>().Init(data.movementData);
+        GetComponentInChildren<PlayerHealth>().Init(data.healthData);
     }
 
     private void FixedUpdate()

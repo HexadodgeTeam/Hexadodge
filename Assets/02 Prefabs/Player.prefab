@@ -55,6 +55,7 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 8e9c1a889a663824cb24dfae4338b39b, type: 2}
   renderer: {fileID: 8815264857993271034}
   inputHandler: {fileID: 3977327151515039948}
+  health: {fileID: 4314140812260327620}
 --- !u!114 &6639904151794185876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -296,9 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   playerAnimator: {fileID: 4784320591457263705}
-  data:
-    MaxHealth: 3
-    InvincibilityCooldown: 1
 --- !u!58 &9185232071776190548
 CircleCollider2D:
   m_ObjectHideFlags: 0
