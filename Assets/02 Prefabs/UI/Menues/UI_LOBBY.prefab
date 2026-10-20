@@ -357,6 +357,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &1807397735371605607
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,6 +381,7 @@ GameObject:
   - component: {fileID: 8699752361391651154}
   - component: {fileID: 6615271234370750540}
   - component: {fileID: 3012869362700750091}
+  - component: {fileID: 8702357891179022024}
   m_Layer: 5
   m_Name: Bouton_Help
   m_TagString: Untagged
@@ -477,9 +490,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 8702357891179022024}
+        m_TargetAssemblyTypeName: AnimBeforeActive, Assembly-CSharp
+        m_MethodName: StartWaitForAnim
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -489,6 +502,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &8702357891179022024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807397735371605607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3490f651de7b795478adbf5d6e95bf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  animGameObject: {fileID: 1294349843878066990}
+  animToWaitFor: {fileID: 7280195115756233229}
+  dureeAnimation: 0.5
+  uiToActive: {fileID: 0}
 --- !u!1 &2188500518954617252
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +793,7 @@ GameObject:
   - component: {fileID: 2614178695507685799}
   - component: {fileID: 3560737687270894752}
   - component: {fileID: 9085658473375264355}
+  - component: {fileID: 2141183567507321738}
   m_Layer: 5
   m_Name: Bouton_Map
   m_TagString: Untagged
@@ -873,9 +903,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 2141183567507321738}
+        m_TargetAssemblyTypeName: AnimBeforeActive, Assembly-CSharp
+        m_MethodName: StartWaitForAnim
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -885,6 +915,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &2141183567507321738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3873970093646593463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3490f651de7b795478adbf5d6e95bf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  animGameObject: {fileID: 1294349843878066990}
+  animToWaitFor: {fileID: 7280195115756233229}
+  dureeAnimation: 0.5
+  uiToActive: {fileID: 0}
 --- !u!1 &4610928328227514498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1925,6 +1971,7 @@ GameObject:
   - component: {fileID: 5630361571328968786}
   - component: {fileID: 1090906838559290912}
   - component: {fileID: 5199493473781462266}
+  - component: {fileID: 8378696720944203499}
   m_Layer: 5
   m_Name: Bouton_Inventaire
   m_TagString: Untagged
@@ -2034,9 +2081,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+      - m_Target: {fileID: 8378696720944203499}
+        m_TargetAssemblyTypeName: AnimBeforeActive, Assembly-CSharp
+        m_MethodName: StartWaitForAnim
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2046,6 +2093,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &8378696720944203499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8177139378982550631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3490f651de7b795478adbf5d6e95bf83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  animGameObject: {fileID: 1294349843878066990}
+  animToWaitFor: {fileID: 7280195115756233229}
+  dureeAnimation: 0.5
+  uiToActive: {fileID: 0}
 --- !u!1 &8246202926872010039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,7 +2284,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9116955751610499078}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
