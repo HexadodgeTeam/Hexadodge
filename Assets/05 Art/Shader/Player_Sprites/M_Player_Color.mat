@@ -43,8 +43,8 @@ Material:
     m_Floats: []
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
-    - _Hat_Color: {r: 1, g: 0.7433009, b: 0.19182366, a: 1}
-    - _Hat_Color_Shadow: {r: 0.35849056, g: 0.12560445, b: 0.06425769, a: 1}
+    - _Hat_Color: {r: 0.18039213, g: 0.8862745, b: 0.51125765, a: 1}
+    - _Hat_Color_Shadow: {r: 0.3137255, g: 0.45782703, b: 0.47843137, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &7049694634278110497
