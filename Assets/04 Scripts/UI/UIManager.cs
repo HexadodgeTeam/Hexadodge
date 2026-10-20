@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Animator hitAnimator;
     [SerializeField] private BorderFill border;
     [SerializeField] private GameObject[] fillPopUps;
+    [SerializeField] private TMP_Text levelTitle;
 
     public CountUI healthUI;
     public SliderUI fillUI;
@@ -73,5 +74,10 @@ public class UIManager : MonoBehaviour
     public void SetPopUpActive(int index, bool active)
     {
         fillPopUps[index].gameObject.SetActive(active);
+    }
+
+    public void SetLevelTitle(string title)
+    {
+        levelTitle.text = title;
     }
 }

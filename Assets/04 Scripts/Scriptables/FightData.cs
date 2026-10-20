@@ -4,11 +4,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Fight", menuName = "Scriptable Objects/Fight/Data")]
 public class FightData : ScriptableObject, IGizmosDrawer
 {
+    [Tooltip("Titre du combat.")]
+    [SerializeField] internal string title;
+    
     [Tooltip("Les différent paliers du combat, contenant chacun une phase.")]
     [SerializeField] internal FightLevel[] levels;
 
     [Tooltip("Les données de l'ennemi.")]
     [SerializeField] internal EnemyData enemy;
+    
+    [Tooltip("Si défini, le combat enchaîne directement vers celui-ci sans repasser par le menu.")]
+    [SerializeField] internal FightData nextFight;
     
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
     

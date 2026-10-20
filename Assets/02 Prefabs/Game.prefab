@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   player: {fileID: 6427996418005150682}
   fill: {fileID: 1551301581224248341}
+  fight: {fileID: 3078088578484012142}
 --- !u!1 &6306310727786411180
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +101,6 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   bulletSpawner: {fileID: 5877302820710266846}
   enemy: {fileID: 1861658777851156153}
-  instanceFight: 1
 --- !u!1 &6715096801270673283
 GameObject:
   m_ObjectHideFlags: 0

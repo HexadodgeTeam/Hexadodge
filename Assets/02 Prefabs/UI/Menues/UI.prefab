@@ -57,6 +57,7 @@ MonoBehaviour:
   - {fileID: 5574016044681513392}
   - {fileID: 3181828401874885367}
   - {fileID: 8549387379586362273}
+  levelTitle: {fileID: 8673788097642421045}
   healthUI: {fileID: 9084470799185933473}
   fillUI: {fileID: 6600298856401742356}
   enemyHealthUI: {fileID: 1156508947069689211}
@@ -823,6 +824,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_text
+      value: Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_fontSize
+      value: 50.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_fontColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -915,6 +936,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 400.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 56.7472
+      objectReference: {fileID: 0}
+    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1084.9966
+      objectReference: {fileID: 0}
+    - target: {fileID: 7963728758624287463, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_Name
+      value: Level Title
+      objectReference: {fileID: 0}
     - target: {fileID: 8221506045613954063, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -987,6 +1024,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
   m_PrefabInstance: {fileID: 6787074320902098680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8673788097642421045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &9084470799185933473 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2315428748153420377, guid: f7175472cf2782745a32862958a17728, type: 3}

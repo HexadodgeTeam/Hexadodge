@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fight : MonoBehaviour
+public class Fight : AbstractFight
 {
     [SerializeField] private FightData data;
     [SerializeField] private BulletSpawner bulletSpawner;
@@ -10,8 +10,14 @@ public class Fight : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         _fightInstance = data.Instance(enemy.TriggerAnim, bulletSpawner.SpawnBullet);
         enemy.Init(data.enemy);
+        UIManager.Instance.SetLevelTitle(data.title);
     }
 
     private void Update()
@@ -19,8 +25,34 @@ public class Fight : MonoBehaviour
         _fightInstance.Tick(enemy.HealthRatio);
     }
 
+    public override void SetFight(FightData fightData)
+    {
+        data = fightData;
+    }
+
+    public override void EndFight()
+    {
+        if (data.nextFight)
+        {
+            bulletSpawner.ClearBullets();
+            SetFight(data.nextFight);
+            Init();
+        }
+        else
+        {
+            UIManager.Instance.GameOver(true);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         data?.OnDrawGizmos();
     }
+}
+
+public abstract class AbstractFight : MonoBehaviour
+{
+    public abstract void SetFight(FightData fightData);
+
+    public abstract void EndFight();
 }
