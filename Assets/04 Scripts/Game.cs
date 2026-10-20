@@ -51,4 +51,9 @@ public class Game : MonoBehaviour
     {
         UIManager.Instance.SetPopUpActive(value, active);
     }
+
+    public void EndFight()
+    {
+        fight.EndFight();
+    }
 }

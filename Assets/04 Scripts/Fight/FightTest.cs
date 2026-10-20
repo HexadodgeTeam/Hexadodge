@@ -153,4 +153,9 @@ public class FightTest : AbstractFight
     {
         testData = fightData;
     }
+
+    public override void EndFight()
+    {
+        UIManager.Instance.GameOver(true);
+    }
 }

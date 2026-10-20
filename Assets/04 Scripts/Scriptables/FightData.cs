@@ -13,6 +13,9 @@ public class FightData : ScriptableObject, IGizmosDrawer
     [Tooltip("Les données de l'ennemi.")]
     [SerializeField] internal EnemyData enemy;
     
+    [Tooltip("Si défini, le combat enchaîne directement vers celui-ci sans repasser par le menu.")]
+    [SerializeField] internal FightData nextFight;
+    
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
     
     public void OnDrawGizmos()

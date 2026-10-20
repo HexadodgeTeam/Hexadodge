@@ -10,6 +10,11 @@ public class Fight : AbstractFight
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
         _fightInstance = data.Instance(enemy.TriggerAnim, bulletSpawner.SpawnBullet);
         enemy.Init(data.enemy);
         UIManager.Instance.SetLevelTitle(data.title);
@@ -20,18 +25,34 @@ public class Fight : AbstractFight
         _fightInstance.Tick(enemy.HealthRatio);
     }
 
-    private void OnDrawGizmos()
-    {
-        data?.OnDrawGizmos();
-    }
-
     public override void SetFight(FightData fightData)
     {
         data = fightData;
+    }
+
+    public override void EndFight()
+    {
+        if (data.nextFight)
+        {
+            bulletSpawner.ClearBullets();
+            SetFight(data.nextFight);
+            Init();
+        }
+        else
+        {
+            UIManager.Instance.GameOver(true);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        data?.OnDrawGizmos();
     }
 }
 
 public abstract class AbstractFight : MonoBehaviour
 {
     public abstract void SetFight(FightData fightData);
+
+    public abstract void EndFight();
 }
