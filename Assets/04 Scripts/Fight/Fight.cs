@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class Fight : AbstractFight
 {
+    private static readonly int Death = Animator.StringToHash("SwitchPhase");
+    
     [SerializeField] private FightData data;
     [SerializeField] private BulletSpawner bulletSpawner;
     [SerializeField] private Enemy enemy;
@@ -28,6 +31,14 @@ public class Fight : AbstractFight
     public override void SetFight(FightData fightData)
     {
         data = fightData;
+        Init();
+    }
+
+    private IEnumerator SetFightCoroutine()
+    {
+        yield return new WaitForSeconds(data.enemy.transitionDuration);
+
+        SetFight(data.nextFight);
     }
 
     public override void EndFight()
@@ -35,8 +46,8 @@ public class Fight : AbstractFight
         if (data.nextFight)
         {
             bulletSpawner.ClearBullets();
-            SetFight(data.nextFight);
-            Init();
+            enemy.TriggerAnim(Death);
+            StartCoroutine(SetFightCoroutine());
         }
         else
         {

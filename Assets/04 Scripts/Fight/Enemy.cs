@@ -3,7 +3,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private static readonly int Hit = Animator.StringToHash("Hit");
-    private static readonly int Death = Animator.StringToHash("Death");
 
     [SerializeField] private Animator enemyAnimator;
     
@@ -21,7 +20,7 @@ public class Enemy : MonoBehaviour
 
             if (_health <= 0)
             {
-                Die();
+                Game.Instance.EndFight();
             }
         }
     }
@@ -40,18 +39,13 @@ public class Enemy : MonoBehaviour
     {
         _data = data;
         Health = data.maxHealth;
+        enemyAnimator.runtimeAnimatorController = data.animator;
     }
 
     public void TakeDamage(int amount)
     {
         Health -= amount;
         enemyAnimator.SetTrigger(Hit);
-    }
-
-    private void Die()
-    {
-        Game.Instance.EndFight();
-        enemyAnimator.SetTrigger(Death);
     }
 
     public void TriggerAnim(int hash)
