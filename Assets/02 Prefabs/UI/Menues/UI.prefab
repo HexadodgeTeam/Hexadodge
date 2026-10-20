@@ -804,49 +804,9 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 4499415613734134416}
-    - target: {fileID: 792115337381262880, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: fillUI
-      value: 
-      objectReference: {fileID: 6600298856401742356}
-    - target: {fileID: 792115337381262880, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: 'thresholdIndicators.Array.data[0]'
-      value: 
-      objectReference: {fileID: 2780684973633916800}
-    - target: {fileID: 792115337381262880, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: 'thresholdIndicators.Array.data[1]'
-      value: 
-      objectReference: {fileID: 2371014141049124596}
     - target: {fileID: 1187209543658767809, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_Name
       value: Screen UI
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399047379014534984, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_text
-      value: Title
-      objectReference: {fileID: 0}
-    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_fontSize
-      value: 50.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_fontColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2769701071041811917, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.x
@@ -934,26 +894,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 400.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 56.7472
-      objectReference: {fileID: 0}
-    - target: {fileID: 6674748721792817761, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 1084.9966
-      objectReference: {fileID: 0}
-    - target: {fileID: 7963728758624287463, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_Name
-      value: Level Title
-      objectReference: {fileID: 0}
-    - target: {fileID: 8221506045613954063, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
