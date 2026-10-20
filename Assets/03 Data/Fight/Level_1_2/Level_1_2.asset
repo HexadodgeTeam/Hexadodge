@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
+  m_Name: Level_1_2
+  m_EditorClassIdentifier: Assembly-CSharp::FightData
+  levels:
+  - phase: {fileID: 11400000, guid: 84437c1aedc37144bac574d1f8f6d79d, type: 2}
+    enemyHealthFraction: 1
+  - phase: {fileID: 11400000, guid: c5e53f08a11a3a544827e75b88a5db12, type: 2}
+    enemyHealthFraction: 0.6
+  enemy: {fileID: 11400000, guid: 5591dfba6bb01ac45bad2fac296283e9, type: 2}
