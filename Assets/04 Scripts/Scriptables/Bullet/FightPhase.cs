@@ -67,7 +67,7 @@ public class FightPhaseInstance
 
     public void Start()
     {
-        Game.SetColor(_data.color, _data.gradient);
+        Game.Instance.SetColor(_data.color, _data.gradient);
         _phaseStart = Game.ScaledTime;
         _phaseTime = 0f;
     }

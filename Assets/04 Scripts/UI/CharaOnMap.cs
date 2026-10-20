@@ -19,17 +19,17 @@ public class CharaOnMap : MonoBehaviour
 
     public void UpdateCharPosition()
 {
-    int serieActuel = levelSelection.precedentlLvl / 3;
-    int serieTarget = levelSelection.actualLvl / 3;
-    int LvlActuel = levelSelection.precedentlLvl % 3;
-    int LvlTarget = levelSelection.actualLvl % 3;
+    int serieActuel = levelSelection.previousLevel / 3;
+    int serieTarget = levelSelection.currentLevel / 3;
+    int LvlActuel = levelSelection.previousLevel % 3;
+    int LvlTarget = levelSelection.currentLevel % 3;
     if (serieActuel == serieTarget || (LvlActuel == LvlTarget && LvlActuel== 0))
     {
-        StartCoroutine(MovePlayer( player.anchoredPosition, mapPoint[levelSelection.actualLvl].anchoredPosition,null,null));
+        StartCoroutine(MovePlayer( player.anchoredPosition, mapPoint[levelSelection.currentLevel].anchoredPosition,null,null));
     }
     else
     {
-        StartCoroutine(MovePlayer(player.anchoredPosition,mapPoint[levelSelection.actualLvl].anchoredPosition,transitionList[serieActuel].anchoredPosition,transitionList[serieTarget].anchoredPosition));
+        StartCoroutine(MovePlayer(player.anchoredPosition,mapPoint[levelSelection.currentLevel].anchoredPosition,transitionList[serieActuel].anchoredPosition,transitionList[serieTarget].anchoredPosition));
     }
 }
 

@@ -52,8 +52,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 078f8231ec4848d782df1bb5efc79545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
+  data: {fileID: 11400000, guid: 8e9c1a889a663824cb24dfae4338b39b, type: 2}
   renderer: {fileID: 8815264857993271034}
-  fillRange: 2.1
+  inputHandler: {fileID: 3977327151515039948}
+  health: {fileID: 4314140812260327620}
 --- !u!114 &6639904151794185876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a374f0eb6b3d9a7468b8a01f11d25b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  data: {fileID: 11400000, guid: ebe3f3bbf2ae5a748976f11ecc73aa10, type: 2}
   rb: {fileID: 4274482798483262675}
 --- !u!50 &4274482798483262675
 Rigidbody2D:
@@ -193,8 +194,8 @@ MonoBehaviour:
     m_ActionName: Game/Move
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: FillManager, Assembly-CSharp
+      - m_Target: {fileID: 3977327151515039948}
+        m_TargetAssemblyTypeName: PlayerInputHandler, Assembly-CSharp
         m_MethodName: TryAttack
         m_Mode: 0
         m_Arguments:
@@ -296,9 +297,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   playerAnimator: {fileID: 4784320591457263705}
-  data:
-    MaxHealth: 3
-    InvincibilityCooldown: 1
 --- !u!58 &9185232071776190548
 CircleCollider2D:
   m_ObjectHideFlags: 0

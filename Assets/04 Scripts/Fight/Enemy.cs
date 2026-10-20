@@ -50,7 +50,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        UIManager.Instance.GameOver(true);
+        Game.Instance.EndFight();
         enemyAnimator.SetTrigger(Death);
     }
 

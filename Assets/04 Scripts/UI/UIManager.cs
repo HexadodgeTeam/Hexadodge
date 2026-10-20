@@ -1,4 +1,3 @@
-using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,43 +7,34 @@ public class UIManager : MonoBehaviour
     private static readonly int Hit = Animator.StringToHash("Hit");
     public static UIManager Instance { get; private set; }
     
+    [Header("Parameters")]
+    [SerializeField] private string mainMenuScene = "MainMenu";
+    
+    [Header("References")]
     [SerializeField] private GameObject stick;
-    [SerializeField] private RectTransform[] thresholdIndicators;
     [SerializeField] private GameOverPanel gameOverPanel;
-    [SerializeField] private PlayerInputHandler playerInputHandler;
     [SerializeField] private TMP_Dropdown controlTypeDropdown;
     [SerializeField] private Animator hitAnimator;
-    [SerializeField] private string mainMenuScene = "MainMenu";
+    [SerializeField] private BorderFill border;
+    [SerializeField] private GameObject[] fillPopUps;
+    [SerializeField] private TMP_Text levelTitle;
 
     public CountUI healthUI;
     public SliderUI fillUI;
     public SliderUI enemyHealthUI;
 
-    private RectTransform[] _thresholdIndicators;
     private GameOverPanel _gameOverPanel;
 
     private void Awake()
     {
         Instance = this;
         
-        _thresholdIndicators = thresholdIndicators;
         _gameOverPanel = gameOverPanel;
     }
     
     private void Start()
     {
         RefreshControlType();
-    }
-
-    public void SetThresholdIndicators(float[] fractions)
-    {
-        for (var i = 0; i < Math.Min(fractions.Length, _thresholdIndicators.Length); i++)
-        {
-            RectTransform ti = _thresholdIndicators[i];
-            ti.anchorMin = new Vector2(ti.anchorMin.x, fractions[i]);
-            ti.anchorMax = new Vector2(ti.anchorMax.x, fractions[i]);
-            ti.anchoredPosition = new Vector2(ti.anchoredPosition.x, 0f);
-        }
     }
 
     public void GameOver(bool win)
@@ -67,12 +57,27 @@ public class UIManager : MonoBehaviour
         bool classic = controlType == (int)Control.Type.Classic;
 
         stick.SetActive(classic);
-        playerInputHandler.ChangeControlType(controlType);
+        Game.Instance.ChangeControlType(controlType);
         controlTypeDropdown.value = controlType;
     }
 
     public void SwitchToMainMenu()
     {
         SceneManager.LoadScene(mainMenuScene);
+    }
+    
+    public void SetThresholdIndicators(float[] fractions)
+    {
+        border.SetThresholdIndicators(fractions);
+    }
+
+    public void SetPopUpActive(int index, bool active)
+    {
+        fillPopUps[index].gameObject.SetActive(active);
+    }
+
+    public void SetLevelTitle(string title)
+    {
+        levelTitle.text = title;
     }
 }

@@ -23,28 +23,39 @@ public class BulletSpawner : MonoBehaviour
 
     private static void DestroyBullet(Bullet bullet)
     {
+        Debug.Log("fasde");
         Destroy(bullet.gameObject);
     }
 
     public void SpawnBullet(BulletSpawn data)
     {
-        Bullet bullet = _pool.Spawn(data.position, data.rotation);
-        if (bullet) bullet.Init(_pool, data.bullet, data.mirror);
+        Bullet bullet = _pool.Spawn(data.Position, data.Rotation);
+        if (bullet) bullet.Init(_pool, data.Bullet, data.Mirror);
+    }
+
+    public void ClearBullets()
+    {
+        _pool.Clear();
+    }
+    
+    public bool HasBulletSpawned()
+    {
+        return _pool.Count > 0;
     }
 }
 
 public readonly struct BulletSpawn
 {
-    public readonly BulletData bullet;
-    public readonly Vector2 position;
-    public readonly float rotation;
-    public readonly (bool, bool) mirror;
+    public readonly BulletData Bullet;
+    public readonly Vector2 Position;
+    public readonly float Rotation;
+    public readonly (bool, bool) Mirror;
 
     public BulletSpawn(BulletData bullet, Vector2 position, float rotation, (bool, bool) mirror)
     {
-        this.bullet = bullet;
-        this.position = position;
-        this.rotation = rotation;
-        this.mirror = mirror;
+        Bullet = bullet;
+        Position = position;
+        Rotation = rotation;
+        Mirror = mirror;
     }
 }
