@@ -50,7 +50,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0.1
-    impactType: 1
+    impactType: 0
     destroyOnImpact: 1
     impactPower:
       curve:

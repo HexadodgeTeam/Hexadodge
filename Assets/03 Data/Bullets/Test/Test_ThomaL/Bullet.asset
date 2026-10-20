@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: Bullet
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 47b2ed20905dd004d9c39746c2970c71, type: 2}
+  transform: {fileID: 11400000, guid: 97012834dd2ae734ba52cba0fee3ea8f, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 2
+        m_ConstantMax: 5
     tangibleCooldown:
       curve:
         m_Mode: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 0
+          m_ConstantMax: 360
       rotationOffset:
         curve:
           m_Mode: 0

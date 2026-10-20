@@ -367,66 +367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9904a5a7347198c44ae639979246a023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  testData: {fileID: 11400000, guid: 624e8994e63742649a7edb1853b90f62, type: 2}
-  basePeriod: 10
-  maxBulletCount: 100
-  debugOneAtATime: 1
-  reset:
-    m_Name: Reset
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9b7e5ee4-2d46-4b46-b8b7-ef0489bb7766
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: d688a2f9-de2c-4748-94ad-ffd4a0900569
-      m_Path: <Keyboard>/r
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Reset
-      m_Flags: 0
-    m_Flags: 0
-  enemyData: {fileID: 11400000, guid: 2d75364874e75b7449cf478e71500d56, type: 2}
-  color: {r: 0, g: 0.6774497, b: 0.7830189, a: 1}
-  gradient:
-    serializedVersion: 2
-    key0: {r: 0, g: 0.2078389, b: 0.26415092, a: 1}
-    key1: {r: 0, g: 0.33595976, b: 0.33962262, a: 1}
-    key2: {r: 0, g: 0, b: 0, a: 0}
-    key3: {r: 0, g: 0, b: 0, a: 0}
-    key4: {r: 0, g: 0, b: 0, a: 0}
-    key5: {r: 0, g: 0, b: 0, a: 0}
-    key6: {r: 0, g: 0, b: 0, a: 0}
-    key7: {r: 0, g: 0, b: 0, a: 0}
-    ctime0: 0
-    ctime1: 65535
-    ctime2: 0
-    ctime3: 0
-    ctime4: 0
-    ctime5: 0
-    ctime6: 0
-    ctime7: 0
-    atime0: 0
-    atime1: 65535
-    atime2: 0
-    atime3: 0
-    atime4: 0
-    atime5: 0
-    atime6: 0
-    atime7: 0
-    m_Mode: 0
-    m_ColorSpace: -1
-    m_NumColorKeys: 2
-    m_NumAlphaKeys: 2
-  bulletSpawnInterval: 1
-  bulletSpawnPos: {x: -2.04, y: 0.95, z: 0}
-  bulletRotation: -22.13
-  mirrorX: 0
-  mirrorY: 0
-  bulletPrefab: {fileID: 3473780315054488795, guid: 2f24820f0a49a644dba5e197ab8ad463, type: 3}
-  enemy: {fileID: 921075221}
 --- !u!1 &821407478
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +503,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  player: {fileID: 0}
+  fill: {fileID: 0}
+  fight: {fileID: 0}
 --- !u!114 &877488862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1155,7 +1098,6 @@ MonoBehaviour:
   data: {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
   bulletSpawner: {fileID: 0}
   enemy: {fileID: 921075221}
-  instanceFight: 0
 --- !u!4 &1766543707
 Transform:
   m_ObjectHideFlags: 0
@@ -1368,6 +1310,10 @@ PrefabInstance:
     - target: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410161204610931633, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.1999512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
