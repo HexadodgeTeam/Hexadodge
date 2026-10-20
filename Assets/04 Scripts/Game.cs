@@ -4,15 +4,17 @@ public class Game : MonoBehaviour
 {
     public static Game Instance { get; private set; }
     
-    public static float TimeScale { private get; set; } = 1f;
+    public static float TimeScale { private get; set; }
+    public static float ScaledTime { get; private set; }
     public static float DeltaTime => Time.deltaTime * TimeScale;
-    public static float ScaledTime { get; private set; } = 0f;
 
     [SerializeField] private Player player;
     [SerializeField] private FillManager fill;
     
     private void Awake()
     {
+        TimeScale = 1f;
+        ScaledTime = 0f;
         Instance = this;
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
