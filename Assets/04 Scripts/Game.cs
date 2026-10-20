@@ -10,6 +10,7 @@ public class Game : MonoBehaviour
 
     [SerializeField] private Player player;
     [SerializeField] private FillManager fill;
+    [SerializeField] private AbstractFight fight;
     
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class Game : MonoBehaviour
         Instance = this;
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
+        if (FightDataTransfer.Instance) fight.SetFight(FightDataTransfer.Instance.fightData);
     }
 
     private void FixedUpdate()

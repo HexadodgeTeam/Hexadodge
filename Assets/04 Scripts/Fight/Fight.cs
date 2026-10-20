@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Fight : MonoBehaviour
+public class Fight : AbstractFight
 {
     [SerializeField] private FightData data;
     [SerializeField] private BulletSpawner bulletSpawner;
@@ -23,4 +23,14 @@ public class Fight : MonoBehaviour
     {
         data?.OnDrawGizmos();
     }
+
+    public override void SetFight(FightData fightData)
+    {
+        data = fightData;
+    }
+}
+
+public abstract class AbstractFight : MonoBehaviour
+{
+    public abstract void SetFight(FightData fightData);
 }

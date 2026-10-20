@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class FightTest : MonoBehaviour
+public class FightTest : AbstractFight
 {
     public static bool ModifyOnPlay = false;
     
@@ -147,5 +147,10 @@ public class FightTest : MonoBehaviour
                 gizmosDrawer.OnDrawGizmos();
                 break;
         }
+    }
+
+    public override void SetFight(FightData fightData)
+    {
+        testData = fightData;
     }
 }

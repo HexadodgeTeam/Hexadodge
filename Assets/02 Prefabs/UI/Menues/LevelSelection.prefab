@@ -65,5 +65,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  actualLvl: 0
-  precedentlLvl: 0
+  fights:
+  - {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
+  - {fileID: 11400000, guid: 52fefae77d48a4a48814c2df1e5673a6, type: 2}
+  - {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
+  - {fileID: 11400000, guid: 57bc2e15c6477e7439e45527f62c7f8a, type: 2}
+  currentLevel: 0
+  previousLevel: 0

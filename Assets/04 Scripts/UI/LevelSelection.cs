@@ -1,33 +1,34 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
    
-    [SerializeField] private List<RuntimeAnimatorController> enemyAnim = new List<RuntimeAnimatorController>();
-    [SerializeField] private List<GameObject> enemy = new List<GameObject>();
+    [SerializeField] private List<RuntimeAnimatorController> enemyAnim = new();
+    [SerializeField] private List<GameObject> enemy = new();
+    [SerializeField] private List<FightData> fights = new();
    
-    public int actualLvl = 0;
-    public int precedentlLvl = 0;
+    public int currentLevel = 0;
+    public int previousLevel = 0;
 
     public void ChangeSpecificLevel(int lvl)
     {
-        precedentlLvl =  actualLvl;
-        actualLvl = lvl;
+        previousLevel =  currentLevel;
+        currentLevel = lvl;
         Animator anim1 = enemy[1].GetComponent<Animator>();
-        anim1.runtimeAnimatorController = enemyAnim[actualLvl];
+        anim1.runtimeAnimatorController = enemyAnim[currentLevel];
     }
     public void ChangeLevel(int lvl)
     {
-        actualLvl += lvl;
+        currentLevel += lvl;
 
-        if (actualLvl >= enemyAnim.Count)
-            actualLvl = 0;
+        if (currentLevel >= enemyAnim.Count)
+            currentLevel = 0;
 
-        if (actualLvl < 0)
-            actualLvl = enemyAnim.Count - 1;
+        if (currentLevel < 0)
+            currentLevel = enemyAnim.Count - 1;
 
         if (lvl > 0)
         {
@@ -35,7 +36,7 @@ public class LevelSelection : MonoBehaviour
             anim1.SetTrigger("SG");
 
             Animator anim2 = enemy[2].GetComponent<Animator>();
-            anim2.runtimeAnimatorController = enemyAnim[actualLvl];
+            anim2.runtimeAnimatorController = enemyAnim[currentLevel];
             anim2.SetTrigger("ED");
 
             StartCoroutine(ChangeEnemy());
@@ -46,7 +47,7 @@ public class LevelSelection : MonoBehaviour
             anim1.SetTrigger("SD");
 
             Animator anim2 = enemy[0].GetComponent<Animator>();
-            anim2.runtimeAnimatorController = enemyAnim[actualLvl];
+            anim2.runtimeAnimatorController = enemyAnim[currentLevel];
             anim2.SetTrigger("EG");
 
             StartCoroutine(ChangeEnemy());
@@ -58,7 +59,12 @@ public class LevelSelection : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         Animator anim1 = enemy[1].GetComponent<Animator>();
-        anim1.runtimeAnimatorController = enemyAnim[actualLvl];
+        anim1.runtimeAnimatorController = enemyAnim[currentLevel];
         yield return null;
+    }
+
+    public void SetFight()
+    {
+        FightDataTransfer.Instance.SetData(fights[currentLevel < fights.Count ? currentLevel : 0]);
     }
 }
