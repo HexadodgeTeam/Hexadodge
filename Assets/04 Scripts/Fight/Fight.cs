@@ -12,6 +12,7 @@ public class Fight : AbstractFight
     {
         _fightInstance = data.Instance(enemy.TriggerAnim, bulletSpawner.SpawnBullet);
         enemy.Init(data.enemy);
+        UIManager.Instance.SetLevelTitle(data.title);
     }
 
     private void Update()

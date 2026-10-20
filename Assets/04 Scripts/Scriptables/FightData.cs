@@ -4,6 +4,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Fight", menuName = "Scriptable Objects/Fight/Data")]
 public class FightData : ScriptableObject, IGizmosDrawer
 {
+    [Tooltip("Titre du combat.")]
+    [SerializeField] internal string title;
+    
     [Tooltip("Les différent paliers du combat, contenant chacun une phase.")]
     [SerializeField] internal FightLevel[] levels;
 

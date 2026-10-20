@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: "H\xE9cate_Fight"
   m_EditorClassIdentifier: Assembly-CSharp::FightData
+  title: "H\xE9cate Test"
   levels:
   - phase: {fileID: 11400000, guid: 56a1ce314fc033f49a78fe5548c3376b, type: 2}
     enemyHealthFraction: 1

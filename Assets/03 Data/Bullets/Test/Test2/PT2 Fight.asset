@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: PT2 Fight
   m_EditorClassIdentifier: Assembly-CSharp::FightData
+  title: Patcho Test
   levels:
   - phase: {fileID: 11400000, guid: c644e7a1a19a3c1459bd6f5b233ce709, type: 2}
     enemyHealthFraction: 1
