@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -7,10 +9,10 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
     private readonly IObjectPool<TPoolObject> _pool;
     private readonly Func<TPoolObject> _instantiateObjectFunc;
     private readonly Action<TPoolObject> _destroyObjectFunc;
-    private int _count = 0;
     private readonly int _maxSize;
+    private readonly List<TPoolObject> _poolObjects = new();
     
-    public int Count => _count;
+    public int Count { get; private set; }
 
     public Pool(Func<TPoolObject> instantiateObjectFunc, Action<TPoolObject> destroyObjectFunc, int maxSize)
     {
@@ -21,19 +23,21 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
             actionOnGet: OnGet,
             actionOnRelease: OnRelease,
             actionOnDestroy: OnDestroy,
-            maxSize: maxSize
+            maxSize: maxSize,
+            defaultCapacity: maxSize
         );
         _maxSize = maxSize;
     }
 
     public TPoolObject Spawn(Vector3 position, float rotation)
     {
-        if (_count + 1 > _maxSize) return null;
+        if (Count + 1 > _maxSize) return null;
         
         TPoolObject po = _pool.Get();
         po.transform.position = position;
         po.transform.eulerAngles = new Vector3(0f, 0f, rotation);
-        _count++;
+        Count++;
+        _poolObjects.Add(po);
         
         return po;
     }
@@ -41,7 +45,8 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
     public void Release(TPoolObject po)
     {
         _pool.Release(po);
-        _count--;
+        _poolObjects.Remove(po);
+        Count--;
     }
 
     private TPoolObject CreatePoolObject()
@@ -51,7 +56,18 @@ public class Pool<TPoolObject> where TPoolObject : MonoBehaviour
         return po;
     }
 
+    public void Clear()
+    {
+        foreach (TPoolObject poolObject in _poolObjects.ToList())
+        {
+            Release(poolObject);
+        }
+        _poolObjects.Clear();
+        Count = 0;
+    }
+
     private void OnGet(TPoolObject po) => po.gameObject.SetActive(true);
     private void OnRelease(TPoolObject po) => po.gameObject.SetActive(false);
+
     private void OnDestroy(TPoolObject po) { if (po) { _destroyObjectFunc.Invoke(po); } }
 }

@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour, IMovable
 {
-    [SerializeField] private PlayerMovementData data;
     [SerializeField] private Rigidbody2D rb;
+    
+    private PlayerMovementData _data;
 
+    public void Init(PlayerMovementData data)
+    {
+        _data = data;
+    }
+    
     public void MoveInput(Vector2 input)
     {
-        data.InputMove(input, this);
+        _data.InputMove(input, this);
     }
 
     public void Move(Vector2 delta)

@@ -89,6 +89,14 @@ public class PlayerInputHandler : MonoBehaviour
         _moveInput = Vector2.zero;
     }
     
+    public void TryAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            Game.Instance.TryAttack();
+        }
+    }
+    
     public void InputCursor(InputAction.CallbackContext context)
     {
         if (_controlType == Control.Type.Classic) return;

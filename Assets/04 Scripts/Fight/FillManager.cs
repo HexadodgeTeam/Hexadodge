@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.InputSystem;
 
 public class FillManager : MonoBehaviour
 {
@@ -58,19 +57,18 @@ public class FillManager : MonoBehaviour
         UIManager.Instance.fillUI.SetFraction(fraction);
     }
 
-    public void TryAttack(InputAction.CallbackContext context)
+    public bool TryAttack()
     {
-        if (context.performed)
-        {
-            if (!HasSkill) return;
+        if (!HasSkill) return false;
             
-            attackFx.SetTrigger(HitTriggers[CurrentSkillIndex]);
-            grid.Empty();
-            attackEvent.Invoke();
-            StartCoroutine(AttackCoroutine(CurrentSkillIndex));
-            StartCoroutine(AttackSlowdownCoroutine());
-            CurrentSkillIndex = NoSkill;
-        }
+        attackFx.SetTrigger(HitTriggers[CurrentSkillIndex]);
+        grid.Empty();
+        attackEvent.Invoke();
+        StartCoroutine(AttackCoroutine(CurrentSkillIndex));
+        StartCoroutine(AttackSlowdownCoroutine());
+        CurrentSkillIndex = NoSkill;
+
+        return true;
     }
 
     private IEnumerator AttackCoroutine(int skillIndex)

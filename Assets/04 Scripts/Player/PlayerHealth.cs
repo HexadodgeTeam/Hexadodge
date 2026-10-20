@@ -1,6 +1,5 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,13 +7,13 @@ public class PlayerHealth : MonoBehaviour
     
     [SerializeField] private Animator playerAnimator;
     [Serializable]
-    public struct Data
+    public class Data
     {
-        public int MaxHealth;
-        public float InvincibilityCooldown;
+        public int maxHealth = 3;
+        public float invincibilityCooldown = 1;
     }
 
-    [SerializeField] private Data data;
+    private Data _data;
 
     private int _health;
     private float _invincibilityTimer = 0f;
@@ -25,7 +24,7 @@ public class PlayerHealth : MonoBehaviour
         get => _health;
         set
         {
-            _health = Mathf.Clamp(value, 0, data.MaxHealth);
+            _health = Mathf.Clamp(value, 0, _data.maxHealth);
             UIManager.Instance.healthUI?.SetCount(_health);
             
             if (_health <= 0)
@@ -35,9 +34,10 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Init(Data data)
     {
-        Health = data.MaxHealth;
+        _data = data;
+        Health = _data.maxHealth;
     }
 
     private void Update()
@@ -60,7 +60,7 @@ public class PlayerHealth : MonoBehaviour
         UIManager.Instance.OnHit();
         Health -= amount;
         
-        _invincibilityTimer = data.InvincibilityCooldown;
+        _invincibilityTimer = _data.invincibilityCooldown;
     }
 
     public void Heal(int amount)
