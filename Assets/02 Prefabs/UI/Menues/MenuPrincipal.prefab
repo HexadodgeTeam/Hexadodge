@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   gameScene: Game
-  launchGameDelay: 1.5
+  launchGameDelay: 1
 --- !u!1 &4406157749792698886
 GameObject:
   m_ObjectHideFlags: 0
@@ -2129,9 +2129,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e162facc35e98554599be7e702191985, type: 3}
---- !u!1 &1491341447404725711 stripped
+--- !u!1 &3264257884028171750 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 6155483838281896570, guid: e162facc35e98554599be7e702191985, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7823348029470474835, guid: e162facc35e98554599be7e702191985, type: 3}
   m_PrefabInstance: {fileID: 4746482660943296437}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &3862391468082557278 stripped
@@ -2167,9 +2167,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3490f651de7b795478adbf5d6e95bf83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
---- !u!1 &5073035924773099709 stripped
+--- !u!1 &4945814545892194445 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 556739493776207624, guid: e162facc35e98554599be7e702191985, type: 3}
+  m_CorrespondingSourceObject: {fileID: 395741675765255992, guid: e162facc35e98554599be7e702191985, type: 3}
   m_PrefabInstance: {fileID: 4746482660943296437}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &6159955850345929887 stripped
@@ -2399,7 +2399,7 @@ PrefabInstance:
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemy.Array.data[0]'
       value: 
-      objectReference: {fileID: 5073035924773099709}
+      objectReference: {fileID: 3264257884028171750}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemy.Array.data[1]'
       value: 
@@ -2407,7 +2407,39 @@ PrefabInstance:
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemy.Array.data[2]'
       value: 
-      objectReference: {fileID: 1491341447404725711}
+      objectReference: {fileID: 4945814545892194445}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[0]'
+      value: 
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[1]'
+      value: 
+      objectReference: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[3]'
+      value: 
+      objectReference: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[4]'
+      value: 
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[6]'
+      value: 
+      objectReference: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[7]'
+      value: 
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[9]'
+      value: 
+      objectReference: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'enemyAnim.Array.data[10]'
+      value: 
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
