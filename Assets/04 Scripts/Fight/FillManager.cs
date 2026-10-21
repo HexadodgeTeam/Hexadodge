@@ -17,15 +17,9 @@ public class FillManager : MonoBehaviour
     [SerializeField] private int[] attackPowers;
     [SerializeField] private UnityEvent[] skillUnlockedEvents;
     [SerializeField] private UnityEvent attackEvent;
-    [SerializeField] private float enemyHitDelay = 0.5f;
-    [SerializeField] private AnimationCurve attackSlowdownTimeScale;
-    [SerializeField] private float attackSlowdownDuration;
 
     [Header("References")]
-    [SerializeField] private Player player;
-    [SerializeField] private Enemy enemy;
     [SerializeField] private FillGrid grid;
-    [SerializeField] private Animator attackFx;
     
     private int _currentSkillIndex = NoSkill;
 
@@ -55,42 +49,5 @@ public class FillManager : MonoBehaviour
         }
 
         UIManager.Instance.fillUI.SetFraction(fraction);
-    }
-
-    public bool TryAttack()
-    {
-        if (!HasSkill) return false;
-            
-        attackFx.SetTrigger(HitTriggers[CurrentSkillIndex]);
-        grid.Empty();
-        attackEvent.Invoke();
-        StartCoroutine(AttackCoroutine(CurrentSkillIndex));
-        StartCoroutine(AttackSlowdownCoroutine());
-        CurrentSkillIndex = NoSkill;
-
-        return true;
-    }
-
-    private IEnumerator AttackCoroutine(int skillIndex)
-    {
-        yield return new WaitForSeconds(enemyHitDelay);
-        
-        enemy.TakeDamage(attackPowers[skillIndex]);
-    }
-
-    private IEnumerator AttackSlowdownCoroutine()
-    {
-        float t = 0f;
-
-        while (t < attackSlowdownDuration)
-        {
-            t += Time.deltaTime;
-
-            Game.TimeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
-
-            yield return null;
-        }
-
-        Game.TimeScale = 1f;
     }
 }

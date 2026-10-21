@@ -25,10 +25,6 @@ public class FightTest : AbstractFight
     [SerializeField] private float bulletRotation;
     [SerializeField] private bool mirrorX;
     [SerializeField] private bool mirrorY;
-    
-    [Header("References")]
-    [SerializeField] private BulletSpawner bulletSpawner;
-    [SerializeField] private Enemy enemy;
 
     private float _bulletSpawnTimer = 0f;
     private BulletPatternInstance _bulletPatternInstance;
