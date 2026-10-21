@@ -207,10 +207,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
-      propertyPath: fights.Array.size
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3729192357616323156, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Name
       value: MenuPrincipal
@@ -394,7 +390,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
