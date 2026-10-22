@@ -9,9 +9,13 @@ using Vector3 = UnityEngine.Vector3;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private BoxCollider2D boxCollider;
+    [SerializeField] private CircleCollider2D circleCollider;
+    [SerializeField] private LayerMask triggerLayerMask;
+    [SerializeField] private LayerMask wallLayerMask;
     
     private const float BaseScaleFactor = 0.25f;
-    private BulletData _data;
+    [SerializeField] private BulletData _data;
     private BulletTransformInstance _transform;
     private BulletPropertiesInstance _properties;
     private BulletAnimationInstance _animation;
@@ -35,13 +39,23 @@ public class Bullet : MonoBehaviour
         }
         else
         {
-            // If no data or different, instance fields.
+            // If no data or different, init bullet.
             _data = data;
             _properties = _data.properties.Instance();
             _transform = _data.transform?.Instance(transform.position);
             _animation = _data.animation.Instance();
             _pool = pool;
             spriteRenderer.sprite = _data.animation.sprite;
+            boxCollider.isTrigger = !data.properties.collider.isWall;
+            circleCollider.isTrigger = !data.properties.collider.isWall;
+            boxCollider.size = data.properties.collider.rectangleSize;
+            circleCollider.radius = data.properties.collider.circleRadius;
+            boxCollider.includeLayers = data.properties.collider.isWall ? wallLayerMask : triggerLayerMask;
+            circleCollider.includeLayers = data.properties.collider.isWall ? wallLayerMask : triggerLayerMask;
+            boxCollider.excludeLayers = data.properties.collider.isWall ? triggerLayerMask : wallLayerMask;
+            circleCollider.excludeLayers = data.properties.collider.isWall ? triggerLayerMask : wallLayerMask;
+            boxCollider.enabled = data.properties.collider.shape == BulletProperties.Collider.Shape.Rectangle;
+            circleCollider.enabled = data.properties.collider.shape == BulletProperties.Collider.Shape.Circle;
         }
 
         _mirror = mirror;
@@ -49,7 +63,7 @@ public class Bullet : MonoBehaviour
         _age = 0f;
         UpdateTransform();
         UpdateAnimation();
-        _lifetime = _properties.lifetime;
+        _lifetime = _properties.Lifetime;
         _releaseRoutine = StartCoroutine(ReleaseCoroutine());
     }
 
@@ -96,9 +110,9 @@ public class Bullet : MonoBehaviour
 
     private void SpawnExplosionProjectiles()
     {
-        int bulletCount = _properties.explosionBulletCount.Eval(_t);
-        float arc = _properties.explosionArc.Eval(_t);
-        float angleOffset = _properties.rotationOffset.Eval(_t) + _data.properties.explosion.direction switch
+        int bulletCount = _properties.ExplosionBulletCount.Eval(_t);
+        float arc = _properties.ExplosionArc.Eval(_t);
+        float angleOffset = _properties.RotationOffset.Eval(_t) + _data.properties.explosion.direction switch
         {
             BulletProperties.ExplosionDirection.BulletDirection => transform.eulerAngles.z,
             BulletProperties.ExplosionDirection.Player => Vector2.SignedAngle(Vector2.right,
@@ -119,20 +133,33 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (_age < _properties.tangibleCooldown) return;
-        if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
+        if (!IsTangible()) return;
 
         PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
 
+        PlayerCollision(playerHealth);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (!IsTangible()) return;
+        
+        PlayerHealth playerHealth = collision.otherCollider.GetComponent<PlayerHealth>();
+
+        PlayerCollision(playerHealth);
+    }
+
+    private void PlayerCollision(PlayerHealth playerHealth)
+    {
         if (!playerHealth.IsInvincible)
         {
             switch (_data.properties.impactType)
             {
                 case BulletProperties.ImpactType.Damage:
-                    playerHealth.TakeDamage(_properties.impactPower.Eval(_t));
+                    playerHealth.TakeDamage(_properties.ImpactPower.Eval(_t));
                     break;
                 case BulletProperties.ImpactType.Heal:
-                    playerHealth.Heal(_properties.impactPower.Eval(_t));
+                    playerHealth.Heal(_properties.ImpactPower.Eval(_t));
                     break;
             }
 
@@ -142,6 +169,13 @@ public class Bullet : MonoBehaviour
                 Die();
             }
         }
+    }
+
+    private bool IsTangible()
+    {
+        return _age > _data.properties.intangibleStart &&
+               _age < _lifetime - _data.properties.intangibleEnd &&
+               _data.properties.impactType != BulletProperties.ImpactType.None;
     }
     
     private bool HasExpired() => _age > _lifetime;
