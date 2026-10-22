@@ -35,6 +35,7 @@ public class Game : MonoBehaviour
     public void SetColor(Color color, Gradient gradient)
     {
         player.UpdateColor(color);
+        fight.SetAttackColor(color);
         FillGrid.Instance.SetGradient(gradient);
         UIManager.Instance.fillUI.SetColor(color);
     }

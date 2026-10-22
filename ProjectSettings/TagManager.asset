@@ -47,5 +47,17 @@ TagManager:
   - name: Player
     uniqueID: 4157775103
     locked: 0
+  - name: Move Box
+    uniqueID: 3661838753
+    locked: 0
+  - name: Bullet
+    uniqueID: 386188901
+    locked: 0
+  - name: Attack Fade
+    uniqueID: 3411427817
+    locked: 0
+  - name: Enemy
+    uniqueID: 3592037951
+    locked: 0
   m_RenderingLayers:
   - Default
