@@ -84,6 +84,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3cbd9ed6fc3084d8dd14d39e0d2884, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &5418574826353281091 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7048626563279593021, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+  m_PrefabInstance: {fileID: 3090425486153668222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5436711858520393130 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7030243514298651604, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+  m_PrefabInstance: {fileID: 3090425486153668222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6009622447636018256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8756425243323408942, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+  m_PrefabInstance: {fileID: 3090425486153668222}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7755248370479473694 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4702682523360817760, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+  m_PrefabInstance: {fileID: 3090425486153668222}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &8895517862959440288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5877302820710266846, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
@@ -112,6 +132,101 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e42fa9ec7782a614780b2c77e31bf551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  bulletSpawner: {fileID: 8895517862959440288}
+  enemy: {fileID: 3690301118087069895}
+  attackPowers: 080000001400000020000000
+  attackDelay: 0.73
+  attackFx: {fileID: 5436711858520393130}
+  attackSlowdownTimeScale: 0.1
+  attackSlowdownIn:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.802721
+      outSlope: 2.802721
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0875
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackSlowdownInDuration: 0.3
+  attackSlowdownOut:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2.7428596
+      outSlope: 2.7428596
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.020833313
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  attackSlowdownOutDuration: 0.2
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7755248370479473694}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5418574826353281091}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6009622447636018256}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   testData: {fileID: 11400000, guid: 495438e023b5fa342a938fe5a8c48367, type: 2}
   basePeriod: 5
   debugOneAtATime: 0
@@ -169,5 +284,3 @@ MonoBehaviour:
   bulletRotation: 10.9
   mirrorX: 0
   mirrorY: 0
-  bulletSpawner: {fileID: 8895517862959440288}
-  enemy: {fileID: 3690301118087069895}

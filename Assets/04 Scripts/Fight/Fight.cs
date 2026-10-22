@@ -5,9 +5,8 @@ public class Fight : AbstractFight
 {
     private static readonly int Death = Animator.StringToHash("SwitchPhase");
     
+    [Header("Parameters")]
     [SerializeField] private FightData data;
-    [SerializeField] private BulletSpawner bulletSpawner;
-    [SerializeField] private Enemy enemy;
 
     private FightDataInstance _fightInstance;
 
@@ -59,11 +58,4 @@ public class Fight : AbstractFight
     {
         data?.OnDrawGizmos();
     }
-}
-
-public abstract class AbstractFight : MonoBehaviour
-{
-    public abstract void SetFight(FightData fightData);
-
-    public abstract void EndFight();
 }

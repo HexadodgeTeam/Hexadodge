@@ -23,7 +23,6 @@ public class BulletSpawner : MonoBehaviour
 
     private static void DestroyBullet(Bullet bullet)
     {
-        Debug.Log("fasde");
         Destroy(bullet.gameObject);
     }
 

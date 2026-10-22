@@ -1,35 +1,20 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class FillManager : MonoBehaviour
 {
-    private static readonly int[] HitTriggers =
-    {
-        Animator.StringToHash("Level_1"),
-        Animator.StringToHash("Level_2"),
-        Animator.StringToHash("Level_3")
-    };
     private const int NoSkill = -1;
     
     [Header("Parameters")]
     [SerializeField] private float[] skillFractions;
-    [SerializeField] private int[] attackPowers;
     [SerializeField] private UnityEvent[] skillUnlockedEvents;
-    [SerializeField] private UnityEvent attackEvent;
-    [SerializeField] private float enemyHitDelay = 0.5f;
-    [SerializeField] private AnimationCurve attackSlowdownTimeScale;
-    [SerializeField] private float attackSlowdownDuration;
 
     [Header("References")]
-    [SerializeField] private Player player;
-    [SerializeField] private Enemy enemy;
     [SerializeField] private FillGrid grid;
-    [SerializeField] private Animator attackFx;
     
     private int _currentSkillIndex = NoSkill;
 
-    private bool HasSkill => _currentSkillIndex != NoSkill;
+    public bool HasSkill => _currentSkillIndex != NoSkill;
     private int CurrentSkillIndex
     {
         get => _currentSkillIndex;
@@ -57,40 +42,14 @@ public class FillManager : MonoBehaviour
         UIManager.Instance.fillUI.SetFraction(fraction);
     }
 
-    public bool TryAttack()
+    public int GetSkillIndex()
     {
-        if (!HasSkill) return false;
-            
-        attackFx.SetTrigger(HitTriggers[CurrentSkillIndex]);
-        grid.Empty();
-        attackEvent.Invoke();
-        StartCoroutine(AttackCoroutine(CurrentSkillIndex));
-        StartCoroutine(AttackSlowdownCoroutine());
-        CurrentSkillIndex = NoSkill;
-
-        return true;
+        return CurrentSkillIndex;
     }
 
-    private IEnumerator AttackCoroutine(int skillIndex)
+    public void OnAttack()
     {
-        yield return new WaitForSeconds(enemyHitDelay);
-        
-        enemy.TakeDamage(attackPowers[skillIndex]);
-    }
-
-    private IEnumerator AttackSlowdownCoroutine()
-    {
-        float t = 0f;
-
-        while (t < attackSlowdownDuration)
-        {
-            t += Time.deltaTime;
-
-            Game.TimeScale = Mathf.Max(0f, attackSlowdownTimeScale.Evaluate(t / attackSlowdownDuration));
-
-            yield return null;
-        }
-
-        Game.TimeScale = 1f;
+        grid.Empty(); // Empty grid.
+        CurrentSkillIndex = NoSkill; // Reset skill index.
     }
 }
