@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 10
   timelines:
-  - pattern: {fileID: 11400000, guid: 619a098922f44704aae1a192bfd02a91, type: 2}
+  - pattern: {fileID: 11400000, guid: 3d0b7a1e2fc095245be5b52bd7017889, type: 2}
     start:
       curve:
         m_Mode: 0
