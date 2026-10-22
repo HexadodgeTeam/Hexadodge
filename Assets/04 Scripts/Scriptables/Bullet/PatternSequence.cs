@@ -51,11 +51,18 @@ public class PatternSequenceInstance
             _timelineInstances[i] = data.timelines[i].Instance(spawnAction);
         }
 
-        _animTriggersHash = new int[data.animTriggers.Length];
-
-        for (int i = 0; i < data.animTriggers.Length; i++)
+        if (data.animTriggers != null)
         {
-            _animTriggersHash[i] = Animator.StringToHash(data.animTriggers[i].animationTrigger);
+            _animTriggersHash = new int[data.animTriggers.Length];
+
+            for (int i = 0; i < data.animTriggers.Length; i++)
+            {
+                _animTriggersHash[i] = Animator.StringToHash(data.animTriggers[i].animationTrigger);
+            }
+        }
+        else
+        {
+            _animTriggers = Array.Empty<AnimTriggerTimeline>();
         }
     }
 

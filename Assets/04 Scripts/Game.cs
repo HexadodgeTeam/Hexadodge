@@ -69,4 +69,11 @@ public class Game : MonoBehaviour
     {
         fight.EndFight();
     }
+
+    public void ResetTime()
+    {
+        TimeScale = 1f;
+        ScaledTime = 0f;
+        Time.timeScale = 1f;
+    }
 }

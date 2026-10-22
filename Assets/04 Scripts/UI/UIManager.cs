@@ -63,6 +63,7 @@ public class UIManager : MonoBehaviour
 
     public void SwitchToMainMenu()
     {
+        Game.Instance.ResetTime();
         SceneManager.LoadScene(mainMenuScene);
     }
     
