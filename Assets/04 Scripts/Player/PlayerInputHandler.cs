@@ -6,6 +6,8 @@ using TouchPhase = UnityEngine.InputSystem.TouchPhase;
 
 public class PlayerInputHandler : MonoBehaviour
 {
+    public static bool PlayerTookControl = false;
+    
     [SerializeField] private float stickInputMultiplier = 2f;
     [SerializeField] private float moveBorderWidth = 40f;
     [SerializeField] private float moveBorderSpeed = 3f;
@@ -110,6 +112,7 @@ public class PlayerInputHandler : MonoBehaviour
                 _isTouching = true;
                 _startPosition = transform.position;
                 _startTouchPosition = touch.startPosition;
+                PlayerTookControl = true;
             }
 
             if (touch.phase.IsActive())
@@ -120,12 +123,14 @@ public class PlayerInputHandler : MonoBehaviour
             {
                 _isTouching = false;
                 _moveInput = Vector2.zero;
+                PlayerTookControl = false;
             }
         }
         else if (context.canceled)
         {
             _isTouching = false;
             _moveInput = Vector2.zero;
+            PlayerTookControl = false;
         }
     }
     
@@ -134,10 +139,12 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.performed)
         {
             _moveInput = context.ReadValue<Vector2>();
+            PlayerTookControl = true;
         }
         else if (context.canceled)
         {
             _moveInput = Vector2.zero;
+            PlayerTookControl = false;
         }
     }
 }

@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        _age += Time.deltaTime;
+        _age += Game.DeltaTime;
         _t = _age / _lifetime;
         
         UpdateAnimation();

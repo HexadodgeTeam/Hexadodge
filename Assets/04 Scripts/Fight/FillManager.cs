@@ -1,29 +1,20 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class FillManager : MonoBehaviour
 {
-    private static readonly int[] HitTriggers =
-    {
-        Animator.StringToHash("Level_1"),
-        Animator.StringToHash("Level_2"),
-        Animator.StringToHash("Level_3")
-    };
     private const int NoSkill = -1;
     
     [Header("Parameters")]
     [SerializeField] private float[] skillFractions;
-    [SerializeField] private int[] attackPowers;
     [SerializeField] private UnityEvent[] skillUnlockedEvents;
-    [SerializeField] private UnityEvent attackEvent;
 
     [Header("References")]
     [SerializeField] private FillGrid grid;
     
     private int _currentSkillIndex = NoSkill;
 
-    private bool HasSkill => _currentSkillIndex != NoSkill;
+    public bool HasSkill => _currentSkillIndex != NoSkill;
     private int CurrentSkillIndex
     {
         get => _currentSkillIndex;
@@ -49,5 +40,16 @@ public class FillManager : MonoBehaviour
         }
 
         UIManager.Instance.fillUI.SetFraction(fraction);
+    }
+
+    public int GetSkillIndex()
+    {
+        return CurrentSkillIndex;
+    }
+
+    public void OnAttack()
+    {
+        grid.Empty(); // Empty grid.
+        CurrentSkillIndex = NoSkill; // Reset skill index.
     }
 }

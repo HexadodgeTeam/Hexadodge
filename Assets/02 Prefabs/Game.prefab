@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  data: {fileID: 11400000, guid: 1bd1def1a34975e4eaa96943bef46376, type: 2}
   player: {fileID: 6427996418005150682}
   fill: {fileID: 1551301581224248341}
   fight: {fileID: 3078088578484012142}
@@ -98,9 +99,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724bf5abfd9ba5f439e65407961c310b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fight
-  data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   bulletSpawner: {fileID: 5877302820710266846}
   enemy: {fileID: 1861658777851156153}
+  attackDelay: 0.73
+  attackFx: {fileID: 7030243514298651604}
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4702682523360817760}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7048626563279593021}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8756425243323408942}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
 --- !u!1 &6715096801270673283
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,7 +192,6 @@ MonoBehaviour:
   - 0.5
   - 0.8
   - 1
-  attackPowers: 050000000c00000012000000
   skillUnlockedEvents:
   - m_PersistentCalls:
       m_Calls:
@@ -254,84 +295,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  attackEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4702682523360817760}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 7048626563279593021}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8756425243323408942}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  enemyHitDelay: 0.65
-  attackSlowdownTimeScale:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: -80
-      outSlope: -80
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.01
-      value: 0.2
-      inSlope: 0.0352899
-      outSlope: 0.0352899
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 1
-      outWeight: 0.63756454
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2.000726
-      outSlope: 2.000726
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.05050506
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  attackSlowdownDuration: 2
-  player: {fileID: 6427996418005150682}
-  enemy: {fileID: 1861658777851156153}
   grid: {fileID: 4455773642171721559}
-  attackFx: {fileID: 7030243514298651604}
 --- !u!1 &8164824055267924155
 GameObject:
   m_ObjectHideFlags: 0
