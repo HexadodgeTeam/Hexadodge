@@ -132,7 +132,7 @@ public class FightTest : AbstractFight
         {
             case BulletData:
                 // Draw spawn point and rotation gizmo.
-                Gizmos.color = Color.yellow;
+                Gizmos.color = Color.red;
                 Gizmos.DrawSphere(bulletSpawnPos, 0.05f);
                 Gizmos.color = Color.blue;
                 Quaternion rotation = Quaternion.Euler(0, 0, bulletRotation);
