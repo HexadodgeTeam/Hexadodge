@@ -23,11 +23,14 @@ public class BulletProperties
     [SerializeField]
     internal FloatCurve lifetime = 5f;
 
-    [Tooltip("Durée avant que le bullet ne soit tangible.\n" +
-             "Utiliser une curve ici n'a aucun effet.")]
+    [Tooltip("Durée avant que le bullet ne soit tangible.")]
     [SerializeField]
-    internal FloatCurve tangibleCooldown = 0.1f;
+    internal float intangibleStart = 0.1f;
 
+    [Tooltip("Durée d'intangibilité du bullet avant sa disparition.")]
+    [SerializeField]
+    internal float intangibleEnd = 0.1f;
+    
     [Tooltip("None : le projectile n'a pas de collision.\n" +
              "Damage : inflige des dégâts au contact.\n" +
              "Heal : soigne au contact.")]
@@ -70,35 +73,56 @@ public class BulletProperties
         public ExplosionDirection direction = ExplosionDirection.Player;
     }
 
+    public Collider collider;
+
+    [Serializable]
+    public class Collider
+    {
+        public enum Shape
+        {
+            Rectangle,
+            Circle
+        }
+        
+        [Tooltip("Forme du collider. Rectangle ou cercle.")]
+        public Shape shape = Shape.Rectangle;
+
+        [Tooltip("Dimensions du collider si c'est un rectangle.")]
+        public Vector2 rectangleSize = new(1, 1);
+
+        [Tooltip("Rayon du collider si c'est un cercle.")]
+        public float circleRadius = 0.5f;
+
+        [Tooltip("Si le collider possède des collisions. Si oui, il ne provoquera pas d'impact au contact du joueur.")]
+        public bool isWall;
+    }
+
     public BulletPropertiesInstance Instance() => new(this);
 }
 
 public class BulletPropertiesInstance
 {
-    public FloatCurveInstance lifetime;
-    public IntCurveInstance impactPower;
-    public IntCurveInstance explosionBulletCount;
-    public FloatCurveInstance explosionArc;
-    public FloatCurveInstance rotationOffset;
-    public FloatCurveInstance tangibleCooldown;
+    public FloatCurveInstance Lifetime;
+    public IntCurveInstance ImpactPower;
+    public IntCurveInstance ExplosionBulletCount;
+    public FloatCurveInstance ExplosionArc;
+    public FloatCurveInstance RotationOffset;
 
     public BulletPropertiesInstance(BulletProperties data)
     {
-        lifetime = data.lifetime.Instance();
-        impactPower = data.impactPower.Instance();
-        explosionBulletCount = data.explosion.bulletCount.Instance();
-        explosionArc = data.explosion.arc.Instance();
-        rotationOffset = data.explosion.rotationOffset.Instance();
-        tangibleCooldown = data.tangibleCooldown.Instance();
+        Lifetime = data.lifetime.Instance();
+        ImpactPower = data.impactPower.Instance();
+        ExplosionBulletCount = data.explosion.bulletCount.Instance();
+        ExplosionArc = data.explosion.arc.Instance();
+        RotationOffset = data.explosion.rotationOffset.Instance();
     }
 
     public void ReRoll()
     {
-        lifetime.ReRoll();
-        impactPower.ReRoll();
-        explosionBulletCount.ReRoll();
-        explosionArc.ReRoll();
-        rotationOffset.ReRoll();
-        tangibleCooldown.ReRoll();
+        Lifetime.ReRoll();
+        ImpactPower.ReRoll();
+        ExplosionBulletCount.ReRoll();
+        ExplosionArc.ReRoll();
+        RotationOffset.ReRoll();
     }
 }
