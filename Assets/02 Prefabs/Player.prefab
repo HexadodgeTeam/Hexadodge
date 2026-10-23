@@ -147,7 +147,7 @@ MonoBehaviour:
   stickInputMultiplier: 1
   moveBorderWidth: 0
   moveBorderSpeed: 3.5
-  swipeMultiplier: 2
+  swipeMultiplier: 1.3
   playerInput: {fileID: 5599694054019429399}
   movement: {fileID: 6639904151794185876}
   ghost: {fileID: 0}
