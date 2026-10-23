@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 882d592421ce413bae0f5b9db6036b91, type: 3}
   m_Name: BulletSpawning_ExplosionCirculaire
   m_EditorClassIdentifier: Assembly-CSharp::BSPosition
+  subSpawning: {fileID: 0}
   positions:
   - x:
       curve:
@@ -30,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: -1.6
-        m_ConstantMax: 0.3
+        m_ConstantMax: 0
     y:
       curve:
         m_Mode: 0
@@ -48,7 +49,9 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 4.27
-        m_ConstantMax: 1.5
+        m_ConstantMax: 0
+  positionsXFromCount: 0
+  positionsYFromCount: 0
   rotations:
   - curve:
       m_Mode: 0
@@ -67,4 +70,5 @@ MonoBehaviour:
         m_RotationOrder: 0
       m_ConstantMin: 0
       m_ConstantMax: -90
+  rotationsFromCount: 0
   pairPositionWithRotation: 1
