@@ -33,7 +33,7 @@ MonoBehaviour:
   bulletThrows:
   - bullet: {fileID: 11400000, guid: 793efbe43956f8b4a87715938cf90d2c, type: 2}
     throwTransform: {fileID: 0}
-    spawn: {fileID: 11400000, guid: 9f485142cf3aeeb429a08800b7962682, type: 2}
+    spawn: {fileID: 11400000, guid: cc03710eaaf8f404fa341744df5ae088, type: 2}
     spawnCount:
       curve:
         m_Mode: 0

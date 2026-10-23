@@ -31,11 +31,9 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 20
   sequences:
-  - {fileID: 11400000, guid: 7972fc2379cea6e4c89f46c98d085916, type: 2}
-  - {fileID: 11400000, guid: af1da03e4e870bb40994da1d7afd66fe, type: 2}
-  - {fileID: 11400000, guid: 7f1d834efba76d54eb78a8df7cb4a17f, type: 2}
-  - {fileID: 11400000, guid: 3a8df85a721e44e409bcb3950f9f4466, type: 2}
-  - {fileID: 11400000, guid: 5aa75adf27010f644ba792c1a93d2696, type: 2}
+  - {fileID: 11400000, guid: 577c4cfde38bc634ea57e60802602e60, type: 2}
+  - {fileID: 11400000, guid: 73a082dc0cbcf214397882bc46331fbd, type: 2}
+  - {fileID: 11400000, guid: 93e81187fd3083949acebe0d459b2ebe, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0
   waitBetweenSequence:

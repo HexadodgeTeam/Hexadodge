@@ -29,9 +29,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 11
+      m_ConstantMax: 7
   timelines:
-  - pattern: {fileID: 11400000, guid: a8aa6c430fd515c49967c9a97ee32c36, type: 2}
+  - pattern: {fileID: 11400000, guid: ace2d5c66e382ff4d8996f44f25b976b, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -67,8 +67,8 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 2
-  - pattern: {fileID: 11400000, guid: ace2d5c66e382ff4d8996f44f25b976b, type: 2}
+        m_ConstantMax: 1
+  - pattern: {fileID: 11400000, guid: a8aa6c430fd515c49967c9a97ee32c36, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 2
+        m_ConstantMax: 3
     end:
       curve:
         m_Mode: 0
@@ -104,8 +104,8 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 8
-  - pattern: {fileID: 11400000, guid: 104e0f17ae0982640af880060db3c222, type: 2}
+        m_ConstantMax: 4
+  - pattern: {fileID: 11400000, guid: 461ad7c265920d14ebaedf573c25c501, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -141,79 +141,5 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 8
-  - pattern: {fileID: 11400000, guid: 5360475318c7c374fbcdd915adcebde9, type: 2}
-    start:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
         m_ConstantMax: 6
-    end:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 7
-  - pattern: {fileID: 11400000, guid: a8aa6c430fd515c49967c9a97ee32c36, type: 2}
-    start:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 8
-    end:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 10
   animTriggers: []
