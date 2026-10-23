@@ -340,7 +340,7 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 461ad7c265920d14ebaedf573c25c501, type: 2}
+      objectReference: {fileID: 11400000, guid: 960c7abba6090394aa322e8587afa1e3, type: 2}
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -380,6 +380,10 @@ PrefabInstance:
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8895517862959440288, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: maxBulletCount
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
