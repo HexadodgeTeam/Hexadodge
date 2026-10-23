@@ -21,4 +21,4 @@ MonoBehaviour:
   - phase: {fileID: 11400000, guid: d000f56c6b74b1743a12d6f5fabe8f91, type: 2}
     enemyHealthFraction: 0.4
   enemy: {fileID: 11400000, guid: 5591dfba6bb01ac45bad2fac296283e9, type: 2}
-  nextFight: {fileID: 0}
+  nextFight: {fileID: 11400000, guid: 201613e97aded594e9f396b3cbec525e, type: 2}
