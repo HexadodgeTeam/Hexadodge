@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: B_Radial_Wave_Blow_into_bomb
+  m_Name: B_X_Laser_Preview
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 0}
+  transform: {fileID: 11400000, guid: c1e10e153c1f8784fa0deb51a74a2da8, type: 2}
   properties:
     lifetime:
       curve:
