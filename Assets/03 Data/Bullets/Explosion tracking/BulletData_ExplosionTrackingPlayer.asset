@@ -112,7 +112,7 @@ MonoBehaviour:
           m_ConstantMax: 0
       direction: 0
     collider:
-      shape: 0
+      shape: 1
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
