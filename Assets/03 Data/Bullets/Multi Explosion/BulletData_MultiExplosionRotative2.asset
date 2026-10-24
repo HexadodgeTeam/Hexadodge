@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_MultiExplosionRotative2
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 22f789cf0f5bcb44f80ead0aab4a71bd, type: 2}
+  transform: {fileID: 11400000, guid: 4dfda9880248bd74580f0e94162001a1, type: 2}
   properties:
     lifetime:
       curve:

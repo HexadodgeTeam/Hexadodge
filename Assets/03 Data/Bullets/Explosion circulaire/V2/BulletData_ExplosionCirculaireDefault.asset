@@ -31,25 +31,9 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 4
-        m_ConstantMax: 0.1
-    tangibleCooldown:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0.1
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0.1
+        m_ConstantMax: 0
+    intangibleStart: 0.1
+    intangibleEnd: 0.1
     impactType: 1
     destroyOnImpact: 1
     impactPower:
@@ -88,7 +72,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 5
+          m_ConstantMax: 4
       bullets:
       - {fileID: 11400000, guid: 067f4a3675e07394ea27255da60150b0, type: 2}
       arc:
@@ -128,8 +112,13 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 0
       direction: 0
+    collider:
+      shape: 0
+      rectangleSize: {x: 1, y: 1}
+      circleRadius: 0.5
+      isWall: 0
   animation:
-    sprite: {fileID: -8156265321633315653, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
+    sprite: {fileID: 0}
     color:
       m_Mode: 0
       m_GradientMin:

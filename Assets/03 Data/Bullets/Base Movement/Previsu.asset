@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: Previsu
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 0}
+  transform: {fileID: 11400000, guid: c9b345484c446b44e9d4c9c69a58455b, type: 2}
   properties:
     lifetime:
       curve:
@@ -34,8 +34,8 @@ MonoBehaviour:
         m_ConstantMax: 2
     intangibleStart: 0.1
     intangibleEnd: 0.1
-    impactType: 1
-    destroyOnImpact: 1
+    impactType: 0
+    destroyOnImpact: 0
     impactPower:
       curve:
         m_Mode: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 0
     explosion:
       bulletCount:
         curve:
@@ -72,8 +72,9 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 0
-      bullets: []
+          m_ConstantMax: 1
+      bullets:
+      - {fileID: 11400000, guid: eae6c01ae05bd0b4b9de17c493e257e9, type: 2}
       arc:
         curve:
           m_Mode: 0
@@ -91,7 +92,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 360
+          m_ConstantMax: 0
       rotationOffset:
         curve:
           m_Mode: 0
@@ -110,14 +111,14 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 0
-      direction: 1
+      direction: 0
     collider:
       shape: 0
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: -7546471824078404419, guid: 85dfa4add36e30e4b93cdea8bfefd11a, type: 3}
     color:
       m_Mode: 1
       m_GradientMin:
@@ -152,8 +153,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.6392157}
         key2: {r: 1, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
