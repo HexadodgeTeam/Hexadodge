@@ -68,7 +68,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 3
         m_ConstantMax: 4
-    intangibleStart: 0.1
+    intangibleStart: 0
     intangibleEnd: 0.1
     impactType: 1
     destroyOnImpact: 1
@@ -155,7 +155,7 @@ MonoBehaviour:
   animation:
     sprite: {fileID: 6722963285083194970, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
     color:
-      m_Mode: 0
+      m_Mode: 1
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -205,8 +205,8 @@ MonoBehaviour:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 52428
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -215,6 +215,6 @@ MonoBehaviour:
         m_Mode: 0
         m_ColorSpace: -1
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
       m_ColorMax: {r: 1, g: 1, b: 1, a: 1}

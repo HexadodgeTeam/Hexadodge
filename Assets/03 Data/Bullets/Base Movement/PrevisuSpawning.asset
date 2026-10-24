@@ -69,6 +69,6 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
       m_ConstantMin: 0
-      m_ConstantMax: -90
+      m_ConstantMax: 45
   rotationsFromCount: 0
   pairPositionWithRotation: 1
