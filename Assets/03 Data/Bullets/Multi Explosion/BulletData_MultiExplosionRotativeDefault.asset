@@ -74,7 +74,7 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 7
       bullets:
-      - {fileID: 11400000, guid: 40af6107406af214f8f8031a1bdc5811, type: 2}
+      - {fileID: 11400000, guid: 4cda71111c982d94882b972c92159531, type: 2}
       arc:
         curve:
           m_Mode: 0
@@ -110,15 +110,15 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 0
-      direction: 2
+          m_ConstantMax: 90
+      direction: 0
     collider:
       shape: 0
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 6722963285083194970, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
+    sprite: {fileID: 333306621, guid: 85dfa4add36e30e4b93cdea8bfefd11a, type: 3}
     color:
       m_Mode: 1
       m_GradientMin:

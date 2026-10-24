@@ -226,7 +226,7 @@ MonoBehaviour:
   scaleMultiplier:
     curve:
       m_Mode: 1
-      m_CurveMultiplier: 1
+      m_CurveMultiplier: 2.5
       m_CurveMin:
         serializedVersion: 2
         m_Curve: []
