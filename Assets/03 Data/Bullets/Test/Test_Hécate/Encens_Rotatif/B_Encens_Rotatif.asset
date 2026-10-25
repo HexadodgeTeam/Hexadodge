@@ -32,24 +32,8 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 7.5
-    tangibleCooldown:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0.1
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0.5
+    intangibleStart: 0.1
+    intangibleEnd: 0.1
     impactType: 1
     destroyOnImpact: 0
     impactPower:
@@ -127,6 +111,11 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 0
       direction: 1
+    collider:
+      shape: 0
+      rectangleSize: {x: 5, y: 0.5}
+      circleRadius: 0.5
+      isWall: 0
   animation:
     sprite: {fileID: 21300000, guid: 6c7596148fd689a488ad8f2dbcfb481b, type: 3}
     color:

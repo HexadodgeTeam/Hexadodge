@@ -190,7 +190,7 @@ MonoBehaviour:
     x:
       curve:
         m_Mode: 1
-        m_CurveMultiplier: 2.25
+        m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -240,7 +240,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 2.25
+        m_ConstantMax: 1
     y:
       curve:
         m_Mode: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0.25
+        m_ConstantMax: 0.5
   scaleMultiplier:
     curve:
       m_Mode: 0
@@ -276,4 +276,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 5
+      m_ConstantMax: 3
