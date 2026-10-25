@@ -56,11 +56,11 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 3
-  color: {r: 0.52156866, g: 0.3882353, b: 0.4, a: 1}
+  color: {r: 0.48252624, g: 0.3882353, b: 0.52156866, a: 1}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.18867922, g: 0.10501955, b: 0.11240129, a: 1}
-    key1: {r: 0.19496846, g: 0.04361882, b: 0.0018392947, a: 1}
+    key0: {r: 0.2455508, g: 0.15356888, b: 0.2735849, a: 1}
+    key1: {r: 0.16845849, g: 0.1492524, b: 0.24528301, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}
