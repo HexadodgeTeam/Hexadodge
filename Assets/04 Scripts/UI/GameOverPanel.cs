@@ -17,6 +17,7 @@ public class GameOverPanel : UIPanel
     {
         Close();
         
+        Game.Instance.SetTransfer();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

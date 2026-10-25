@@ -154,4 +154,9 @@ public class FightTest : AbstractFight
     {
         UIManager.Instance.GameOver(true);
     }
+
+    public override void SetTransfer()
+    {
+        
+    }
 }

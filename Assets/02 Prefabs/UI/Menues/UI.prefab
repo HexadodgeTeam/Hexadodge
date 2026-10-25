@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   mainMenuScene: MainMenu
   stick: {fileID: 4745421021602695444}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 8174502463279006636}
   controlTypeDropdown: {fileID: 6575130696739126287}
   hitAnimator: {fileID: 2268219843693278199}
   border: {fileID: 7699900343028233220}
@@ -798,6 +798,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5888574606790291814}
     m_Modifications:
+    - target: {fileID: 327366306303245443, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8174502463279006636}
     - target: {fileID: 364517424527930103, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -865,6 +869,10 @@ PrefabInstance:
     - target: {fileID: 1187209543658767809, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_Name
       value: Screen UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211614103539959910, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_text
+      value: Return to menu
       objectReference: {fileID: 0}
     - target: {fileID: 2745466925426156058, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.y
@@ -974,6 +982,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8977165736545002570, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4499415613734134416}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1026,6 +1038,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
+--- !u!114 &8174502463279006636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3405040781093145940, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f199c24578e445b5054fcc0f77f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
 --- !u!1 &8549387379586362273 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}

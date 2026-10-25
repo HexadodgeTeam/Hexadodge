@@ -71,6 +71,11 @@ public class Game : MonoBehaviour
         fight.EndFight();
     }
 
+    public void SetTransfer()
+    {
+        fight.SetTransfer();
+    }
+
     public void ResetTime()
     {
         TimeScale = 1f;

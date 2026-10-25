@@ -54,6 +54,11 @@ public class Fight : AbstractFight
         }
     }
 
+    public override void SetTransfer()
+    {
+        FightDataTransfer.Instance.SetData(data);
+    }
+
     private void OnDrawGizmos()
     {
         data?.OnDrawGizmos();

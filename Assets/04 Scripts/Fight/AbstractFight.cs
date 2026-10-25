@@ -105,4 +105,6 @@ public abstract class AbstractFight : MonoBehaviour
     {
         return PlayerInputHandler.PlayerTookControl;
     }
+
+    public abstract void SetTransfer();
 }
