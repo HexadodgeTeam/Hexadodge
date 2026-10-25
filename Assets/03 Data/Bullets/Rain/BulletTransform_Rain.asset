@@ -52,7 +52,7 @@ MonoBehaviour:
   forwardSpeed:
     x:
       curve:
-        m_Mode: 0
+        m_Mode: 1
         m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
@@ -65,21 +65,30 @@ MonoBehaviour:
           m_Curve:
           - serializedVersion: 3
             time: 0
-            value: 0.5
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
+            value: 0
+            inSlope: 0.99763286
+            outSlope: 31.909983
+            tangentMode: 1
+            weightedMode: 3
             inWeight: 0
-            outWeight: 0
+            outWeight: 0.09083101
+          - serializedVersion: 3
+            time: 0.20269695
+            value: 1.0334466
+            inSlope: 0.28946835
+            outSlope: 0.28946835
+            tangentMode: 1
+            weightedMode: 3
+            inWeight: 0.3126533
+            outWeight: 0.5105544
           - serializedVersion: 3
             time: 1
-            value: 1.75
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
+            value: 2
+            inSlope: 2.9661374
+            outSlope: 0.99763286
+            tangentMode: 1
+            weightedMode: 3
+            inWeight: 0.18817332
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
