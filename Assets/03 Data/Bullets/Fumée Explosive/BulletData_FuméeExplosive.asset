@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 15
+        m_ConstantMax: 7
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 1
@@ -117,9 +117,9 @@ MonoBehaviour:
       circleRadius: 0.35
       isWall: 0
   animation:
-    sprite: {fileID: 8471686017046580912, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 6227693075063511505, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
     color:
-      m_Mode: 0
+      m_Mode: 1
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -152,25 +152,25 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 0, b: 0, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 771
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 49922
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -178,7 +178,7 @@ MonoBehaviour:
         atime7: 0
         m_Mode: 0
         m_ColorSpace: -1
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 3
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
       m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
