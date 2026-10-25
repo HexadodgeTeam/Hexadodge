@@ -105,4 +105,6 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 7
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Prep_C
+    triggerTime: 6.8

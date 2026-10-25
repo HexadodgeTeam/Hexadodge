@@ -16,7 +16,7 @@ MonoBehaviour:
   properties:
     lifetime:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2

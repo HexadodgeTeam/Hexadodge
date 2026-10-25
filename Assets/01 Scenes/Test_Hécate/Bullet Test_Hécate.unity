@@ -333,6 +333,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1121015923659193562, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
     - target: {fileID: 3336268648861323118, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_Name
       value: Game Test
@@ -340,7 +344,11 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: fd18d372d75f28a45958531ac31d0173, type: 2}
+      objectReference: {fileID: 11400000, guid: b8b13aa44aae35748a6670d5c8cf538e, type: 2}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: cd01c3d6d0c420f4697cb86686691f28, type: 2}
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

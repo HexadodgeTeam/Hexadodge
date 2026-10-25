@@ -253,4 +253,8 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Enter_Loop_A
+    triggerTime: 1
+  - animationTrigger: Exit_Loop_A
+    triggerTime: 9
