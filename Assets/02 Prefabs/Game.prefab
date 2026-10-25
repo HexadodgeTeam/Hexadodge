@@ -638,7 +638,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2076078300285216102, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.97
       objectReference: {fileID: 0}
     - target: {fileID: 2076078300285216102, guid: 2a3bde127a80da045b225031401f3240, type: 3}
       propertyPath: m_LocalRotation.w
@@ -672,6 +672,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 3555416487120806831, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 3329846888488446647, guid: 5642f157432ba4a4eb65fa8718e32eb6, type: 3}
+    - target: {fileID: 7280712666256111870, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
