@@ -29,7 +29,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 9
+      m_ConstantMax: 10
   timelines:
   - pattern: {fileID: 11400000, guid: c9ae01cb746ee0a49b4e7d744e3408eb, type: 2}
     start:
@@ -108,3 +108,5 @@ MonoBehaviour:
   animTriggers:
   - animationTrigger: Prep_C
     triggerTime: 6.8
+  - animationTrigger: Prep_B
+    triggerTime: 9.2
