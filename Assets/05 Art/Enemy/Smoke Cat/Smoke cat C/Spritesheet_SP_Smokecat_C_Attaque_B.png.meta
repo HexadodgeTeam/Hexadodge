@@ -244,6 +244,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Spritesheet_SP_Smokecat_C_Attaque_B_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78ca6150ebe8b744faf721a8952db4e6
+      internalID: -1472487569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_SP_Smokecat_C_Attaque_B_7
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6aa987686f920d4e9b23f317a1ffdf4
+      internalID: -1043877941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -266,6 +310,8 @@ TextureImporter:
       Spritesheet_SP_Smokecat_C_Attaque_B_3: 371991992
       Spritesheet_SP_Smokecat_C_Attaque_B_4: 1192801056
       Spritesheet_SP_Smokecat_C_Attaque_B_5: 2054185212
+      Spritesheet_SP_Smokecat_C_Attaque_B_6: -1472487569
+      Spritesheet_SP_Smokecat_C_Attaque_B_7: -1043877941
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

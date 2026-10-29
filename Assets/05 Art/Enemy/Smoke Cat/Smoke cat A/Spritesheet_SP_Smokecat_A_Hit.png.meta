@@ -384,6 +384,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Spritesheet_SP_Smokecat_A_Hit_9
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddfff0e7278684d41a7ac1c0ac213523
+      internalID: -1597245348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Spritesheet_SP_Smokecat_A_Hit_10
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 512
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 416d5f798c2381b4dbcdb682bc3b56ee
+      internalID: -446705626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -402,6 +446,7 @@ TextureImporter:
     nameFileIdTable:
       Spritesheet_SP_Smokecat_A_Hit_0: 5974620310389904952
       Spritesheet_SP_Smokecat_A_Hit_1: -7447779091380810362
+      Spritesheet_SP_Smokecat_A_Hit_10: -446705626
       Spritesheet_SP_Smokecat_A_Hit_2: 1591941102439817464
       Spritesheet_SP_Smokecat_A_Hit_3: 1122405687
       Spritesheet_SP_Smokecat_A_Hit_4: -513721439
@@ -409,6 +454,7 @@ TextureImporter:
       Spritesheet_SP_Smokecat_A_Hit_6: -96197728
       Spritesheet_SP_Smokecat_A_Hit_7: 276665956
       Spritesheet_SP_Smokecat_A_Hit_8: -258533552
+      Spritesheet_SP_Smokecat_A_Hit_9: -1597245348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
