@@ -127,6 +127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2102290343}
     m_Modifications:
+    - target: {fileID: 417582997206000863, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
     - target: {fileID: 1939653507737652601, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -215,6 +219,18 @@ PrefabInstance:
       propertyPath: changeSpeed
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: fights.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'fights.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a59708ddf6f772c48b55ccc92f933fc8, type: 2}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'enemyAnim.Array.data[3]'
+      value: 
+      objectReference: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
     - target: {fileID: 3729192357616323156, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Name
       value: MenuPrincipal
