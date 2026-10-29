@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
-  m_Name: Exemple 5
+  m_Name: Item_1_1_Encens_Spectral
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  Name: Oiscie B
-  Description: 
-  Icon: {fileID: -4364385916704743455, guid: 73e62456a5145e8488fa2efb8cae3169, type: 3}
-  lore: 
-  emplacement: 4
-  ID: 4
+  Name: Pipe Spectral
+  Description: Un super Item avec un super effets (soon ^^)
+  Icon: {fileID: 21300000, guid: e7ee2e81ee2247b4ea0dfa9a946dae47, type: 3}
+  lore: "Pipe poss\xE9d\xE9e par le spectre d'un chats de son ex propri\xE9taire
+    , ce chats \xE9tait connue de tout le voisinage"
+  emplacement: 1
+  ID: 0
