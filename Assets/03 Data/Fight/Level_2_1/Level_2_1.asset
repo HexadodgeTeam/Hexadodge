@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: Level_2_1
   m_EditorClassIdentifier: Assembly-CSharp::FightData
-  title: 
-  levels: []
-  enemy: {fileID: 0}
-  nextFight: {fileID: 0}
+  title: 2 - 1
+  levels:
+  - phase: {fileID: 11400000, guid: 3ef0d287534dab046814db449cd07988, type: 2}
+    enemyHealthFraction: 1
+  - phase: {fileID: 11400000, guid: 3af35ef873530be459681114abfdf625, type: 2}
+    enemyHealthFraction: 0.6
+  enemy: {fileID: 11400000, guid: 0c5ad29aff2f8b74b94bbe73536e8db4, type: 2}
+  nextFight: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}

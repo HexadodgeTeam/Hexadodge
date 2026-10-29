@@ -113,7 +113,7 @@ MonoBehaviour:
       direction: 1
     collider:
       shape: 0
-      rectangleSize: {x: 1, y: 1}
+      rectangleSize: {x: 0.5, y: 0.5}
       circleRadius: 0.5
       isWall: 0
   animation:
