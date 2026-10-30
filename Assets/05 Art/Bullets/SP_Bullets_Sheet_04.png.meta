@@ -159,6 +159,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SP_Bullets_Sheet_04_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae9147e1b2d04d144a6126e5fe61bd59
+      internalID: 506610610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -177,6 +199,7 @@ TextureImporter:
     nameFileIdTable:
       SP_Bullets_Sheet_04_0: 2547227256828472806
       SP_Bullets_Sheet_04_1: -3788157731220107339
+      SP_Bullets_Sheet_04_2: 506610610
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
