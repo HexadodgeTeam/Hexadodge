@@ -31,11 +31,11 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 3
+        m_ConstantMax: 1
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 0
-    destroyOnImpact: 1
+    destroyOnImpact: 0
     impactPower:
       curve:
         m_Mode: 0
@@ -53,7 +53,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 0
     explosion:
       bulletCount:
         curve:
@@ -118,7 +118,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 2547227256828472806, guid: 2c4877cd9e982e648b6e08e5c648c102, type: 3}
     color:
       m_Mode: 1
       m_GradientMin:
@@ -153,8 +153,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 0, b: 0, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 0.30980393}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

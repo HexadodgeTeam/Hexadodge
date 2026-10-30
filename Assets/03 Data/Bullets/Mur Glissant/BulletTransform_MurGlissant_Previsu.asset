@@ -195,11 +195,11 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 4
+        m_ConstantMax: 1
   scaleMultiplier:
     curve:
-      m_Mode: 0
-      m_CurveMultiplier: 1
+      m_Mode: 1
+      m_CurveMultiplier: 4
       m_CurveMin:
         serializedVersion: 2
         m_Curve: []
@@ -208,7 +208,34 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 0
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.79620785
+          value: 0.9584688
+          inSlope: 0.4075842
+          outSlope: 0.4075842
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 1.0015259
+          value: -0.0060806274
+          inSlope: -12.51052
+          outSlope: -12.51052
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.12069911
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_MultiExplosionSablier_3
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: c27d2fb4b5ec406499f88d6afca5735b, type: 2}
+  transform: {fileID: 11400000, guid: 52f97b2fdba2a664ab3056741d42ed2c, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 7
+        m_ConstantMax: 4
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 1
