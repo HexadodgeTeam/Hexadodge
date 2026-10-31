@@ -181,6 +181,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SP_Bullets_Sheet_04_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30bb619af4cca1644832c7fd0bea5c99
+      internalID: 1413219436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SP_Bullets_Sheet_04_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f860eb8857d644084accf31501026a
+      internalID: -1056541024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -200,6 +244,8 @@ TextureImporter:
       SP_Bullets_Sheet_04_0: 2547227256828472806
       SP_Bullets_Sheet_04_1: -3788157731220107339
       SP_Bullets_Sheet_04_2: 506610610
+      SP_Bullets_Sheet_04_3: 1413219436
+      SP_Bullets_Sheet_04_4: -1056541024
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

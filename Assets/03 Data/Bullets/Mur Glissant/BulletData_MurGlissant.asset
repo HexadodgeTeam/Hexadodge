@@ -117,7 +117,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 1
   animation:
-    sprite: {fileID: 5941571246908216448, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: -8050726335865754823, guid: 2e0b2c092fa9a034285c68eee0aa78a6, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:
@@ -181,4 +181,4 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
-      m_ColorMax: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+      m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
