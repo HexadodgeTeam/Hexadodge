@@ -526,14 +526,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3862391468082557278}
-    - target: {fileID: 1402962148828035571, guid: 343527a9a17e9b244b5ff07018b40c93, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -102.43042
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699858136665742557, guid: 343527a9a17e9b244b5ff07018b40c93, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -102.43042
-      objectReference: {fileID: 0}
     - target: {fileID: 4104212321569456957, guid: 343527a9a17e9b244b5ff07018b40c93, type: 3}
       propertyPath: m_Name
       value: UI_Inventaire
@@ -769,6 +761,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 3715227635401843820}
+    - target: {fileID: 6572419006510693068, guid: e162facc35e98554599be7e702191985, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5974620310389904952, guid: df3b10ac4836ee54091e696abf25773c, type: 3}
     - target: {fileID: 7030028036553693522, guid: e162facc35e98554599be7e702191985, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -789,6 +785,10 @@ PrefabInstance:
       propertyPath: uiToActive
       value: 
       objectReference: {fileID: 3429270021584972740}
+    - target: {fileID: 8890402310366614551, guid: e162facc35e98554599be7e702191985, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -8012477803278423736, guid: c8fadd9f195875b4c8ff967bcbf9b161, type: 3}
     - target: {fileID: 9097377454049646861, guid: e162facc35e98554599be7e702191985, type: 3}
       propertyPath: uiToActive
       value: 
@@ -1086,11 +1086,11 @@ PrefabInstance:
       objectReference: {fileID: 4440478345932204368}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: changeSpeed
-      value: 0.5
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: fights.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemy.Array.data[0]'
@@ -1109,6 +1109,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 201613e97aded594e9f396b3cbec525e, type: 2}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
+      propertyPath: 'fights.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a59708ddf6f772c48b55ccc92f933fc8, type: 2}
+    - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemyAnim.Array.data[0]'
       value: 
       objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
@@ -1123,7 +1127,7 @@ PrefabInstance:
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemyAnim.Array.data[3]'
       value: 
-      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+      objectReference: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
     - target: {fileID: 8802657376753565302, guid: 8b16c16af2edc86408f07d8bfb2997c7, type: 3}
       propertyPath: 'enemyAnim.Array.data[4]'
       value: 
