@@ -10,7 +10,7 @@ public class CharaOnMap : MonoBehaviour
     [SerializeField]private LevelSelection levelSelection;
     [SerializeField]private List<RectTransform> transitionList = new List<RectTransform>();
     
-    float moveDuration = 1f;
+    public float moveDuration = 1f;
 
     private void OnEnable()
     {
