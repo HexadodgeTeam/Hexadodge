@@ -216,4 +216,32 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 7
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Loop_Enter_A
+    triggerTime: 0.5
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 2
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 2.25
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 2.5
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 2.75
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 3
+  - animationTrigger: Loop_Exit_A
+    triggerTime: 5
+  - animationTrigger: Loop_Enter_A
+    triggerTime: 6.5
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 8
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 8.25
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 8.5
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 8.75
+  - animationTrigger: Loop_Attack_A
+    triggerTime: 9
+  - animationTrigger: Loop_Exit_A
+    triggerTime: 10
