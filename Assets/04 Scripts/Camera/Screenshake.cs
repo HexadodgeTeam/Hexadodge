@@ -6,19 +6,68 @@ public class Screenshake : MonoBehaviour
     public AnimationCurve curve;
     public float duration = 1f;
     [SerializeField] public Camera camera;
+    [SerializeField] public float strengthMultiplierWeak = 1f;
+    [SerializeField] public float strengthMultiplierMid = 1f;
+    [SerializeField] public float strengthMultiplierStrong = 1f;
+    
 
-    IEnumerator Shaking()
+    public IEnumerator ShakingStrong()
     {
-        Vector3 startPosition = transform.position;
+        Vector3 startPosition = camera.transform.position;
+        
         float elapsedTime = 0;
+        
         while (elapsedTime < duration)
         {
             elapsedTime += Time.deltaTime;
+            
             float strength = curve.Evaluate(elapsedTime / duration);
-            transform.position = startPosition + Random.insideUnitSphere * strength;
+            
+            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierStrong;
+            
             yield return null;
         }
-        transform.position = startPosition;
+        
+        camera.transform.position = startPosition;
+    }
+    
+    public IEnumerator ShakingMid()
+    {
+        Vector3 startPosition = camera.transform.position;
+        
+        float elapsedTime = 0;
+        
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            
+            float strength = curve.Evaluate(elapsedTime / duration);
+            
+            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierMid;
+            
+            yield return null;
+        }
+        
+        camera.transform.position = startPosition;
+    }
+    public IEnumerator ShakingWeak()
+    {
+        Vector3 startPosition = camera.transform.position;
+        
+        float elapsedTime = 0;
+        
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            
+            float strength = curve.Evaluate(elapsedTime / duration);
+            
+            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierWeak;
+            
+            yield return null;
+        }
+        
+        camera.transform.position = startPosition;
     }
     
     

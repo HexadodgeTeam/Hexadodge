@@ -9985,6 +9985,7 @@ GameObject:
   - component: {fileID: 3977327151515039948}
   - component: {fileID: 5599694054019429399}
   - component: {fileID: 4784320591457263705}
+  - component: {fileID: 8861189096998599120}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -10219,6 +10220,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8861189096998599120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2562194563750654527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dc80751e200a724db72147eac5a5336, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Screenshake
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0.086715244
+      outSlope: 0.086715244
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1334923
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.3824785
+      outSlope: -2.3824785
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06964332
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  duration: 0.1
+  camera: {fileID: 0}
+  strengthMultiplierWeak: 0.05
+  strengthMultiplierMid: 0.05
+  strengthMultiplierStrong: 0.05
 --- !u!1 &2845587456215179688
 GameObject:
   m_ObjectHideFlags: 0
