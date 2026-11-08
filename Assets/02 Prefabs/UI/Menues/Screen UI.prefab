@@ -1617,8 +1617,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_margin.w
+      value: -124.76463
+      objectReference: {fileID: 0}
+    - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 973078527
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1641,8 +1645,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.14010851
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 741474048
+      value: 4278199551
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
@@ -1650,7 +1666,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3198617528483151376, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_IsActive
@@ -2030,7 +2046,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 989855743
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2054,7 +2070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 758251264
+      value: 4281466624
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
@@ -2211,7 +2227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563999883348433623, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 939524095
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 915878679365865082, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2234,8 +2250,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0.9863349
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
+      propertyPath: m_fontColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2490070222422566209, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 724696832
+      value: 4278254847
       objectReference: {fileID: 0}
     - target: {fileID: 2853490931730355736, guid: 3a78c9fc2cf153e4e957c7e7ca8e66c5, type: 3}
       propertyPath: m_Name
