@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,6 +16,7 @@ public abstract class AbstractFight : MonoBehaviour
     [SerializeField] protected BulletSpawner bulletSpawner;
     [SerializeField] protected Enemy enemy;
     [SerializeField] private SpriteRenderer attackFade;
+    [SerializeField] private TMP_Text damageText;
     
     [Header("Attack")]
     [SerializeField] private float attackDelay;
@@ -57,6 +59,8 @@ public abstract class AbstractFight : MonoBehaviour
     {
         attackFx.SetTrigger(HitTriggers[skillIndex]);
         attackEvent.Invoke();
+        int attackPower = _parameters.attackPowers[skillIndex] + _attackBonus;
+        damageText.text = attackPower.ToString();
         UIManager.Instance.OnAttack();
         StartCoroutine(AttackCoroutine(skillIndex));
         StartCoroutine(AttackSlowdownCoroutine());

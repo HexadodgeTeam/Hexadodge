@@ -603,14 +603,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
-    - target: {fileID: 4488213879885110665, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 519420031}
-    - target: {fileID: 5794539436471931891, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: camera
-      value: 
-      objectReference: {fileID: 519420031}
     - target: {fileID: 6553630420821436579, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -651,10 +643,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7819778588710733892, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: m_Camera
-      value: 
-      objectReference: {fileID: 519420031}
     - target: {fileID: 8960447521896103189, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_Camera
       value: 
@@ -671,3 +659,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 2904951314633214297}
   - {fileID: 2529757443027705894}
+  - {fileID: 109004665793433132}
