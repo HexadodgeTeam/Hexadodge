@@ -29,7 +29,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 5
+      m_ConstantMax: 5.5
   timelines:
   - pattern: {fileID: 11400000, guid: 6ce9e4533cfd7fb4ab0c9795d60b1f40, type: 2}
     start:
@@ -142,4 +142,20 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 2
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Prep_B
+    triggerTime: 0.5
+  - animationTrigger: Attack_B
+    triggerTime: 1.5
+  - animationTrigger: Prep_B
+    triggerTime: 2
+  - animationTrigger: Attack_B
+    triggerTime: 2.3
+  - animationTrigger: Prep_B
+    triggerTime: 2.8
+  - animationTrigger: Attack_B
+    triggerTime: 3.1
+  - animationTrigger: Prep_B
+    triggerTime: 5
+  - animationTrigger: Attack_B
+    triggerTime: 5.5

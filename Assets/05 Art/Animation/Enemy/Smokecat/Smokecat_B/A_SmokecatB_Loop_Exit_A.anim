@@ -22,9 +22,9 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -2881380700191129523, guid: 516cb4fe8a187034887839251c3d3cee, type: 3}
-    - time: 0.083333336
+    - time: 0.16666667
       value: {fileID: -6569688818407739400, guid: 516cb4fe8a187034887839251c3d3cee, type: 3}
-    - time: 0.25
+    - time: 0.33333334
       value: {fileID: -6569688818407739400, guid: 516cb4fe8a187034887839251c3d3cee, type: 3}
     attribute: m_Sprite
     path: Enemy_Visual
@@ -56,7 +56,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.29166666
+    m_StopTime: 0.375
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
