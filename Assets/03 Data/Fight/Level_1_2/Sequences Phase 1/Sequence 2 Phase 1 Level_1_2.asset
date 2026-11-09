@@ -329,3 +329,15 @@ MonoBehaviour:
     triggerTime: 11.75
   - animationTrigger: Loop_Exit_A
     triggerTime: 12.5
+  - animationTrigger: Moove_Left
+    triggerTime: 5.5
+  - animationTrigger: Return_Middle
+    triggerTime: 6.5
+  - animationTrigger: Moove_Right
+    triggerTime: 7.5
+  - animationTrigger: Return_Middle
+    triggerTime: 8.5
+  - animationTrigger: Moove_Left
+    triggerTime: 9.5
+  - animationTrigger: Return_Middle
+    triggerTime: 10.5
