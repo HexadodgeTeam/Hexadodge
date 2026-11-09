@@ -103,7 +103,7 @@ public class LevelSelection : MonoBehaviour
         Animator anim2 = enemyanimator[2].GetComponent<Animator>();
         
         anim0.runtimeAnimatorController = enemyAnim[(currentLevel)%enemyAnim.Count];
-        anim2.runtimeAnimatorController = enemyAnim[(currentLevel-1)%enemyAnim.Count];
+        anim2.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-1)%enemyAnim.Count];
         anim1.runtimeAnimatorController = enemyAnim[(currentLevel+1)%enemyAnim.Count];
         ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
 
