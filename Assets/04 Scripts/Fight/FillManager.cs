@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Tilemaps;
 
 public class FillManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class FillManager : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private FillGrid grid;
+    [SerializeField] private Tilemap backgroundTilemap;
     
     private int _currentSkillIndex = NoSkill;
     private readonly List<SkillData> _skills = new();
@@ -69,5 +71,11 @@ public class FillManager : MonoBehaviour
     {
         grid.Empty(); // Empty grid.
         CurrentSkillIndex = NoSkill; // Reset skill index.
+    }
+
+    public void SetGrid(Tilemap gridPrefab)
+    {
+        Destroy(backgroundTilemap.gameObject);
+        backgroundTilemap = Instantiate(gridPrefab, transform);
     }
 }

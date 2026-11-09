@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [CreateAssetMenu(fileName = "Fight", menuName = "Scriptable Objects/Fight/Data")]
 public class FightData : ScriptableObject, IGizmosDrawer
@@ -15,8 +16,25 @@ public class FightData : ScriptableObject, IGizmosDrawer
     
     [Tooltip("Si défini, le combat enchaîne directement vers celui-ci sans repasser par le menu.")]
     [SerializeField] internal FightData nextFight;
+
+    [Tooltip("Arène du combat. Prefab définissant les collisions.")]
+    [SerializeField]
+    internal GameObject arenaPrefab;
+
+    [Tooltip("Grille de remplissage du combat. Prefab définissant la zone à remplir.")]
+    [SerializeField]
+    internal Tilemap gridPrefab;
+    
+    [Tooltip("Point d'apparition du joueur au début du combat. Particulièrement utile si l'arène n'est pas accessible en 0 0.")]
+    [SerializeField]
+    internal Vector2 playerSpawnPoint;
+
+    [Tooltip("Fond du combat.")]
+    [SerializeField]
+    internal GameObject backgroundPrefab;
     
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
+
     
     public void OnDrawGizmos()
     {

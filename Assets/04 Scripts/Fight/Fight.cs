@@ -7,6 +7,7 @@ public class Fight : AbstractFight
     
     [Header("Parameters")]
     [SerializeField] private FightData data;
+    [SerializeField] private GameObject arena;
 
     private FightDataInstance _fightInstance;
 
@@ -20,6 +21,11 @@ public class Fight : AbstractFight
         _fightInstance = data.Instance(enemy.TriggerAnim, bulletSpawner.SpawnBullet);
         enemy.Init(data.enemy);
         UIManager.Instance.SetLevelTitle(data.title);
+        //if (data.arenaPrefab)
+        //{
+        //    Destroy(arena);
+        //    arena = Instantiate(data.arenaPrefab, transform);
+        //}
     }
 
     private void Update()
@@ -37,7 +43,7 @@ public class Fight : AbstractFight
     {
         yield return new WaitForSeconds(data.enemy.transitionDuration);
 
-        SetFight(data.nextFight);
+        Game.Instance.SetFight(data.nextFight);
     }
 
     public override void EndFight()

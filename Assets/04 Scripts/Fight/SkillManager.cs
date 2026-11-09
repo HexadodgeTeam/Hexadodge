@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class SkillManager : MonoBehaviour
@@ -7,6 +8,7 @@ public class SkillManager : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private BulletSpawner bulletSpawner;
     [SerializeField] private AbstractFight fight;
+    [SerializeField] private float paintExplosionDelay = 0.73f;
 
     private void Awake()
     {
@@ -30,6 +32,13 @@ public class SkillManager : MonoBehaviour
 
     public void PaintExplosion(float radius)
     {
+        StartCoroutine(PaintExplosionRoutine(radius));
+    }
+
+    private IEnumerator PaintExplosionRoutine(float radius)
+    {
+        yield return new WaitForSeconds(paintExplosionDelay);
+        
         player.PaintCircle(radius);
     }
 }

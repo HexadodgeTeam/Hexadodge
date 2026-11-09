@@ -18,3 +18,7 @@ MonoBehaviour:
     enemyHealthFraction: 1
   enemy: {fileID: 11400000, guid: 7f55b7c3af70d004d9f885acc965fe4b, type: 2}
   nextFight: {fileID: 0}
+  arenaPrefab: {fileID: 3994123169950664376, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
+  gridPrefab: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
+  playerSpawnPoint: {x: 0, y: 0}
+  backgroundPrefab: {fileID: 453420770198184038, guid: c2f5dcf709ab8ff49ab131edbed85742, type: 3}

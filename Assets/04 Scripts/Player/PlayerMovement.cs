@@ -20,4 +20,10 @@ public class PlayerMovement : MonoBehaviour, IMovable
     {
         rb.MovePosition(rb.position + delta * Game.DeltaTime);
     }
+
+    public void Teleport(Vector2 position)
+    {
+        Debug.Log("Teleport " + position);
+        rb.MovePosition(position);
+    }
 }

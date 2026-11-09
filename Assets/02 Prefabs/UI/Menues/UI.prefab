@@ -50,7 +50,7 @@ MonoBehaviour:
   mainMenuScene: MainMenu
   stick: {fileID: 4745421021602695444}
   gameOverPanel: {fileID: 8174502463279006636}
-  controlTypeDropdown: {fileID: 0}
+  controlTypeDropdown: {fileID: 1492574495849225758}
   hitAnimator: {fileID: 2268219843693278199}
   border: {fileID: 7699900343028233220}
   fillPopUps:
@@ -58,6 +58,45 @@ MonoBehaviour:
   - {fileID: 3181828401874885367}
   - {fileID: 8549387379586362273}
   levelTitle: {fileID: 8673788097642421045}
+  attackEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5574016044681513392}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3181828401874885367}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8549387379586362273}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   healthUI: {fileID: 9084470799185933473}
   fillUI: {fileID: 6600298856401742356}
   enemyHealthUI: {fileID: 1156508947069689211}
@@ -886,6 +925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen UI
       objectReference: {fileID: 0}
+    - target: {fileID: 1620532131158176785, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 791805696
+      objectReference: {fileID: 0}
     - target: {fileID: 2745466925426156058, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -906,6 +949,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -913,6 +960,10 @@ PrefabInstance:
     - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684070012753283975, guid: f7175472cf2782745a32862958a17728, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 1040187391
       objectReference: {fileID: 0}
     - target: {fileID: 3946677054087606199, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1199,6 +1250,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4866a9e44a9743508e2c997229d068c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SliderUI
+--- !u!114 &1492574495849225758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5370041978147639526, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b743370ac3e4ec2a1668f5455a8ef8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TMP_Dropdown
 --- !u!95 &2268219843693278199 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4704816631373626639, guid: f7175472cf2782745a32862958a17728, type: 3}

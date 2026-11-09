@@ -1,19 +1,25 @@
 using System.Collections;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Screenshake : MonoBehaviour
 {
     public AnimationCurve curve;
     public float duration = 1f;
-    [SerializeField] public new Camera camera;
     [SerializeField] public float strengthMultiplierWeak = 1f;
     [SerializeField] public float strengthMultiplierMid = 1f;
     [SerializeField] public float strengthMultiplierStrong = 1f;
+
+    private Camera _camera;
     
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
 
     public IEnumerator ShakingStrong()
     {
-        Vector3 startPosition = camera.transform.position;
+        Vector3 startPosition = _camera.transform.position;
         
         float elapsedTime = 0;
         
@@ -23,17 +29,17 @@ public class Screenshake : MonoBehaviour
             
             float strength = curve.Evaluate(elapsedTime / duration);
             
-            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierStrong;
+            _camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierStrong;
             
             yield return null;
         }
         
-        camera.transform.position = startPosition;
+        _camera.transform.position = startPosition;
     }
     
     public IEnumerator ShakingMid()
     {
-        Vector3 startPosition = camera.transform.position;
+        Vector3 startPosition = _camera.transform.position;
         
         float elapsedTime = 0;
         
@@ -43,16 +49,16 @@ public class Screenshake : MonoBehaviour
             
             float strength = curve.Evaluate(elapsedTime / duration);
             
-            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierMid;
+            _camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierMid;
             
             yield return null;
         }
         
-        camera.transform.position = startPosition;
+        _camera.transform.position = startPosition;
     }
     public IEnumerator ShakingWeak()
     {
-        Vector3 startPosition = camera.transform.position;
+        Vector3 startPosition = _camera.transform.position;
         
         float elapsedTime = 0;
         
@@ -62,12 +68,12 @@ public class Screenshake : MonoBehaviour
             
             float strength = curve.Evaluate(elapsedTime / duration);
             
-            camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierWeak;
+            _camera.transform.position = startPosition + Random.insideUnitSphere * strength * strengthMultiplierWeak;
             
             yield return null;
         }
         
-        camera.transform.position = startPosition;
+        _camera.transform.position = startPosition;
     }
     
     

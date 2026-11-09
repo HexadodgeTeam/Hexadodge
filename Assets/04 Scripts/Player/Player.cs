@@ -20,9 +20,14 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        _paint = FillGrid.Instance.Paint;
+        InitPaintAction();
         GetComponent<PlayerMovement>().Init(data.movementData);
         GetComponentInChildren<PlayerHealth>().Init(data.healthData);
+    }
+
+    public void InitPaintAction()
+    {
+        _paint = FillGrid.Instance.Paint;
     }
 
     private void FixedUpdate()
@@ -47,6 +52,12 @@ public class Player : MonoBehaviour
     
     public void PaintCircle(float radius)
     {
+        if (_paint == null) InitPaintAction();
         _paint.Circle(transform.position, radius);
+    }
+
+    public void Teleport(Vector2 position)
+    {
+        inputHandler.Teleport(position);
     }
 }

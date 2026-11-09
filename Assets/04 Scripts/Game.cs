@@ -15,6 +15,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private FillManager fill;
     [SerializeField] private AbstractFight fight;
+    [SerializeField] private GameObject background;
     
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class Game : MonoBehaviour
         Instance = this;
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
-        if (FightDataTransfer.Instance) fight.SetFight(FightDataTransfer.Instance.fightData);
+        if (FightDataTransfer.Instance) SetFight(FightDataTransfer.Instance.fightData);
         fight.Init(data.fight);
         fill.Init(data.baseSkills);
     }
@@ -57,6 +58,22 @@ public class Game : MonoBehaviour
         fill.OnAttack();
         
         return true;
+    }
+
+    public void SetFight(FightData fightData)
+    {
+        if (fightData.backgroundPrefab)
+        {
+            Destroy(background);
+            background = Instantiate(fightData.backgroundPrefab, transform);
+        }
+        
+        //if (fightData.gridPrefab) fill.SetGrid(fightData.gridPrefab);
+        player.InitPaintAction();
+        fight.SetFight(fightData);
+        
+        // TP player to spawn position.
+        player.Teleport(fightData.playerSpawnPoint);
     }
 
     public void ChangeControlType(int value)

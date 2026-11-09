@@ -57,6 +57,7 @@ public abstract class AbstractFight : MonoBehaviour
     {
         attackFx.SetTrigger(HitTriggers[skillIndex]);
         attackEvent.Invoke();
+        UIManager.Instance.OnAttack();
         StartCoroutine(AttackCoroutine(skillIndex));
         StartCoroutine(AttackSlowdownCoroutine());
 

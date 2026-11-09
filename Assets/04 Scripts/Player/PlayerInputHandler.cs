@@ -84,6 +84,12 @@ public class PlayerInputHandler : MonoBehaviour
         float multiplier = _controlType == Control.Type.Classic ? stickInputMultiplier : 1f;
         movement.MoveInput(_moveInput * multiplier);
     }
+
+    public void Teleport(Vector2 position)
+    {
+        movement.Teleport(position);
+        _moveInput = Vector2.zero;
+    }
     
     public void ChangeControlType(int value)
     {

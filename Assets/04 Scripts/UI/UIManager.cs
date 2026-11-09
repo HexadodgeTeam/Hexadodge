@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private BorderFill border;
     [SerializeField] private GameObject[] fillPopUps;
     [SerializeField] private TMP_Text levelTitle;
+    [SerializeField] private UnityEvent attackEvent;
 
     public CountUI healthUI;
     public SliderUI fillUI;
@@ -80,5 +82,10 @@ public class UIManager : MonoBehaviour
     public void SetLevelTitle(string title)
     {
         levelTitle.text = title;
+    }
+
+    public void OnAttack()
+    {
+        attackEvent.Invoke();
     }
 }
