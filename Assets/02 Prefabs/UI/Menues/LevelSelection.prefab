@@ -24,7 +24,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132619306447135695}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -49,18 +49,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   enemyAnim:
-  - {fileID: 9100000, guid: 3f82e28e383edf645892986935313d7b, type: 2}
-  - {fileID: 9100000, guid: 6655a0d8b2ef91649943bcbe65fdb734, type: 2}
-  - {fileID: 9100000, guid: 7b7da64238f5da94d94a36069ae547ce, type: 2}
-  - {fileID: 9100000, guid: 6655a0d8b2ef91649943bcbe65fdb734, type: 2}
-  - {fileID: 9100000, guid: 3f82e28e383edf645892986935313d7b, type: 2}
-  - {fileID: 9100000, guid: 7b7da64238f5da94d94a36069ae547ce, type: 2}
-  - {fileID: 9100000, guid: 6655a0d8b2ef91649943bcbe65fdb734, type: 2}
-  - {fileID: 9100000, guid: 3f82e28e383edf645892986935313d7b, type: 2}
-  - {fileID: 9100000, guid: 7b7da64238f5da94d94a36069ae547ce, type: 2}
-  - {fileID: 9100000, guid: 6655a0d8b2ef91649943bcbe65fdb734, type: 2}
-  - {fileID: 9100000, guid: 3f82e28e383edf645892986935313d7b, type: 2}
-  - {fileID: 9100000, guid: 7b7da64238f5da94d94a36069ae547ce, type: 2}
+  - {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+  - {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+  - {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
+  - {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
+  - {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+  - {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
+  - {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+  - {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+  - {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
+  - {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
+  - {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
+  - {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
+  enemyanimator:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   enemy:
   - {fileID: 0}
   - {fileID: 0}
@@ -68,7 +72,13 @@ MonoBehaviour:
   fights:
   - {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   - {fileID: 11400000, guid: 52fefae77d48a4a48814c2df1e5673a6, type: 2}
-  - {fileID: 11400000, guid: f01faf45e4d22c347a7892ad805c0a23, type: 2}
-  - {fileID: 11400000, guid: 57bc2e15c6477e7439e45527f62c7f8a, type: 2}
+  - {fileID: 11400000, guid: 201613e97aded594e9f396b3cbec525e, type: 2}
+  - {fileID: 11400000, guid: a59708ddf6f772c48b55ccc92f933fc8, type: 2}
+  changeSpeed: 0.2
+  enemytransform:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  ennemyName: {fileID: 0}
   currentLevel: 0
   previousLevel: 0
