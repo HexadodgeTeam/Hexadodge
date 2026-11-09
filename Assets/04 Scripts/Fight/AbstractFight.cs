@@ -24,6 +24,7 @@ public abstract class AbstractFight : MonoBehaviour
     [SerializeField] private Color attackFadeColor;
     
     private FightParameters _parameters;
+    private int _attackBonus = 0;
 
     public void Init(FightParameters parameters)
     {
@@ -37,6 +38,11 @@ public abstract class AbstractFight : MonoBehaviour
     public void SetAttackColor(Color color)
     {
         StartCoroutine(SetAttackColorCoroutine(color));
+    }
+
+    public void AddAttackBonus(int value)
+    {
+        _attackBonus += value;
     }
 
     private IEnumerator SetAttackColorCoroutine(Color color)
@@ -61,7 +67,7 @@ public abstract class AbstractFight : MonoBehaviour
     {
         yield return new WaitForSeconds(attackDelay);
         
-        enemy.TakeDamage(_parameters.attackPowers[skillIndex]);
+        enemy.TakeDamage(_parameters.attackPowers[skillIndex] + _attackBonus);
         yield return null;
     }
 

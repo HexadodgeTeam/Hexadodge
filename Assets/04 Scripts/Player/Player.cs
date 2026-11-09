@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
         Pos = transform.position;
         if (FillGrid.Active)
         {
-            _paint.Circle(transform.position, data.fillRange * FillRangeMultiplier);
+            PaintCircle(data.fillRange * FillRangeMultiplier);
         }
     }
 
@@ -43,5 +43,10 @@ public class Player : MonoBehaviour
     public void ChangeControlType(int value)
     {
         inputHandler.ChangeControlType(value);
+    }
+    
+    public void PaintCircle(float radius)
+    {
+        _paint.Circle(transform.position, radius);
     }
 }

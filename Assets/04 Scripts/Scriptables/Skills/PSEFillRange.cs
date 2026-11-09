@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "PSE_FillRange", menuName = "Scriptable Objects/Skills/Passive Effects/FillRange")]
+[CreateAssetMenu(fileName = "PSE_FillRange", menuName = "Scriptable Objects/Skills/Passive Effects/Fill Range")]
 public class PSEFillRange : PassiveSkillEffect
 {
     [Tooltip("Multiplicateur du rayon de peinture du joueur.")]

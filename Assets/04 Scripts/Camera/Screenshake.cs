@@ -5,7 +5,7 @@ public class Screenshake : MonoBehaviour
 {
     public AnimationCurve curve;
     public float duration = 1f;
-    [SerializeField] public Camera camera;
+    [SerializeField] public new Camera camera;
     [SerializeField] public float strengthMultiplierWeak = 1f;
     [SerializeField] public float strengthMultiplierMid = 1f;
     [SerializeField] public float strengthMultiplierStrong = 1f;
