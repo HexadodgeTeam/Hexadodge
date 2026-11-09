@@ -344,11 +344,11 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: ae871a32f92bfa5458ed1cf606753d94, type: 2}
+      objectReference: {fileID: 11400000, guid: 0bb57f5b4e41e7c4d8c9bed77d500352, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
-      objectReference: {fileID: 11400000, guid: cd01c3d6d0c420f4697cb86686691f28, type: 2}
+      objectReference: {fileID: 11400000, guid: 5591dfba6bb01ac45bad2fac296283e9, type: 2}
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

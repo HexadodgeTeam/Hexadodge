@@ -51,7 +51,7 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 0.5
     intangibleStart: 0
-    intangibleEnd: 0.1
+    intangibleEnd: 0
     impactType: 1
     destroyOnImpact: 0
     impactPower:
