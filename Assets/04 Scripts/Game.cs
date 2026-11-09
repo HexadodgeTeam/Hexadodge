@@ -25,6 +25,7 @@ public class Game : MonoBehaviour
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
         if (FightDataTransfer.Instance) fight.SetFight(FightDataTransfer.Instance.fightData);
         fight.Init(data.fight);
+        fill.Init(data.baseSkills);
     }
 
     private void FixedUpdate()
@@ -49,7 +50,12 @@ public class Game : MonoBehaviour
         
         if (!attacked) return false;
         
+        foreach (SkillData skill in data.baseSkills)
+        {
+            skill.OnAttack(skillIndex);
+        }
         fill.OnAttack();
+        
         return true;
     }
 

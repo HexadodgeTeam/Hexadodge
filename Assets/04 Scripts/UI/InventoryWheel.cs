@@ -11,8 +11,8 @@ public class InventoryWheel : MonoBehaviour
     private const int InventoryImageOffset = 5;
 
     [Header("Données")]
-    public List<ItemData> ItemInInventory = new List<ItemData>();
-    public List<ItemData> ItemEquip = new List<ItemData>();
+    public List<SkillData> ItemInInventory = new List<SkillData>();
+    public List<SkillData> ItemEquip = new List<SkillData>();
     public List<Image> itemEmplacement = new List<Image>();
     public Sprite emptySlotSprite; 
 
@@ -76,7 +76,7 @@ public class InventoryWheel : MonoBehaviour
     {
         int inventorySlot = isSlotInventaireShow.IndexOf(true);
         int equipSlot = itemToShowEquipement;
-        ItemData fromInventory = GetInventoryItem(itemToShowInventaire);
+        SkillData fromInventory = GetInventoryItem(itemToShowInventaire);
 
         if (inventorySlot < 0 || fromInventory == null
             || !IsValidEquipSlot(equipSlot)
@@ -124,12 +124,12 @@ public class InventoryWheel : MonoBehaviour
         }
     }
 
-    private void ApplySwap(ItemData fromInventory, int equipSlot)
+    private void ApplySwap(SkillData fromInventory, int equipSlot)
     {
         int inventoryIndex = ItemInInventory.IndexOf(fromInventory);
         if (inventoryIndex < 0 || !IsValidEquipSlot(equipSlot)) return;
 
-        ItemData fromEquipment = ItemEquip[equipSlot];
+        SkillData fromEquipment = ItemEquip[equipSlot];
 
         ItemInInventory.RemoveAt(inventoryIndex);
         ItemEquip[equipSlot] = fromInventory;
@@ -159,19 +159,19 @@ public class InventoryWheel : MonoBehaviour
         if (isSwapping) return;
         if (!IsValidEquipSlot(itemToShowEquipement)) return;
 
-        ItemData item = ItemEquip[itemToShowEquipement];
-        if (item == null) return;
+        SkillData skill = ItemEquip[itemToShowEquipement];
+        if (skill == null) return;
 
-        InsertInInventoryById(item);
+        InsertInInventoryById(skill);
         ItemEquip[itemToShowEquipement] = null;
 
         OnItemsChanged();
     }
 
-    private void InsertInInventoryById(ItemData item)
+    private void InsertInInventoryById(SkillData skill)
     {
-        int insertAt = Mathf.Clamp(item.ID, 0, ItemInInventory.Count);
-        ItemInInventory.Insert(insertAt, item);
+        int insertAt = Mathf.Clamp(skill.ID, 0, ItemInInventory.Count);
+        ItemInInventory.Insert(insertAt, skill);
     }
 
     private void Start()
@@ -367,12 +367,12 @@ public class InventoryWheel : MonoBehaviour
         return ((valeur % modulo) + modulo) % modulo;
     }
 
-    private ItemData GetInventoryItem(int index)
+    private SkillData GetInventoryItem(int index)
     {
         return index >= 0 && index < ItemInInventory.Count ? ItemInInventory[index] : null;
     }
 
-    private ItemData GetEquippedItem(int slot)
+    private SkillData GetEquippedItem(int slot)
     {
         return IsValidEquipSlot(slot) ? ItemEquip[slot] : null;
     }
@@ -403,13 +403,13 @@ public class InventoryWheel : MonoBehaviour
 
     private void RefreshDescription()
     {
-        ItemData item = IsInventory
+        SkillData skill = IsInventory
             ? GetInventoryItem(itemToShowInventaire)
             : GetEquippedItem(itemToShowEquipement);
 
-        nameItem.text = item != null ? item.Name : string.Empty;
-        descriptionItem.text = item != null ? item.Description : string.Empty;
-        lore.text = item != null ? item.lore : string.Empty;
+        nameItem.text = skill != null ? skill.Name : string.Empty;
+        descriptionItem.text = skill != null ? skill.Description : string.Empty;
+        lore.text = skill != null ? skill.lore : string.Empty;
     }
 
     private void RefreshAllIcons()
@@ -426,12 +426,12 @@ public class InventoryWheel : MonoBehaviour
         SetIcon(InventoryImageOffset + slot, GetInventoryItem(WheelIndexOf(slot)));
     }
 
-    private void SetIcon(int imageIndex, ItemData item)
+    private void SetIcon(int imageIndex, SkillData skill)
     {
         Image image = itemEmplacement[imageIndex];
         if (image == null) return;
 
-        Sprite sprite = item != null ? item.Icon : null;
+        Sprite sprite = skill != null ? skill.Icon : null;
         if (sprite == null) sprite = emptySlotSprite;   
 
         if (image.sprite != sprite) image.sprite = sprite;
@@ -440,9 +440,9 @@ public class InventoryWheel : MonoBehaviour
     private void SyncItemEmplacement()
     {
         for (int i = 0; i < ItemInInventory.Count; i++)
-            if (ItemInInventory[i] != null) ItemInInventory[i].emplacement = i;
+            if (ItemInInventory[i] != null) ItemInInventory[i].level = i;
 
         for (int n = 0; n < ItemEquip.Count; n++)
-            if (ItemEquip[n] != null) ItemEquip[n].emplacement = n;
+            if (ItemEquip[n] != null) ItemEquip[n].level = n;
     }
 }

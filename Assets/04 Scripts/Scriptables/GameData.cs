@@ -4,11 +4,12 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Game", menuName = "Scriptable Objects/Game")]
 public class GameData : ScriptableObject
 {
-    public GameParameters fight;
+    public FightParameters fight;
+    public SkillData[] baseSkills;
 }
 
 [Serializable]
-public class GameParameters
+public class FightParameters
 {
     public int[] attackPowers;
     [Min(0f)] public float attackSlowdownTimeScale = 0.1f;

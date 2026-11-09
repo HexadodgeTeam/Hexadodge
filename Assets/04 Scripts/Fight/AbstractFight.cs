@@ -23,9 +23,9 @@ public abstract class AbstractFight : MonoBehaviour
     [SerializeField] private UnityEvent attackEvent;
     [SerializeField] private Color attackFadeColor;
     
-    private GameParameters _parameters;
+    private FightParameters _parameters;
 
-    public void Init(GameParameters parameters)
+    public void Init(FightParameters parameters)
     {
         _parameters = parameters;
     }

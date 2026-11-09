@@ -65,3 +65,5 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attackSlowdownOutDuration: 0.2
+  baseSkills:
+  - {fileID: 11400000, guid: f53fbdb9f47fbbc4e9be6e70eeb61e90, type: 2}

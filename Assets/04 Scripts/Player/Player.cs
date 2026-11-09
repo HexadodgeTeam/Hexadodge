@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
@@ -15,6 +16,8 @@ public class Player : MonoBehaviour
 
     private Action<Vector3Int> _paint;
 
+    public float FillRangeMultiplier { get; set; } = 1f;
+
     private void Start()
     {
         _paint = FillGrid.Instance.Paint;
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour
         Pos = transform.position;
         if (FillGrid.Active)
         {
-            _paint.Circle(transform.position, data.fillRange);
+            _paint.Circle(transform.position, data.fillRange * FillRangeMultiplier);
         }
     }
 

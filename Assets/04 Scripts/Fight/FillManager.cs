@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,6 +14,7 @@ public class FillManager : MonoBehaviour
     [SerializeField] private FillGrid grid;
     
     private int _currentSkillIndex = NoSkill;
+    private readonly List<SkillData> _skills = new();
 
     public bool HasSkill => _currentSkillIndex != NoSkill;
     private int CurrentSkillIndex
@@ -30,6 +32,18 @@ public class FillManager : MonoBehaviour
     {
         UIManager.Instance.SetThresholdIndicators(skillFractions);
         grid.OnFillUpdated = SetFillFraction;
+        foreach (SkillData skill in _skills)
+        {
+            skill.OnLevelReached(CurrentSkillIndex);
+        }
+    }
+
+    public void Init(SkillData[] baseSkills)
+    {
+        foreach (SkillData skill in baseSkills)
+        {
+            _skills.Add(skill);
+        }
     }
     
     private void SetFillFraction(float fraction)
@@ -37,6 +51,10 @@ public class FillManager : MonoBehaviour
         while (CurrentSkillIndex + 1 < skillFractions.Length && fraction >= skillFractions[CurrentSkillIndex + 1])
         {
             CurrentSkillIndex++;
+            foreach (SkillData skill in _skills)
+            {
+                skill.OnLevelReached(CurrentSkillIndex);
+            }
         }
 
         UIManager.Instance.fillUI.SetFraction(fraction);
