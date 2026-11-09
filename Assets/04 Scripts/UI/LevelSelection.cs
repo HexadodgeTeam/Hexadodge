@@ -89,7 +89,6 @@ public class LevelSelection : MonoBehaviour
 
             enemy[direction > 0 ? 2 : 0].GetComponent<RectTransform>().anchoredPosition =
                 Vector2.Lerp(startMoving, endMoving, t);
-                print("is not ended");
             yield return null;
         }
        
@@ -98,11 +97,8 @@ public class LevelSelection : MonoBehaviour
         Animator anim2 = enemyanimator[2].GetComponent<Animator>();
         
         anim0.runtimeAnimatorController = enemyAnim[(currentLevel)%enemyAnim.Count];
-        print((currentLevel)%enemyAnim.Count);
         anim2.runtimeAnimatorController = enemyAnim[(currentLevel-1)%enemyAnim.Count];
-        print((currentLevel+2)%enemyAnim.Count);
         anim1.runtimeAnimatorController = enemyAnim[(currentLevel+1)%enemyAnim.Count];
-        print((currentLevel+1)%enemyAnim.Count);
         ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
 
         SetOriginPosition();
