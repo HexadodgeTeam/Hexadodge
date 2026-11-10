@@ -27,6 +27,13 @@ public class LevelSelection : MonoBehaviour
     public Vector2 startTouchPosition;
     public Vector2 endTouchPosition;
     public int actualFloor = 0;
+    private Animator anim0;
+    private Animator anim1;
+    private Animator anim2;
+
+    private Animator anim3;
+
+    private Animator anim4;
 
     public string GetScene()
     {
@@ -107,6 +114,12 @@ public class LevelSelection : MonoBehaviour
         {
             enemytransform.Add(e.GetComponent<RectTransform>().anchoredPosition);
         }
+        anim0 = enemyanimator[0].GetComponent<Animator>();
+        anim1 = enemyanimator[1].GetComponent<Animator>();
+        anim2 = enemyanimator[2].GetComponent<Animator>();
+        
+        anim3 = enemyanimator[3].GetComponent<Animator>();
+        anim4 = enemyanimator[4].GetComponent<Animator>();
     }
 
     public void ChangeSpecificLevel(int lvl)
@@ -206,16 +219,14 @@ public class LevelSelection : MonoBehaviour
             yield return null;
         }
        
-        Animator anim0 = enemyanimator[3].GetComponent<Animator>();
-        Animator anim1 = enemyanimator[0].GetComponent<Animator>();
-        Animator anim2 = enemyanimator[4].GetComponent<Animator>();
         
-        anim0.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel+3)-(currentLevel%3)%enemyAnim.Count];
-        anim2.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-3)-(currentLevel%3)%enemyAnim.Count];
-        anim1.runtimeAnimatorController = enemyAnim[(currentLevel)%enemyAnim.Count];
+        SetOriginPosition();
+        
+        anim3.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel+3)-(currentLevel%3)%enemyAnim.Count];
+        anim4.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-3)-(currentLevel%3)%enemyAnim.Count];
+        anim0.runtimeAnimatorController = enemyAnim[(currentLevel)%enemyAnim.Count];
         ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
 
-        SetOriginPosition();
        
         isChanging = false;
     }
@@ -247,16 +258,17 @@ public class LevelSelection : MonoBehaviour
             yield return null;
         }
        
-        Animator anim0 = enemyanimator[0].GetComponent<Animator>();
-        Animator anim1 = enemyanimator[1].GetComponent<Animator>();
-        Animator anim2 = enemyanimator[2].GetComponent<Animator>();
+       
         
+        
+        yield return  new WaitForSeconds(0.2f);
+        SetOriginPosition();
         anim0.runtimeAnimatorController = enemyAnim[((currentLevel)%3)+(actualFloor*3)];
         anim2.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-1)%3+(actualFloor*3)];
         anim1.runtimeAnimatorController = enemyAnim[(currentLevel+1)%3+(actualFloor*3)];
         ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
 
-        SetOriginPosition();
+        
        
         isChanging = false;
     }
