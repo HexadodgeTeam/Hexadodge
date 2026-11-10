@@ -220,7 +220,7 @@ MonoBehaviour:
   bulletSpawner: {fileID: 5877302820710266846}
   enemy: {fileID: 1861658777851156153}
   attackFade: {fileID: 5464848641276957330}
-  damageText: {fileID: 3300915435917040281}
+  damageText: {fileID: 211464728569252318}
   attackDelay: 0.73
   attackFx: {fileID: 7030243514298651604}
   attackFxSprite: {fileID: 3152948435012335709}
@@ -717,11 +717,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4794306123526511492, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 16777215
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+--- !u!114 &211464728569252318 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4794306123526511492, guid: 2a3bde127a80da045b225031401f3240, type: 3}
+  m_PrefabInstance: {fileID: 4640829709094097498}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &1861658777851156153 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6463363396445947107, guid: 2a3bde127a80da045b225031401f3240, type: 3}
@@ -738,17 +753,6 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 7756904922157328903, guid: 2a3bde127a80da045b225031401f3240, type: 3}
   m_PrefabInstance: {fileID: 4640829709094097498}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3300915435917040281 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7901775629560989891, guid: 2a3bde127a80da045b225031401f3240, type: 3}
-  m_PrefabInstance: {fileID: 4640829709094097498}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!4 &6676652687511500604 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2076078300285216102, guid: 2a3bde127a80da045b225031401f3240, type: 3}
