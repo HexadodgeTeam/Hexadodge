@@ -27,11 +27,6 @@ public class LevelSelection : MonoBehaviour
     public Vector2 endTouchPosition;
     int actualFloor = 0;
 
-    public string GetScene()
-    {
-        return sceneName[currentLevel];
-    }
-
     private void Update()
     {
         if (!isOpen)
