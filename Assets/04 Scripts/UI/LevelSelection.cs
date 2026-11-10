@@ -13,19 +13,25 @@ public class LevelSelection : MonoBehaviour
    
     [SerializeField] private List<RuntimeAnimatorController> enemyAnim = new();
     [SerializeField] private List<GameObject> enemyanimator = new();
-    [SerializeField] private List<GameObject> BG = new();
+    [SerializeField] private GameObject BG ;
     [SerializeField] private List<GameObject> enemy = new();
     [SerializeField] private List<FightData> fights = new();
     [SerializeField] private float changeSpeed;
     [SerializeField] private List<Vector2> enemytransform = new();
     [SerializeField] private TextMeshProUGUI ennemyName;
+    [SerializeField] private List<string> sceneName;
     private bool  isChanging = false;
     public int currentLevel = 0;
     public int previousLevel = 0;
-    private bool isOpen=false;
+    public bool isOpen=false;
     public Vector2 startTouchPosition;
     public Vector2 endTouchPosition;
-    int actualFloor = 0;
+    public int actualFloor = 0;
+
+    public string GetScene()
+    {
+        return sceneName[currentLevel];
+    }
 
     private void Update()
     {
@@ -107,14 +113,19 @@ public class LevelSelection : MonoBehaviour
     {
         if (isChanging || lvl < 0 || lvl >= enemyAnim.Count)
             return;
-
+        
         previousLevel = currentLevel;
         currentLevel = lvl;
+        
+        int quotient = currentLevel / 3;
+        actualFloor = quotient ;
+        BG.transform.position = new Vector3(0, -(actualFloor ) * 11, 0);
 
-        Animator anim = enemyanimator[1].GetComponent<Animator>();
+        Animator anim = enemyanimator[0].GetComponent<Animator>();
 
         if (anim != null)
             anim.runtimeAnimatorController = enemyAnim[currentLevel];
+        ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
     }
 
     public void ChangeLevel(int lvl)
@@ -187,6 +198,11 @@ public class LevelSelection : MonoBehaviour
 
             enemy[direction > 0 ? 3 : 4].GetComponent<RectTransform>().anchoredPosition =
                 Vector2.Lerp(startMoving, endMoving, t);
+            int x = -11 * (actualFloor);
+            
+            Vector2 objectif = new Vector2(0, x);
+            
+            BG.transform.position = Vector2.Lerp(BG.transform.position, objectif, t) ;
             yield return null;
         }
        
@@ -256,7 +272,7 @@ public class LevelSelection : MonoBehaviour
 
     public void SetBoolInMenu(bool Open)
     {
-        isOpen = Open;
+       // isOpen = Open;
     }
 
 
