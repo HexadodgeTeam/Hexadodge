@@ -16,3 +16,7 @@ MonoBehaviour:
   levels: []
   enemy: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
   nextFight: {fileID: 0}
+  arenaPrefab: {fileID: 0}
+  gridPrefab: {fileID: 0}
+  playerSpawnPoint: {x: 0, y: 0}
+  backgroundPrefab: {fileID: 453420770198184038, guid: 5d2ccc0b794bf754e8d3a9a43da74843, type: 3}
