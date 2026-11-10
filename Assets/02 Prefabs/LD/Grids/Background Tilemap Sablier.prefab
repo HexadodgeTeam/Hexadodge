@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5798059162844333263, guid: 677da5b2c8b34b64a984909dd9b95ebe, type: 3}
       propertyPath: m_Name
-      value: Background Tilemap (1) Variant
+      value: Background Tilemap Sablier
       objectReference: {fileID: 0}
     - target: {fileID: 8041223072086934990, guid: 677da5b2c8b34b64a984909dd9b95ebe, type: 3}
       propertyPath: m_Tiles.Array.size
@@ -3242,11 +3242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068015139440497314, guid: 677da5b2c8b34b64a984909dd9b95ebe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8068015139440497314, guid: 677da5b2c8b34b64a984909dd9b95ebe, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8068015139440497314, guid: 677da5b2c8b34b64a984909dd9b95ebe, type: 3}
       propertyPath: m_LocalPosition.z

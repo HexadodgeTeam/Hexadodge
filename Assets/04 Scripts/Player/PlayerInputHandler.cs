@@ -89,6 +89,11 @@ public class PlayerInputHandler : MonoBehaviour
     {
         movement.Teleport(position);
         _moveInput = Vector2.zero;
+        if (_isTouching)
+        {
+            _startPosition = new Vector3(position.x, position.y);
+            _startTouchPosition = _touchPosition;
+        }
     }
     
     public void ChangeControlType(int value)

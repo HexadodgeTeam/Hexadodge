@@ -7,7 +7,7 @@ public static class GridUtils
     {
         Vector3Int centerCell = FillGrid.Instance.WorldToCell(center);
         int radiusCeil = Mathf.CeilToInt(radius);
-        float radiusScaled = radius * FillGrid.ScaleX;
+        float radiusScaled = radius * FillGrid.Instance.ScaleX;
 
         for (int x = centerCell.x - radiusCeil; x <= centerCell.x + radiusCeil; x++)
         {

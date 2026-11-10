@@ -6,7 +6,6 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private string gameScene = "Game";
     [SerializeField] private float launchGameDelay = 1f;
-    [SerializeField] private LevelSelection levelSelection;
     
     public void SwitchToGame()
     {
@@ -17,6 +16,6 @@ public class MainMenu : MonoBehaviour
     {
         yield return new WaitForSeconds(launchGameDelay);
         
-        SceneManager.LoadScene(levelSelection.GetScene());
+        SceneManager.LoadScene(gameScene);
     }
 }

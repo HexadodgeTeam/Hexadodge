@@ -62,6 +62,7 @@ public abstract class AbstractFight : MonoBehaviour
         int attackPower = _parameters.attackPowers[skillIndex] + _attackBonus;
         damageText.text = attackPower.ToString();
         UIManager.Instance.OnAttack();
+        FillGrid.Instance.Active = false;
         StartCoroutine(AttackCoroutine(skillIndex));
         StartCoroutine(AttackSlowdownCoroutine());
 
@@ -74,6 +75,7 @@ public abstract class AbstractFight : MonoBehaviour
         
         enemy.TakeDamage(_parameters.attackPowers[skillIndex] + _attackBonus);
         yield return null;
+        if (Game.Instance.IsInFight) FillGrid.Instance.Active = true;
     }
 
     private IEnumerator AttackSlowdownCoroutine()

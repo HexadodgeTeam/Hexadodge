@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  IsInFight: 0
   data: {fileID: 11400000, guid: 1bd1def1a34975e4eaa96943bef46376, type: 2}
   player: {fileID: 6427996418005150682}
   fill: {fileID: 1551301581224248341}
@@ -281,7 +282,7 @@ MonoBehaviour:
   player: {fileID: 6427996418005150682}
   bulletSpawner: {fileID: 5877302820710266846}
   fight: {fileID: 3078088578484012142}
-  paintExplosionDelay: 0.73
+  paintExplosionDelay: 0.74
 --- !u!1 &6715096801270673283
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +436,6 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   grid: {fileID: 4455773642171721559}
-  backgroundTilemap: {fileID: 694423692513644195}
 --- !u!1 &8164824055267924155
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,11 +883,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
---- !u!1839735485 &694423692513644195 stripped
-Tilemap:
-  m_CorrespondingSourceObject: {fileID: 7583413805439257257, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
-  m_PrefabInstance: {fileID: 6962182420206715914}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4455773642171721559 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6721818720447341405, guid: 82fc8ad56cbbd0942b4d00b2d39fac75, type: 3}
