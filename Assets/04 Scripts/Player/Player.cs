@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
@@ -34,10 +33,7 @@ public class Player : MonoBehaviour
     {
         Delta = (Vector2)transform.position - Pos;
         Pos = transform.position;
-        if (FillGrid.Active)
-        {
-            PaintCircle(data.fillRange * FillRangeMultiplier);
-        }
+        PaintCircle(data.fillRange * FillRangeMultiplier);
     }
 
     public void UpdateColor(Color color)
@@ -52,12 +48,14 @@ public class Player : MonoBehaviour
     
     public void PaintCircle(float radius)
     {
-        if (_paint == null) InitPaintAction();
+        if (!FillGrid.Instance.Active) return;
+        
         _paint.Circle(transform.position, radius);
     }
 
     public void Teleport(Vector2 position)
     {
         inputHandler.Teleport(position);
+        Pos = position;
     }
 }

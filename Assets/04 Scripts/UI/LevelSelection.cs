@@ -16,15 +16,9 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private float changeSpeed;
     [SerializeField] private List<Vector2> enemytransform = new();
     [SerializeField] private TextMeshProUGUI ennemyName;
-    [SerializeField] private List<string> sceneName;
     private bool  isChanging = false;
     public int currentLevel = 0;
     public int previousLevel = 0;
-
-    public string GetScene()
-    {
-        return sceneName[currentLevel];
-    }
     
     private void Start()
     {

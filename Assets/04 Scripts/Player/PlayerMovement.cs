@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
     public void Teleport(Vector2 position)
     {
-        Debug.Log("Teleport " + position);
-        rb.MovePosition(position);
+        rb.position = position;
+        transform.position = position;
     }
 }
