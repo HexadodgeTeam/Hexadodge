@@ -289,7 +289,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 4
+        m_ConstantMax: 3.2
   - pattern: {fileID: 11400000, guid: f8c3009f1def0bc439f56b1fd379027d, type: 2}
     start:
       curve:
@@ -326,5 +326,5 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 10
+        m_ConstantMax: 9.2
   animTriggers: []
