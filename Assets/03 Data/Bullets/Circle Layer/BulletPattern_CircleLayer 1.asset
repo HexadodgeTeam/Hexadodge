@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
-  m_Name: Pattern 8 Level_1_3
+  m_Name: BulletPattern_CircleLayer 1
   m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
   period:
     curve:
@@ -29,29 +29,29 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 10
+      m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 793efbe43956f8b4a87715938cf90d2c, type: 2}
+  - bullet: {fileID: 11400000, guid: 244e61a35dbcecf41aca3340bcfba452, type: 2}
     throwTransform: {fileID: 0}
-    spawn: {fileID: 11400000, guid: 4a5c93ba7e800cc49a913a535439c7a3, type: 2}
+    spawn: {fileID: 11400000, guid: 2fe7ab1d9fb7c8f439e686ad14bd3d7f, type: 2}
     spawnCount:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 1
+        m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
         m_CurveMax:
           serializedVersion: 2
           m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 0
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -59,15 +59,15 @@ MonoBehaviour:
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
         m_CurveMax:
           serializedVersion: 2
           m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 0
     mirrorX: 0
@@ -89,4 +89,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 2
+      m_ConstantMax: 4

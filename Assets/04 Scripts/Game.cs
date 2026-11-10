@@ -7,6 +7,7 @@ public class Game : MonoBehaviour
     public static float TimeScale { private get; set; }
     public static float ScaledTime { get; private set; }
     public static float DeltaTime => Time.deltaTime * TimeScale;
+    public bool IsInFight { get; private set; }
 
     [Header("Parameters")]
     [SerializeField] private GameData data;
@@ -27,6 +28,7 @@ public class Game : MonoBehaviour
         if (FightDataTransfer.Instance) SetFight(FightDataTransfer.Instance.fightData);
         fight.Init(data.fight);
         fill.Init(data.baseSkills);
+        StartFight();
     }
 
     private void FixedUpdate()
@@ -68,12 +70,14 @@ public class Game : MonoBehaviour
             background = Instantiate(fightData.backgroundPrefab, transform);
         }
         
-        //if (fightData.gridPrefab) fill.SetGrid(fightData.gridPrefab);
+        if (fightData.gridPrefab) FillGrid.Instance.SetGrid(fightData.gridPrefab);
         player.InitPaintAction();
         fight.SetFight(fightData);
         
         // TP player to spawn position.
         player.Teleport(fightData.playerSpawnPoint);
+        
+        StartFight();
     }
 
     public void ChangeControlType(int value)
@@ -89,8 +93,15 @@ public class Game : MonoBehaviour
         UIManager.Instance.SetPopUpActive(value, active);
     }
 
+    private void StartFight()
+    {
+        IsInFight = true;
+        FillGrid.Instance.Active = true;
+    }
+    
     public void EndFight()
     {
+        IsInFight = false;
         fight.EndFight();
     }
 

@@ -8,6 +8,7 @@ public class Fight : AbstractFight
     [Header("Parameters")]
     [SerializeField] private FightData data;
     [SerializeField] private GameObject arena;
+    [SerializeField] private GameObject mask;
 
     private FightDataInstance _fightInstance;
 
@@ -21,15 +22,22 @@ public class Fight : AbstractFight
         _fightInstance = data.Instance(enemy.TriggerAnim, bulletSpawner.SpawnBullet);
         enemy.Init(data.enemy);
         UIManager.Instance.SetLevelTitle(data.title);
-        //if (data.arenaPrefab)
-        //{
-        //    Destroy(arena);
-        //    arena = Instantiate(data.arenaPrefab, transform);
-        //}
+        if (data.arenaPrefab)
+        {
+            Destroy(arena);
+            arena = Instantiate(data.arenaPrefab, transform);
+        }
+        if (data.maskPrefab)
+        {
+            if (mask) Destroy(mask);
+            mask = Instantiate(data.maskPrefab, transform);
+        }
     }
 
     private void Update()
     {
+        if (!Game.Instance.IsInFight) return;
+        
         _fightInstance.Tick(enemy.HealthRatio);
     }
 

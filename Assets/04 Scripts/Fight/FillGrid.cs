@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 public class FillGrid : MonoBehaviour
 {
     public static FillGrid Instance { get; private set; }
-    public static float ScaleX;
-    private static float ScaleY;
-    public static bool Active { get; private set; }
+    public float ScaleX;
+    private float ScaleY;
+    public bool Active { get; set; }
 
     [Header("Bounds")]
     [SerializeField] private Rect gridBounds;
@@ -60,17 +60,21 @@ public class FillGrid : MonoBehaviour
         set
         {
             _filledTileCount = value;
-            OnFillUpdated.Invoke(_filledTileCount / (float)_totalTileCount);
+            OnFillUpdated?.Invoke(_filledTileCount / (float)_totalTileCount);
         }
     }
 
     private void Awake()
     {
-        Active = true;
         Instance = this;
         ScaleX = transform.localScale.x;
         ScaleY = transform.localScale.y;
 
+        UpdateTileCount();
+    }
+
+    private void UpdateTileCount()
+    {
         _totalTileCount = backgroundTilemap.GetTilesRangeCount(
             new Vector3Int((int)(gridBounds.xMin / ScaleX), (int)(gridBounds.yMin / ScaleY)),
             new Vector3Int((int)(gridBounds.xMax / ScaleX), (int)(gridBounds.yMax / ScaleY)));
@@ -221,7 +225,6 @@ public class FillGrid : MonoBehaviour
         _activeGlows.Clear();
         _capillarityRoutines.Clear();
         FilledTileCount = 0;
-        Active = false;
         StartCoroutine(EmptyAnimation());
     }
 
@@ -261,8 +264,6 @@ public class FillGrid : MonoBehaviour
 
             yield return null;
         }
-
-        Active = true;
     }
 
     private IEnumerator ShrinkRoutine(Vector3Int cell, float shrinkTime)
@@ -294,4 +295,12 @@ public class FillGrid : MonoBehaviour
     }
 
     #endregion
+    
+    public void SetGrid(Tilemap gridPrefab)
+    {
+        Destroy(backgroundTilemap.gameObject);
+        backgroundTilemap = Instantiate(gridPrefab, transform);
+        UpdateTileCount();
+        FilledTileCount = 0;
+    }
 }

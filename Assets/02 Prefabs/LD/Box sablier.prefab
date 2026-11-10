@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Box sablier
       objectReference: {fileID: 0}
+    - target: {fileID: 5264545072199516528, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5632722588547655313, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.15
@@ -562,13 +566,17 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -2.51
       objectReference: {fileID: 0}
+    - target: {fileID: 7264226334292777741, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7280202371204885419, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4482
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7280202371204885419, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.88826
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7280202371204885419, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -601,6 +609,10 @@ PrefabInstance:
     - target: {fileID: 7280202371204885419, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722749612172176712, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9090927128664148649, guid: ec9cc91a449e4614ab3a07670467e9f0, type: 3}
       propertyPath: m_LocalScale.x
