@@ -66,7 +66,4 @@ MonoBehaviour:
       m_RotationOrder: 4
     attackSlowdownOutDuration: 0.2
   baseSkills:
-  - {fileID: 11400000, guid: f53fbdb9f47fbbc4e9be6e70eeb61e90, type: 2}
   - {fileID: 11400000, guid: 5429a5249f84e0545bc6ac7da7e9f6e7, type: 2}
-  - {fileID: 11400000, guid: 158f5d8b405c1274fb7599ad6c8a7d5c, type: 2}
-  - {fileID: 11400000, guid: cdb15790c8c6d97478857f53d1970904, type: 2}
