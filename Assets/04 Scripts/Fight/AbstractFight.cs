@@ -60,7 +60,7 @@ public abstract class AbstractFight : MonoBehaviour
         attackFx.SetTrigger(HitTriggers[skillIndex]);
         attackEvent.Invoke();
         int attackPower = _parameters.attackPowers[skillIndex] + _attackBonus;
-        damageText.text = attackPower.ToString();
+        if (damageText) damageText.text = attackPower.ToString();
         UIManager.Instance.OnAttack();
         FillGrid.Instance.Active = false;
         StartCoroutine(AttackCoroutine(skillIndex));

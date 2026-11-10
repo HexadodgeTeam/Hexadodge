@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
     public void UpdateColor(Color color)
     {
         renderer.color = color;
+        health.SetColor(color);
     }
 
     public void ChangeControlType(int value)

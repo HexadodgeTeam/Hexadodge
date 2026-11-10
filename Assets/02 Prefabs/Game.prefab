@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be404184402752449389dd99ca9c749, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  IsInFight: 0
   data: {fileID: 11400000, guid: 1bd1def1a34975e4eaa96943bef46376, type: 2}
   player: {fileID: 6427996418005150682}
   fill: {fileID: 1551301581224248341}
@@ -267,6 +266,7 @@ MonoBehaviour:
   attackFadeColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   arena: {fileID: 4971377856772587349}
+  mask: {fileID: 0}
 --- !u!114 &2904766152425356429
 MonoBehaviour:
   m_ObjectHideFlags: 0

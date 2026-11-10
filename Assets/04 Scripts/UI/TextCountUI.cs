@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class CountUI : MonoBehaviour
+public class TextCountUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text countText;
     [SerializeField] private string fieldName;

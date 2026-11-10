@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text levelTitle;
     [SerializeField] private UnityEvent attackEvent;
 
-    public CountUI healthUI;
+    public HealthUI healthUI;
     public SliderUI fillUI;
     public SliderUI enemyHealthUI;
 

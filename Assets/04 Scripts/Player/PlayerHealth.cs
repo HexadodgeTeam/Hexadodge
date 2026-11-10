@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
     private int _health;
     private float _invincibilityTimer = 0f;
+    private Color _color;
 
     public bool IsInvincible => _invincibilityTimer > 0f;
     private int Health
@@ -25,7 +26,7 @@ public class PlayerHealth : MonoBehaviour
         set
         {
             _health = Mathf.Clamp(value, 0, _data.maxHealth);
-            UIManager.Instance.healthUI?.SetCount(_health);
+            UIManager.Instance.healthUI?.Refresh(_health, _color);
             
             if (_health <= 0)
             {
@@ -38,6 +39,12 @@ public class PlayerHealth : MonoBehaviour
     {
         _data = data;
         Health = _data.maxHealth;
+    }
+
+    public void SetColor(Color color)
+    {
+        _color = color;
+        UIManager.Instance.healthUI?.Refresh(_health, _color);
     }
 
     private void Update()
