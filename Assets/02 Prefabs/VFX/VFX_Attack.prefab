@@ -9922,6 +9922,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 260902317785218324}
+  - component: {fileID: 7798464179988933989}
   - component: {fileID: 8379485981710118244}
   - component: {fileID: 7535212108108558886}
   - component: {fileID: 588378801344102987}
@@ -9952,6 +9953,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &7798464179988933989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553086916619432685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fbc204e08114bf469ee6ce1a72d8023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI_Bind_Camera
 --- !u!223 &8379485981710118244
 Canvas:
   m_ObjectHideFlags: 0
@@ -35302,7 +35315,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 16777215
   m_fontColor: {r: 1, g: 1, b: 1, a: 0}
   m_enableVertexGradient: 0
   m_colorMode: 3

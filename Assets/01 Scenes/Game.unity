@@ -451,6 +451,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 211464728569252318, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 337676736661952784, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_Name
       value: Game
