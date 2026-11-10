@@ -102,7 +102,7 @@ public class BTRadialInstance : BulletTransformInstance
             _ => throw new ArgumentOutOfRangeException()
         };
         Vector2 bulletToPole = _pole - bulletPos;
-        _angle = Vector2.SignedAngle(Vector2.right, bulletToPole);
+        _angle = Vector2.SignedAngle(Vector2.right, -bulletToPole);
         _distance = Vector2.Distance(_pole, bulletPos);
     }
 }
