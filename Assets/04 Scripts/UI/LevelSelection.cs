@@ -1,294 +1,209 @@
-
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.InputSystem;
-
 
 public class LevelSelection : MonoBehaviour
 {
-   
+    private const int SlotLeft = 0;
+    private const int SlotCenter = 1;
+    private const int SlotRight = 2;
+    private const int SlotNextFloor = 3;
+    private const int SlotPrevFloor = 4;
+
+    private const int LevelsPerFloor = 3;
+    private const float FloorHeight = 11f;
+    private const float MinSwipeDistance = 50f;
+
     [SerializeField] private List<RuntimeAnimatorController> enemyAnim = new();
     [SerializeField] private List<GameObject> enemyanimator = new();
-    [SerializeField] private GameObject BG ;
     [SerializeField] private List<GameObject> enemy = new();
     [SerializeField] private List<FightData> fights = new();
-    [SerializeField] private float changeSpeed;
-    [SerializeField] private List<Vector2> enemytransform = new();
-    [SerializeField] private TextMeshProUGUI ennemyName;
     [SerializeField] private List<string> sceneName;
-    private bool  isChanging = false;
+    [SerializeField] private GameObject BG;
+    [SerializeField] private TextMeshProUGUI ennemyName;
+    [SerializeField] private float changeSpeed;
+
     public int currentLevel = 0;
     public int previousLevel = 0;
-    public bool isOpen=false;
-    public Vector2 startTouchPosition;
-    public Vector2 endTouchPosition;
     public int actualFloor = 0;
-    private Animator anim0;
-    private Animator anim1;
-    private Animator anim2;
+    public bool isOpen = false;
 
-    private Animator anim3;
+    private RectTransform[] rects;  
+    private Animator[] anims;      
+    private Vector2[] slots;        
+    private Vector2 swipeStart;
+    private bool isChanging;
+    
+    private const int AnimCenter = 0;
+    private const int AnimRight  = 1;
+    private const int AnimLeft   = 2;
+    private static readonly int SlideLeftHash  = Animator.StringToHash("Slide_Left");
+    private static readonly int SlideRightHash = Animator.StringToHash("Slide_Right");
 
-    private Animator anim4;
+    private bool CanChange => !isChanging && rects != null && enemyAnim.Count > 0;
+    private int FloorCount => Mathf.CeilToInt(enemyAnim.Count / (float)LevelsPerFloor);
+    private FightData CurrentFight => fights[currentLevel < fights.Count ? currentLevel : 0];
+    private int FloorSize(int floor) => Mathf.Clamp(enemyAnim.Count - floor * LevelsPerFloor, 1, LevelsPerFloor);
 
-    public string GetScene()
+    private static Vector3 BgPosition(int floor) => new Vector3(0f, -floor * FloorHeight, 0f);
+
+    private void Awake()
+    {
+        if (enemy.Count < 5 || enemyanimator.Count < 5)
+        {
+            Debug.LogError("LevelSelection : 'enemy' et 'enemyanimator' doivent contenir 5 éléments.", this);
+            enabled = false;
+            return;
+        }
+
+        rects = enemy.ConvertAll(e => e.GetComponent<RectTransform>()).ToArray();
+        anims = enemyanimator.ConvertAll(e => e.GetComponent<Animator>()).ToArray();
+        slots = System.Array.ConvertAll(rects, r => r.anchoredPosition);
+
+        isOpen = false;
+        actualFloor = currentLevel / LevelsPerFloor;
+        Refresh();
+    }
+public string GetScene()
     {
         return sceneName[currentLevel];
     }
 
     private void Update()
     {
-        if (!isOpen)
-        {
-            Swipe();
-        }
-    }
-
-    void Swipe()
-    {
-        if (Touchscreen.current == null)
+        if (isOpen || Touchscreen.current == null)
             return;
 
         var touch = Touchscreen.current.primaryTouch;
 
         if (touch.press.wasPressedThisFrame)
-        {
-            startTouchPosition = touch.position.ReadValue();
-        }
+            swipeStart = touch.position.ReadValue();
 
-        if (touch.press.wasReleasedThisFrame)
-        {
-            endTouchPosition = touch.position.ReadValue();
+        if (!touch.press.wasReleasedThisFrame)
+            return;
 
-            Vector2 inputVector = endTouchPosition - startTouchPosition;
+        Vector2 delta = touch.position.ReadValue() - swipeStart;
+        if (delta.magnitude < MinSwipeDistance)
+            return;
 
-            if (inputVector.magnitude < 50f)
-                return;
-
-            if (Mathf.Abs(inputVector.x) > Mathf.Abs(inputVector.y))
-            {
-                if (inputVector.x > 0)
-                    RightSwipe();
-                else
-                    LeftSwipe();
-            }
-            else
-            {
-                if (inputVector.y > 0)
-                    UpSwipe();
-                else
-                    DownSwipe();
-            }
-        }
-    }
-
-    private void UpSwipe()
-    {
-        ChangeFloorL(-1);
-    }
-    private void DownSwipe()
-    {
-        ChangeFloorL(1);
-    }
-    private void LeftSwipe()
-    {
-        ChangeLevel(1);
-    }
-    private void RightSwipe()
-    {
-        ChangeLevel(-1);
-    }
-
-
-
-    private void Start()
-    {
-        isOpen = false;
-        enemytransform.Clear();
-        ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
-        foreach (GameObject e in enemy)
-        {
-            enemytransform.Add(e.GetComponent<RectTransform>().anchoredPosition);
-        }
-        anim0 = enemyanimator[0].GetComponent<Animator>();
-        anim1 = enemyanimator[1].GetComponent<Animator>();
-        anim2 = enemyanimator[2].GetComponent<Animator>();
-        
-        anim3 = enemyanimator[3].GetComponent<Animator>();
-        anim4 = enemyanimator[4].GetComponent<Animator>();
+        if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
+            ChangeLevel(delta.x > 0 ? -1 : 1);  
+        else
+            ChangeFloorL(delta.y > 0 ? -1 : 1);  
     }
 
     public void ChangeSpecificLevel(int lvl)
     {
-        if (isChanging || lvl < 0 || lvl >= enemyAnim.Count)
+        if (!CanChange || lvl < 0 || lvl >= enemyAnim.Count)
             return;
-        
+
         previousLevel = currentLevel;
         currentLevel = lvl;
-        
-        int quotient = currentLevel / 3;
-        actualFloor = quotient ;
-        BG.transform.position = new Vector3(0, -(actualFloor ) * 11, 0);
+        actualFloor = lvl / LevelsPerFloor;
 
-        Animator anim = enemyanimator[0].GetComponent<Animator>();
-
-        if (anim != null)
-            anim.runtimeAnimatorController = enemyAnim[currentLevel];
-        ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
+        BG.transform.position = BgPosition(actualFloor);
+        Refresh();
     }
-
-    public void ChangeLevel(int lvl)
+    public void ChangeLevel(int dir)
     {
-        if (isChanging || lvl == 0 || enemyAnim.Count == 0)
+        if (!CanChange || dir == 0)
             return;
 
-        if (enemy.Count < 3)
+        int size = FloorSize(actualFloor);
+        if (size < 2)
             return;
 
-        if (lvl < 0 && currentLevel % 3 == 0) currentLevel += 2;
-        else if (lvl>0 && currentLevel % 3 == 2) currentLevel -= 2;
-        else currentLevel += lvl > 0 ? 1 : -1;
-        
+        bool forward = dir > 0;
+        int first = actualFloor * LevelsPerFloor;
+
         previousLevel = currentLevel;
+        currentLevel = first + (currentLevel - first + (forward ? 1 : size - 1)) % size;
 
-        
+        int trigger = forward ? SlideLeftHash : SlideRightHash;
+        anims[AnimCenter].SetTrigger(trigger);
+        anims[forward ? AnimRight : AnimLeft].SetTrigger(trigger);
 
-        if (currentLevel >= enemyAnim.Count)
-            currentLevel = 0;
-
-        if (currentLevel < 0)
-            currentLevel = enemyAnim.Count - 1;
-
-        StartCoroutine(ChangeEnemy(lvl));
+        int exit = forward ? SlotLeft : SlotRight;
+        int entry = forward ? SlotRight : SlotLeft;
+        StartCoroutine(Transition(exit, entry, entry));
     }
-    public void ChangeFloorL(int lvl)
+    public void ChangeFloorL(int dir)
     {
-        if (isChanging || lvl == 0 || enemyAnim.Count == 0)
+        int target = actualFloor + (dir > 0 ? 1 : -1);
+        if (!CanChange || dir == 0 || target < 0 || target >= FloorCount)
             return;
 
-        if (enemy.Count < 3)
-            return;
-        if (lvl<0 && currentLevel - 3 < 0)
-            return;
-
-        actualFloor += lvl;
         previousLevel = currentLevel;
-
-        currentLevel += lvl > 0 ? 3-(currentLevel%3) : -3-(currentLevel%3);
-
-        if (currentLevel >= enemyAnim.Count)
-            currentLevel = 0;
-
-        
-
-        StartCoroutine(ChangeFloor(lvl));
+        actualFloor = target;
+        currentLevel = target * LevelsPerFloor;
+        bool next = dir > 0;
+        int exit = next ? SlotNextFloor : SlotPrevFloor;
+        int from = next ? SlotPrevFloor : SlotNextFloor;
+        StartCoroutine(Transition(exit, exit, from));
     }
-    private IEnumerator ChangeFloor(int direction)
+
+    private IEnumerator Transition(int exitSlot, int entryIndex, int entryStartSlot)
     {
         isChanging = true;
 
-        
-        Vector2 startCenter = enemytransform[1];
-        Vector2 startMoving = enemytransform[direction > 0 ? 4 : 3];
+        RectTransform center = rects[SlotCenter];
+        RectTransform entry = rects[entryIndex];
 
-        Vector2 endCenter = enemytransform[direction > 0 ? 3 : 4];
-        Vector2 endMoving = enemytransform[1];
+        Vector2 centerFrom = slots[SlotCenter];
+        Vector2 centerTo = slots[exitSlot];
+        Vector2 entryFrom = slots[entryStartSlot];
+        Vector2 entryTo = slots[SlotCenter];
 
-        float elapsed = 0f;
-        float duration = changeSpeed;
+        Vector3 bgFrom = BG.transform.position;
+        Vector3 bgTo = BgPosition(actualFloor);
 
-        while (elapsed < duration)
+        float duration = Mathf.Max(changeSpeed, 0.01f);
+
+        for (float t = 0f; t < 1f;)
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
+            t = Mathf.Min(1f, t + Time.deltaTime / duration);
 
-            enemy[1].GetComponent<RectTransform>().anchoredPosition =
-                Vector2.Lerp(startCenter, endCenter, t);
+            center.anchoredPosition = Vector2.Lerp(centerFrom, centerTo, t);
+            entry.anchoredPosition = Vector2.Lerp(entryFrom, entryTo, t);
+            BG.transform.position = Vector3.Lerp(bgFrom, bgTo, t); 
 
-            enemy[direction > 0 ? 3 : 4].GetComponent<RectTransform>().anchoredPosition =
-                Vector2.Lerp(startMoving, endMoving, t);
-            int x = -11 * (actualFloor);
-            
-            Vector2 objectif = new Vector2(0, x);
-            
-            BG.transform.position = Vector2.Lerp(BG.transform.position, objectif, t) ;
             yield return null;
         }
-       
-        
-        SetOriginPosition();
-        
-        anim3.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel+3)-(currentLevel%3)%enemyAnim.Count];
-        anim4.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-3)-(currentLevel%3)%enemyAnim.Count];
-        anim0.runtimeAnimatorController = enemyAnim[(currentLevel)%enemyAnim.Count];
-        ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
 
-       
+        Refresh();
         isChanging = false;
     }
-
-    private IEnumerator ChangeEnemy(int direction)
+    private void Refresh()
     {
-        isChanging = true;
+        int first = actualFloor * LevelsPerFloor;
+        int size = FloorSize(actualFloor);
+        int col = currentLevel - first;
 
-        
-        Vector2 startCenter = enemytransform[1];
-        Vector2 startMoving = enemytransform[direction > 0 ? 2 : 0];
+        SetController(anims[0], currentLevel);
+        SetController(anims[1], first + (col + 1) % size);
+        SetController(anims[2], first + (col + size - 1) % size);
+        SetController(anims[3], first + LevelsPerFloor);
+        SetController(anims[4], first - LevelsPerFloor);
 
-        Vector2 endCenter = enemytransform[direction > 0 ? 0 : 2];
-        Vector2 endMoving = enemytransform[1];
+        for (int i = 0; i < rects.Length; i++)
+            rects[i].anchoredPosition = slots[i];
 
-        float elapsed = 0f;
-        float duration = changeSpeed;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            enemy[1].GetComponent<RectTransform>().anchoredPosition =
-                Vector2.Lerp(startCenter, endCenter, t);
-
-            enemy[direction > 0 ? 2 : 0].GetComponent<RectTransform>().anchoredPosition =
-                Vector2.Lerp(startMoving, endMoving, t);
-            yield return null;
-        }
-       
-       
-        
-        
-        yield return  new WaitForSeconds(0.2f);
-        SetOriginPosition();
-        anim0.runtimeAnimatorController = enemyAnim[((currentLevel)%3)+(actualFloor*3)];
-        anim2.runtimeAnimatorController = enemyAnim[Math.Abs(currentLevel-1)%3+(actualFloor*3)];
-        anim1.runtimeAnimatorController = enemyAnim[(currentLevel+1)%3+(actualFloor*3)];
-        ennemyName.text = fights[currentLevel < fights.Count ? currentLevel : 0].title;
-
-        
-       
-        isChanging = false;
+        ennemyName.text = CurrentFight.title;
     }
 
-    public void SetOriginPosition()
+    private void SetController(Animator anim, int level)
     {
-        enemy[0].GetComponent<RectTransform>().anchoredPosition = enemytransform[0];
-        enemy[1].GetComponent<RectTransform>().anchoredPosition = enemytransform[1];
-        enemy[2].GetComponent<RectTransform>().anchoredPosition = enemytransform[2];
-        enemy[3].GetComponent<RectTransform>().anchoredPosition = enemytransform[3];
-        enemy[4].GetComponent<RectTransform>().anchoredPosition = enemytransform[4];
+        if (level < 0 || level >= enemyAnim.Count || anim.runtimeAnimatorController == enemyAnim[level])
+            return; 
+
+        anim.runtimeAnimatorController = enemyAnim[level];
+
+        if (anim.isActiveAndEnabled)
+            anim.Update(0f); 
     }
-
-    public void SetBoolInMenu(bool Open)
-    {
-       // isOpen = Open;
-    }
-
-
-    public void SetFight()
+	public void SetFight()
     {
         FightDataTransfer.Instance.SetData(fights[currentLevel < fights.Count ? currentLevel : 0]);
     }

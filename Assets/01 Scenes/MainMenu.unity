@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &652891972 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 921487439363154249, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &659613687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8409607947112985203, guid: bae1875cc8b5e48479270610f7143fe7, type: 3}
@@ -162,6 +167,11 @@ Transform:
   - {fileID: 659613688}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1091831671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 344296813695042269, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1180531563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8409607947112985203, guid: bae1875cc8b5e48479270610f7143fe7, type: 3}
@@ -317,6 +327,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 659613687}
     - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'enemy.Array.data[3]'
+      value: 
+      objectReference: {fileID: 652891972}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'enemy.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1761155927}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: 'enemyAnim.Array.data[4]'
       value: 
       objectReference: {fileID: 9100000, guid: 75bc8a27dd3308f4998391abfbca347e, type: 2}
@@ -324,6 +342,14 @@ PrefabInstance:
       propertyPath: 'enemyAnim.Array.data[5]'
       value: 
       objectReference: {fileID: 9100000, guid: 4f1088d815a70f24fa86ee4fe5189fcf, type: 2}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'enemyanimator.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1357588289}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'enemyanimator.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1091831671}
     - target: {fileID: 3729192357616323156, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Name
       value: MenuPrincipal
@@ -408,6 +434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146ff30353b948a4895bac1d97ed9844, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!1 &1357588289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2232675357308506422, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1657068067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -505,6 +536,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bae1875cc8b5e48479270610f7143fe7, type: 3}
+--- !u!1 &1761155927 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4677264858495118106, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1851529972
 GameObject:
   m_ObjectHideFlags: 0
