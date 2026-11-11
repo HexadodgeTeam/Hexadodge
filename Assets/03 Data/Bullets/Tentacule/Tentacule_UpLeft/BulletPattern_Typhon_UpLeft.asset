@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
-  m_Name: BulletPattern_BulletTentacule
+  m_Name: BulletPattern_Typhon_UpLeft
   m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
   period:
     curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 904055a2b35559b469ab166a43c8652c, type: 2}
+  - bullet: {fileID: 11400000, guid: ba2068d720405a546b64073d90f2766f, type: 2}
     throwTransform: {fileID: 0}
     spawn: {fileID: 11400000, guid: d2d555bdbd05e144792996254f8b690c, type: 2}
     spawnCount:
