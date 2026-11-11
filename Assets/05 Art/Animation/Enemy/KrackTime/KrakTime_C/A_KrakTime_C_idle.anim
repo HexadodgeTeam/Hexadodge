@@ -63,7 +63,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 9064e49d56f83134bb05a2f82c1f1c03, type: 3}
+      value: {fileID: 21300000, guid: c19b5cc63347b584b9a984492d1fb046, type: 3}
     attribute: m_Sprite
     path: Enemy_Visual_Image
     classID: 114
@@ -158,7 +158,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 9064e49d56f83134bb05a2f82c1f1c03, type: 3}
+    - {fileID: 21300000, guid: c19b5cc63347b584b9a984492d1fb046, type: 3}
     - {fileID: 21300000, guid: c19b5cc63347b584b9a984492d1fb046, type: 3}
     - {fileID: 2100000, guid: 84f880b1226af274c905eafbe3970fbe, type: 2}
     - {fileID: 2100000, guid: 84f880b1226af274c905eafbe3970fbe, type: 2}
