@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   maxHealth: 200
   animator: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
-  transitionDuration: 1
+  transitionDuration: 2.7
