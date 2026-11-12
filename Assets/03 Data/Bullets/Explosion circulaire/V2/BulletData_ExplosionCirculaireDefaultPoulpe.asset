@@ -74,7 +74,7 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 5
       bullets:
-      - {fileID: 11400000, guid: 067f4a3675e07394ea27255da60150b0, type: 2}
+      - {fileID: 11400000, guid: 48d0f20b6b79d7148a664fa04fb98b50, type: 2}
       arc:
         curve:
           m_Mode: 0

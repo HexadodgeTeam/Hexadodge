@@ -32,7 +32,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 5
-    intangibleStart: 0.1
+    intangibleStart: 0
     intangibleEnd: 0.1
     impactType: 1
     destroyOnImpact: 1
@@ -117,9 +117,9 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 8471686017046580912, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 695665781, guid: 2c4877cd9e982e648b6e08e5c648c102, type: 3}
     color:
-      m_Mode: 0
+      m_Mode: 1
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -152,9 +152,9 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0}
         key1: {r: 1, g: 1, b: 1, a: 1}
-        key2: {r: 0, g: 0, b: 0, a: 0}
+        key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -169,8 +169,8 @@ MonoBehaviour:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
+        atime1: 7710
+        atime2: 65535
         atime3: 0
         atime4: 0
         atime5: 0
@@ -179,6 +179,6 @@ MonoBehaviour:
         m_Mode: 0
         m_ColorSpace: -1
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
       m_ColorMax: {r: 1, g: 1, b: 1, a: 1}

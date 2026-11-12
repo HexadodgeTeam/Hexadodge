@@ -112,12 +112,12 @@ MonoBehaviour:
           m_ConstantMax: 0
       direction: 1
     collider:
-      shape: 0
+      shape: 1
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 8471686017046580912, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 695665781, guid: 2c4877cd9e982e648b6e08e5c648c102, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:

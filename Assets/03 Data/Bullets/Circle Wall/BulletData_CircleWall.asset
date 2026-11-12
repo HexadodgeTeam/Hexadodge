@@ -119,7 +119,7 @@ MonoBehaviour:
   animation:
     sprite: {fileID: -8050726335865754823, guid: 2e0b2c092fa9a034285c68eee0aa78a6, type: 3}
     color:
-      m_Mode: 0
+      m_Mode: 1
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -152,8 +152,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0.6901961}
+        key1: {r: 1, g: 1, b: 1, a: 0.6901961}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

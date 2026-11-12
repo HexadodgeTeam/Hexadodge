@@ -29,7 +29,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 37
+      m_ConstantMax: 15
   timelines:
   - pattern: {fileID: 11400000, guid: f1e6bb711dda9dc46ab3851ebee2ff6b, type: 2}
     start:
@@ -67,7 +67,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 15
+        m_ConstantMax: 7
   - pattern: {fileID: 11400000, guid: 206be84204445c84e884c49f8f712121, type: 2}
     start:
       curve:
@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 19
+        m_ConstantMax: 7
     end:
       curve:
         m_Mode: 0
@@ -104,5 +104,5 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 34
+        m_ConstantMax: 15
   animTriggers: []

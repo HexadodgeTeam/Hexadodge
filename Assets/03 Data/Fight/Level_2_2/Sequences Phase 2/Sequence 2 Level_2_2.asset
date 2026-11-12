@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 1.5
     end:
       curve:
         m_Mode: 0
