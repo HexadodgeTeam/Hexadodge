@@ -30,7 +30,10 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 20
-  sequences: []
+  sequences:
+  - {fileID: 11400000, guid: 62675337aed76e341ae96ad6be4e12e6, type: 2}
+  - {fileID: 11400000, guid: 66c976e097ac15a488163214b8c25c9f, type: 2}
+  - {fileID: 11400000, guid: 73caafcfc45ee354b9ea9964cea0f9c3, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0
   waitBetweenSequence:
@@ -50,12 +53,12 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0.5
-  color: {r: 1, g: 1, b: 1, a: 1}
+      m_ConstantMax: 2
+  color: {r: 0.7475524, g: 0.7924528, b: 0.063545756, a: 1}
   gradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
-    key1: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.20754719, g: 0.18077995, b: 0.034264863, a: 1}
+    key1: {r: 0.5, g: 0.39368123, b: 0, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
     key4: {r: 0, g: 0, b: 0, a: 0}

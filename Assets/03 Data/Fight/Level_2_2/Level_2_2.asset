@@ -12,11 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: Level_2_2
   m_EditorClassIdentifier: Assembly-CSharp::FightData
-  title: 
-  levels: []
+  title: 2 - 2
+  levels:
+  - phase: {fileID: 11400000, guid: 1b7b56d037cf38949a05cd070fa52b4e, type: 2}
+    enemyHealthFraction: 1
+  - phase: {fileID: 11400000, guid: 8462cd315b0434e4f996df33cacf645a, type: 2}
+    enemyHealthFraction: 0.7
+  - phase: {fileID: 11400000, guid: cf7c68c666ca7794d9f81c6c78bf57cc, type: 2}
+    enemyHealthFraction: 0.5
   enemy: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
   nextFight: {fileID: 0}
-  arenaPrefab: {fileID: 0}
-  gridPrefab: {fileID: 0}
+  arenaPrefab: {fileID: 4222642122561531476, guid: a5178e392f193a54f96304742895e67a, type: 3}
+  gridPrefab: {fileID: 541341664871628978, guid: 3a7a94f3d5f23a642a73af27c4708aa8, type: 3}
   playerSpawnPoint: {x: 0, y: 0}
   backgroundPrefab: {fileID: 453420770198184038, guid: 5d2ccc0b794bf754e8d3a9a43da74843, type: 3}
+  maskPrefab: {fileID: 8988707183881367610, guid: dd76095438001bf4280cb7451c37fd48, type: 3}
