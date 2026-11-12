@@ -244,6 +244,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Spritesheet_SP_Smokecat_C_Exit_Loop_A_6
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 1024
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1100299bddbc5274c881c70ec30fe937
+      internalID: 1897570720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -266,6 +288,7 @@ TextureImporter:
       Spritesheet_SP_Smokecat_C_Exit_Loop_A_3: 494683311
       Spritesheet_SP_Smokecat_C_Exit_Loop_A_4: -132415006
       Spritesheet_SP_Smokecat_C_Exit_Loop_A_5: -859130384
+      Spritesheet_SP_Smokecat_C_Exit_Loop_A_6: 1897570720
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
