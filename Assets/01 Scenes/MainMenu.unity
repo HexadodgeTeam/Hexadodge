@@ -249,6 +249,10 @@ PrefabInstance:
       propertyPath: m_RaycastPadding.z
       value: 142.23
       objectReference: {fileID: 0}
+    - target: {fileID: 2711004290387429892, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: b7da9da384e1f2141a97ba20f41b0595, type: 2}
     - target: {fileID: 3235719094869925507, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -403,7 +407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4214214676895172166, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1806.2552
+      value: 1806.2544
       objectReference: {fileID: 0}
     - target: {fileID: 4358668754947660555, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_AnchorMax.x
@@ -440,7 +444,7 @@ PrefabInstance:
     - target: {fileID: 5508049033731704687, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
+      objectReference: {fileID: 9100000, guid: 2a905342dae86a4438a15e6922dcdd24, type: 2}
     - target: {fileID: 6659108375562683455, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: levelSelection
       value: 
