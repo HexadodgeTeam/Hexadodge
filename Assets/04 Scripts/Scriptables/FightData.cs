@@ -8,6 +8,9 @@ public class FightData : ScriptableObject, IGizmosDrawer
     [Tooltip("Titre du combat.")]
     [SerializeField] internal string title;
     
+    [Tooltip("Durée d'attente entre 2 phases.\n" + "Utiliser une courbe ici n'a aucun effet.")]
+    [SerializeField] internal FloatCurve waitBetweenPhases = 0.5f;
+    
     [Tooltip("Les différent paliers du combat, contenant chacun une phase.")]
     [SerializeField] internal FightLevel[] levels;
 
@@ -53,6 +56,7 @@ public class FightDataInstance
 {
     private int _currentLevelIndex;
     private readonly FightLevelInstance[] _levels;
+    private float _waitTimer = 0f;
     
     public FightDataInstance(FightData data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
@@ -63,10 +67,17 @@ public class FightDataInstance
         }
         _currentLevelIndex = GetLevelIndex(1);
         _levels[_currentLevelIndex].phase.Start();
+        _waitTimer = data.waitBetweenPhases.Instance();
     }
 
     public void Tick(float enemyHealthFraction)
     {
+        if (_waitTimer > 0f)
+        {
+            _waitTimer -= Game.DeltaTime;
+            return;
+        }
+        
         int nextLevelIndex = GetLevelIndex(enemyHealthFraction);
 
         if (_currentLevelIndex != nextLevelIndex)
