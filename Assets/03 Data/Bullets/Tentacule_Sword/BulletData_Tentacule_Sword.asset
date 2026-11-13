@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: Bullet
+  m_Name: BulletData_Tentacule_Sword
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   transform: {fileID: 11400000, guid: d466994cca307944fab73ad36e0ca8c9, type: 2}
   properties:
@@ -94,8 +94,8 @@ MonoBehaviour:
           m_ConstantMax: 360
       rotationOffset:
         curve:
-          m_Mode: 0
-          m_CurveMultiplier: 0
+          m_Mode: 1
+          m_CurveMultiplier: 1
           m_CurveMin:
             serializedVersion: 2
             m_Curve: []
@@ -104,12 +104,39 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_CurveMax:
             serializedVersion: 2
-            m_Curve: []
+            m_Curve:
+            - serializedVersion: 3
+              time: 0
+              value: 1
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
+            - serializedVersion: 3
+              time: 0.4434379
+              value: 0.99403864
+              inSlope: 0.102301046
+              outSlope: 0.102301046
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0.33333334
+              outWeight: 0.8146847
+            - serializedVersion: 3
+              time: 1
+              value: 5
+              inSlope: 0
+              outSlope: 0
+              tangentMode: 0
+              weightedMode: 0
+              inWeight: 0
+              outWeight: 0
             m_PreInfinity: 2
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 0
+          m_ConstantMax: 10.88
       direction: 1
     collider:
       shape: 0

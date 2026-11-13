@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 882d592421ce413bae0f5b9db6036b91, type: 3}
-  m_Name: Spawn Tentacule
+  m_Name: BulletSpawning_Tentacule_Sword
   m_EditorClassIdentifier: Assembly-CSharp::BSCartesian
   subSpawning: {fileID: 0}
   positions:
   - x:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
@@ -67,7 +67,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0.2
-        m_ConstantMax: 0.33
+        m_ConstantMax: 2.76
     y:
       curve:
         m_Mode: 3
@@ -90,7 +90,7 @@ MonoBehaviour:
   positionsYFromCount: 0
   rotations:
   - curve:
-      m_Mode: 0
+      m_Mode: 3
       m_CurveMultiplier: 0
       m_CurveMin:
         serializedVersion: 2
@@ -105,6 +105,6 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
       m_ConstantMin: 0
-      m_ConstantMax: 0.1
+      m_ConstantMax: 11.1
   rotationsFromCount: 0
   pairPositionWithRotation: 0

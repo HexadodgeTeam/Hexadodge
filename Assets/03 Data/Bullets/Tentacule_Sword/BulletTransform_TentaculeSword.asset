@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d80f85e0e0cc4864b120e5c40eba41cf, type: 3}
-  m_Name: Radial
-  m_EditorClassIdentifier: Assembly-CSharp::BTRadial
+  m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
+  m_Name: BulletTransform_TentaculeSword
+  m_EditorClassIdentifier: Assembly-CSharp::BTCartesian
   period:
     curve:
       m_Mode: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0
-  basePolePosition:
+  forwardSpeed:
     x:
       curve:
         m_Mode: 0
@@ -86,8 +86,7 @@ MonoBehaviour:
           m_RotationOrder: 4
         m_ConstantMin: 0
         m_ConstantMax: 0
-  basePolePositionReference: 0
-  poleSpeed:
+  worldSpeed:
     x:
       curve:
         m_Mode: 0
@@ -105,7 +104,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1.16
+        m_ConstantMax: 0
     y:
       curve:
         m_Mode: 0
@@ -123,8 +122,8 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1.39
-  distanceSpeed:
+        m_ConstantMax: 0
+  playerFollowMultiplier:
     curve:
       m_Mode: 0
       m_CurveMultiplier: 0
@@ -141,8 +140,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: -3.29
-  angleSpeed:
+      m_ConstantMax: 0
+  rotationSpeed:
     curve:
       m_Mode: 0
       m_CurveMultiplier: 0
@@ -159,4 +158,59 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 17.58
+      m_ConstantMax: 0
+  scale:
+    x:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+    y:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 1
+  scaleMultiplier:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 1
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 1
