@@ -52,9 +52,10 @@ public class Fight : AbstractFight
 
     public override void EndFight()
     {
+        _fightInstance.End();
+        
         if (data.nextFight)
         {
-            bulletSpawner.ClearBullets();
             enemy.TriggerAnim(Death);
             StartCoroutine(SetFightCoroutine());
         }

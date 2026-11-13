@@ -9,13 +9,14 @@ public class GameSettingsPanel : UIPanel
 
     private void Awake()
     {
-        sensitivitySlider.value = PlayerPrefs.HasKey("Sensitivity") ? PlayerPrefs.GetFloat("Sensitivity") : 1.5f;
+        if (sensitivitySlider)
+            sensitivitySlider.value = PlayerPrefs.HasKey("Sensitivity") ? PlayerPrefs.GetFloat("Sensitivity") : 1.5f;
     }
 
     public void UpdateSensitivity(float value)
     {
         PlayerPrefs.SetFloat("Sensitivity", value);
-        sensitivityText.text = "Sensitivity: " + value.ToString("0.00");
+        if (sensitivityText) sensitivityText.text = "Sensitivity: " + value.ToString("0.00");
         PlayerInputHandler.PlayerSensitivity = value;
     }
 }

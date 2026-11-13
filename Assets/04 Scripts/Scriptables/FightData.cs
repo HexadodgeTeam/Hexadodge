@@ -39,6 +39,10 @@ public class FightData : ScriptableObject, IGizmosDrawer
     [Tooltip("Mask de peinture hors de l'arène. Prefab.")]
     [SerializeField]
     internal ArenaBorder borderPrefab;
+
+    [Tooltip("Faire disparaître les bullets à la fin du combat.")]
+    [SerializeField]
+    internal bool clearBulletsOnEnd = true;
     
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
@@ -57,6 +61,7 @@ public class FightDataInstance
     private int _currentLevelIndex;
     private readonly FightLevelInstance[] _levels;
     private float _waitTimer = 0f;
+    private bool _clearBulletsOnEnd;
     
     public FightDataInstance(FightData data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
@@ -68,6 +73,7 @@ public class FightDataInstance
         _currentLevelIndex = GetLevelIndex(1);
         _levels[_currentLevelIndex].phase.Start();
         _waitTimer = data.waitBetweenPhases.Instance();
+        _clearBulletsOnEnd = data.clearBulletsOnEnd;
     }
 
     public void Tick(float enemyHealthFraction)
@@ -82,6 +88,7 @@ public class FightDataInstance
 
         if (_currentLevelIndex != nextLevelIndex)
         {
+            _levels[_currentLevelIndex].phase.End();
             _currentLevelIndex = nextLevelIndex;
             _levels[_currentLevelIndex].phase.Start();
         }
@@ -104,6 +111,11 @@ public class FightDataInstance
         }
         
         return levelIndex;
+    }
+
+    public void End()
+    {
+        if (_clearBulletsOnEnd) SkillManager.Instance.ClearBullets();
     }
 
     public void ReRoll()
