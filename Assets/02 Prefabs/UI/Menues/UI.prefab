@@ -99,6 +99,7 @@ MonoBehaviour:
         m_CallState: 2
   arenaMaskParent: {fileID: 692554692768472818}
   arenaMask: {fileID: 1416485161090045836}
+  timerDisplay: {fileID: 4108831124125799617}
   healthUI: {fileID: 4196785610782045579}
   fillUI: {fileID: 6600298856401742356}
   enemyHealthUI: {fileID: 1156508947069689211}
