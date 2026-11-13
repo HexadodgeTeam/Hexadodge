@@ -390,6 +390,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 5877302820710266846, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+      propertyPath: maxBulletCount
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 6553630420821436579, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
