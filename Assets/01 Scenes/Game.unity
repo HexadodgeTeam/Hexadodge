@@ -313,6 +313,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.1999512
       objectReference: {fileID: 0}
+    - target: {fileID: 4499415613734134416, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+      propertyPath: arenaMaskParent
+      value: 
+      objectReference: {fileID: 2529757443027705895}
     - target: {fileID: 5888574606790291814, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -378,6 +382,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+--- !u!224 &2529757443027705895 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 692554692768472818, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+  m_PrefabInstance: {fileID: 2529757443027705894}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2904951314633214297
 PrefabInstance:
   m_ObjectHideFlags: 0

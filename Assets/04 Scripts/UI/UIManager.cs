@@ -20,6 +20,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject[] fillPopUps;
     [SerializeField] private TMP_Text levelTitle;
     [SerializeField] private UnityEvent attackEvent;
+    [SerializeField] private Transform arenaMaskParent;
+    [SerializeField] private GameObject arenaMask;
 
     public HealthUI healthUI;
     public SliderUI fillUI;
@@ -87,5 +89,11 @@ public class UIManager : MonoBehaviour
     public void OnAttack()
     {
         attackEvent.Invoke();
+    }
+
+    public void SetArenaMask(GameObject maskPrefab)
+    {
+        if (arenaMask) Destroy(arenaMask);
+        arenaMask = Instantiate(maskPrefab, arenaMaskParent);
     }
 }
