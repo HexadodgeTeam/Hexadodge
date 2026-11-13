@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -64,9 +65,15 @@ public class LevelSelection : MonoBehaviour
 
         isOpen = false;
         actualFloor = currentLevel / LevelsPerFloor;
+        
+    }
+
+    private void Start()
+    {
         Refresh();
     }
-public string GetScene()
+
+    public string GetScene()
     {
         return sceneName[currentLevel];
     }
