@@ -27,6 +27,9 @@ public class FightPhase : ScriptableObject, IGizmosDrawer
     
     [Tooltip("Dégradé de la peinture lors de la phase.")]
     [SerializeField] internal Gradient gradient;
+    
+    [Tooltip("Faire disparaître les bullets à la fin de la phase.")]
+    [SerializeField] internal bool clearBulletsOnEnd;
 
     public FightPhaseInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
@@ -94,12 +97,18 @@ public class FightPhaseInstance
             currentSequence.Tick(time01);
             if (currentSequence.Ended(time01))
             {
+                currentSequence.End();
                 _isWaiting = true;
                 _waitTimer = _waitBetweenSequenceInstance.Eval(time01);
                 currentSequence.ReRoll();
                 GetNextSequenceIndex();
             }
         }
+    }
+
+    public void End()
+    {
+        if (_data.clearBulletsOnEnd) SkillManager.Instance.ClearBullets();
     }
 
     private void GetNextSequenceIndex()

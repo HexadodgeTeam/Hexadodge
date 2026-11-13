@@ -13,6 +13,9 @@ public class PatternSequence : ScriptableObject, IGizmosDrawer
     
     [Tooltip("Les triggers d'animation présentes dans la séquence.")]
     [SerializeField] internal AnimTriggerTimeline[] animTriggers;
+    
+    [Tooltip("Faire disparaître les bullets à la fin de la séquence.")]
+    [SerializeField] internal bool clearBulletsOnEnd;
 
     public PatternSequenceInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
@@ -35,6 +38,7 @@ public class PatternSequenceInstance
     private readonly AnimTriggerTimeline[] _animTriggers;
     private readonly int[] _animTriggersHash;
     private readonly Action<int> _animTriggerAction;
+    private bool _clearBulletsOnEnd;
 
     public PatternSequenceInstance(PatternSequence data, Action<int> animTriggerAction, Action<BulletSpawn> spawnAction)
     {
@@ -45,6 +49,7 @@ public class PatternSequenceInstance
         _timelineInstances = new PatternTimelineInstance[data.timelines.Length];
         _animTriggers = data.animTriggers;
         _animTriggerAction = animTriggerAction;
+        _clearBulletsOnEnd = data.clearBulletsOnEnd;
         
         for (int i = 0; i < data.timelines.Length; i++)
         {
@@ -95,6 +100,11 @@ public class PatternSequenceInstance
     public bool Ended(float phaseTime01)
     {
         return _sequenceTime >= _durationInstance.Eval(phaseTime01);
+    }
+
+    public void End()
+    {
+        if (_clearBulletsOnEnd) SkillManager.Instance.ClearBullets();
     }
 
     public void ReRoll()
