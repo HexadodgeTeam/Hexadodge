@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
-  m_Name: BulletTransform_TentaculeSword
+  m_Name: RightBulletTransform_TentaculeSword
   m_EditorClassIdentifier: Assembly-CSharp::BTCartesian
   period:
     curve:
@@ -143,8 +143,8 @@ MonoBehaviour:
       m_ConstantMax: 0
   rotationSpeed:
     curve:
-      m_Mode: 0
-      m_CurveMultiplier: 0
+      m_Mode: 1
+      m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
         m_Curve: []
@@ -153,12 +153,57 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.13934347
+          value: 46.202938
+          inSlope: 28.572857
+          outSlope: 28.572857
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.20254602
+          outWeight: 0.57314134
+        - serializedVersion: 3
+          time: 0.3498872
+          value: 2.1144905
+          inSlope: -5.0449257
+          outSlope: -5.0449257
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 1
+          outWeight: 0.33333334
+        - serializedVersion: 3
+          time: 0.51595825
+          value: 142.08853
+          inSlope: -3.8729482
+          outSlope: -3.8729482
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.29482025
+        - serializedVersion: 3
+          time: 1.0914514
+          value: 140.7376
+          inSlope: -3.4976208
+          outSlope: -3.4976208
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.24360164
+          outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 0
+      m_ConstantMax: 90
   scale:
     x:
       curve:
@@ -177,7 +222,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 4
     y:
       curve:
         m_Mode: 0
