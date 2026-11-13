@@ -13,6 +13,24 @@ MonoBehaviour:
   m_Name: Level_2_1
   m_EditorClassIdentifier: Assembly-CSharp::FightData
   title: 2 - 1
+  waitBetweenPhases:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 0.5
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0.5
   levels:
   - phase: {fileID: 11400000, guid: 3ef0d287534dab046814db449cd07988, type: 2}
     enemyHealthFraction: 1
@@ -24,4 +42,4 @@ MonoBehaviour:
   gridPrefab: {fileID: 6479036403575174762, guid: 30771c14dda3b3e48bba78221bb8ddcd, type: 3}
   playerSpawnPoint: {x: 0, y: 0}
   backgroundPrefab: {fileID: 453420770198184038, guid: 3236fedff6628cb4084be88c5fe490eb, type: 3}
-  maskPrefab: {fileID: 8988707183881367610, guid: 69f05ea742bf8aa4f87ae8bef4b65502, type: 3}
+  borderPrefab: {fileID: 2500356032567612590, guid: 69f05ea742bf8aa4f87ae8bef4b65502, type: 3}

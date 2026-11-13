@@ -41,7 +41,7 @@ public class Game : MonoBehaviour
         player.UpdateColor(color);
         fight.SetAttackColor(color);
         FillGrid.Instance.SetGradient(gradient);
-        UIManager.Instance.fillUI.SetColor(color);
+        UIManager.Instance.SetColor(color);
     }
 
     public bool TryAttack()

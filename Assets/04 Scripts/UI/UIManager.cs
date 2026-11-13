@@ -21,13 +21,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private TMP_Text levelTitle;
     [SerializeField] private UnityEvent attackEvent;
     [SerializeField] private Transform arenaMaskParent;
-    [SerializeField] private GameObject arenaMask;
+    [SerializeField] private ArenaBorder arenaMask;
 
     public HealthUI healthUI;
     public SliderUI fillUI;
     public SliderUI enemyHealthUI;
 
     private GameOverPanel _gameOverPanel;
+    private Color _currentColor;
 
     private void Awake()
     {
@@ -91,9 +92,17 @@ public class UIManager : MonoBehaviour
         attackEvent.Invoke();
     }
 
-    public void SetArenaMask(GameObject maskPrefab)
+    public void SetArenaMask(ArenaBorder borderPrefab)
     {
-        if (arenaMask) Destroy(arenaMask);
-        arenaMask = Instantiate(maskPrefab, arenaMaskParent);
+        if (arenaMask) Destroy(arenaMask.gameObject);
+        arenaMask = Instantiate(borderPrefab, arenaMaskParent);
+        fillUI = arenaMask.sliderUI;
+        fillUI.SetColor(_currentColor);
+    }
+
+    public void SetColor(Color color)
+    {
+        _currentColor = color;
+        fillUI.SetColor(color);
     }
 }

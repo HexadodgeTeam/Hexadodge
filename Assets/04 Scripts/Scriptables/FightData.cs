@@ -38,7 +38,7 @@ public class FightData : ScriptableObject, IGizmosDrawer
     
     [Tooltip("Mask de peinture hors de l'arène. Prefab.")]
     [SerializeField]
-    internal GameObject maskPrefab;
+    internal ArenaBorder borderPrefab;
     
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 

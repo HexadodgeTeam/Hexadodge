@@ -27,7 +27,7 @@ public class Fight : AbstractFight
             Destroy(arena);
             arena = Instantiate(data.arenaPrefab, transform);
         }
-        if (data.maskPrefab) UIManager.Instance.SetArenaMask(data.maskPrefab);
+        if (data.borderPrefab) UIManager.Instance.SetArenaMask(data.borderPrefab);
     }
 
     private void Update()
