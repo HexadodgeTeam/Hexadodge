@@ -23,7 +23,7 @@ MonoBehaviour:
   enemy: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
   nextFight: {fileID: 0}
   arenaPrefab: {fileID: 4222642122561531476, guid: a5178e392f193a54f96304742895e67a, type: 3}
-  gridPrefab: {fileID: 541341664871628978, guid: 3a7a94f3d5f23a642a73af27c4708aa8, type: 3}
+  gridPrefab: {fileID: 2935348472675979555, guid: b7dd03126ecb07a4899721c54711227a, type: 3}
   playerSpawnPoint: {x: 0, y: 0}
   backgroundPrefab: {fileID: 453420770198184038, guid: 5d2ccc0b794bf754e8d3a9a43da74843, type: 3}
   maskPrefab: {fileID: 8988707183881367610, guid: dd76095438001bf4280cb7451c37fd48, type: 3}
