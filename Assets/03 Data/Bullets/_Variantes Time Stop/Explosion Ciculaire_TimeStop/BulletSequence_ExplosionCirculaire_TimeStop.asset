@@ -68,7 +68,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 0.5
-  - pattern: {fileID: 11400000, guid: 995c2550221d5874d94ce310759b780d, type: 2}
+  - pattern: {fileID: 11400000, guid: 326868755c61dee40abf9f4782b4c80e, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  - pattern: {fileID: 11400000, guid: 995c2550221d5874d94ce310759b780d, type: 2}
+  - pattern: {fileID: 11400000, guid: 5c94b954117e9f540abf15ff2968660c, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1.5
-  - pattern: {fileID: 11400000, guid: 995c2550221d5874d94ce310759b780d, type: 2}
+  - pattern: {fileID: 11400000, guid: 27ceb6147be69ca49ada121aac089216, type: 2}
     start:
       curve:
         m_Mode: 0
