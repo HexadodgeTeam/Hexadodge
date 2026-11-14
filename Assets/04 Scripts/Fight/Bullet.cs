@@ -127,7 +127,7 @@ public class Bullet : MonoBehaviour
             Bullet bullet = _pool.Spawn(transform.position, rotation);
             if (bullet) bullet.Init(_pool, _data.properties.explosion.bullets.Length > 0
                 ? _data.properties.explosion.bullets.RandomElement()
-                : _data, (false, false));
+                : _data, (_mirror.x, _mirror.y));
         }
     }
 
