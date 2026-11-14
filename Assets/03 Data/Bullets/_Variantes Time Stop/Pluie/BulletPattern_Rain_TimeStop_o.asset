@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
-  m_Name: BulletPattern_Rain_TimeStop 1
+  m_Name: BulletPattern_Rain_TimeStop_o
   m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
   period:
     curve:
@@ -31,9 +31,9 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 0}
+  - bullet: {fileID: 11400000, guid: 1659b2828af61a04abd8958b52dd1cdf, type: 2}
     throwTransform: {fileID: 0}
-    spawn: {fileID: 0}
+    spawn: {fileID: 11400000, guid: 3835f330b94a82c4b9d6df4b056ae802, type: 2}
     spawnCount:
       curve:
         m_Mode: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 10
     spawnPeriodOverride:
       curve:
         m_Mode: 0

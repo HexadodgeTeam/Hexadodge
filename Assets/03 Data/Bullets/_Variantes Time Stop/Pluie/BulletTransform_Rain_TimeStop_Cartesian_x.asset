@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
-  m_Name: BulletTransform_Rain_TimeStop_Cartesian
+  m_Name: BulletTransform_Rain_TimeStop_Cartesian_x
   m_EditorClassIdentifier: Assembly-CSharp::BTCartesian
   period:
     curve:
@@ -73,49 +73,22 @@ MonoBehaviour:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 0.3
-            value: 0.2
-            inSlope: 0.30941844
-            outSlope: 0.30941844
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.64273465
-          - serializedVersion: 3
-            time: 0.36914054
-            value: 0
-            inSlope: -2.8926597
+            time: 0.3799474
+            value: 1.5
+            inSlope: 3.9479148
             outSlope: 0
             tangentMode: 69
             weightedMode: 0
             inWeight: 0.33333334
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.4575737
-            value: 0
-            inSlope: -0
-            outSlope: 1.8216815
-            tangentMode: 5
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.5
-            value: 0.2
-            inSlope: 1.4999986
-            outSlope: 1.4999986
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
             time: 1
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
+            value: 1.5
+            inSlope: -0
+            outSlope: 0.052792434
+            tangentMode: 69
             weightedMode: 0
-            inWeight: 0
+            inWeight: 0.11775956
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
