@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 9ecfa541bebb799478acf74cf090a184, type: 2}
+      objectReference: {fileID: 11400000, guid: 6fb7a6a5856148646b36d89a67f9905b, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
