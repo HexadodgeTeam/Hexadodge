@@ -57,7 +57,8 @@ public class BTGeneralInstance : BulletTransformInstance
         _scaleMultiplier = data.scaleMultiplier.Instance();
     }
     
-    protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01)
+    protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward,
+        float lifetime01, Vector2 pos)
     {
         // Position
         Vector2 p = Vector2.zero;

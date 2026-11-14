@@ -59,6 +59,8 @@ public class Bullet : MonoBehaviour
         }
 
         _mirror = mirror;
+        spriteRenderer.flipX = mirror.x;
+        spriteRenderer.flipY = mirror.y;
         _t = 0f;
         _age = 0f;
         UpdateTransform();
@@ -94,8 +96,9 @@ public class Bullet : MonoBehaviour
 
     private void UpdateTransform()
     {
-        (Vector2 position, float rotation, Vector2 scale) = _transform?.Transform(_mirror, transform.right, _t)
-                                                            ?? (Vector2.zero, 0f, Vector2.one);
+        (Vector2 position, float rotation, Vector2 scale) =
+            _transform?.Transform(_mirror, transform.right, transform.position, _t) 
+            ?? (Vector2.zero, 0f, Vector2.one);
         
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);

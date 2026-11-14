@@ -64,7 +64,8 @@ public class BTRadialInstance : BulletTransformInstance
         Start(bulletPos);
     }
     
-    protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01)
+    protected override (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward,
+        float lifetime01, Vector2 pos)
     {
         _pole += _poleSpeed.Eval(lifetime01) * Game.DeltaTime;
         _angle += _angleSpeed.Eval(lifetime01) * Game.DeltaTime;

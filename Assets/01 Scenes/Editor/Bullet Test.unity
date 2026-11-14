@@ -432,6 +432,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 192714667005897459, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: fight
+      value: 
+      objectReference: {fileID: 1058945988510833297}
     - target: {fileID: 1489058863381957623, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: camera
       value: 
@@ -443,11 +447,15 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 70a8f6cb10f704540906c87f4d62f08f, type: 2}
+      objectReference: {fileID: 11400000, guid: fa0357dbc6d68474f9f813d714183bad, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: bulletSpawnInterval
+      value: 0.6
+      objectReference: {fileID: 0}
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -497,6 +505,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+--- !u!114 &1058945988510833297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e42fa9ec7782a614780b2c77e31bf551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

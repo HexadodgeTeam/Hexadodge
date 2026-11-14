@@ -31,13 +31,13 @@ public abstract class BulletTransformInstance : PeriodDataInstance
         }
     }
 
-    public (Vector2 p, float r, Vector2 s) Transform((bool x, bool y) mirror, Vector2 forward, float lifetime01)
+    public (Vector2 p, float r, Vector2 s) Transform((bool x, bool y) mirror, Vector2 forward, Vector2 pos, float lifetime01)
     {
         float period01 = GetPeriod01(lifetime01);
         
-        (Vector2 p, float r, Vector2 s) transform = TransformTimed(mirror, forward, period01);
+        (Vector2 p, float r, Vector2 s) transform = TransformTimed(mirror, forward, period01, pos);
         (Vector2 p, float r, Vector2 s) subTransform =
-            _subInstance?.Transform(mirror, forward, lifetime01) ?? (Vector2.zero, 0, Vector2.one);
+            _subInstance?.Transform(mirror, forward, pos, lifetime01) ?? (Vector2.zero, 0, Vector2.one);
         
         return (
             p: transform.p + subTransform.p,
@@ -45,7 +45,8 @@ public abstract class BulletTransformInstance : PeriodDataInstance
             s: new Vector2(transform.s.x * subTransform.s.x, transform.s.y * subTransform.s.y));
     }
     
-    protected abstract (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward, float lifetime01);
+    protected abstract (Vector2 p, float r, Vector2 s) TransformTimed((bool x, bool y) mirror, Vector2 forward,
+        float lifetime01, Vector2 pos);
 
     public virtual void ReRollTransform(Vector2 bulletPos)
     {
