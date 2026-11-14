@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 665e56a5435de234baabbbb630388c28, type: 2}
+  - bullet: {fileID: 11400000, guid: 6802cc4f4ebca9840a5ee1ce7e9831c7, type: 2}
     throwTransform: {fileID: 0}
     spawn: {fileID: 11400000, guid: e5feec4ce1edc6145927914bd9e8b89b, type: 2}
     spawnCount:
