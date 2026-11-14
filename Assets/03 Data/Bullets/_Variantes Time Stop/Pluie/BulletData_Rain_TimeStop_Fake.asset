@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: BulletData_Rain_TimeStop_o
+  m_Name: BulletData_Rain_TimeStop_Fake
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: bfe29fdeb653f5647b23ce4504adafa3, type: 2}
+  transform: {fileID: 11400000, guid: 2a200f7e2c18d194db3e753ad1bc3e58, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 10
+        m_ConstantMax: 6
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 1
@@ -117,7 +117,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 5941571246908216448, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 695665781, guid: 2c4877cd9e982e648b6e08e5c648c102, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:

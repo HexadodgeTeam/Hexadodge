@@ -36,7 +36,7 @@ MonoBehaviour:
     spawn: {fileID: 11400000, guid: 04d3e181253117047b6b5a5e4ee051b5, type: 2}
     spawnCount:
       curve:
-        m_Mode: 3
+        m_Mode: 0
         m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2
