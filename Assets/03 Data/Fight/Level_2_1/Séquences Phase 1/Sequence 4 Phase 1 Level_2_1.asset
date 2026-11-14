@@ -142,7 +142,44 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 4
-  - pattern: {fileID: 11400000, guid: d56958bb83a894c48b24da01eafe1331, type: 2}
+  - pattern: {fileID: 11400000, guid: ec1237c320ed9c74f966982585f22185, type: 2}
+    start:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_ConstantMin: 0
+        m_ConstantMax: 5
+    end:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_ConstantMin: 0
+        m_ConstantMax: 6
+  - pattern: {fileID: 11400000, guid: 5b7d209f487999a4aaa819b04ef2cdf7, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -180,3 +217,4 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 6
   animTriggers: []
+  clearBulletsOnEnd: 0
