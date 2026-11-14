@@ -104,6 +104,14 @@ public class BulletThrow
     [SerializeField]
     internal bool mirrorY;
 
+    [Tooltip("Inverser le spawn du bullet en X.")]
+    [SerializeField]
+    internal bool mirrorSpawnX;
+    
+    [Tooltip("Inverser le spawn du bullet en Y.")]
+    [SerializeField]
+    internal bool mirrorSpawnY;
+
     public BulletThrowInstance Instance(Action<BulletSpawn> spawnAction) => new(this, spawnAction);
 }
 
@@ -142,6 +150,9 @@ public class BulletThrowInstance
             if (_data.throwTransform) s = _data.throwTransform.TransformSpawn(time01, ttRandom01, s);
             
             // Spawn bullet.
+            if (_data.mirrorSpawnX) s.p.x *= -1;
+            if (_data.mirrorSpawnY) s.p.y *= -1;
+            
             _spawnAction.Invoke(new BulletSpawn(_data.bullet, s.p, s.r, (_data.mirrorX, _data.mirrorY)));
         }
     }
