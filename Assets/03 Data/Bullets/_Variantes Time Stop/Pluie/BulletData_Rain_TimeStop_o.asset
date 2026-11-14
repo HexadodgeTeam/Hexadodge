@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_Rain_TimeStop_o
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 84fb21fa8a0da6947bebedef7693ddc6, type: 2}
+  transform: {fileID: 11400000, guid: bfe29fdeb653f5647b23ce4504adafa3, type: 2}
   properties:
     lifetime:
       curve:
