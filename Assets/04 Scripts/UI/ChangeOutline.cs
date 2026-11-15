@@ -20,10 +20,10 @@ public class ChangeOutline : MonoBehaviour
         
     }
 
-    public void ChangeOutlineFonction()
+    /*public void ChangeOutlineFonction()
     {
         i += 1;
         if (i >= outlineType.Count) i = 0;
         sprite.material = outlineType[i];
-    }
+    }*/
 }

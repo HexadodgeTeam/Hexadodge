@@ -260,11 +260,16 @@ public class InventoryWheel : MonoBehaviour
         }
     }
 
+    private int actualInventorySlot = 10;
     private void UpdateInventorySlotFocus(int slot, float angle)
     {
         RectTransform slotRect = SlotInventaire[slot];
         bool inCenter = Mathf.Abs(angle) < popRange;
-
+        if (itemToShowInventaire!= actualInventorySlot)
+        {
+            actualInventorySlot= itemToShowInventaire  ;
+            SoundManager.Instance.PlaySound("Click");
+        }
         if (inCenter)
         {
             slotRect.localScale = popScaleSlotInventaire;
@@ -282,7 +287,6 @@ public class InventoryWheel : MonoBehaviour
         {
             slotRect.localScale = Vector3.one;
             if (!isSlotInventaireShow[slot]) return;
-
             isSlotInventaireShow[slot] = false;
             slotRect.SetParent(PivotSlotInventaire[slot]);
             slotRect.localPosition = positionBaseSlotInventaire;
@@ -311,15 +315,22 @@ public class InventoryWheel : MonoBehaviour
         }
     }
 
+    private int actualEquipSlot = 10;
     private void UpdateEquipmentSlotFocus(int slot, float angle)
     {
         bool inCenter = Mathf.Abs(angle) < popRange;
 
         SlotEquipement[slot].localScale = inCenter ? popScaleEquip : Vector3.one;
         SlotEquipement[slot].localPosition = inCenter ? Deplacementpop : DeplacementInitial;
-
+        
+        if (itemToShowEquipement != actualEquipSlot)
+        {
+            actualEquipSlot = itemToShowEquipement;
+            SoundManager.Instance.PlaySound("Click");
+        }
         if (!inCenter)
         {
+            
             isSlotEquipShow[slot] = false;
             return;
         }

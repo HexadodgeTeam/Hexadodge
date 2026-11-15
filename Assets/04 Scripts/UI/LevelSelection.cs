@@ -71,6 +71,7 @@ public class LevelSelection : MonoBehaviour
     private void Start()
     {
         Refresh();
+        SoundManager.Instance.PlaySound("Ambiance");
     }
 
     public string GetScene()
@@ -134,6 +135,7 @@ public class LevelSelection : MonoBehaviour
 
         int exit = forward ? SlotLeft : SlotRight;
         int entry = forward ? SlotRight : SlotLeft;
+        SoundManager.Instance.PlaySound("Swipe");
         StartCoroutine(Transition(exit, entry, entry));
     }
     public void ChangeFloorL(int dir)
@@ -148,6 +150,7 @@ public class LevelSelection : MonoBehaviour
         bool next = dir > 0;
         int exit = next ? SlotNextFloor : SlotPrevFloor;
         int from = next ? SlotPrevFloor : SlotNextFloor;
+        SoundManager.Instance.PlaySound("Swipe");
         StartCoroutine(Transition(exit, exit, from));
     }
 
