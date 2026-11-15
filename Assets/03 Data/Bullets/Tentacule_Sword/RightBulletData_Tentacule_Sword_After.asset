@@ -144,7 +144,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: -1272124190914542917, guid: d93d5cb9a160db9418e940ef39274d49, type: 3}
+    sprite: {fileID: 21300000, guid: 92cefd0e329d6f24ba25f3d1363f0956, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:

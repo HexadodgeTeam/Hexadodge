@@ -72,7 +72,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 5
+          m_ConstantMax: 9
       bullets:
       - {fileID: 11400000, guid: 17872e89860b4ee4db379ef0de638271, type: 2}
       arc:
