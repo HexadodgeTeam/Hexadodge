@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,7 +22,8 @@ public abstract class AbstractFight : MonoBehaviour
     [Header("Attack")]
     [SerializeField] private float attackDelay;
     [SerializeField] private Animator attackFx;
-    [SerializeField] private SpriteRenderer attackFxSprite;
+    [SerializeField] private List<SpriteRenderer> attackFxSprites;
+    [SerializeField] private List<ParticleSystem> attackFxParticleSystems;
     [SerializeField] private UnityEvent attackEvent;
     [SerializeField] private Color attackFadeColor;
     
@@ -52,7 +54,16 @@ public abstract class AbstractFight : MonoBehaviour
         // Wait for attack vfx animation to end.
         yield return new WaitForSeconds(0.8f);
         
-        attackFxSprite.color = color;
+        foreach (SpriteRenderer fxSprite in attackFxSprites)
+        {
+            fxSprite.color = color;
+        }
+
+        foreach (ParticleSystem fxParticleSystem in attackFxParticleSystems)
+        {
+            ParticleSystem.MainModule main = fxParticleSystem.main;
+            main.startColor = color;
+        }
     }
     
     public bool TryAttack(int skillIndex)
