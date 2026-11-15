@@ -8,7 +8,6 @@ public class Fight : AbstractFight
     [Header("Parameters")]
     [SerializeField] private FightData data;
     [SerializeField] private GameObject arena;
-    [SerializeField] private GameObject mask;
 
     private FightDataInstance _fightInstance;
 
