@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: BulletData_BulletTentaculePrevisu 1
+  m_Name: BulletData_BulletTentaculePrevisu 2
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   transform: {fileID: 11400000, guid: c773bd122ef83894e8d2f6dda543851f, type: 2}
   properties:
@@ -72,8 +72,9 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 0
-      bullets: []
+          m_ConstantMax: 6
+      bullets:
+      - {fileID: 11400000, guid: 47772a5c7fad16841a2071bcf64d9b07, type: 2}
       arc:
         curve:
           m_Mode: 0
