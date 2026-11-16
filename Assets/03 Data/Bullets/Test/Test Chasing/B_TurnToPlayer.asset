@@ -118,6 +118,74 @@ MonoBehaviour:
       isWall: 0
   animation:
     sprite: {fileID: 6722963285083194970, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
+    enableSpriteOverLifetime: 1
+    spriteOverLifetime:
+    - {fileID: 8471686017046580912, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    - {fileID: -3914024959634055235, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    - {fileID: -5021518383467713255, guid: 3f86c45fbae3cc145a4412b36ea5f841, type: 3}
+    spriteOverLifetimeCurve:
+      curve:
+        m_Mode: 1
+        m_CurveMultiplier: 1
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve:
+          - serializedVersion: 3
+            time: 0
+            value: 0
+            inSlope: 1.237326
+            outSlope: 1.237326
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0.19166666
+          - serializedVersion: 3
+            time: 0.367553
+            value: 1.4988583
+            inSlope: -0.15153493
+            outSlope: -0.15153493
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.30677372
+          - serializedVersion: 3
+            time: 0.7256766
+            value: 0.5576744
+            inSlope: 3.4504929
+            outSlope: 3.4504929
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.8477061
+            value: 2.3292665
+            inSlope: 13.944073
+            outSlope: 13.944073
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 1.0041809
+            value: 2.7260864
+            inSlope: 0
+            outSlope: 0
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0
+            outWeight: 0
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     color:
       m_Mode: 0
       m_GradientMin:

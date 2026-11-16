@@ -92,6 +92,8 @@ public class Bullet : MonoBehaviour
     private void UpdateAnimation()
     {
         spriteRenderer.color = _animation.GetColor(_t);
+        
+        if (_data.animation.enableSpriteOverLifetime) spriteRenderer.sprite = _animation.GetSpriteOverLifetime(_t);
     }
 
     private void UpdateTransform()

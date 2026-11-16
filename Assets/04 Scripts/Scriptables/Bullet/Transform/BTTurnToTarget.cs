@@ -54,7 +54,7 @@ public class BTTurnToTargetInstance : BulletTransformInstance
         Vector2 bulletToTarget = target - pos;
         
         float signedAngle = Vector2.SignedAngle(forward, bulletToTarget);
-        float rotation = _rotationSpeed.Eval(lifetime01);
+        float rotation = _rotationSpeed.Eval(lifetime01) * Game.DeltaTime;
         if (signedAngle < 0) rotation *= -1;
 
         return (Vector2.zero, rotation, Vector2.one);
