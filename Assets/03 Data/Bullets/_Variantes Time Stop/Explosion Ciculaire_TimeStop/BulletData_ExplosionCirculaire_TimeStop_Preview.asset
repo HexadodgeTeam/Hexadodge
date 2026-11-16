@@ -118,6 +118,26 @@ MonoBehaviour:
       isWall: 0
   animation:
     sprite: {fileID: 597661030714509015, guid: c0c495a9e98b8464e9019ce2449a67ef, type: 3}
+    enableSpriteOverLifetime: 0
+    spriteOverLifetime: []
+    spriteOverLifetimeCurve:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     color:
       m_Mode: 1
       m_GradientMin:
