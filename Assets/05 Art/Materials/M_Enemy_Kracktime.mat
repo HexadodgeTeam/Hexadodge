@@ -75,7 +75,7 @@ Material:
     - _Color_D_Light: {r: 0.6175566, g: 0.6603774, b: 0, a: 1}
     - _Color_D_Line: {r: 0.7365658, g: 0.9254902, b: 0.5882353, a: 1}
     - _Color_D_Shadow: {r: 0.43907973, g: 0.6509434, b: 0.5073312, a: 1}
-    - _Color_EXTRA: {r: 0, g: 0, b: 0, a: 1}
+    - _Color_EXTRA: {r: 1, g: 1, b: 1, a: 1}
     - _Color_E_Light: {r: 0, g: 0, b: 0, a: 1}
     - _Color_E_Line: {r: 0.1137255, g: 0.56078434, b: 0.15294118, a: 1}
     - _Color_E_Shadow: {r: 1, g: 1, b: 1, a: 1}
