@@ -109,8 +109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 384.6, y: 598.6}
-  m_SizeDelta: {x: 789.4, y: 1295.6}
+  m_AnchoredPosition: {x: 377.9, y: 603.2}
+  m_SizeDelta: {x: 745.5, y: 1254.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2376000576634694614
 CanvasRenderer:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bafc975b808eb2048bf173be3dae885c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8fa015dcd50e4f54982f0c77924c3fe8, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -184,8 +184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 45.2, y: 73.94995}
-  m_SizeDelta: {x: 110.6, y: 246.3}
+  m_AnchoredPosition: {x: 37.81, y: 77.44}
+  m_SizeDelta: {x: 51.52, y: 180.56}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &149254977287169517
 CanvasRenderer:
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 161a8e9fe2a5add4cb6be5d1a3a3d2de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c6e77662a0a4684f8ec00271e0605cc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -375,8 +375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 384.59998, y: 598.6}
-  m_SizeDelta: {x: 789.39996, y: 1295.6001}
+  m_AnchoredPosition: {x: 377.51, y: 602.24}
+  m_SizeDelta: {x: 730.82, y: 1232.36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2379802022746609630
 CanvasRenderer:
@@ -406,12 +406,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 161a8e9fe2a5add4cb6be5d1a3a3d2de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1c6e77662a0a4684f8ec00271e0605cc, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.99
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
