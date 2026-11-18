@@ -498,11 +498,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
---- !u!1 &2529757443027705895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4957992233074081962, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
-  m_PrefabInstance: {fileID: 2529757443027705894}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2904951314633214297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -511,46 +506,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 211464728569252318, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278386505
+      objectReference: {fileID: 0}
     - target: {fileID: 337676736661952784, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_Name
       value: Game
       objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_Target
-      value: 
-      objectReference: {fileID: 2529757443027705895}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetActive
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1551301581224248341, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: skillUnlockedEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2697026775481051812, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 75bc8a27dd3308f4998391abfbca347e, type: 2}
     - target: {fileID: 5383240894680003878, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
       propertyPath: m_Camera
       value: 
