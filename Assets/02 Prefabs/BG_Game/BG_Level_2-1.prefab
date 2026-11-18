@@ -79,10 +79,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 203512853
   m_SortingLayer: -1
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 521106130393663667, guid: 2f3aa89a1df408e409252070900faf73, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.4339623, g: 0.4339623, b: 0.4339623, a: 0.8666667}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -122,13 +122,13 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 259652872212380118}
-  - {fileID: 8259855265664371716}
   - {fileID: 8647346463229743803}
   - {fileID: 6589331966100148703}
   - {fileID: 8715467654769827450}
   - {fileID: 2853917208336578577}
   - {fileID: 5098250425910795286}
   - {fileID: 2746376026049738302}
+  - {fileID: 8259855265664371716}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2572085461180139353
@@ -200,6 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5098250425910795286}
   - component: {fileID: 8036925490578419758}
+  - component: {fileID: 7936834669944383801}
   m_Layer: 0
   m_Name: Aiguille2_0
   m_TagString: Untagged
@@ -216,7 +217,7 @@ Transform:
   m_GameObject: {fileID: 736658423684070107}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.41, y: 9.21, z: 0}
+  m_LocalPosition: {x: -0.017, y: 8.113, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -281,6 +282,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7936834669944383801
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736658423684070107}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c0a567a10baa6814a93d2180ddf56993, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1050241527672347752
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,6 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2746376026049738302}
   - component: {fileID: 5475026171807646464}
+  - component: {fileID: 7956901383544359319}
   m_Layer: 0
   m_Name: Aiguille1_0
   m_TagString: Untagged
@@ -307,7 +331,7 @@ Transform:
   m_GameObject: {fileID: 1050241527672347752}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.94, y: 8.77, z: 0}
+  m_LocalPosition: {x: 0.04, y: 8.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -360,7 +384,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 203512853
   m_SortingLayer: -1
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 8124677746223074189, guid: cefed6136345f1e488c2b95d9e8ccdac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -372,6 +396,28 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &7956901383544359319
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050241527672347752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 616d57a1400ef7841aee222eb51fa330, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1307356891811677023
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2853917208336578577}
   - component: {fileID: 2764160540020961815}
+  - component: {fileID: 1792031790142779363}
   m_Layer: 0
   m_Name: Horloge_0
   m_TagString: Untagged
@@ -580,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 5700595852947913443}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 7.86, z: 0}
+  m_LocalPosition: {x: 0, y: 8.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -635,16 +682,38 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 9217979620491101921, guid: 88dbae734e1f5c646bb8eec5ef2df2ea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 88dbae734e1f5c646bb8eec5ef2df2ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.08, y: 8.33}
+  m_Size: {x: 9.09, y: 9.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &1792031790142779363
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5700595852947913443}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 813a1611874eb8d4f8cfbd50565e06f5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6944625855672176516
 GameObject:
   m_ObjectHideFlags: 0

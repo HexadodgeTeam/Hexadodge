@@ -34,7 +34,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4225f2b1394551348a895d261253e58c, type: 2}
   - {fileID: 11400000, guid: 325d19e76c4f9764f82343671a2f2277, type: 2}
   - {fileID: 11400000, guid: 0e6c51a67633abe408512c5d8183df97, type: 2}
-  - {fileID: 11400000, guid: fd18d372d75f28a45958531ac31d0173, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0
   waitBetweenSequence:
@@ -86,3 +85,4 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  clearBulletsOnEnd: 1
