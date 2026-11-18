@@ -66,38 +66,38 @@ MonoBehaviour:
           - serializedVersion: 3
             time: 0
             value: 0
-            inSlope: 30.813684
-            outSlope: 30.813684
-            tangentMode: 0
+            inSlope: 5
+            outSlope: 5
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
-            outWeight: 0.10769231
-          - serializedVersion: 3
-            time: 0.09701493
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 0.90149254
-            value: 1
-            inSlope: 0
-            outSlope: 0
+            time: 0.1
+            value: 0.5
+            inSlope: 0.05995717
+            outSlope: 0.05995717
             tangentMode: 0
             weightedMode: 0
             inWeight: 0.33333334
+            outWeight: 0.41370073
+          - serializedVersion: 3
+            time: 0.9
+            value: 0.5
+            inSlope: 0.03394269
+            outSlope: 0.03394269
+            tangentMode: 0
+            weightedMode: 0
+            inWeight: 0.37835264
             outWeight: 0.33333334
           - serializedVersion: 3
             time: 1
             value: 0
-            inSlope: -17.346155
-            outSlope: -17.346155
-            tangentMode: 0
+            inSlope: -4.999999
+            outSlope: -4.999999
+            tangentMode: 34
             weightedMode: 0
-            inWeight: 0.16666676
+            inWeight: 0.33333334
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
@@ -230,7 +230,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: -40
+      m_ConstantMax: -30
   scale:
     x:
       curve:
@@ -366,4 +366,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 1
+      m_ConstantMax: 0.8

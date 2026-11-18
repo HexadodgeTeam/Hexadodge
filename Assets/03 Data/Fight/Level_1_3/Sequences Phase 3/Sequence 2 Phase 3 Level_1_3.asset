@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 3
+        m_ConstantMax: 3.25
     end:
       curve:
         m_Mode: 0
@@ -123,7 +123,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 6
+        m_ConstantMax: 6.75
     end:
       curve:
         m_Mode: 0

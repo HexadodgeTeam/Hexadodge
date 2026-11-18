@@ -51,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 8
+        m_ConstantMax: 7
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -72,6 +72,8 @@ MonoBehaviour:
         m_ConstantMax: 0
     mirrorX: 0
     mirrorY: 0
+    mirrorSpawnX: 0
+    mirrorSpawnY: 0
   throwInterval:
     curve:
       m_Mode: 0
