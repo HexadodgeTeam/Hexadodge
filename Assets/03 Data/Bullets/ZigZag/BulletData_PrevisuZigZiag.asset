@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_PrevisuZigZiag
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 64018ceda0aec724893f60b99a52d80e, type: 2}
+  transform: {fileID: 11400000, guid: c3795d89372a7fa4db1b7646038a4c3c, type: 2}
   properties:
     lifetime:
       curve:

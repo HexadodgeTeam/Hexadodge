@@ -10225,7 +10225,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -14993,7 +14993,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 379122201
   m_SortingLayer: 6
-  m_SortingOrder: 94
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -15132,7 +15132,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -15195,8 +15195,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 30
-      minScalar: 50
+      scalar: 40
+      minScalar: 55
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -16088,7 +16088,7 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.6926981
+          time: 0.46713424
           value: 1
           inSlope: 0
           outSlope: 0
@@ -16097,13 +16097,13 @@ ParticleSystem:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.9895833
+          time: 0.9538691
           value: 0
-          inSlope: -10.12746
-          outSlope: -10.12746
+          inSlope: -0.6704114
+          outSlope: -0.6704114
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.1842044
+          inWeight: 0.42528698
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -19900,7 +19900,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 379122201
   m_SortingLayer: 6
-  m_SortingOrder: 94
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -25033,7 +25033,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -29801,7 +29801,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 379122201
   m_SortingLayer: 6
-  m_SortingOrder: 94
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
@@ -50164,7 +50164,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -54932,7 +54932,7 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 379122201
   m_SortingLayer: 6
-  m_SortingOrder: 94
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_RenderMode: 1
   m_MeshDistribution: 0
