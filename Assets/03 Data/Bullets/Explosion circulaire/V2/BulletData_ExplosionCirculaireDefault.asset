@@ -72,7 +72,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 5
+          m_ConstantMax: 4
       bullets:
       - {fileID: 11400000, guid: 067f4a3675e07394ea27255da60150b0, type: 2}
       arc:
@@ -119,6 +119,26 @@ MonoBehaviour:
       isWall: 0
   animation:
     sprite: {fileID: 0}
+    enableSpriteOverLifetime: 0
+    spriteOverLifetime: []
+    spriteOverLifetimeCurve:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     color:
       m_Mode: 0
       m_GradientMin:
