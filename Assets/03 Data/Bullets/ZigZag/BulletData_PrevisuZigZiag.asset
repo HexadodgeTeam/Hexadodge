@@ -118,7 +118,27 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 21300000, guid: 61656697624d442468537dd0f11ab8a6, type: 3}
+    enableSpriteOverLifetime: 0
+    spriteOverLifetime: []
+    spriteOverLifetimeCurve:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     color:
       m_Mode: 1
       m_GradientMin:
@@ -154,8 +174,8 @@ MonoBehaviour:
       m_GradientMax:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0}
-        key1: {r: 1, g: 0.023584902, b: 0.023584902, a: 0.3137255}
-        key2: {r: 0, g: 0, b: 0, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0.3137255}
+        key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
@@ -170,7 +190,7 @@ MonoBehaviour:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 42405
+        atime1: 50501
         atime2: 65535
         atime3: 0
         atime4: 0
