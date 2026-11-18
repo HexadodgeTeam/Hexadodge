@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   movementData: {fileID: 11400000, guid: ebe3f3bbf2ae5a748976f11ecc73aa10, type: 2}
   fillRange: 2.1
+  healthData:
+    maxHealth: 4
+    invincibilityCooldown: 1
