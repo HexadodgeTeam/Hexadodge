@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   mainMenuScene: MainMenu
   stick: {fileID: 4745421021602695444}
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 318994028641717650}
   controlTypeDropdown: {fileID: 1492574495849225758}
   hitAnimator: {fileID: 2268219843693278199}
   border: {fileID: 7699900343028233220}
@@ -559,10 +559,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Screen UI
       objectReference: {fileID: 0}
-    - target: {fileID: 2924259633922598233, guid: f7175472cf2782745a32862958a17728, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3425641638794061469, guid: f7175472cf2782745a32862958a17728, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -660,6 +656,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7175472cf2782745a32862958a17728, type: 3}
+--- !u!114 &318994028641717650 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6511575331648996202, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f199c24578e445b5054fcc0f77f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
 --- !u!224 &614315531001185178 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
