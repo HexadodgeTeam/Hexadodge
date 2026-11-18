@@ -146,6 +146,26 @@ MonoBehaviour:
       isWall: 0
   animation:
     sprite: {fileID: 21300000, guid: 91e9d169fe2726346929f5acaf880738, type: 3}
+    enableSpriteOverLifetime: 0
+    spriteOverLifetime: []
+    spriteOverLifetimeCurve:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 0
+        m_ConstantMax: 0
     color:
       m_Mode: 0
       m_GradientMin:
@@ -209,4 +229,4 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
-      m_ColorMax: {r: 0.34630015, g: 1, b: 0.3066038, a: 1}
+      m_ColorMax: {r: 1, g: 0.22987673, b: 0.15566039, a: 1}

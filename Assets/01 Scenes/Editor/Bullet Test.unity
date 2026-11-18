@@ -542,11 +542,15 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 5a7f8713d9fbfbc44bee5d3392baa8ba, type: 2}
+      objectReference: {fileID: 11400000, guid: 1558aa78f7596e048a80d0ce06106d1a, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: debugOneAtATime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: bulletSpawnInterval
       value: 0.6
