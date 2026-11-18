@@ -118,7 +118,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 21300000, guid: 61656697624d442468537dd0f11ab8a6, type: 3}
     enableSpriteOverLifetime: 0
     spriteOverLifetime: []
     spriteOverLifetimeCurve:
@@ -174,7 +174,7 @@ MonoBehaviour:
       m_GradientMax:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 0.3137255}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 47802
+        atime0: 52428
         atime1: 65535
         atime2: 0
         atime3: 0

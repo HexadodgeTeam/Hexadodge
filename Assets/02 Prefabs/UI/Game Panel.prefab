@@ -2430,7 +2430,6 @@ GameObject:
   - component: {fileID: 1325780631226610640}
   - component: {fileID: 1217979626710981107}
   - component: {fileID: 3897935012676027389}
-  - component: {fileID: 4746786964197093999}
   - component: {fileID: 4702819783644404388}
   m_Layer: 5
   m_Name: Game Panel
@@ -2505,19 +2504,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4746786964197093999
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8058496860751678902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 177f199c24578e445b5054fcc0f77f04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
-  gameOverField: {fileID: 2634328556848086761}
 --- !u!114 &4702819783644404388
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2716,7 +2702,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1511127102524700208}
   m_Direction: 0
   m_MinValue: 1
-  m_MaxValue: 2
+  m_MaxValue: 4
   m_WholeNumbers: 0
   m_Value: 1.5
   m_OnValueChanged:
