@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7124909042787119601, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15220
+      objectReference: {fileID: 0}
     - target: {fileID: 7185636648976955483, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -409,8 +413,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5805335984781239759, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2529757443027705896}
   m_SourcePrefab: {fileID: 100100000, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+--- !u!1 &2529757443027705895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5805335984781239759, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+  m_PrefabInstance: {fileID: 2529757443027705894}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2529757443027705896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2529757443027705895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: -542
 --- !u!1001 &2904951314633214297
 PrefabInstance:
   m_ObjectHideFlags: 0
