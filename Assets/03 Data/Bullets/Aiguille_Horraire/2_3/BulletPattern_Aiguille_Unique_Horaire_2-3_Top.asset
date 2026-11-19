@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
-  m_Name: BulletPattern_Aiguille_Unique_Horraire
+  m_Name: BulletPattern_Aiguille_Unique_Horaire_2-3_Top
   m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
   period:
     curve:
@@ -31,9 +31,9 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: 3563db77592fd914b81809c3df3f8656, type: 2}
+  - bullet: {fileID: 11400000, guid: c4cf28ef9c90cea40aa46cd7ac072f7a, type: 2}
     throwTransform: {fileID: 0}
-    spawn: {fileID: 11400000, guid: 9f04771c567e88d46b2ed05bd54a0b95, type: 2}
+    spawn: {fileID: 11400000, guid: 8c8ec33d47094d24492c60d7c80a7f85, type: 2}
     spawnCount:
       curve:
         m_Mode: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
     mirrorSpawnY: 0
   throwInterval:
     curve:
-      m_Mode: 1
+      m_Mode: 0
       m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
@@ -109,4 +109,4 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 4
+      m_ConstantMax: 12

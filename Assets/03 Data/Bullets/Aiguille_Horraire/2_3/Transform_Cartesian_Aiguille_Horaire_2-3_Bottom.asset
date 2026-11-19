@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d80f85e0e0cc4864b120e5c40eba41cf, type: 3}
-  m_Name: Transform_Aiguille_Horraire
+  m_Name: Transform_Cartesian_Aiguille_Horaire_2-3_Bottom
   m_EditorClassIdentifier: Assembly-CSharp::BTRadial
   period:
     curve:
@@ -30,7 +30,7 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: 0.5
-  subTransform: {fileID: 11400000, guid: 37e012410224fef46952ebc62683174a, type: 2}
+  subTransform: {fileID: 11400000, guid: 806c4ca3dc6daea4e9d6d93f5a8a6a1d, type: 2}
   subPeriodOverride:
     curve:
       m_Mode: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: -1.45
   basePolePositionReference: 0
   poleSpeed:
     x:
@@ -160,21 +160,21 @@ MonoBehaviour:
           value: 1
           inSlope: -2
           outSlope: -2
-          tangentMode: 0
+          tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 0.5
           value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
+          inSlope: -2
+          outSlope: -2
+          tangentMode: 34
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.33333334
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 30
+      m_ConstantMax: 0

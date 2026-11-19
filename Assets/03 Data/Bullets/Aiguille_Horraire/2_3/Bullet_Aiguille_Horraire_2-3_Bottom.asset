@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: Bullet_Aiguille_Horraire
+  m_Name: Bullet_Aiguille_Horraire_2-3_Bottom
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: cca2e5cfb22be344f8c75954dbed3a10, type: 2}
+  transform: {fileID: 11400000, guid: 4314e541b4eb2404f85b239662087385, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 13
+        m_ConstantMax: 11
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 1
