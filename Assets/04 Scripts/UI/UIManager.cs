@@ -31,7 +31,8 @@ public class UIManager : MonoBehaviour
 
     private GameOverPanel _gameOverPanel;
     private Color _currentColor;
-    private float _timer = 0f;
+    public float _timer = 0f;
+    
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         RefreshControlType();
+        _timer = 0f;
     }
 
     private void Update()
