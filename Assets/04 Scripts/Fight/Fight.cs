@@ -6,7 +6,7 @@ public class Fight : AbstractFight
     private static readonly int Death = Animator.StringToHash("SwitchPhase");
     
     [Header("Parameters")]
-    [SerializeField] private FightData data;
+    [SerializeField] public FightData data;
     [SerializeField] private GameObject arena;
 
     private FightDataInstance _fightInstance;

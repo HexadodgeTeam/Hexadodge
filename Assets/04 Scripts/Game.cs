@@ -10,14 +10,14 @@ public class Game : MonoBehaviour
     public bool IsInFight { get; private set; }
 
     [Header("Parameters")]
-    [SerializeField] private GameData data;
+    [SerializeField] public GameData data;
     
     [Header("References")]
     [SerializeField] private Player player;
     [SerializeField] private FillManager fill;
     [SerializeField] private AbstractFight fight;
     [SerializeField] private GameObject background;
-    
+    public SubmitRunFonction subRun;
     private void Awake()
     {
         TimeScale = 1f;
@@ -108,6 +108,8 @@ public class Game : MonoBehaviour
     public void SetTransfer()
     {
         fight.SetTransfer();
+        
+        subRun.subRun();
     }
 
     public void ResetTime()
