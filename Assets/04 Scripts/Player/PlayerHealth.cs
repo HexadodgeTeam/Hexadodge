@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
 
     private Data _data;
 
-    private int _health;
+    public int _health;
     private float _invincibilityTimer = 0f;
     private Color _color;
 

@@ -58,6 +58,7 @@ public class Game : MonoBehaviour
             skill.OnAttack(skillIndex);
         }
         fill.OnAttack();
+        subRun.stockPallierSkill(skillIndex);
         player.AnimationTrigger("Attack");
         
         return true;

@@ -38,7 +38,7 @@ public class LevelLeaderboard : MonoBehaviour
     }
 
     
-    public static async Task<bool> SubmitRun(string levelId, float timeSeconds, IList<int> equippedItemIds)
+    public static async Task<bool> SubmitRun(string levelId, float timeSeconds, IList<int> equippedItemIds,string PallierSkillTime, int life)
     {
         await PlayerIdentity.Init();
         Increment($"successes_{levelId}");
@@ -50,7 +50,7 @@ public class LevelLeaderboard : MonoBehaviour
             ("successes", PlayerPrefs.GetInt($"successes_{levelId}", 0).ToString()),
             ("equipment", EncodeItems(equippedItemIds)),
             ("avatar", PlayerIdentity.GetAvatarId().ToString()),
-            ("pseudo", PlayerIdentity.GetPseudo())
+            ("pseudo", PlayerIdentity.GetPseudo()), ("PallierSkillTime", PallierSkillTime), ("life", life.ToString())
         );
 
         return result.Success && result.Updated;

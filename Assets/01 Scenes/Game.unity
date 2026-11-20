@@ -452,6 +452,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2904951314633214299}
     - target: {fileID: 6991916838453126265, guid: a934d188883fdc842869bfc7b6a7a604, type: 3}
+      propertyPath: forLife
+      value: 
+      objectReference: {fileID: 2904951314633214300}
+    - target: {fileID: 6991916838453126265, guid: a934d188883fdc842869bfc7b6a7a604, type: 3}
       propertyPath: forTimer
       value: 
       objectReference: {fileID: 2529757443027705897}
@@ -690,6 +694,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724bf5abfd9ba5f439e65407961c310b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Fight
+--- !u!114 &2904951314633214300 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1246927912482269927, guid: aefd86b91896ff649bd1d86d6353c298, type: 3}
+  m_PrefabInstance: {fileID: 2904951314633214297}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ed3a4018311424aa537a385e55a09c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
