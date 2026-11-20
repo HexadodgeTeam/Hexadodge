@@ -29,7 +29,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 25
+      m_ConstantMax: 18
   timelines:
   - pattern: {fileID: 11400000, guid: 16e58ef8be32507458364395db706219, type: 2}
     start:
@@ -68,40 +68,5 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 15
-  - pattern: {fileID: 11400000, guid: df3885b202978eb4ca85990745a498fa, type: 2}
-    start:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 10
-    end:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 25
+  animTriggers: []
+  clearBulletsOnEnd: 0
