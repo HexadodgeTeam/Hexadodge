@@ -134,11 +134,15 @@ public class LevelSelection : MonoBehaviour
             if (i == currentLevel % 3)
             {
                 LeaderBoard[i].gameObject.SetActive(true);
+                LeaderBoard[i+3].gameObject.SetActive(true);
                 LeaderBoard[i].Refresh();
             }
             else
             {
+                
+                
                 LeaderBoard[i].gameObject.SetActive(false);
+                LeaderBoard[i+3].gameObject.SetActive(false);
                 
             }
         }
@@ -157,6 +161,12 @@ public class LevelSelection : MonoBehaviour
         if (!CanChange || dir == 0 || target < 0 || target >= FloorCount)
             return;
 
+        LeaderBoard[0].gameObject.SetActive(true);
+        LeaderBoard[1].gameObject.SetActive(false);
+        LeaderBoard[2].gameObject.SetActive(false);
+        LeaderBoard[3].gameObject.SetActive(true);
+        LeaderBoard[4].gameObject.SetActive(false);
+        LeaderBoard[5].gameObject.SetActive(false);
         previousLevel = currentLevel;
         actualFloor = target;
         currentLevel = target * LevelsPerFloor;
