@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40683352dea3ec34589256222fefe81b, type: 3}
-  m_Name: B_Bonus_P_1_S_2
-  m_EditorClassIdentifier: Assembly-CSharp::PatternSequence
-  duration:
+  m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
+  m_Name: X_Laser_Rotated
+  m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
+  period:
     curve:
       m_Mode: 0
       m_CurveMultiplier: 0
@@ -29,10 +29,30 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 8
-  timelines:
-  - pattern: {fileID: 11400000, guid: ac73f350ff8139f4f973be778b08c758, type: 2}
-    start:
+      m_ConstantMax: 1
+  bulletThrows:
+  - bullet: {fileID: 11400000, guid: 34489ec5073cc2d4892c450fe4c2fee7, type: 2}
+    throwTransform: {fileID: 0}
+    spawn: {fileID: 11400000, guid: 51a6e19d5f1051b4d98e08a736547c97, type: 2}
+    spawnCount:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 0
+          m_PostInfinity: 0
+          m_RotationOrder: 0
+        m_ConstantMin: 0
+        m_ConstantMax: 4
+    spawnPeriodOverride:
       curve:
         m_Mode: 0
         m_CurveMultiplier: 0
@@ -50,22 +70,25 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 0
-    end:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 0
-          m_PostInfinity: 0
-          m_RotationOrder: 0
-        m_ConstantMin: 0
-        m_ConstantMax: 1
-  animTriggers: []
+    mirrorX: 0
+    mirrorY: 0
+    mirrorSpawnX: 0
+    mirrorSpawnY: 0
+  throwInterval:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 1
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0.15
