@@ -6,9 +6,10 @@ public class Fight : AbstractFight
     private static readonly int Death = Animator.StringToHash("SwitchPhase");
     
     [Header("Parameters")]
-    [SerializeField] private FightData data;
+    [SerializeField] public FightData data;
     [SerializeField] private GameObject arena;
-
+    public SubmitRunFonction subRun;
+    
     private FightDataInstance _fightInstance;
 
     private void Start()
@@ -52,9 +53,11 @@ public class Fight : AbstractFight
     public override void EndFight()
     {
         _fightInstance.End();
-        
+        subRun.subRun();
         if (data.nextFight)
         {
+            
+            LevelLeaderboard.OnLevelStart(data.nextFight.title);
             enemy.TriggerAnim(Death);
             StartCoroutine(SetFightCoroutine());
         }
@@ -66,6 +69,7 @@ public class Fight : AbstractFight
 
     public override void SetTransfer()
     {
+        
         FightDataTransfer.Instance.SetData(data);
     }
 

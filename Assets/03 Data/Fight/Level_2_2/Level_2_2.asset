@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: Level_2_2
   m_EditorClassIdentifier: Assembly-CSharp::FightData
-  title: 2 - 2
+  title: 2-2
   waitBetweenPhases:
     curve:
       m_Mode: 0
@@ -45,3 +45,4 @@ MonoBehaviour:
   playerSpawnPoint: {x: 0, y: 0}
   backgroundPrefab: {fileID: 453420770198184038, guid: 5d2ccc0b794bf754e8d3a9a43da74843, type: 3}
   borderPrefab: {fileID: 2500356032567612590, guid: b466d3dea9efef44f89e29a428f7b567, type: 3}
+  clearBulletsOnEnd: 1
