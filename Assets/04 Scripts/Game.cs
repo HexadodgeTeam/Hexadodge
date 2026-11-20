@@ -58,6 +58,7 @@ public class Game : MonoBehaviour
             skill.OnAttack(skillIndex);
         }
         fill.OnAttack();
+        player.AnimationTrigger("Attack");
         
         return true;
     }

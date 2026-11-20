@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private new SpriteRenderer renderer;
     [SerializeField] private PlayerInputHandler inputHandler;
     [SerializeField] private PlayerHealth health;
+    [SerializeField] private Animator animator;
 
     private Action<Vector3Int> _paint;
 
@@ -58,5 +59,10 @@ public class Player : MonoBehaviour
     {
         inputHandler.Teleport(position);
         Pos = position;
+    }
+
+    public void AnimationTrigger(string trigger)
+    {
+        animator.SetTrigger(trigger);
     }
 }

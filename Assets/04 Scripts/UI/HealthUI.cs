@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class HealthUI : MonoBehaviour
 {
     [SerializeField] private List<Heart> hearts;
     [SerializeField] private Heart heartPrefab;
+    [SerializeField] private UnityEvent onLowHealth;
+
+    private int _lastCount;
 
     private void Init(int maxHealth)
     {
@@ -28,5 +31,12 @@ public class HealthUI : MonoBehaviour
         {
             hearts[i].Empty();
         }
+
+        if (count != _lastCount && count == 1)
+        {
+            onLowHealth.Invoke();
+        }
+
+        _lastCount = count;
     }
 }
