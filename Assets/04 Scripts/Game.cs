@@ -107,9 +107,8 @@ public class Game : MonoBehaviour
 
     public void SetTransfer()
     {
-        fight.SetTransfer();
-        
         subRun.subRun();
+        fight.SetTransfer();
     }
 
     public void ResetTime()

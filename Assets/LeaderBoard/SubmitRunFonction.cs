@@ -27,5 +27,6 @@ public class SubmitRunFonction : MonoBehaviour
       
       string Lvl = forData.data.title;
       LevelLeaderboard.SubmitRun(Lvl, timer,item);
+      forTimer._timer=-5;
    }
 }

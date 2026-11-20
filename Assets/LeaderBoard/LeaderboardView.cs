@@ -53,9 +53,9 @@ public class LeaderboardView : MonoBehaviour
         avatarImages[i].enabled = avatar != null;
 
         
-        pseudoTexts[i].text = $"{row.rank}. {row.pseudo}";
+        pseudoTexts[i].text = row.pseudo;
         scoreTexts[i].text  = row.TimeText;
-        resultTexts[i].text = $"{fails} échecs / {successes} réussites";
+        resultTexts[i].text = $"{fails}/{successes}";
 
         
         var slots = itemRows[i].slots;
