@@ -24,9 +24,15 @@ public class Bullet : MonoBehaviour
     private float _lifetime;
     private float _t;
     private Coroutine _releaseRoutine;
+    private bool _colliderOn;
     
     // Bullet pattern variables.
     private (bool x, bool y) _mirror;
+
+    private Collider2D ActiveCollider =>
+        _data.properties.collider.shape == BulletProperties.Collider.Shape.Rectangle
+            ? boxCollider
+            : circleCollider;
 
     public void Init(Pool<Bullet> pool, BulletData data, (bool x, bool y) mirror)
     {
@@ -54,8 +60,7 @@ public class Bullet : MonoBehaviour
             circleCollider.includeLayers = data.properties.collider.isWall ? wallLayerMask : triggerLayerMask;
             boxCollider.excludeLayers = data.properties.collider.isWall ? triggerLayerMask : wallLayerMask;
             circleCollider.excludeLayers = data.properties.collider.isWall ? triggerLayerMask : wallLayerMask;
-            boxCollider.enabled = data.properties.collider.shape == BulletProperties.Collider.Shape.Rectangle;
-            circleCollider.enabled = data.properties.collider.shape == BulletProperties.Collider.Shape.Circle;
+            UpdateColliders();
         }
 
         _mirror = mirror;
@@ -81,6 +86,7 @@ public class Bullet : MonoBehaviour
         _age += Game.DeltaTime;
         _t = _age / _lifetime;
         
+        UpdateColliders();
         UpdateAnimation();
     }
 
@@ -105,6 +111,14 @@ public class Bullet : MonoBehaviour
         transform.Translate(position, Space.World);
         transform.Rotate(Vector3.forward, rotation);
         transform.localScale = new Vector3(scale.x * BaseScaleFactor, scale.y * BaseScaleFactor, 1f);
+    }
+    
+    private void UpdateColliders()
+    {
+        bool colliderShouldBeOn = IsTangible();
+        if (colliderShouldBeOn == _colliderOn) return;
+        _colliderOn = colliderShouldBeOn;
+        ActiveCollider.enabled = colliderShouldBeOn;
     }
 
     private void Die()
@@ -138,24 +152,20 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!IsTangible()) return;
-
-        PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
-
-        PlayerCollision(playerHealth);
+        PlayerCollision(collision);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!IsTangible()) return;
-        
-        PlayerHealth playerHealth = collision.otherCollider.GetComponent<PlayerHealth>();
-
-        PlayerCollision(playerHealth);
+        PlayerCollision(collision.otherCollider);
     }
 
-    private void PlayerCollision(PlayerHealth playerHealth)
+    private void PlayerCollision(Collider2D playerCollider)
     {
+        if (!IsTangible()) return;
+        
+        PlayerHealth playerHealth = playerCollider.GetComponent<PlayerHealth>();
+        
         if (!playerHealth.IsInvincible)
         {
             switch (_data.properties.impactType)
@@ -178,8 +188,8 @@ public class Bullet : MonoBehaviour
 
     private bool IsTangible()
     {
-        return _age > _data.properties.intangibleStart &&
-               _age < _lifetime - _data.properties.intangibleEnd &&
+        return _age >= _data.properties.intangibleStart &&
+               _age <= _lifetime - _data.properties.intangibleEnd &&
                _data.properties.impactType != BulletProperties.ImpactType.None;
     }
     
