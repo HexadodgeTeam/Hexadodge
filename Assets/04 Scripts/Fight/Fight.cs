@@ -8,7 +8,8 @@ public class Fight : AbstractFight
     [Header("Parameters")]
     [SerializeField] public FightData data;
     [SerializeField] private GameObject arena;
-
+    public SubmitRunFonction subRun;
+    
     private FightDataInstance _fightInstance;
 
     private void Start()
@@ -55,6 +56,8 @@ public class Fight : AbstractFight
         
         if (data.nextFight)
         {
+            subRun.subRun();
+            LevelLeaderboard.OnLevelStart(data.nextFight.title);
             enemy.TriggerAnim(Death);
             StartCoroutine(SetFightCoroutine());
         }
@@ -66,6 +69,7 @@ public class Fight : AbstractFight
 
     public override void SetTransfer()
     {
+        
         FightDataTransfer.Instance.SetData(data);
     }
 

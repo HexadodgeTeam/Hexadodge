@@ -6,6 +6,7 @@ public class ChangePseudo : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _pseudo;
     [SerializeField] private TextMeshProUGUI _pseudoToChange;
+    public GameObject butonPDP;
     private void OnEnable()
     {
         refreshpsuedoPlayer();
@@ -23,5 +24,10 @@ public class ChangePseudo : MonoBehaviour
         pseudo = PlayerIdentity.GetPseudo();
         Debug.Log(pseudo);
         _pseudoToChange.text = pseudo;
+    }
+
+    public void activePDPChoice()
+    {
+        butonPDP.SetActive(!butonPDP.activeSelf);
     }
 }

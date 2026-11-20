@@ -26,7 +26,7 @@ public class LevelLeaderboard : MonoBehaviour
     static string BoardName(string levelId) => levelId;
 
     
-    public void OnLevelStart(string levelId)
+    public static async void OnLevelStart(string levelId)
     {
         Increment($"attempts_{levelId}");
     }

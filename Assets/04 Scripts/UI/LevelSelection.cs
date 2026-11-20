@@ -22,6 +22,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<GameObject> enemy = new();
     [SerializeField] private List<FightData> fights = new();
     [SerializeField] private List<string> sceneName;
+    [SerializeField] private List<LeaderboardView> LeaderBoard = new();
     [SerializeField] private GameObject BG;
     [SerializeField] private TextMeshProUGUI ennemyName;
     [SerializeField] private float changeSpeed;
@@ -128,7 +129,19 @@ public class LevelSelection : MonoBehaviour
 
         previousLevel = currentLevel;
         currentLevel = first + (currentLevel - first + (forward ? 1 : size - 1)) % size;
-
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == currentLevel % 3)
+            {
+                LeaderBoard[i].gameObject.SetActive(true);
+                LeaderBoard[i].Refresh();
+            }
+            else
+            {
+                LeaderBoard[i].gameObject.SetActive(false);
+                
+            }
+        }
         int trigger = forward ? SlideLeftHash : SlideRightHash;
         anims[AnimCenter].SetTrigger(trigger);
         anims[forward ? AnimRight : AnimLeft].SetTrigger(trigger);
