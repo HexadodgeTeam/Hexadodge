@@ -15,7 +15,7 @@ public class LeaderboardView : MonoBehaviour
     public string levelId = "1-1";
     public LevelLeaderboard leaderboard;
 
-    [Header("Lignes (même taille dans chaque liste)")]
+    [Header("Lignes")]
     public Image[] avatarImages;
     public TMP_Text[] pseudoTexts;
     public TMP_Text[] scoreTexts;
