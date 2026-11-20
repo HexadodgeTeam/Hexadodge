@@ -53,10 +53,10 @@ public class Fight : AbstractFight
     public override void EndFight()
     {
         _fightInstance.End();
-        
+        subRun.subRun();
         if (data.nextFight)
         {
-            subRun.subRun();
+            
             LevelLeaderboard.OnLevelStart(data.nextFight.title);
             enemy.TriggerAnim(Death);
             StartCoroutine(SetFightCoroutine());
