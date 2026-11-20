@@ -341,7 +341,7 @@ Animator:
   m_GameObject: {fileID: 2608281597816560119}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 75bc8a27dd3308f4998391abfbca347e, type: 2}
+  m_Controller: {fileID: 9100000, guid: af78f60261aa38c4397dad6a0b482efe, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1041,6 +1041,10 @@ PrefabInstance:
     - target: {fileID: 4718274607275766573, guid: f2870215b68078a46a791767a6cd14bf, type: 3}
       propertyPath: m_Name
       value: PS_Scream
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718274607275766573, guid: f2870215b68078a46a791767a6cd14bf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
