@@ -119,6 +119,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &11711771 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2190903515708225661, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &67493909 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2330486856156357861, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &151800645 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8319603384863813338, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &462263788 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 81874577483394595, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &469972914 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 84231060396369226, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,6 +281,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &554911329 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993106788509961702, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &694784409
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,6 +486,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30de841448c49ce439ac8024da789e6a, type: 3}
+--- !u!114 &880831006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2885720596038410144, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
+--- !u!198 &936765815 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5781095715118022585, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1112207572
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +593,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1252934165 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3644478410920425854, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1254417367 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8354920404670251983, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1335208452 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1670540930987113347, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1690026999 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6679075161771573761, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &2058755330 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8311277115518793569, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+  m_PrefabInstance: {fileID: 1058945988510833296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1058945988510833296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,11 +645,15 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: ae871a32f92bfa5458ed1cf606753d94, type: 2}
+      objectReference: {fileID: 11400000, guid: 2255d33162bb5bb4487205ad037789c3, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
       objectReference: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: damageText
+      value: 
+      objectReference: {fileID: 880831006}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: debugOneAtATime
       value: 1
@@ -587,6 +662,70 @@ PrefabInstance:
       propertyPath: bulletSpawnInterval
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: attackFxSprites.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxSprites.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2058755330}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxSprites.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1252934165}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxSprites.Array.data[2]'
+      value: 
+      objectReference: {fileID: 462263788}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxSprites.Array.data[3]'
+      value: 
+      objectReference: {fileID: 554911329}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxSprites.Array.data[4]'
+      value: 
+      objectReference: {fileID: 554911329}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: attackFxParticleSystems.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1335208452}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1690026999}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1254417367}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[3]'
+      value: 
+      objectReference: {fileID: 151800645}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[4]'
+      value: 
+      objectReference: {fileID: 469972914}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11711771}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[6]'
+      value: 
+      objectReference: {fileID: 936765815}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[7]'
+      value: 
+      objectReference: {fileID: 67493909}
+    - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
+      propertyPath: 'attackFxParticleSystems.Array.data[8]'
+      value: 
+      objectReference: {fileID: 67493909}
     - target: {fileID: 8075035213295632093, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
