@@ -13245,6 +13245,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 907757976}
     - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: 'fights.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b49baea64d250f478ef669e8a2ed4f0, type: 2}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: sceneName.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: 'LeaderBoard.Array.data[0]'
       value: 
       objectReference: {fileID: 2125986051}

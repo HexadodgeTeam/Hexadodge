@@ -633,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 1121015923659193562, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f0ecd0843611b824c860c2776c586016, type: 2}
+      objectReference: {fileID: 9100000, guid: 75bc8a27dd3308f4998391abfbca347e, type: 2}
     - target: {fileID: 1489058863381957623, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: camera
       value: 
@@ -645,7 +645,7 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 2255d33162bb5bb4487205ad037789c3, type: 2}
+      objectReference: {fileID: 11400000, guid: 62675337aed76e341ae96ad6be4e12e6, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 

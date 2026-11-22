@@ -39,7 +39,7 @@ MonoBehaviour:
   - phase: {fileID: 11400000, guid: cf7c68c666ca7794d9f81c6c78bf57cc, type: 2}
     enemyHealthFraction: 0.5
   enemy: {fileID: 11400000, guid: 4419685915c105f4b942ff6f4ef52650, type: 2}
-  nextFight: {fileID: 0}
+  nextFight: {fileID: 11400000, guid: 1b49baea64d250f478ef669e8a2ed4f0, type: 2}
   arenaPrefab: {fileID: 4222642122561531476, guid: a5178e392f193a54f96304742895e67a, type: 3}
   gridPrefab: {fileID: 2935348472675979555, guid: b7dd03126ecb07a4899721c54711227a, type: 3}
   playerSpawnPoint: {x: 0, y: 0}
