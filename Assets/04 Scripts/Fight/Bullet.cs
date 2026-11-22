@@ -163,6 +163,7 @@ public class Bullet : MonoBehaviour
     private void PlayerCollision(Collider2D playerCollider)
     {
         if (!IsTangible()) return;
+		if (_data.properties.impactType == BulletProperties.ImpactType.None) return;
         
         PlayerHealth playerHealth = playerCollider.GetComponent<PlayerHealth>();
         
@@ -189,8 +190,7 @@ public class Bullet : MonoBehaviour
     private bool IsTangible()
     {
         return _age >= _data.properties.intangibleStart &&
-               _age <= _lifetime - _data.properties.intangibleEnd &&
-               _data.properties.impactType != BulletProperties.ImpactType.None;
+               _age <= _lifetime - _data.properties.intangibleEnd;
     }
     
     private bool HasExpired() => _age > _lifetime;
