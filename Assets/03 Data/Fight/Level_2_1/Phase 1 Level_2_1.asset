@@ -58,7 +58,7 @@ MonoBehaviour:
   color: {r: 0, g: 0.20354223, b: 1, a: 1}
   gradient:
     serializedVersion: 2
-    key0: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+    key0: {r: 0, g: 0.3023386, b: 0.4245283, a: 1}
     key1: {r: 0, g: 0.06746783, b: 0.6226415, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -86,3 +86,4 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
+  clearBulletsOnEnd: 0
