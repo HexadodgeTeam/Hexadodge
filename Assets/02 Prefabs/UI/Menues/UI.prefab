@@ -49,7 +49,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   mainMenuScene: MainMenu
   stick: {fileID: 4745421021602695444}
-  gameOverPanel: {fileID: 318994028641717650}
   controlTypeDropdown: {fileID: 1492574495849225758}
   hitAnimator: {fileID: 2268219843693278199}
   border: {fileID: 7699900343028233220}
@@ -100,6 +99,8 @@ MonoBehaviour:
   arenaMaskParent: {fileID: 692554692768472818}
   arenaMask: {fileID: 1416485161090045836}
   timerDisplay: {fileID: 4415540416321736488}
+  winGamePanel: {fileID: 4762654577264860878}
+  loseGamePanel: {fileID: 672251981391229200}
   healthUI: {fileID: 4196785610782045579}
   fillUI: {fileID: 6600298856401742356}
   enemyHealthUI: {fileID: 1156508947069689211}
@@ -799,9 +800,14 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3375958989782031359}
   m_SourcePrefab: {fileID: 100100000, guid: f7175472cf2782745a32862958a17728, type: 3}
---- !u!114 &318994028641717650 stripped
+--- !u!224 &614315531001185178 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &672251981391229200 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6511575331648996202, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6297397594136772584, guid: f7175472cf2782745a32862958a17728, type: 3}
   m_PrefabInstance: {fileID: 6787074320902098680}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -810,11 +816,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 177f199c24578e445b5054fcc0f77f04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
---- !u!224 &614315531001185178 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6248450478856686946, guid: f7175472cf2782745a32862958a17728, type: 3}
-  m_PrefabInstance: {fileID: 6787074320902098680}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1156508947069689211 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5637441169801466755, guid: f7175472cf2782745a32862958a17728, type: 3}
@@ -863,6 +864,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2300098492464842732, guid: f7175472cf2782745a32862958a17728, type: 3}
   m_PrefabInstance: {fileID: 6787074320902098680}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4762654577264860878 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2029101670852005942, guid: f7175472cf2782745a32862958a17728, type: 3}
+  m_PrefabInstance: {fileID: 6787074320902098680}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 177f199c24578e445b5054fcc0f77f04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
 --- !u!1 &5574016044681513392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1399047379014534984, guid: f7175472cf2782745a32862958a17728, type: 3}

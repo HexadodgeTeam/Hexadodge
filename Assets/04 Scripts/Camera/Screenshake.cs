@@ -27,7 +27,7 @@ public class Screenshake : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
 
             float strength = curve.Evaluate(elapsedTime / duration);
 
@@ -49,7 +49,7 @@ public class Screenshake : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
 
             float strength = curve.Evaluate(elapsedTime / duration);
 
@@ -71,7 +71,7 @@ public class Screenshake : MonoBehaviour
 
         while (elapsedTime < duration)
         {
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.unscaledDeltaTime;
 
             float strength = curve.Evaluate(elapsedTime / duration);
 

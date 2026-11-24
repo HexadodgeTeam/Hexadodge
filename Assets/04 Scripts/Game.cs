@@ -24,8 +24,8 @@ public class Game : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
         if (FightDataTransfer.Instance) SetFight(FightDataTransfer.Instance.fightData);
-        fight.Init(PlayerState.instance.gameData.fight);
-        fill.Init(PlayerState.instance.equippedSkills);
+        fight.Init(PlayerState.Instance.gameData.fight);
+        fill.Init(PlayerState.Instance.EquippedSkills);
         StartFight();
     }
 
@@ -51,7 +51,7 @@ public class Game : MonoBehaviour
         
         if (!attacked) return false;
         
-        foreach (SkillData skill in PlayerState.instance.equippedSkills)
+        foreach (SkillData skill in PlayerState.Instance.EquippedSkills)
         {
             skill.OnAttack(skillIndex);
         }

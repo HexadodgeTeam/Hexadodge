@@ -10,7 +10,7 @@ public class GameOverPanel : UIPanel
     {
         Open();
         
-        gameOverField.text = win ? "You win!" : "You lose!";
+        if (gameOverField) gameOverField.text = win ? "You win!" : "You lose!";
     }
 
     public void Restart()

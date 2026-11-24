@@ -29,9 +29,9 @@ public class SubmitRunFonction : MonoBehaviour
       float timer = forTimer._timer;
       for (int i = 0; i < 5; i++)
       {
-         if (PlayerState.instance.equippedSkills.Count > i)
+         if (PlayerState.Instance.EquippedSkills.Count > i)
          {
-            item[i] = PlayerState.instance.equippedSkills[i].ID;
+            item[i] = PlayerState.Instance.EquippedSkills[i].ID;
          }
          else
          {

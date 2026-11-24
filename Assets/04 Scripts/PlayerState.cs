@@ -3,18 +3,18 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    public static PlayerState instance;
+    public static PlayerState Instance;
 
     public GameData gameData;
 
-    public List<SkillData> obtainedSkills { get; } = new();
-    public List<SkillData> equippedSkills { get; } = new();
+    public List<SkillData> ObtainedSkills { get; } = new();
+    public List<SkillData> EquippedSkills { get; } = new();
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
             LoadData();
         }
@@ -30,12 +30,12 @@ public class PlayerState : MonoBehaviour
 
         foreach (int skillId in saveData.obtainedSkillIds)
         {
-            obtainedSkills.Add(gameData.GetSkillByID(skillId));
+            ObtainedSkills.Add(gameData.GetSkillByID(skillId));
         }
         
         foreach (int skillId in saveData.equippedSkillIds)
         {
-            equippedSkills.Add(gameData.GetSkillByID(skillId));
+            EquippedSkills.Add(gameData.GetSkillByID(skillId));
         }
 
         if (saveData.freshSave)
@@ -43,7 +43,7 @@ public class PlayerState : MonoBehaviour
             // Give start skills if fresh save.
             foreach (SkillData skill in gameData.startSkills)
             {
-                obtainedSkills.Add(skill);
+                ObtainedSkills.Add(skill);
             }
             
             SaveData();
@@ -57,12 +57,12 @@ public class PlayerState : MonoBehaviour
             freshSave = false
         };
 
-        foreach (SkillData skill in obtainedSkills)
+        foreach (SkillData skill in ObtainedSkills)
         {
             saveData.obtainedSkillIds.Add(skill.ID);
         }
         
-        foreach (SkillData skill in equippedSkills)
+        foreach (SkillData skill in EquippedSkills)
         {
             saveData.equippedSkillIds.Add(skill.ID);
         }
@@ -88,7 +88,7 @@ public class PlayerState : MonoBehaviour
 
         foreach (SkillData skill in gameData.gameSkills)
         {
-            obtainedSkills.Add(skill);
+            ObtainedSkills.Add(skill);
         }
         
         SaveSystem.Save(saveData);

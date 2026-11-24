@@ -63,13 +63,13 @@ public class InventoryWheel : MonoBehaviour
     
     private void Start()
     {
-        PlayerState state = PlayerState.instance;
+        PlayerState state = PlayerState.Instance;
 
-        EquippedSkills = new List<SkillData>(state.equippedSkills);
+        EquippedSkills = new List<SkillData>(state.EquippedSkills);
         EquippedSkills.RemoveAll(s => s == null);
 
         // Skills obtenus dans ce script = skills du joueur - ceux équipés.
-        ObtainedSkills = state.obtainedSkills.FindAll(s => s != null && !EquippedSkills.Contains(s));
+        ObtainedSkills = state.ObtainedSkills.FindAll(s => s != null && !EquippedSkills.Contains(s));
 
         if (!ValidateSetup())
         {
@@ -408,16 +408,16 @@ public class InventoryWheel : MonoBehaviour
         RefreshSelection();
         RefreshDescription();
 
-        PlayerState.instance.equippedSkills.Clear();
+        PlayerState.Instance.EquippedSkills.Clear();
         foreach (SkillData skill in EquippedSkills)
         {
             if (skill)
             {
-                PlayerState.instance.equippedSkills.Add(skill);
+                PlayerState.Instance.EquippedSkills.Add(skill);
             }
         }
         // Save data when changing inventory.
-        PlayerState.instance.SaveData();
+        PlayerState.Instance.SaveData();
     }
 
     private void RefreshSelection()
