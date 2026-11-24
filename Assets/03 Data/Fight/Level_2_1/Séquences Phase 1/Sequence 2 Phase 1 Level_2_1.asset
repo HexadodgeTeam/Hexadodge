@@ -105,4 +105,9 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 8
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Attack_A_Loop
+    triggerTime: 1.8
+  - animationTrigger: Attack_A_Loop_Exit
+    triggerTime: 8
+  clearBulletsOnEnd: 0
