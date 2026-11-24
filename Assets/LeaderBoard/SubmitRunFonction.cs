@@ -10,7 +10,6 @@ public class SubmitRunFonction : MonoBehaviour
 {
    [SerializeField] private UIManager forTimer;
    [SerializeField] private Fight forData;
-   [SerializeField] private Game forGameData;
    [SerializeField] private List<int> item = new List<int>();
    [SerializeField] private PlayerHealth forLife;
    private List<int> pallierList = new List<int>();
@@ -30,10 +29,9 @@ public class SubmitRunFonction : MonoBehaviour
       float timer = forTimer._timer;
       for (int i = 0; i < 5; i++)
       {
-         if (forGameData.data.baseSkills.Length>i)
+         if (PlayerState.instance.equippedSkills.Count > i)
          {
-            
-            item[i] = forGameData.data.baseSkills[i].ID;
+            item[i] = PlayerState.instance.equippedSkills[i].ID;
          }
          else
          {

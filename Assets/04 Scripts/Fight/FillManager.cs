@@ -38,7 +38,7 @@ public class FillManager : MonoBehaviour
         }
     }
 
-    public void Init(SkillData[] baseSkills)
+    public void Init(List<SkillData> baseSkills)
     {
         foreach (SkillData skill in baseSkills)
         {

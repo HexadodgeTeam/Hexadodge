@@ -21,7 +21,6 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<GameObject> enemyanimator = new();
     [SerializeField] private List<GameObject> enemy = new();
     [SerializeField] private List<FightData> fights = new();
-    [SerializeField] private List<string> sceneName;
     [SerializeField] private List<LeaderboardView> LeaderBoard = new();
     [SerializeField] private GameObject BG;
     [SerializeField] private TextMeshProUGUI ennemyName;
@@ -62,7 +61,7 @@ public class LevelSelection : MonoBehaviour
 
         rects = enemy.ConvertAll(e => e.GetComponent<RectTransform>()).ToArray();
         anims = enemyanimator.ConvertAll(e => e.GetComponent<Animator>()).ToArray();
-        slots = System.Array.ConvertAll(rects, r => r.anchoredPosition);
+        slots = Array.ConvertAll(rects, r => r.anchoredPosition);
 
         isOpen = false;
         actualFloor = currentLevel / LevelsPerFloor;
@@ -73,11 +72,6 @@ public class LevelSelection : MonoBehaviour
     {
         Refresh();
         SoundManager.Instance.PlaySound("Ambiance");
-    }
-
-    public string GetScene()
-    {
-        return sceneName[currentLevel];
     }
 
     private void Update()
@@ -115,6 +109,7 @@ public class LevelSelection : MonoBehaviour
         BG.transform.position = BgPosition(actualFloor);
         Refresh();
     }
+    
     public void ChangeLevel(int dir)
     {
         if (!CanChange || dir == 0)
@@ -139,11 +134,8 @@ public class LevelSelection : MonoBehaviour
             }
             else
             {
-                
-                
                 LeaderBoard[i].gameObject.SetActive(false);
                 LeaderBoard[i+3].gameObject.SetActive(false);
-                
             }
         }
         int trigger = forward ? SlideLeftHash : SlideRightHash;
@@ -155,6 +147,7 @@ public class LevelSelection : MonoBehaviour
         SoundManager.Instance.PlaySound("Swipe");
         StartCoroutine(Transition(exit, entry, entry));
     }
+    
     public void ChangeFloorL(int dir)
     {
         int target = actualFloor + (dir > 0 ? 1 : -1);

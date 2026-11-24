@@ -8,9 +8,6 @@ public class Game : MonoBehaviour
     public static float ScaledTime { get; private set; }
     public static float DeltaTime => Time.deltaTime * TimeScale;
     public bool IsInFight { get; private set; }
-
-    [Header("Parameters")]
-    [SerializeField] public GameData data;
     
     [Header("References")]
     [SerializeField] private Player player;
@@ -18,6 +15,7 @@ public class Game : MonoBehaviour
     [SerializeField] private AbstractFight fight;
     [SerializeField] private GameObject background;
     public SubmitRunFonction subRun;
+    
     private void Awake()
     {
         TimeScale = 1f;
@@ -26,8 +24,8 @@ public class Game : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
         if (FightDataTransfer.Instance) SetFight(FightDataTransfer.Instance.fightData);
-        fight.Init(data.fight);
-        fill.Init(data.baseSkills);
+        fight.Init(PlayerState.instance.gameData.fight);
+        fill.Init(PlayerState.instance.equippedSkills);
         StartFight();
     }
 
@@ -53,7 +51,7 @@ public class Game : MonoBehaviour
         
         if (!attacked) return false;
         
-        foreach (SkillData skill in data.baseSkills)
+        foreach (SkillData skill in PlayerState.instance.equippedSkills)
         {
             skill.OnAttack(skillIndex);
         }

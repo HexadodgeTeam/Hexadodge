@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
   m_Name: S_IncreaseRange
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
+  Name: Increase Range
+  Description: Augmentation du range
+  Icon: {fileID: 21300000, guid: 847397e39fa11c94f9390e9b0fe65263, type: 3}
   lore: 
-  ID: 0
+  ID: 3
   level: 1
   activeEffects: []
   passiveEffects:
