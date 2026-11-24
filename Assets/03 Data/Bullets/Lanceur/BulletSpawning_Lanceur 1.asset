@@ -88,9 +88,9 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 180
+      m_ConstantMax: 0
   angleFromCount: 1
-  facePole: 1
+  facePole: 0
   rotationOffset:
     curve:
       m_Mode: 0
@@ -109,4 +109,4 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_ConstantMin: 0
       m_ConstantMax: -90
-  rotationOffsetFromCount: 0
+  rotationOffsetFromCount: 1
