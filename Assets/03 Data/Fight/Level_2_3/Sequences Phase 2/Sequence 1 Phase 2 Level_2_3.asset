@@ -29,7 +29,7 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 12
+      m_ConstantMax: 7
   timelines:
   - pattern: {fileID: 11400000, guid: c8bde929befce0845989feeb471cadac, type: 2}
     start:
