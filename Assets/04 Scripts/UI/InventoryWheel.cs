@@ -12,6 +12,7 @@ public class InventoryWheel : MonoBehaviour
 
     [Header("Données")]
     public List<Image> itemEmplacement = new List<Image>();
+    public List<Image> ConditionEmplacement = new List<Image>();
     public Sprite emptySlotSprite; 
 
     [Header("Focus et description")]
@@ -23,6 +24,7 @@ public class InventoryWheel : MonoBehaviour
     public int itemToShowEquipement;   
     public Vector3 Deplacementpop;
     public Vector3 DeplacementInitial;
+    public List<Sprite> conditionSprite = new List<Sprite>(); 
 
     [Header("Roue inventaire")]
     public Scrollbar scrollbarInventaire;
@@ -448,12 +450,18 @@ public class InventoryWheel : MonoBehaviour
             RefreshInventorySlotIcon(i);
 
         for (int n = 0; n < EquipSlotCount; n++)
+        {
             SetIcon(n, GetEquippedItem(n));
+            SetConditionIcon(n, GetEquippedItem(n));
+            
+        }
+            
     }
 
     private void RefreshInventorySlotIcon(int slot)
     {
         SetIcon(InventoryImageOffset + slot, GetInventoryItem(WheelIndexOf(slot)));
+        SetConditionIcon (InventoryImageOffset + slot, GetInventoryItem(WheelIndexOf(slot)));
     }
 
     private void SetIcon(int imageIndex, SkillData skill)
@@ -466,4 +474,23 @@ public class InventoryWheel : MonoBehaviour
 
         if (image.sprite != sprite) image.sprite = sprite;
     }
+    private void SetConditionIcon(int imageIndex, SkillData skill)
+    {
+        Image image = ConditionEmplacement[imageIndex];
+        if (image == null) return;
+
+        Sprite sprite = skill != null ? conditionSprite[(int)skill.condition] : null;
+        if (sprite == null) sprite = emptySlotSprite;   
+
+        if (image.sprite != sprite) image.sprite = sprite;
+    }
+}
+
+public enum Condition
+{
+    Pallier_01=1,
+    Pallier_02=2,
+    Pallier_03=3,
+    Die=4,
+    TakeDammage=5
 }

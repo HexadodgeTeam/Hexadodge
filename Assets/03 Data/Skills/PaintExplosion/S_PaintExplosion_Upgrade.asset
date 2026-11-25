@@ -17,6 +17,7 @@ MonoBehaviour:
   Icon: {fileID: -3791335136706530532, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
   lore: 
   ID: 6
+  condition: 4
   level: 3
   activeEffects:
   - {fileID: 11400000, guid: 1af0e4b13cda682429cfd233be828602, type: 2}

@@ -7,6 +7,7 @@ public class SkillData : ScriptableObject
   public Sprite Icon;
   public string lore;
   public int ID;
+  public Condition condition;
   
   [Tooltip("Palier de la compétence (commence à 1 pour le premier palier).\n" +
            "Si 0, est actif en continu.")]
