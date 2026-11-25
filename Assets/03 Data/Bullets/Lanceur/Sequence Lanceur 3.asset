@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40683352dea3ec34589256222fefe81b, type: 3}
-  m_Name: Sequence Lanceur
+  m_Name: Sequence Lanceur 3
   m_EditorClassIdentifier: Assembly-CSharp::PatternSequence
   duration:
     curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 8
   timelines:
-  - pattern: {fileID: 11400000, guid: b4cb54b46829d9b48b5c8db58d9fa652, type: 2}
+  - pattern: {fileID: 11400000, guid: 522b51a0bd493bd419f3778c0a7becb3, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 1
-  - pattern: {fileID: 11400000, guid: 0c5a46e48e40c1943a2237061494319b, type: 2}
+  - pattern: {fileID: 11400000, guid: 2e08f975a3e99f84484afc4e81a34d80, type: 2}
     start:
       curve:
         m_Mode: 0
