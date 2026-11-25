@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   Name: Increase Attack 2
   Description: "\xE7a augmente encore + l'attaque c'est fou"
-  Icon: {fileID: -1418753882, guid: 516cb4fe8a187034887839251c3d3cee, type: 3}
+  Icon: {fileID: 21300000, guid: e67f0e164a1120545829a19dfebe7041, type: 3}
   lore: 
   ID: 2
   condition: 2

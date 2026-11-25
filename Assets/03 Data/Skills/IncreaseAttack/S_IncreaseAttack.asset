@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
   Name: Increase Attack
   Description: "\xE7a augmente l'attaque oui oui"
-  Icon: {fileID: 5165955226933090522, guid: 516cb4fe8a187034887839251c3d3cee, type: 3}
+  Icon: {fileID: 21300000, guid: ffc1e250f267fde4a9f621aa52df5ab3, type: 3}
   lore: 
   ID: 1
   condition: 2
