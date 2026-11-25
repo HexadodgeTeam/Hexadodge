@@ -31,10 +31,10 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 8
+        m_ConstantMax: 10
     intangibleStart: 0.1
     intangibleEnd: 0.1
-    impactType: 0
+    impactType: 1
     destroyOnImpact: 1
     impactPower:
       curve:
@@ -72,9 +72,9 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 1
+          m_ConstantMax: 0
       bullets:
-      - {fileID: 11400000, guid: eae427e49e7a9504d8683abe22482724, type: 2}
+      - {fileID: 0}
       arc:
         curve:
           m_Mode: 0
@@ -92,7 +92,7 @@ MonoBehaviour:
             m_PostInfinity: 2
             m_RotationOrder: 4
           m_ConstantMin: 0
-          m_ConstantMax: 1
+          m_ConstantMax: 360
       rotationOffset:
         curve:
           m_Mode: 0
@@ -111,14 +111,14 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 0
-      direction: 0
+      direction: 1
     collider:
       shape: 0
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: 8471686017046580912, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
     enableSpriteOverLifetime: 0
     spriteOverLifetime: []
     spriteOverLifetimeCurve:
@@ -140,7 +140,7 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 0
     color:
-      m_Mode: 1
+      m_Mode: 0
       m_GradientMin:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -174,7 +174,7 @@ MonoBehaviour:
       m_GradientMax:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 0, b: 0, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}

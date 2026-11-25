@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fbab8d94972011544bcb0fd61bf3b71a, type: 3}
-  m_Name: BulletPattern_Aiguille_Unique_Horaire_2-3_Top
+  m_Name: BulletPattern_Typhon_Bottom
   m_EditorClassIdentifier: Assembly-CSharp::BulletPattern
   period:
     curve:
@@ -31,9 +31,9 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 0
   bulletThrows:
-  - bullet: {fileID: 11400000, guid: c4cf28ef9c90cea40aa46cd7ac072f7a, type: 2}
+  - bullet: {fileID: 11400000, guid: ba2068d720405a546b64073d90f2766f, type: 2}
     throwTransform: {fileID: 0}
-    spawn: {fileID: 11400000, guid: 8c8ec33d47094d24492c60d7c80a7f85, type: 2}
+    spawn: {fileID: 11400000, guid: 797f8ad4bf7426941bb1af4166cb4ccd, type: 2}
     spawnCount:
       curve:
         m_Mode: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 0
     spawnPeriodOverride:
       curve:
         m_Mode: 0
@@ -86,27 +86,9 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 3
-          inSlope: -1.5
-          outSlope: -1.5
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1.5
-          inSlope: -1.5
-          outSlope: -1.5
-          tangentMode: 34
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0
+        m_Curve: []
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
       m_ConstantMin: 0
-      m_ConstantMax: 12
+      m_ConstantMax: 10

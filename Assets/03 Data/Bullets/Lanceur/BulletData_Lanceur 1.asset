@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
   m_Name: BulletData_Lanceur 1
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: e355aa479855d244c83388fe04a464ea, type: 2}
+  transform: {fileID: 11400000, guid: a08580a520258b44a86483e849ffc079, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 20
+        m_ConstantMax: 10
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 1
