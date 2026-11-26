@@ -19,6 +19,7 @@ public class InventoryWheel : MonoBehaviour
     public bool IsInventory;
     public TextMeshProUGUI nameItem;
     public TextMeshProUGUI descriptionItem;
+    public TextMeshProUGUI condition;
     public TextMeshProUGUI lore;
     public int itemToShowInventaire;    
     public int itemToShowEquipement;   
@@ -441,6 +442,7 @@ public class InventoryWheel : MonoBehaviour
 
         nameItem.text = skill != null ? skill.Name : string.Empty;
         descriptionItem.text = skill != null ? skill.Description : string.Empty;
+        if (skill != null) condition.text = skill.condition.ToString();
         lore.text = skill != null ? skill.lore : string.Empty;
     }
 
