@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -21,6 +22,8 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<RuntimeAnimatorController> enemyAnim = new();
     [SerializeField] private List<GameObject> enemyanimator = new();
     [SerializeField] private List<GameObject> enemy = new();
+    [SerializeField] private List<Image> materials = new();
+    [SerializeField] private List<Material> materialsToApply = new();
     [SerializeField] private List<FightData> fights = new();
     [SerializeField] private List<LeaderboardView> LeaderBoard = new();
     [SerializeField] private GameObject BG;
@@ -28,6 +31,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private float changeSpeed;
     [SerializeField] private Button playButton;
 
+    
     public int currentLevel = 0;
     public int previousLevel = 0;
     public int actualFloor = 0;
@@ -38,6 +42,7 @@ public class LevelSelection : MonoBehaviour
     private Vector2[] slots;        
     private Vector2 swipeStart;
     private bool isChanging;
+    private Material[] runtimeMats;
     
     private const int AnimCenter = 0;
     private const int AnimRight  = 1;
@@ -53,6 +58,11 @@ public class LevelSelection : MonoBehaviour
     private int FloorSize(int floor) => Mathf.Clamp(enemyAnim.Count - floor * LevelsPerFloor, 1, LevelsPerFloor);
 
     private static Vector3 BgPosition(int floor) => new Vector3(0f, -floor * FloorHeight, 0f);
+    int center;
+    int right  ;
+    int left   ;
+    int top    ;
+    int bottom;
 
     private void Awake()
     {
@@ -69,13 +79,43 @@ public class LevelSelection : MonoBehaviour
 
         isOpen = false;
         actualFloor = currentLevel / LevelsPerFloor;
+        runtimeMats = materialsToApply.ConvertAll(m => new Material(m)).ToArray();
         
     }
 
     private void Start()
     {
+        
         Refresh();
+        UpdateMaterials();
+        SetMaterial(materials[0], center);
+        SetMaterial(materials[1], right);
+        SetMaterial(materials[2], left);
+        SetMaterial(materials[3], top);
+        SetMaterial(materials[4], bottom);
         SoundManager.Instance.PlaySound("Ambiance");
+    }
+    private void OnDestroy()
+    {
+        if (runtimeMats == null) return;
+        foreach (var m in runtimeMats) if (m != null) Destroy(m);
+    }
+
+    private void UpdateMaterials()
+    {
+        int count = Mathf.Min(runtimeMats.Length, fights.Count);
+        for (int i = 0; i < count; i++)
+        {
+            if (PlayerState.Instance.Fights.TryGetValue(fights[i], out var data))
+                materialsToApply[i].SetFloat("_isLocked", data.unlocked ? 0f : 1f);
+        }
+    }
+
+    private void SetMaterial(Image img, int level)
+    {
+        if (level < 0 || level >= runtimeMats.Length) return;
+        if (img.material != runtimeMats[level])
+            img.material = runtimeMats[level];
     }
 
     private void Update()
@@ -210,28 +250,45 @@ public class LevelSelection : MonoBehaviour
         int first = actualFloor * LevelsPerFloor;
         int size = FloorSize(actualFloor);
         int col = currentLevel - first;
+        
+         center = currentLevel;
+         right  = first + (col + 1) % size;
+         left   = first + (col + size - 1) % size;
+         top    = first + LevelsPerFloor;
+         bottom = first - LevelsPerFloor;
+        
+        UpdateMaterials();
 
-        SetController(anims[0], currentLevel);
-        SetController(anims[1], first + (col + 1) % size);
-        SetController(anims[2], first + (col + size - 1) % size);
-        SetController(anims[3], first + LevelsPerFloor);
-        SetController(anims[4], first - LevelsPerFloor);
+        SetController(anims[0], center);
+        SetController(anims[1], right);
+        SetController(anims[2], left);
+        SetController(anims[3], top);
+        SetController(anims[4], bottom);
 
+        // Mêmes indices que les controllers, sans modulo
+        SetMaterial(materials[0], center);
+        SetMaterial(materials[1], right);
+        SetMaterial(materials[2], left);
+        SetMaterial(materials[3], top);
+        SetMaterial(materials[4], bottom);
+
+        
         for (int i = 0; i < rects.Length; i++)
             rects[i].anchoredPosition = slots[i];
 
         ennemyName.text = CurrentFight.title;
 
-        if (currentLevel < fights.Count &&
-            currentLevel < anims.Length &&
-            PlayerState.Instance.Fights.ContainsKey(fights[currentLevel]))
-        {
-            bool fightUnlocked = PlayerState.Instance.Fights[fights[currentLevel]].unlocked;
         
-            playButton.interactable = fightUnlocked;
-            anims[currentLevel].SetBool(Unlocked, fightUnlocked);
-            anims[currentLevel].SetBool(Beaten, fightUnlocked);
-        }
+        bool unlocked = IsUnlocked(currentLevel);
+        playButton.interactable = unlocked;
+        anims[0].SetBool(Unlocked, unlocked);
+        anims[0].SetBool(Beaten, unlocked);
+    }
+    private bool IsUnlocked(int level)
+    {
+        return level >= 0 && level < fights.Count &&
+               PlayerState.Instance.Fights.TryGetValue(fights[level], out var d) &&
+               d.unlocked;
     }
 
     private void SetController(Animator anim, int level)
@@ -244,6 +301,7 @@ public class LevelSelection : MonoBehaviour
         if (anim.isActiveAndEnabled)
             anim.Update(0f); 
     }
+   
 	public void SetFight()
     {
         FightDataTransfer.Instance.SetData(fights[currentLevel < fights.Count ? currentLevel : 0]);
