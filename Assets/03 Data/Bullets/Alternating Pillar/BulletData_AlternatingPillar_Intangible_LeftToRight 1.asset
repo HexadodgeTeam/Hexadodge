@@ -74,10 +74,6 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 1
       bullets:
-      - {fileID: 11400000, guid: 27238816ba7f8e9489b7ed8a61cf778c, type: 2}
-      - {fileID: 11400000, guid: a2df46b432b821e47a65b447fe588130, type: 2}
-      - {fileID: 11400000, guid: a2df46b432b821e47a65b447fe588130, type: 2}
-      - {fileID: 11400000, guid: a2df46b432b821e47a65b447fe588130, type: 2}
       - {fileID: 11400000, guid: a2df46b432b821e47a65b447fe588130, type: 2}
       arc:
         curve:
