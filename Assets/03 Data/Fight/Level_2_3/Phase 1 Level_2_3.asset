@@ -33,7 +33,6 @@ MonoBehaviour:
   sequences:
   - {fileID: 11400000, guid: f2cbbe72d9e7893438d8e4c22f67e948, type: 2}
   - {fileID: 11400000, guid: 116abdda454f14a4d9a000e3500f8afd, type: 2}
-  - {fileID: 11400000, guid: bbd234477d3459749b9aec9586ff561f, type: 2}
   randomOrder: 1
   randomSequenceCanRepeat: 0
   waitBetweenSequence:

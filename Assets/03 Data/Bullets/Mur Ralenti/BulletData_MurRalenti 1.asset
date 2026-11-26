@@ -117,7 +117,7 @@ MonoBehaviour:
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 0}
+    sprite: {fileID: 695665781, guid: 2c4877cd9e982e648b6e08e5c648c102, type: 3}
     enableSpriteOverLifetime: 0
     spriteOverLifetime: []
     spriteOverLifetimeCurve:
