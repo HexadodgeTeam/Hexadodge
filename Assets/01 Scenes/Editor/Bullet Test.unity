@@ -702,7 +702,7 @@ PrefabInstance:
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: testData
       value: 
-      objectReference: {fileID: 11400000, guid: 3e7edaa7ae9e74a44b810f3cf4a78ed6, type: 2}
+      objectReference: {fileID: 11400000, guid: 40e72f30d8145ff479b2f9c9dbb484d0, type: 2}
     - target: {fileID: 6758262288678559304, guid: 10e6c9391b298104f9112eea91bb3f8a, type: 3}
       propertyPath: enemyData
       value: 
