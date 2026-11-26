@@ -45,6 +45,7 @@ MonoBehaviour:
   gridPrefab: {fileID: 7569591809526182187, guid: ac80cc321fb66f54881de8a79d742f40, type: 3}
   playerSpawnPoint: {x: 0, y: 0}
   backgroundPrefab: {fileID: 453420770198184038, guid: 69917e47b380549489dd03d1af44383d, type: 3}
-  borderPrefab: {fileID: 0}
+  borderPrefab: {fileID: 2500356032567612590, guid: 6b152179f2de37047bd90ecb57c2fa21, type: 3}
   clearBulletsOnEnd: 1
   skillRewards: []
+  fightUnlocks: []
