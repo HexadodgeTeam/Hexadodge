@@ -52,7 +52,7 @@ MonoBehaviour:
   forwardSpeed:
     x:
       curve:
-        m_Mode: 0
+        m_Mode: 1
         m_CurveMultiplier: 1
         m_CurveMin:
           serializedVersion: 2
@@ -65,39 +65,30 @@ MonoBehaviour:
           m_Curve:
           - serializedVersion: 3
             time: 0
-            value: 0.4
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
+            value: 0
+            inSlope: 16.802475
+            outSlope: 16.802475
+            tangentMode: 34
             weightedMode: 0
             inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
-            time: 0.3
-            value: 0.4
-            inSlope: -0.0153701585
-            outSlope: -0.0153701585
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33140054
-          - serializedVersion: 3
-            time: 0.42867702
-            value: 1.9962234
-            inSlope: -0.041838937
-            outSlope: -0.041838937
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0.19261569
             outWeight: 0.33333334
           - serializedVersion: 3
-            time: 1
-            value: 2
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
+            time: 0.059515044
+            value: 1
+            inSlope: 16.802475
+            outSlope: 2.3837433
+            tangentMode: 69
             weightedMode: 0
-            inWeight: 0
+            inWeight: 0.33333334
+            outWeight: 0.33333334
+          - serializedVersion: 3
+            time: 0.5
+            value: 2.050003
+            inSlope: 2.3837433
+            outSlope: 0.54264975
+            tangentMode: 69
+            weightedMode: 0
+            inWeight: 0.33333334
             outWeight: 0
           m_PreInfinity: 2
           m_PostInfinity: 2
@@ -234,7 +225,7 @@ MonoBehaviour:
         m_ConstantMax: 1
   scaleMultiplier:
     curve:
-      m_Mode: 0
+      m_Mode: 1
       m_CurveMultiplier: 1
       m_CurveMin:
         serializedVersion: 2
@@ -244,7 +235,25 @@ MonoBehaviour:
         m_RotationOrder: 4
       m_CurveMax:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 1
+          value: 1
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4

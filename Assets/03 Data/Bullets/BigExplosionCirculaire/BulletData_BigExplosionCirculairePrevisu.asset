@@ -111,14 +111,14 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 0
-      direction: 1
+      direction: 0
     collider:
       shape: 0
       rectangleSize: {x: 1, y: 1}
       circleRadius: 0.5
       isWall: 0
   animation:
-    sprite: {fileID: 7761446687801348396, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
+    sprite: {fileID: -5906729336746580959, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
     enableSpriteOverLifetime: 0
     spriteOverLifetime: []
     spriteOverLifetimeCurve:
@@ -173,8 +173,8 @@ MonoBehaviour:
         m_NumAlphaKeys: 2
       m_GradientMax:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0.03137255}
+        key1: {r: 1, g: 1, b: 1, a: 0.8666667}
         key2: {r: 1, g: 0.49694997, b: 0, a: 0}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 1, g: 0.49411768, b: 0, a: 0}
