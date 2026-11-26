@@ -278,17 +278,26 @@ public class LevelSelection : MonoBehaviour
 
         ennemyName.text = CurrentFight.title;
 
-        
+       
         bool unlocked = IsUnlocked(currentLevel);
+				bool beaten = IsBeaten(currentLevel);
         playButton.interactable = unlocked;
         anims[0].SetBool(Unlocked, unlocked);
-        anims[0].SetBool(Beaten, unlocked);
+        anims[0].SetBool(Beaten, beaten);
     }
+		
     private bool IsUnlocked(int level)
     {
         return level >= 0 && level < fights.Count &&
                PlayerState.Instance.Fights.TryGetValue(fights[level], out var d) &&
                d.unlocked;
+    }
+		
+		private bool IsBeaten(int level)
+    {
+        return level >= 0 && level < fights.Count &&
+               PlayerState.Instance.Fights.TryGetValue(fights[level], out var d) &&
+               d.beaten;
     }
 
     private void SetController(Animator anim, int level)
