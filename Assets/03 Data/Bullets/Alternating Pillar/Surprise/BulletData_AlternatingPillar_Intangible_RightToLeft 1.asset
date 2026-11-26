@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: BulletData_AlternatingPillar_Intangible_LeftToRight
+  m_Name: BulletData_AlternatingPillar_Intangible_RightToLeft 1
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: 332ecd51dafeea9439bc65d964522f13, type: 2}
+  transform: {fileID: 11400000, guid: e3f2103ab40a79f409b362fee804be6c, type: 2}
   properties:
     lifetime:
       curve:
@@ -31,7 +31,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 4
+        m_ConstantMax: 3
     intangibleStart: 0.1
     intangibleEnd: 0.1
     impactType: 0

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2545f9fcc63c4417a6b31c994301ff72, type: 3}
-  m_Name: BulletsTransform_AlternatingPillar_Tangible_RightToLeft
+  m_Name: BulletsTransform_AlternatingPillar_Tangible_LeftToRight 1
   m_EditorClassIdentifier: Assembly-CSharp::BTCartesian
   period:
     curve:
@@ -104,7 +104,7 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: -0.5
+        m_ConstantMax: 0.7
     y:
       curve:
         m_Mode: 0

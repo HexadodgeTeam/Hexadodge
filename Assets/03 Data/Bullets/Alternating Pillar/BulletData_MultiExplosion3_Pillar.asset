@@ -10,14 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: BulletsData_AlternatingPillar_Tangible_RightToLeft
+  m_Name: BulletData_MultiExplosion3_Pillar
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
-  transform: {fileID: 11400000, guid: e3f2103ab40a79f409b362fee804be6c, type: 2}
+  transform: {fileID: 11400000, guid: 0961a1caf28e43e49966d4769fcbfe6c, type: 2}
   properties:
     lifetime:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 5
+        m_CurveMultiplier: 0
+        m_CurveMin:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_CurveMax:
+          serializedVersion: 2
+          m_Curve: []
+          m_PreInfinity: 2
+          m_PostInfinity: 2
+          m_RotationOrder: 4
+        m_ConstantMin: 4
+        m_ConstantMax: 8
+    tangibleCooldown:
+      curve:
+        m_Mode: 0
+        m_CurveMultiplier: 0.1
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -31,15 +49,13 @@ MonoBehaviour:
           m_PostInfinity: 2
           m_RotationOrder: 4
         m_ConstantMin: 0
-        m_ConstantMax: 6
-    intangibleStart: 0.1
-    intangibleEnd: 0.1
+        m_ConstantMax: 0.1
     impactType: 1
     destroyOnImpact: 1
     impactPower:
       curve:
         m_Mode: 0
-        m_CurveMultiplier: 1
+        m_CurveMultiplier: 0
         m_CurveMin:
           serializedVersion: 2
           m_Curve: []
@@ -77,7 +93,7 @@ MonoBehaviour:
       arc:
         curve:
           m_Mode: 0
-          m_CurveMultiplier: 360
+          m_CurveMultiplier: 0
           m_CurveMin:
             serializedVersion: 2
             m_Curve: []
@@ -110,34 +126,9 @@ MonoBehaviour:
             m_RotationOrder: 4
           m_ConstantMin: 0
           m_ConstantMax: 0
-      direction: 1
-    collider:
-      shape: 0
-      rectangleSize: {x: 1, y: 1}
-      circleRadius: 0.5
-      isWall: 0
+      direction: 2
   animation:
-    sprite: {fileID: 5941571246908216448, guid: 954bc3a57c6d08d418a8b95f5ec94cbc, type: 3}
-    enableSpriteOverLifetime: 0
-    spriteOverLifetime: []
-    spriteOverLifetimeCurve:
-      curve:
-        m_Mode: 0
-        m_CurveMultiplier: 0
-        m_CurveMin:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_CurveMax:
-          serializedVersion: 2
-          m_Curve: []
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        m_ConstantMin: 0
-        m_ConstantMax: 0
+    sprite: {fileID: 6722963285083194970, guid: 744776c7f8bc8214bb8f94b60d2f5604, type: 3}
     color:
       m_Mode: 0
       m_GradientMin:

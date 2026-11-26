@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f64df99dd40747829fef288839b33c55, type: 3}
-  m_Name: BulletsPattern_AlternatingPillar_TangibleToIntangible_LeftToRight
+  m_Name: BulletData_AlternatingPillar_Intangible_LeftToRight 1
   m_EditorClassIdentifier: Assembly-CSharp::BulletData
   transform: {fileID: 11400000, guid: 332ecd51dafeea9439bc65d964522f13, type: 2}
   properties:
@@ -34,8 +34,8 @@ MonoBehaviour:
         m_ConstantMax: 2
     intangibleStart: 0.1
     intangibleEnd: 0.1
-    impactType: 1
-    destroyOnImpact: 1
+    impactType: 0
+    destroyOnImpact: 0
     impactPower:
       curve:
         m_Mode: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
           m_ConstantMin: 0
           m_ConstantMax: 1
       bullets:
-      - {fileID: 11400000, guid: 97c6581991a954149a9732b90c524419, type: 2}
+      - {fileID: 11400000, guid: a2df46b432b821e47a65b447fe588130, type: 2}
       arc:
         curve:
           m_Mode: 0
@@ -202,4 +202,4 @@ MonoBehaviour:
         m_NumColorKeys: 2
         m_NumAlphaKeys: 2
       m_ColorMin: {r: 0, g: 0, b: 0, a: 1}
-      m_ColorMax: {r: 1, g: 1, b: 1, a: 1}
+      m_ColorMax: {r: 1, g: 1, b: 1, a: 0.3137255}
