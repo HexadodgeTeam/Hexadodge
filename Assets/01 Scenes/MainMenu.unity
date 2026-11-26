@@ -207,6 +207,17 @@ Transform:
   - {fileID: 1214643374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &984952141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6576317512399362781, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!114 &1006444940 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7515220527375737764, guid: ed92732b23f3b414ab183686803a9450, type: 3}
@@ -254,6 +265,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2102290343}
     m_Modifications:
     - target: {fileID: 506127100400895000, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 509569022}
+    - target: {fileID: 654460713108129941, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 509569022}
@@ -382,6 +397,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 907757976}
     - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: playButton
+      value: 
+      objectReference: {fileID: 1385329955}
+    - target: {fileID: 3715227635401843820, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: 'LeaderBoard.Array.data[0]'
       value: 
       objectReference: {fileID: 2125986051}
@@ -425,6 +444,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2066858533}
+    - target: {fileID: 4569069337848766953, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+      propertyPath: condition
+      value: 
+      objectReference: {fileID: 984952141}
     - target: {fileID: 4596023386875861462, guid: ed92732b23f3b414ab183686803a9450, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -522,6 +545,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1385329955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2328723389541428967, guid: ed92732b23f3b414ab183686803a9450, type: 3}
+  m_PrefabInstance: {fileID: 1198907817}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1 &1479300499
 GameObject:
   m_ObjectHideFlags: 0

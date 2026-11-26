@@ -99,10 +99,10 @@ public class Game : MonoBehaviour
         FillGrid.Instance.Active = true;
     }
     
-    public void EndFight()
+    public void WinFight()
     {
         IsInFight = false;
-        fight.EndFight();
+        fight.WinFight();
     }
 
     public void SetTransfer()

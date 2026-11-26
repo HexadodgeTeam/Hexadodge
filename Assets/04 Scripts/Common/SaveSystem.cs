@@ -8,13 +8,15 @@ public class SaveData
 {
     public int version = 1;
     public bool freshSave = true;
-    public List<FightSaveData> enemies = new();
-    public List<int> obtainedSkillIds = new();
-    public List<int> equippedSkillIds = new();
+    public List<FightSaveData> fights = new();
+    public List<int> obtainedSkillIds = new(); // All skills in inventory.
+    public List<int> equippedSkillIds = new(); // All equipped skills.
+    public List<int> upcomingSkillIds = new(); // All skills that have been unlocked but not opened.
 
     [Serializable]
     public class FightSaveData
     {
+        public bool unlocked = false;
         public bool beaten = false;
     }
 }

@@ -6,6 +6,9 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public FightParameters fight;
+
+    [Tooltip("Tous les combats du jeu. Un combat doit être enregistré ici pour être sauvegardé correctement.")]
+    public FightData[] gameFights;
     
     [Tooltip("Tous les skills du jeu. Un skill doit être enregistré ici pour fonctionner correctement.")]
     public SkillData[] gameSkills;
@@ -20,6 +23,19 @@ public class GameData : ScriptableObject
             if (s.ID == id)
             {
                 return s;
+            }
+        }
+
+        return null;
+    }
+
+    public FightData GetFightByID(int id)
+    {
+        foreach (FightData f in gameFights)
+        {
+            if (f.id == id)
+            {
+                return f;
             }
         }
 

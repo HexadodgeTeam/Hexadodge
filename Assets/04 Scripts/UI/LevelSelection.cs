@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private GameObject BG;
     [SerializeField] private TextMeshProUGUI ennemyName;
     [SerializeField] private float changeSpeed;
+    [SerializeField] private Button playButton;
 
     public int currentLevel = 0;
     public int previousLevel = 0;
@@ -42,6 +44,8 @@ public class LevelSelection : MonoBehaviour
     private const int AnimLeft   = 2;
     private static readonly int SlideLeftHash  = Animator.StringToHash("Slide_Left");
     private static readonly int SlideRightHash = Animator.StringToHash("Slide_Right");
+    private static readonly int Unlocked = Animator.StringToHash("Unlocked");
+    private static readonly int Beaten = Animator.StringToHash("Beaten");
 
     private bool CanChange => !isChanging && rects != null && enemyAnim.Count > 0;
     private int FloorCount => Mathf.CeilToInt(enemyAnim.Count / (float)LevelsPerFloor);
@@ -217,6 +221,17 @@ public class LevelSelection : MonoBehaviour
             rects[i].anchoredPosition = slots[i];
 
         ennemyName.text = CurrentFight.title;
+
+        if (currentLevel < fights.Count &&
+            currentLevel < anims.Length &&
+            PlayerState.Instance.Fights.ContainsKey(fights[currentLevel]))
+        {
+            bool fightUnlocked = PlayerState.Instance.Fights[fights[currentLevel]].unlocked;
+        
+            playButton.interactable = fightUnlocked;
+            anims[currentLevel].SetBool(Unlocked, fightUnlocked);
+            anims[currentLevel].SetBool(Beaten, fightUnlocked);
+        }
     }
 
     private void SetController(Animator anim, int level)

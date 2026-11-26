@@ -2,11 +2,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "S_Skill", menuName = "Scriptable Objects/Skills/Skill")]
 public class SkillData : ScriptableObject
 {
+  [Tooltip("Id de la compétence. Doit être unique, et correspondre à son emplacement dans la GameData.")]
+  public int ID;
   public string Name;
   [TextArea] public string Description;
   public Sprite Icon;
   public string lore;
-  public int ID;
+  public string rarity;
   public Condition condition;
   
   [Tooltip("Palier de la compétence (commence à 1 pour le premier palier).\n" +

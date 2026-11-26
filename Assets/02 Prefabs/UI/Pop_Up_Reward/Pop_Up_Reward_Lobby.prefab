@@ -601,6 +601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7774189827568790223}
+  - component: {fileID: 7971502295309906029}
   m_Layer: 5
   m_Name: Pop_Up_Reward_Lobby
   m_TagString: Untagged
@@ -635,6 +636,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7971502295309906029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4166000582829621159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f31d1bd9758f5de4cab162cd4f2aaeaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  conditionPrefix: 'Level '
+  nextButton: {fileID: 4829659785699683168}
+  equipButton: {fileID: 4825858072528196385}
+  closeButton: {fileID: 6834666030566670656}
+  skillIcon: {fileID: 8316204695572824789}
+  conditionField: {fileID: 3138813193157144718}
+  rarityField: {fileID: 7078680199049234917}
+  descriptionField: {fileID: 4367210973352214125}
+  descriptionPanel: {fileID: 95793783507045817}
 --- !u!1 &4587393276700288983
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1304,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 894621451400006233, guid: 812d62ac11bc4604f9d12216ab4e2e13, type: 3}
   m_PrefabInstance: {fileID: 800060922118102795}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6834666030566670656 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6180064178420473419, guid: 812d62ac11bc4604f9d12216ab4e2e13, type: 3}
+  m_PrefabInstance: {fileID: 800060922118102795}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &3990476372706665631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1481,6 +1514,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 556ddbfa40ade1740a87ba2e8ccec93d, type: 3}
+--- !u!114 &8316204695572824789 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2875804863990087404, guid: 556ddbfa40ade1740a87ba2e8ccec93d, type: 3}
+  m_PrefabInstance: {fileID: 6089413520812014649}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
 --- !u!224 &8920700705555672664 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3408454515010900577, guid: 556ddbfa40ade1740a87ba2e8ccec93d, type: 3}
@@ -1588,3 +1632,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6387072896440213707, guid: 5e60fb96d0567dc42ac33ddad7bb4b3b, type: 3}
   m_PrefabInstance: {fileID: 8307555727416547661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4825858072528196385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3581128827886258796, guid: 5e60fb96d0567dc42ac33ddad7bb4b3b, type: 3}
+  m_PrefabInstance: {fileID: 8307555727416547661}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button

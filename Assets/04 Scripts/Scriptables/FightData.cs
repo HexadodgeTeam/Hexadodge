@@ -5,6 +5,9 @@ using UnityEngine.Tilemaps;
 [CreateAssetMenu(fileName = "Fight", menuName = "Scriptable Objects/Fight/Data")]
 public class FightData : ScriptableObject, IGizmosDrawer
 {
+    [Tooltip("Id du combat. Doit être unique, et correspondre à sa place dans la GameData.")]
+    [SerializeField] internal int id;
+    
     [Tooltip("Titre du combat.")]
     [SerializeField] internal string title;
     
@@ -43,6 +46,15 @@ public class FightData : ScriptableObject, IGizmosDrawer
     [Tooltip("Faire disparaître les bullets à la fin du combat.")]
     [SerializeField]
     internal bool clearBulletsOnEnd = true;
+    
+    [Header("Meta-progression")]
+    [Tooltip("Compétence(s) en récompense du combat.")]
+    [SerializeField]
+    internal SkillData[] skillRewards;
+    
+    [Tooltip("Combat qui sont débloqués lorsque celui-ci est terminé.")]
+    [SerializeField]
+    internal FightData[] fightUnlocks;
     
     public FightDataInstance Instance(Action<int> animTriggerAction, Action<BulletSpawn> spawnAction) => new(this, animTriggerAction, spawnAction);
 
