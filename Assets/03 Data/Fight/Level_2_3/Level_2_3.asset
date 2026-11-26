@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
+  m_Name: Level_2_3
+  m_EditorClassIdentifier: Assembly-CSharp::FightData
+  title: 2-3
+  waitBetweenPhases:
+    curve:
+      m_Mode: 0
+      m_CurveMultiplier: 0.5
+      m_CurveMin:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_CurveMax:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_ConstantMin: 0
+      m_ConstantMax: 0.5
+  levels:
+  - phase: {fileID: 11400000, guid: a4b528c7af92a764aac7b5a690b3b81d, type: 2}
+    enemyHealthFraction: 1
+  - phase: {fileID: 11400000, guid: ea62c3a7c09351d479275f2f68ae55aa, type: 2}
+    enemyHealthFraction: 0.7
+  - phase: {fileID: 11400000, guid: abe746b9743e13b4eb636d2268698751, type: 2}
+    enemyHealthFraction: 0.4
+  enemy: {fileID: 11400000, guid: 69c136958c910af4fab9decdb74dc393, type: 2}
+  nextFight: {fileID: 0}
+  arenaPrefab: {fileID: 7143978175505978997, guid: 481b53df9250b6b42afddb16d9e2d620, type: 3}
+  gridPrefab: {fileID: 7569591809526182187, guid: ac80cc321fb66f54881de8a79d742f40, type: 3}
+  playerSpawnPoint: {x: 0, y: 0}
+  backgroundPrefab: {fileID: 453420770198184038, guid: 69917e47b380549489dd03d1af44383d, type: 3}
+  borderPrefab: {fileID: 0}
+  clearBulletsOnEnd: 1

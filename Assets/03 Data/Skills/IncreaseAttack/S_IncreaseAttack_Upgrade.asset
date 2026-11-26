@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
   m_Name: S_IncreaseAttack_Upgrade
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
+  Name: Increase Attack 2
+  Description: "\xE7a augmente encore + l'attaque c'est fou"
+  Icon: {fileID: 21300000, guid: e67f0e164a1120545829a19dfebe7041, type: 3}
   lore: 
-  ID: 0
+  ID: 2
+  condition: 2
   level: 1
   activeEffects: []
   passiveEffects:

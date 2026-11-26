@@ -52,6 +52,7 @@ MonoBehaviour:
   fill: {fileID: 1551301581224248341}
   fight: {fileID: 3078088578484012142}
   background: {fileID: 4783259619976112327}
+  subRun: {fileID: 0}
 --- !u!1 &6160710918490172895
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +277,7 @@ MonoBehaviour:
   attackFadeColor: {r: 0, g: 0, b: 0, a: 0.5019608}
   data: {fileID: 11400000, guid: 1e1fcf67c04cf9e48b8520e3838097fd, type: 2}
   arena: {fileID: 4971377856772587349}
+  subRun: {fileID: 0}
 --- !u!114 &2904766152425356429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,6 +640,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8333848220272853497, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 7563303373410732666}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -662,6 +668,11 @@ MonoBehaviour:
 --- !u!1 &7048626563279593021 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5423128768596489246, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
+  m_PrefabInstance: {fileID: 3067815984725010979}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &7563303373410732666 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4784320591457263705, guid: e283dd6eb4efd7540b1fe7dcba8939ad, type: 3}
   m_PrefabInstance: {fileID: 3067815984725010979}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8129546500708683024 stripped

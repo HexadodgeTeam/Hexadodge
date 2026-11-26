@@ -49,7 +49,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 1
     end:
       curve:
         m_Mode: 0
@@ -67,7 +67,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 1
+        m_ConstantMax: 2
   - pattern: {fileID: 11400000, guid: acab5d66b08a05044956433e03131cee, type: 2}
     start:
       curve:
@@ -86,7 +86,7 @@ MonoBehaviour:
           m_PostInfinity: 0
           m_RotationOrder: 0
         m_ConstantMin: 0
-        m_ConstantMax: 0
+        m_ConstantMax: 2
     end:
       curve:
         m_Mode: 0
@@ -105,5 +105,25 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 12
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Prep_B
+    triggerTime: 0
+  - animationTrigger: Prep_C
+    triggerTime: 2.5
+  - animationTrigger: Prep_C
+    triggerTime: 4
+  - animationTrigger: Prep_C
+    triggerTime: 5.5
+  - animationTrigger: Prep_C
+    triggerTime: 7
+  - animationTrigger: Prep_C
+    triggerTime: 8
+  - animationTrigger: Prep_C
+    triggerTime: 9
+  - animationTrigger: Prep_C
+    triggerTime: 10
+  - animationTrigger: Prep_C
+    triggerTime: 11
+  - animationTrigger: Prep_C
+    triggerTime: 12
   clearBulletsOnEnd: 0

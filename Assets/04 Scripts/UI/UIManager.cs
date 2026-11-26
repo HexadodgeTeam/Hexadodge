@@ -14,7 +14,6 @@ public class UIManager : MonoBehaviour
     
     [Header("References")]
     [SerializeField] private GameObject stick;
-    [SerializeField] private GameOverPanel gameOverPanel;
     [SerializeField] private TMP_Dropdown controlTypeDropdown;
     [SerializeField] private Animator hitAnimator;
     [SerializeField] private BorderFill border;
@@ -24,25 +23,26 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Transform arenaMaskParent;
     [SerializeField] private ArenaBorder arenaMask;
     [SerializeField] private TMP_Text timerDisplay;
+    [SerializeField] private GameOverPanel winGamePanel;
+    [SerializeField] private GameOverPanel loseGamePanel;
 
     public HealthUI healthUI;
     public SliderUI fillUI;
     public SliderUI enemyHealthUI;
 
-    private GameOverPanel _gameOverPanel;
     private Color _currentColor;
-    private float _timer = 0f;
+    public float _timer = 0f;
+    
 
     private void Awake()
     {
         Instance = this;
-        
-        _gameOverPanel = gameOverPanel;
     }
     
     private void Start()
     {
         RefreshControlType();
+        _timer = 0f;
     }
 
     private void Update()
@@ -57,7 +57,10 @@ public class UIManager : MonoBehaviour
 
     public void GameOver(bool win)
     {
-        _gameOverPanel.Display(win);
+        if (win)
+            winGamePanel.Display(true);
+        else
+            loseGamePanel.Display(false);
     }
 
     public void SetControlType(int value)

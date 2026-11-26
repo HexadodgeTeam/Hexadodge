@@ -72,6 +72,8 @@ MonoBehaviour:
         m_ConstantMax: 0
     mirrorX: 0
     mirrorY: 0
+    mirrorSpawnX: 0
+    mirrorSpawnY: 0
   throwInterval:
     curve:
       m_Mode: 0

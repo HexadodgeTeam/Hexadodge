@@ -8,15 +8,13 @@ public class Game : MonoBehaviour
     public static float ScaledTime { get; private set; }
     public static float DeltaTime => Time.deltaTime * TimeScale;
     public bool IsInFight { get; private set; }
-
-    [Header("Parameters")]
-    [SerializeField] private GameData data;
     
     [Header("References")]
     [SerializeField] private Player player;
     [SerializeField] private FillManager fill;
     [SerializeField] private AbstractFight fight;
     [SerializeField] private GameObject background;
+    public SubmitRunFonction subRun;
     
     private void Awake()
     {
@@ -26,8 +24,8 @@ public class Game : MonoBehaviour
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = Mathf.RoundToInt((float)Screen.currentResolution.refreshRateRatio.value);
         if (FightDataTransfer.Instance) SetFight(FightDataTransfer.Instance.fightData);
-        fight.Init(data.fight);
-        fill.Init(data.baseSkills);
+        fight.Init(PlayerState.Instance.gameData.fight);
+        fill.Init(PlayerState.Instance.EquippedSkills);
         StartFight();
     }
 
@@ -53,11 +51,13 @@ public class Game : MonoBehaviour
         
         if (!attacked) return false;
         
-        foreach (SkillData skill in data.baseSkills)
+        foreach (SkillData skill in PlayerState.Instance.EquippedSkills)
         {
             skill.OnAttack(skillIndex);
         }
         fill.OnAttack();
+        subRun.stockPallierSkill(skillIndex);
+        player.AnimationTrigger("Attack");
         
         return true;
     }
@@ -107,6 +107,7 @@ public class Game : MonoBehaviour
 
     public void SetTransfer()
     {
+        subRun.subRun();
         fight.SetTransfer();
     }
 

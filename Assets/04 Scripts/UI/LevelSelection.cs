@@ -21,7 +21,7 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private List<GameObject> enemyanimator = new();
     [SerializeField] private List<GameObject> enemy = new();
     [SerializeField] private List<FightData> fights = new();
-    [SerializeField] private List<string> sceneName;
+    [SerializeField] private List<LeaderboardView> LeaderBoard = new();
     [SerializeField] private GameObject BG;
     [SerializeField] private TextMeshProUGUI ennemyName;
     [SerializeField] private float changeSpeed;
@@ -61,7 +61,7 @@ public class LevelSelection : MonoBehaviour
 
         rects = enemy.ConvertAll(e => e.GetComponent<RectTransform>()).ToArray();
         anims = enemyanimator.ConvertAll(e => e.GetComponent<Animator>()).ToArray();
-        slots = System.Array.ConvertAll(rects, r => r.anchoredPosition);
+        slots = Array.ConvertAll(rects, r => r.anchoredPosition);
 
         isOpen = false;
         actualFloor = currentLevel / LevelsPerFloor;
@@ -72,11 +72,6 @@ public class LevelSelection : MonoBehaviour
     {
         Refresh();
         SoundManager.Instance.PlaySound("Ambiance");
-    }
-
-    public string GetScene()
-    {
-        return sceneName[currentLevel];
     }
 
     private void Update()
@@ -114,6 +109,7 @@ public class LevelSelection : MonoBehaviour
         BG.transform.position = BgPosition(actualFloor);
         Refresh();
     }
+    
     public void ChangeLevel(int dir)
     {
         if (!CanChange || dir == 0)
@@ -128,7 +124,20 @@ public class LevelSelection : MonoBehaviour
 
         previousLevel = currentLevel;
         currentLevel = first + (currentLevel - first + (forward ? 1 : size - 1)) % size;
-
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == currentLevel % 3)
+            {
+                LeaderBoard[i].gameObject.SetActive(true);
+                LeaderBoard[i+3].gameObject.SetActive(true);
+                LeaderBoard[i].Refresh();
+            }
+            else
+            {
+                LeaderBoard[i].gameObject.SetActive(false);
+                LeaderBoard[i+3].gameObject.SetActive(false);
+            }
+        }
         int trigger = forward ? SlideLeftHash : SlideRightHash;
         anims[AnimCenter].SetTrigger(trigger);
         anims[forward ? AnimRight : AnimLeft].SetTrigger(trigger);
@@ -138,12 +147,19 @@ public class LevelSelection : MonoBehaviour
         SoundManager.Instance.PlaySound("Swipe");
         StartCoroutine(Transition(exit, entry, entry));
     }
+    
     public void ChangeFloorL(int dir)
     {
         int target = actualFloor + (dir > 0 ? 1 : -1);
         if (!CanChange || dir == 0 || target < 0 || target >= FloorCount)
             return;
 
+        LeaderBoard[0].gameObject.SetActive(true);
+        LeaderBoard[1].gameObject.SetActive(false);
+        LeaderBoard[2].gameObject.SetActive(false);
+        LeaderBoard[3].gameObject.SetActive(true);
+        LeaderBoard[4].gameObject.SetActive(false);
+        LeaderBoard[5].gameObject.SetActive(false);
         previousLevel = currentLevel;
         actualFloor = target;
         currentLevel = target * LevelsPerFloor;

@@ -549,4 +549,13 @@ MonoBehaviour:
           m_RotationOrder: 0
         m_ConstantMin: 0
         m_ConstantMax: 11
-  animTriggers: []
+  animTriggers:
+  - animationTrigger: Prep_B
+    triggerTime: 1.3
+  - animationTrigger: Prep_B
+    triggerTime: 5.25
+  - animationTrigger: Prep_C
+    triggerTime: 7.5
+  - animationTrigger: Prep_C
+    triggerTime: 12.5
+  clearBulletsOnEnd: 0

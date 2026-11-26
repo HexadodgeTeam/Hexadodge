@@ -31,7 +31,7 @@ MonoBehaviour:
       m_ConstantMin: 0
       m_ConstantMax: 5
   timelines:
-  - pattern: {fileID: 11400000, guid: b4cab81e861225945ba6c436e6108cc0, type: 2}
+  - pattern: {fileID: 11400000, guid: b8bcafcf52b5a734bae0c60e1aaae804, type: 2}
     start:
       curve:
         m_Mode: 0
@@ -69,3 +69,4 @@ MonoBehaviour:
         m_ConstantMin: 0
         m_ConstantMax: 1
   animTriggers: []
+  clearBulletsOnEnd: 0

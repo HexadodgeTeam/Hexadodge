@@ -11,9 +11,8 @@ public class InventoryWheel : MonoBehaviour
     private const int InventoryImageOffset = 5;
 
     [Header("Données")]
-    public List<SkillData> ItemInInventory = new List<SkillData>();
-    public List<SkillData> ItemEquip = new List<SkillData>();
     public List<Image> itemEmplacement = new List<Image>();
+    public List<Image> ConditionEmplacement = new List<Image>();
     public Sprite emptySlotSprite; 
 
     [Header("Focus et description")]
@@ -25,6 +24,7 @@ public class InventoryWheel : MonoBehaviour
     public int itemToShowEquipement;   
     public Vector3 Deplacementpop;
     public Vector3 DeplacementInitial;
+    public List<Sprite> conditionSprite = new List<Sprite>(); 
 
     [Header("Roue inventaire")]
     public Scrollbar scrollbarInventaire;
@@ -60,7 +60,39 @@ public class InventoryWheel : MonoBehaviour
 
     private bool isSwapping;
 
+    private static List<SkillData> ObtainedSkills;
+    private static List<SkillData> EquippedSkills;
+    
+    private void Start()
+    {
+        PlayerState state = PlayerState.Instance;
 
+        EquippedSkills = new List<SkillData>(state.EquippedSkills);
+        EquippedSkills.RemoveAll(s => s == null);
+
+        // Skills obtenus dans ce script = skills du joueur - ceux équipés.
+        ObtainedSkills = state.ObtainedSkills.FindAll(s => s != null && !EquippedSkills.Contains(s));
+
+        if (!ValidateSetup())
+        {
+            enabled = false;
+            return;
+        }
+
+        PadEquipList();
+        CacheSlotBaseRotations();
+        InitInventoryIndexes();
+        OnItemsChanged();
+    }
+
+    private void Update()
+    {
+        if (isSwapping) return;   
+
+        UpdateInventoryWheel();
+        UpdateEquipmentWheel();
+    }
+    
     public void changeDesciptionFocus(bool isInventoryB)
     {
         IsInventory = isInventoryB;
@@ -126,16 +158,16 @@ public class InventoryWheel : MonoBehaviour
 
     private void ApplySwap(SkillData fromInventory, int equipSlot)
     {
-        int inventoryIndex = ItemInInventory.IndexOf(fromInventory);
+        int inventoryIndex = ObtainedSkills.IndexOf(fromInventory);
         if (inventoryIndex < 0 || !IsValidEquipSlot(equipSlot)) return;
 
-        SkillData fromEquipment = ItemEquip[equipSlot];
+        SkillData fromEquipment = EquippedSkills[equipSlot];
 
-        ItemInInventory.RemoveAt(inventoryIndex);
-        ItemEquip[equipSlot] = fromInventory;
+        ObtainedSkills.RemoveAt(inventoryIndex);
+        EquippedSkills[equipSlot] = fromInventory;
 
         if (fromEquipment != null)
-            ItemInInventory.Insert(inventoryIndex, fromEquipment);  
+            ObtainedSkills.Insert(inventoryIndex, fromEquipment);  
 
         OnItemsChanged();
     }
@@ -159,41 +191,19 @@ public class InventoryWheel : MonoBehaviour
         if (isSwapping) return;
         if (!IsValidEquipSlot(itemToShowEquipement)) return;
 
-        SkillData skill = ItemEquip[itemToShowEquipement];
+        SkillData skill = EquippedSkills[itemToShowEquipement];
         if (skill == null) return;
 
         InsertInInventoryById(skill);
-        ItemEquip[itemToShowEquipement] = null;
+        EquippedSkills[itemToShowEquipement] = null;
 
         OnItemsChanged();
     }
 
     private void InsertInInventoryById(SkillData skill)
     {
-        int insertAt = Mathf.Clamp(skill.ID, 0, ItemInInventory.Count);
-        ItemInInventory.Insert(insertAt, skill);
-    }
-
-    private void Start()
-    {
-        if (!ValidateSetup())
-        {
-            enabled = false;
-            return;
-        }
-
-        PadEquipList();
-        CacheSlotBaseRotations();
-        InitInventoryIndexes();
-        OnItemsChanged();
-    }
-
-    private void Update()
-    {
-        if (isSwapping) return;   
-
-        UpdateInventoryWheel();
-        UpdateEquipmentWheel();
+        int insertAt = Mathf.Clamp(skill.ID, 0, ObtainedSkills.Count);
+        ObtainedSkills.Insert(insertAt, skill);
     }
 
     private bool ValidateSetup()
@@ -227,14 +237,15 @@ public class InventoryWheel : MonoBehaviour
 
     private void PadEquipList()
     {
-        while (ItemEquip.Count < EquipSlotCount) ItemEquip.Add(null);
+        while (EquippedSkills.Count < EquipSlotCount) EquippedSkills.Add(null);
     }
 
     private void CacheSlotBaseRotations()
     {
         slotBaseLocalRotation.Clear();
-        for (int i = 0; i < SlotInventaire.Count; i++)
-            slotBaseLocalRotation.Add(SlotInventaire[i].localRotation);
+
+        foreach (RectTransform slot in SlotInventaire)
+            slotBaseLocalRotation.Add(slot.localRotation);
     }
 
     private void InitInventoryIndexes()
@@ -296,7 +307,7 @@ public class InventoryWheel : MonoBehaviour
 
     private int WheelIndexOf(int slot)
     {
-        int count = ItemInInventory.Count;
+        int count = ObtainedSkills.Count;
         return count == 0 ? -1 : ModuloPositif(indexItemInventaire[slot], count);
     }
 
@@ -380,25 +391,35 @@ public class InventoryWheel : MonoBehaviour
 
     private SkillData GetInventoryItem(int index)
     {
-        return index >= 0 && index < ItemInInventory.Count ? ItemInInventory[index] : null;
+        return index >= 0 && index < ObtainedSkills.Count ? ObtainedSkills[index] : null;
     }
 
     private SkillData GetEquippedItem(int slot)
     {
-        return IsValidEquipSlot(slot) ? ItemEquip[slot] : null;
+        return IsValidEquipSlot(slot) ? EquippedSkills[slot] : null;
     }
 
     private bool IsValidEquipSlot(int slot)
     {
-        return slot >= 0 && slot < ItemEquip.Count;
+        return slot >= 0 && slot < EquippedSkills.Count;
     }
 
     private void OnItemsChanged()
     {
-        SyncItemEmplacement();
         RefreshAllIcons();
         RefreshSelection();
         RefreshDescription();
+
+        PlayerState.Instance.EquippedSkills.Clear();
+        foreach (SkillData skill in EquippedSkills)
+        {
+            if (skill)
+            {
+                PlayerState.Instance.EquippedSkills.Add(skill);
+            }
+        }
+        // Save data when changing inventory.
+        PlayerState.Instance.SaveData();
     }
 
     private void RefreshSelection()
@@ -429,12 +450,18 @@ public class InventoryWheel : MonoBehaviour
             RefreshInventorySlotIcon(i);
 
         for (int n = 0; n < EquipSlotCount; n++)
+        {
             SetIcon(n, GetEquippedItem(n));
+            SetConditionIcon(n, GetEquippedItem(n));
+            
+        }
+            
     }
 
     private void RefreshInventorySlotIcon(int slot)
     {
         SetIcon(InventoryImageOffset + slot, GetInventoryItem(WheelIndexOf(slot)));
+        SetConditionIcon (InventoryImageOffset + slot, GetInventoryItem(WheelIndexOf(slot)));
     }
 
     private void SetIcon(int imageIndex, SkillData skill)
@@ -447,13 +474,23 @@ public class InventoryWheel : MonoBehaviour
 
         if (image.sprite != sprite) image.sprite = sprite;
     }
-
-    private void SyncItemEmplacement()
+    private void SetConditionIcon(int imageIndex, SkillData skill)
     {
-        for (int i = 0; i < ItemInInventory.Count; i++)
-            if (ItemInInventory[i] != null) ItemInInventory[i].level = i;
+        Image image = ConditionEmplacement[imageIndex];
+        if (image == null) return;
 
-        for (int n = 0; n < ItemEquip.Count; n++)
-            if (ItemEquip[n] != null) ItemEquip[n].level = n;
+        Sprite sprite = skill != null ? conditionSprite[(int)skill.condition] : null;
+        if (sprite == null) sprite = emptySlotSprite;   
+
+        if (image.sprite != sprite) image.sprite = sprite;
     }
+}
+
+public enum Condition
+{
+    Pallier_01=1,
+    Pallier_02=2,
+    Pallier_03=3,
+    Die=4,
+    TakeDammage=5
 }

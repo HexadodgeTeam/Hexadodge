@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32b9d51769f0de1479899beb47cce2e1, type: 3}
   m_Name: S_ClearBullets
   m_EditorClassIdentifier: Assembly-CSharp::SkillData
-  Name: 
-  Description: 
-  Icon: {fileID: 0}
+  Name: Clear Bullets
+  Description: "\xE7a clear les bullets oue"
+  Icon: {fileID: 21300000, guid: 52dcb1fe2c59afe47b2d90ad1ae1bbec, type: 3}
   lore: 
   ID: 0
+  condition: 1
   level: 3
   activeEffects:
   - {fileID: 11400000, guid: 83482d45c10225a4a97ddba1b905d361, type: 2}
