@@ -45,6 +45,7 @@ public class LevelSelection : MonoBehaviour
     private static readonly int SlideLeftHash  = Animator.StringToHash("Slide_Left");
     private static readonly int SlideRightHash = Animator.StringToHash("Slide_Right");
     private static readonly int Unlocked = Animator.StringToHash("Unlocked");
+    private static readonly int Beaten = Animator.StringToHash("Beaten");
 
     private bool CanChange => !isChanging && rects != null && enemyAnim.Count > 0;
     private int FloorCount => Mathf.CeilToInt(enemyAnim.Count / (float)LevelsPerFloor);
@@ -229,6 +230,7 @@ public class LevelSelection : MonoBehaviour
         
             playButton.interactable = fightUnlocked;
             anims[currentLevel].SetBool(Unlocked, fightUnlocked);
+            anims[currentLevel].SetBool(Beaten, fightUnlocked);
         }
     }
 
