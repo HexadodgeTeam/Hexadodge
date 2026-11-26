@@ -37,7 +37,7 @@ public abstract class AbstractFight : MonoBehaviour
     
     public abstract void SetFight(FightData fightData);
 
-    public abstract void EndFight();
+    public abstract void WinFight();
 
     public void SetAttackColor(Color color)
     {

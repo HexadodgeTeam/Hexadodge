@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
 
             if (_health <= 0)
             {
-                Game.Instance.EndFight();
+                Game.Instance.WinFight();
             }
         }
     }

@@ -50,10 +50,12 @@ public class Fight : AbstractFight
         Game.Instance.SetFight(data.nextFight);
     }
 
-    public override void EndFight()
+    public override void WinFight()
     {
         _fightInstance.End();
         subRun.subRun();
+        EarnRewards();
+        
         if (data.nextFight)
         {
             
@@ -67,9 +69,23 @@ public class Fight : AbstractFight
         }
     }
 
+    private void EarnRewards()
+    {
+        foreach (SkillData skill in data.skillRewards)
+        {
+            PlayerState.Instance.UpcomingSkills.Add(skill);
+        }
+
+        foreach (FightData fight in data.fightUnlocks)
+        {
+            PlayerState.Instance.Fights[fight].unlocked = true;
+        }
+        
+        PlayerState.Instance.SaveData();
+    }
+
     public override void SetTransfer()
     {
-        
         FightDataTransfer.Instance.SetData(data);
     }
 

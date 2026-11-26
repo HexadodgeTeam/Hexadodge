@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private float launchGameDelay = 1f;
     [SerializeField] private FightData tutorialFight;
     [SerializeField] private GameObject setPseudo;
+    [SerializeField] private SkillRewardMenu skillRewardMenu;
+    
     private async void Start()
     {
         try
@@ -34,6 +36,15 @@ public class MainMenu : MonoBehaviour
         {
             setPseudo.SetActive(true);
         }
+        
+        HandleSkillRewards();
+    }
+
+    private void HandleSkillRewards()
+    {
+        if (PlayerState.Instance.UpcomingSkills.Count <= 0) return;
+        
+        skillRewardMenu.Open();
     }
 
     public void SwitchToGame()

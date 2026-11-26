@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91da48a2d56e49c41877df8d7d574be2, type: 3}
   m_Name: Level_1_3
   m_EditorClassIdentifier: Assembly-CSharp::FightData
+  id: 2
   title: 1-3
   waitBetweenPhases:
     curve:
@@ -46,3 +47,4 @@ MonoBehaviour:
   backgroundPrefab: {fileID: 453420770198184038, guid: 9535b581ffd2eb64aada85ea21e2afe3, type: 3}
   borderPrefab: {fileID: 0}
   clearBulletsOnEnd: 1
+  skillRewards: []
