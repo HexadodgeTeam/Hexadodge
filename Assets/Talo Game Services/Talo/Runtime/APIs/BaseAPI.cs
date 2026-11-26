@@ -74,7 +74,7 @@ namespace TaloGameServices
 
             if (Talo.Settings.logRequests && Debug.isDebugBuild)
             {
-                Debug.Log($"<-- {method} {uri}{(continuity ? " [CONTINUITY]" : "")} {content}");
+               // Debug.Log($"<-- {method} {uri}{(continuity ? " [CONTINUITY]" : "")} {content}");
             }
 
             if (Talo.Settings.offlineMode)
@@ -108,7 +108,7 @@ namespace TaloGameServices
 
                 if (Talo.Settings.logResponses && Debug.isDebugBuild)
                 {
-                    Debug.Log($"--> {method} {uri} [{www.responseCode}] {www.downloadHandler.text}");
+                    //Debug.Log($"--> {method} {uri} [{www.responseCode}] {www.downloadHandler.text}");
                 }
 
                 await Talo.Continuity.HandlePostResponseHealthCheck(uri.ToString(), www.result);

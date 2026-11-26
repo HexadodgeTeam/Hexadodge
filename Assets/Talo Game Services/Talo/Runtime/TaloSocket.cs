@@ -58,7 +58,7 @@ namespace TaloGameServices
 
             if (Talo.Settings.logResponses && Debug.isDebugBuild)
             {
-                Debug.Log($"--> WSS {res} {response.GetJsonData()}");
+               // Debug.Log($"--> WSS {res} {response.GetJsonData()}");
             }
 
             switch (res)
@@ -105,7 +105,7 @@ namespace TaloGameServices
 
             if (Talo.Settings.logRequests && Debug.isDebugBuild)
             {
-                Debug.Log($"<-- WSS {request.req} {data}");
+                //Debug.Log($"<-- WSS {request.req} {data}");
             }
 
             if (Talo.Settings.verificationEnabled && identified)
