@@ -60,6 +60,15 @@ AnimationClip:
     classID: 114
     script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
     flags: 2
+  - serializedVersion: 2
+    curve:
+    - time: 0
+      value: {fileID: 2100000, guid: 4dd9832226e84514f966535495710401, type: 2}
+    attribute: m_Material
+    path: Enemy_Visual_Image
+    classID: 114
+    script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+    flags: 2
   m_SampleRate: 24
   m_WrapMode: 0
   m_Bounds:
@@ -85,6 +94,15 @@ AnimationClip:
       isPPtrCurve: 1
       isIntCurve: 0
       isSerializeReferenceCurve: 0
+    - serializedVersion: 2
+      path: 2894247917
+      attribute: 2324865467
+      script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+      typeID: 114
+      customType: 0
+      isPPtrCurve: 1
+      isIntCurve: 0
+      isSerializeReferenceCurve: 0
     pptrCurveMapping:
     - {fileID: 4256163275261795738, guid: a4f4dfb5fe2be9d4ebc1688b35c4fc93, type: 3}
     - {fileID: 1434821485824683024, guid: a4f4dfb5fe2be9d4ebc1688b35c4fc93, type: 3}
@@ -100,6 +118,7 @@ AnimationClip:
     - {fileID: 2319689038173635089, guid: a4f4dfb5fe2be9d4ebc1688b35c4fc93, type: 3}
     - {fileID: 7459792464764731302, guid: a4f4dfb5fe2be9d4ebc1688b35c4fc93, type: 3}
     - {fileID: 7459792464764731302, guid: a4f4dfb5fe2be9d4ebc1688b35c4fc93, type: 3}
+    - {fileID: 2100000, guid: 4dd9832226e84514f966535495710401, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ public class PlayerIdentity : MonoBehaviour
 
     public static PlayerIdentity Instance { get; private set; }
     static Task initTask;
+    
+    public List<float> pb = new List<float>();
 
     [Header("Avatars (index = id de l'avatar)")]
     public Sprite[] avatarSprites;

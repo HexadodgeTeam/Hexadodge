@@ -42,6 +42,33 @@ public class SubmitRunFonction : MonoBehaviour
       string Lvl = forData.data.title;
       string pallierSkillTime = BuildPallierString();
       int restLife = forLife._health;
+      int x = -1;
+      switch (Lvl)
+      {
+         case "1-1" :
+            x = 0;
+            break;
+         case "1-2" :
+            x = 1;
+            break;
+         case "1-3" :
+            x = 2;
+            break;
+         case "2-1" :
+            x = 3;
+            break;
+         case "2-2" :
+            x = 4;
+            break;
+         case "2-3" :
+            x = 5;
+            break;
+      }
+
+      if (timer < PlayerIdentity.Instance.pb[x])
+      {
+         PlayerIdentity.Instance.pb[x] = timer;
+      }
       LevelLeaderboard.SubmitRun(Lvl, timer,item,pallierSkillTime,restLife);
       forTimer._timer=-5;
    }
