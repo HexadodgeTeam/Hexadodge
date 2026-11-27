@@ -107,7 +107,12 @@ public class LevelSelection : MonoBehaviour
         for (int i = 0; i < count; i++)
         {
             if (PlayerState.Instance.Fights.TryGetValue(fights[i], out var data))
+            {
                 materialsToApply[i].SetFloat("_isLocked", data.unlocked ? 0f : 1f);
+                materialsToApply[i].SetFloat("_isComplete", data.beaten ? 1f : 0f);
+            }
+                
+            
         }
     }
 
@@ -265,7 +270,6 @@ public class LevelSelection : MonoBehaviour
         SetController(anims[3], top);
         SetController(anims[4], bottom);
 
-        // Mêmes indices que les controllers, sans modulo
         SetMaterial(materials[0], center);
         SetMaterial(materials[1], right);
         SetMaterial(materials[2], left);
@@ -280,7 +284,7 @@ public class LevelSelection : MonoBehaviour
 
        
         bool unlocked = IsUnlocked(currentLevel);
-				bool beaten = IsBeaten(currentLevel);
+		bool beaten = IsBeaten(currentLevel);
         playButton.interactable = unlocked;
         anims[0].SetBool(Unlocked, unlocked);
         anims[0].SetBool(Beaten, beaten);

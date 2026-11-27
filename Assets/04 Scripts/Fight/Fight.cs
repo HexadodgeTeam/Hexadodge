@@ -79,6 +79,7 @@ public class Fight : AbstractFight
         foreach (FightData fight in data.fightUnlocks)
         {
             PlayerState.Instance.Fights[fight].unlocked = true;
+            PlayerState.Instance.Fights[data].beaten = true;
         }
         
         PlayerState.Instance.SaveData();
