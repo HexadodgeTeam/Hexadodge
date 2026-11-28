@@ -2,18 +2,18 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class LevelSelection : MonoBehaviour
 {
-    private const int SlotLeft = 0;
-    private const int SlotCenter = 1;
-    private const int SlotRight = 2;
+    private const int SlotCenter = 0;
+    private const int SlotRight = 1;
+    private const int SlotLeft = 2;
     private const int SlotNextFloor = 3;
     private const int SlotPrevFloor = 4;
+    private const int SlotCount = 5;
 
     private const int LevelsPerFloor = 3;
     private const float FloorHeight = 11f;
@@ -31,26 +31,25 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] private float changeSpeed;
     [SerializeField] private Button playButton;
 
-    
     public int currentLevel = 0;
     public int previousLevel = 0;
     public int actualFloor = 0;
     public bool isOpen = false;
+    public Material[] runtimeMats;
 
-    private RectTransform[] rects;  
-    private Animator[] anims;      
-    private Vector2[] slots;        
+    private RectTransform[] rects;
+    private Animator[] anims;
+    private Vector2[] slots;
     private Vector2 swipeStart;
     private bool isChanging;
-    private Material[] runtimeMats;
-    
-    private const int AnimCenter = 0;
-    private const int AnimRight  = 1;
-    private const int AnimLeft   = 2;
-    private static readonly int SlideLeftHash  = Animator.StringToHash("Slide_Left");
+    private int[] displayedLevels;
+
+    private static readonly int SlideLeftHash = Animator.StringToHash("Slide_Left");
     private static readonly int SlideRightHash = Animator.StringToHash("Slide_Right");
     private static readonly int Unlocked = Animator.StringToHash("Unlocked");
     private static readonly int Beaten = Animator.StringToHash("Beaten");
+    private static readonly int IsLocked = Shader.PropertyToID("_isLocked");
+    private static readonly int IsComplete = Shader.PropertyToID("_isComplete");
 
     private bool CanChange => !isChanging && rects != null && enemyAnim.Count > 0;
     private int FloorCount => Mathf.CeilToInt(enemyAnim.Count / (float)LevelsPerFloor);
@@ -58,17 +57,13 @@ public class LevelSelection : MonoBehaviour
     private int FloorSize(int floor) => Mathf.Clamp(enemyAnim.Count - floor * LevelsPerFloor, 1, LevelsPerFloor);
 
     private static Vector3 BgPosition(int floor) => new Vector3(0f, -floor * FloorHeight, 0f);
-    int center;
-    int right  ;
-    int left   ;
-    int top    ;
-    int bottom;
 
     private void Awake()
     {
-        if (enemy.Count < 5 || enemyanimator.Count < 5)
+        if (enemy.Count < SlotCount || enemyanimator.Count < SlotCount || materials.Count < SlotCount)
         {
-            Debug.LogError("LevelSelection : 'enemy' et 'enemyanimator' doivent contenir 5 éléments.", this);
+            Debug.LogError("LevelSelection : 'enemy', 'enemyanimator' et 'materials' doivent contenir 5 éléments " +
+                           "(Center, Right, Left, Next floor, Prev floor).", this);
             enabled = false;
             return;
         }
@@ -80,47 +75,20 @@ public class LevelSelection : MonoBehaviour
         isOpen = false;
         actualFloor = currentLevel / LevelsPerFloor;
         runtimeMats = materialsToApply.ConvertAll(m => new Material(m)).ToArray();
-        
     }
 
     private void Start()
     {
-        
-        Refresh();
         UpdateMaterials();
-        SetMaterial(materials[0], center);
-        SetMaterial(materials[1], right);
-        SetMaterial(materials[2], left);
-        SetMaterial(materials[3], top);
-        SetMaterial(materials[4], bottom);
+        Refresh();
         SoundManager.Instance.PlaySound("Ambiance");
     }
+
     private void OnDestroy()
     {
         if (runtimeMats == null) return;
-        foreach (var m in runtimeMats) if (m != null) Destroy(m);
-    }
-
-    private void UpdateMaterials()
-    {
-        int count = Mathf.Min(runtimeMats.Length, fights.Count);
-        for (int i = 0; i < count; i++)
-        {
-            if (PlayerState.Instance.Fights.TryGetValue(fights[i], out var data))
-            {
-                materialsToApply[i].SetFloat("_isLocked", data.unlocked ? 0f : 1f);
-                materialsToApply[i].SetFloat("_isComplete", data.beaten ? 1f : 0f);
-            }
-                
-            
-        }
-    }
-
-    private void SetMaterial(Image img, int level)
-    {
-        if (level < 0 || level >= runtimeMats.Length) return;
-        if (img.material != runtimeMats[level])
-            img.material = runtimeMats[level];
+        foreach (var m in runtimeMats)
+            if (m != null) Destroy(m);
     }
 
     private void Update()
@@ -141,9 +109,9 @@ public class LevelSelection : MonoBehaviour
             return;
 
         if (Mathf.Abs(delta.x) > Mathf.Abs(delta.y))
-            ChangeLevel(delta.x > 0 ? -1 : 1);  
+            ChangeLevel(delta.x > 0 ? -1 : 1);
         else
-            ChangeFloorL(delta.y > 0 ? -1 : 1);  
+            ChangeFloorL(delta.y > 0 ? -1 : 1);
     }
 
     public void ChangeSpecificLevel(int lvl)
@@ -156,9 +124,10 @@ public class LevelSelection : MonoBehaviour
         actualFloor = lvl / LevelsPerFloor;
 
         BG.transform.position = BgPosition(actualFloor);
+        ShowLeaderboard(currentLevel % LevelsPerFloor);
         Refresh();
     }
-    
+
     public void ChangeLevel(int dir)
     {
         if (!CanChange || dir == 0)
@@ -173,45 +142,31 @@ public class LevelSelection : MonoBehaviour
 
         previousLevel = currentLevel;
         currentLevel = first + (currentLevel - first + (forward ? 1 : size - 1)) % size;
-        for (int i = 0; i < 3; i++)
-        {
-            if (i == currentLevel % 3)
-            {
-                LeaderBoard[i].gameObject.SetActive(true);
-                LeaderBoard[i+3].gameObject.SetActive(true);
-                LeaderBoard[i].Refresh();
-            }
-            else
-            {
-                LeaderBoard[i].gameObject.SetActive(false);
-                LeaderBoard[i+3].gameObject.SetActive(false);
-            }
-        }
+
+        ShowLeaderboard(currentLevel % LevelsPerFloor);
+
         int trigger = forward ? SlideLeftHash : SlideRightHash;
-        anims[AnimCenter].SetTrigger(trigger);
-        anims[forward ? AnimRight : AnimLeft].SetTrigger(trigger);
+        anims[SlotCenter].SetTrigger(trigger);
+        anims[forward ? SlotRight : SlotLeft].SetTrigger(trigger);
 
         int exit = forward ? SlotLeft : SlotRight;
         int entry = forward ? SlotRight : SlotLeft;
         SoundManager.Instance.PlaySound("Swipe");
         StartCoroutine(Transition(exit, entry, entry));
     }
-    
+
     public void ChangeFloorL(int dir)
     {
         int target = actualFloor + (dir > 0 ? 1 : -1);
         if (!CanChange || dir == 0 || target < 0 || target >= FloorCount)
             return;
 
-        LeaderBoard[0].gameObject.SetActive(true);
-        LeaderBoard[1].gameObject.SetActive(false);
-        LeaderBoard[2].gameObject.SetActive(false);
-        LeaderBoard[3].gameObject.SetActive(true);
-        LeaderBoard[4].gameObject.SetActive(false);
-        LeaderBoard[5].gameObject.SetActive(false);
+        ShowLeaderboard(0, false);
+
         previousLevel = currentLevel;
         actualFloor = target;
         currentLevel = target * LevelsPerFloor;
+
         bool next = dir > 0;
         int exit = next ? SlotNextFloor : SlotPrevFloor;
         int from = next ? SlotPrevFloor : SlotNextFloor;
@@ -222,9 +177,10 @@ public class LevelSelection : MonoBehaviour
     private IEnumerator Transition(int exitSlot, int entryIndex, int entryStartSlot)
     {
         isChanging = true;
+        SetMaterial(materials[0], previousLevel);
 
-        RectTransform center = rects[SlotCenter];
-        RectTransform entry = rects[entryIndex];
+        RectTransform centerRect = rects[SlotCenter];
+        RectTransform entryRect = rects[entryIndex];
 
         Vector2 centerFrom = slots[SlotCenter];
         Vector2 centerTo = slots[exitSlot];
@@ -240,9 +196,9 @@ public class LevelSelection : MonoBehaviour
         {
             t = Mathf.Min(1f, t + Time.deltaTime / duration);
 
-            center.anchoredPosition = Vector2.Lerp(centerFrom, centerTo, t);
-            entry.anchoredPosition = Vector2.Lerp(entryFrom, entryTo, t);
-            BG.transform.position = Vector3.Lerp(bgFrom, bgTo, t); 
+            centerRect.anchoredPosition = Vector2.Lerp(centerFrom, centerTo, t);
+            entryRect.anchoredPosition = Vector2.Lerp(entryFrom, entryTo, t);
+            BG.transform.position = Vector3.Lerp(bgFrom, bgTo, t);
 
             yield return null;
         }
@@ -250,73 +206,128 @@ public class LevelSelection : MonoBehaviour
         Refresh();
         isChanging = false;
     }
+
     private void Refresh()
+    {
+        for (int i = 0; i < SlotCount; i++)
+            rects[i].anchoredPosition = slots[i];
+
+        RefreshMatAnim();
+
+        ennemyName.text = CurrentFight.title;
+        playButton.interactable = IsUnlocked(currentLevel);
+    }
+    private int[] SlotLevels()
     {
         int first = actualFloor * LevelsPerFloor;
         int size = FloorSize(actualFloor);
         int col = currentLevel - first;
-        
-         center = currentLevel;
-         right  = first + (col + 1) % size;
-         left   = first + (col + size - 1) % size;
-         top    = first + LevelsPerFloor;
-         bottom = first - LevelsPerFloor;
-        
+
+        int[] levels = new int[SlotCount];
+        levels[SlotCenter] = currentLevel;
+        levels[SlotRight] = first + (col + 1) % size;
+        levels[SlotLeft] = first + (col + size - 1) % size;
+        levels[SlotNextFloor] = first + LevelsPerFloor;
+        levels[SlotPrevFloor] = first - LevelsPerFloor;
+        return levels;
+    }
+
+    private void RefreshMatAnim()
+    {
         UpdateMaterials();
 
-        SetController(anims[0], center);
-        SetController(anims[1], right);
-        SetController(anims[2], left);
-        SetController(anims[3], top);
-        SetController(anims[4], bottom);
+        int[] levels = SlotLevels();
+        for (int i = 0; i < SlotCount; i++)
+        {
+            SetController(anims[i], levels[i]);
+            SetMaterial(materials[i], levels[i]);
+        }
 
-        SetMaterial(materials[0], center);
-        SetMaterial(materials[1], right);
-        SetMaterial(materials[2], left);
-        SetMaterial(materials[3], top);
-        SetMaterial(materials[4], bottom);
-
-        
-        for (int i = 0; i < rects.Length; i++)
-            rects[i].anchoredPosition = slots[i];
-
-        ennemyName.text = CurrentFight.title;
-
-       
-        bool unlocked = IsUnlocked(currentLevel);
-		bool beaten = IsBeaten(currentLevel);
-        playButton.interactable = unlocked;
-        anims[0].SetBool(Unlocked, unlocked);
-        anims[0].SetBool(Beaten, beaten);
+        anims[SlotCenter].SetBool(Unlocked, IsUnlocked(currentLevel));
+        anims[SlotCenter].SetBool(Beaten, IsBeaten(currentLevel));
     }
-		
+    private void UpdateMaterials()
+    {
+        int count = Mathf.Min(runtimeMats.Length, fights.Count);
+        for (int i = 0; i < count; i++)
+        {
+            if (PlayerState.Instance.Fights.TryGetValue(fights[i], out var data))
+            {
+                runtimeMats[i].SetFloat(IsLocked, data.unlocked ? 0f : 1f);
+                runtimeMats[i].SetFloat(IsComplete, data.beaten ? 1f : 0f);
+                int[] levels = SlotLevels();
+                displayedLevels = levels;
+            }
+            
+        }
+    }
+    private void LateUpdate()
+    {
+        if (displayedLevels == null) return;
+
+        for (int i = 0; i < SlotCount; i++)
+        {
+            int level = displayedLevels[i];
+            if (level < 0 || level >= runtimeMats.Length) continue;
+
+            if (materials[i].material != runtimeMats[level])
+                materials[i].material = runtimeMats[level];
+        }
+    }
+
+    private void SetMaterial(Image img, int level)
+    {
+        if (level < 0 || level >= runtimeMats.Length)
+            return;
+
+        img.material = runtimeMats[level];
+    }
+    private void SetController(Animator anim, int level)
+    {
+        if (level < 0 || level >= enemyAnim.Count || anim.runtimeAnimatorController == enemyAnim[level])
+            return;
+
+        anim.runtimeAnimatorController = enemyAnim[level];
+
+        if (anim.isActiveAndEnabled)
+        {
+            anim.SetBool(Unlocked, IsUnlocked(level));
+            anim.SetBool(Beaten, IsBeaten(level));
+            anim.Update(0f);
+        }
+    }
+    private void ShowLeaderboard(int index, bool refresh = true)
+    {
+        if (LeaderBoard.Count < LevelsPerFloor * 2)
+            return;
+
+        for (int i = 0; i < LevelsPerFloor; i++)
+        {
+            bool active = i == index;
+            LeaderBoard[i].gameObject.SetActive(active);
+            LeaderBoard[i + LevelsPerFloor].gameObject.SetActive(active);
+
+            if (active && refresh)
+                LeaderBoard[i].Refresh();
+        }
+    }
+
     private bool IsUnlocked(int level)
     {
         return level >= 0 && level < fights.Count &&
                PlayerState.Instance.Fights.TryGetValue(fights[level], out var d) &&
                d.unlocked;
     }
-		
-		private bool IsBeaten(int level)
+
+    private bool IsBeaten(int level)
     {
         return level >= 0 && level < fights.Count &&
                PlayerState.Instance.Fights.TryGetValue(fights[level], out var d) &&
                d.beaten;
     }
 
-    private void SetController(Animator anim, int level)
+    public void SetFight()
     {
-        if (level < 0 || level >= enemyAnim.Count || anim.runtimeAnimatorController == enemyAnim[level])
-            return; 
-
-        anim.runtimeAnimatorController = enemyAnim[level];
-
-        if (anim.isActiveAndEnabled)
-            anim.Update(0f); 
-    }
-   
-	public void SetFight()
-    {
-        FightDataTransfer.Instance.SetData(fights[currentLevel < fights.Count ? currentLevel : 0]);
+        FightDataTransfer.Instance.SetData(CurrentFight);
     }
 }
